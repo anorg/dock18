@@ -13,13 +13,14 @@ from bcast.models import Event
 """
 EventPlugin - Handles complete events
 """
+@plugin_pool.register_plugin
 class EventPlugin(CMSPluginBase):
-    model = EventPluginModel # Model where data about this plugin is saved
-    name = _("Event Plugin") # Name of the plugin
-    render_template = "bcast/event_detail.html" # template to render the plugin with
+    model = EventPluginModel
+    name = _("Event Plugin")
+    render_template = "bcast/event_detail.html"
 
     def render(self, context, instance, placeholder):
-        #context.update({'instance':instance})        
+   
         context.update({
             'event':instance.event,
             'object':instance,
@@ -27,15 +28,12 @@ class EventPlugin(CMSPluginBase):
         })
         return context
 
-plugin_pool.register_plugin(EventPlugin) # register the plugin
-
-
-
 
 
 """
 EventListing - List of Events (e.g. to use on front-page)
 """
+@plugin_pool.register_plugin
 class EventListingPlugin(CMSPluginBase):
     
     model = EventListPluginModel
@@ -43,9 +41,7 @@ class EventListingPlugin(CMSPluginBase):
     render_template = "bcast/event_list.html"
 
     def render(self, context, instance, placeholder):
-        """
-            Render the latest news
-        """
+
         latest = Event.published.all()[:instance.limit]
         
         context.update({
@@ -55,17 +51,3 @@ class EventListingPlugin(CMSPluginBase):
         })
         
         return context
-
-    
-    """
-    def render(self, context, instance, placeholder):
-        
-        context.update({
-                        'context':context,
-                        'instance':instance,
-                        'placeholder':placeholder,
-                        })        
-                
-        return context
-    """
-plugin_pool.register_plugin(EventListingPlugin) # register the plugin
