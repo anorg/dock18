@@ -13,6 +13,8 @@ from dajaxice.core import dajaxice_autodiscover
 dajaxice_autodiscover()
 
 
+
+
 urlpatterns = patterns('',
     # dajaxice
     (r'^%s/' % settings.DAJAXICE_MEDIA_PREFIX, include('dajaxice.urls')),
@@ -29,6 +31,15 @@ urlpatterns = patterns('',
 
     # admin             
     # (r'^admin/', include(admin.site.urls)),
+    
+    # filer
+    #(r'^', include('filer.server.urls')),
+    
+    #(r'^grappelli/', include('grappelli.urls')),
+    
+    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    
+    (r'^adminfiles/', include('adminfiles.urls')),
     
     # apps
     (r'^jqchat/', include('jqchat.urls')),

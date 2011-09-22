@@ -30,7 +30,7 @@ DEFAULT_LANGUAGE = 0
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dock18-dev',
+        'NAME': 'dock18_ch-dev',
         'USERNAME': 'root',
         'PASSWORD': 'root',
     },
@@ -122,7 +122,11 @@ CMS_PLUGIN_PROCESSORS = (
 )
 
 ROOT_URLCONF = 'urls'
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+
+
+
+
 DAJAXICE_MEDIA_PREFIX = 'dajaxice'
 
 # media deliver
@@ -132,6 +136,9 @@ MEDIA_URL = '/media/'
 # static files (application js/img etc)
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+#ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'media'),
@@ -148,6 +155,12 @@ STATICFILES_FINDERS = (
 
 
 INSTALLED_APPS = (
+            
+    # filebrowser
+    #'filebrowser',
+    #'grappelli',
+                  
+                  
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -179,6 +192,10 @@ INSTALLED_APPS = (
     'appmedia',
     'south',
     
+    'filer',
+    #'adminfiles',
+
+    
     # cms plugins (default)
     'cms.plugins.text',
     'cms.plugins.picture',
@@ -199,7 +216,7 @@ INSTALLED_APPS = (
     # asset and media handling
     'compressor',
     'easy_thumbnails',
-    'cms_redirects',
+    #'cms_redirects',
     
     # ajax
     'dajaxice',
@@ -211,6 +228,19 @@ INSTALLED_APPS = (
     'jqchat', 
 )
 
+
+FILER_IS_PUBLIC_DEFAULT = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
+
+FILEBROWSER_DIRECTORY = 'fb'
 
 FIXTURE_DIRS = [
     os.path.join(PROJECT_DIR, 'fixtures'),

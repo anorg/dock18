@@ -12,6 +12,8 @@ from django.utils.translation import ugettext as _
 # jqchat
 from jqchat.models import Room
 
+# django-filer (https://github.com/stefanfoulis/django-filer/blob/develop/docs/usage.rst)
+
 
 class Season(models.Model):
     title = models.CharField(max_length=200)
@@ -75,6 +77,11 @@ class Event(models.Model):
 
     # enable tagging
     tags = TaggableManager()
+    
+    
+    
+    # filer 
+    # picture = FilerImageField(null=True, blank=True)
 
     class Meta:
         verbose_name = _('Event')

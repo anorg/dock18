@@ -8,25 +8,39 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'Profile'
-        db.create_table('profiles_profile', (
+        # Adding model 'Room'
+        db.create_table('jqchat_room', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('picture', self.gf('django.db.models.fields.files.ImageField')(default=False, max_length=100, blank=True)),
-            ('skype', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('facebook', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('location', self.gf('django.db.models.fields.CharField')(max_length=40, null=True, blank=True)),
-            ('website', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
-            ('about', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=20, null=True, blank=True)),
+            ('created', self.gf('django.db.models.fields.DateTimeField')()),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
+            ('description_modified', self.gf('django.db.models.fields.IntegerField')(null=True)),
+            ('last_activity', self.gf('django.db.models.fields.IntegerField')()),
+            ('content_type', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['contenttypes.ContentType'], null=True, blank=True)),
+            ('object_id', self.gf('django.db.models.fields.PositiveIntegerField')(null=True, blank=True)),
         ))
-        db.send_create_signal('profiles', ['Profile'])
+        db.send_create_signal('jqchat', ['Room'])
+
+        # Adding model 'Message'
+        db.create_table('jqchat_message', (
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='jchat_messages', to=orm['auth.User'])),
+            ('room', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['jqchat.Room'])),
+            ('event', self.gf('django.db.models.fields.IntegerField')(null=True, blank=True)),
+            ('text', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
+            ('unix_timestamp', self.gf('django.db.models.fields.FloatField')()),
+            ('created', self.gf('django.db.models.fields.DateTimeField')()),
+        ))
+        db.send_create_signal('jqchat', ['Message'])
 
 
     def backwards(self, orm):
         
-        # Deleting model 'Profile'
-        db.delete_table('profiles_profile')
+        # Deleting model 'Room'
+        db.delete_table('jqchat_room')
+
+        # Deleting model 'Message'
+        db.delete_table('jqchat_message')
 
 
     models = {
@@ -66,18 +80,27 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'profiles.profile': {
-            'Meta': {'object_name': 'Profile'},
-            'about': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'facebook': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
+        'jqchat.message': {
+            'Meta': {'ordering': "['unix_timestamp']", 'object_name': 'Message'},
+            'created': ('django.db.models.fields.DateTimeField', [], {}),
+            'event': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'location': ('django.db.models.fields.CharField', [], {'max_length': '40', 'null': 'True', 'blank': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'picture': ('django.db.models.fields.files.ImageField', [], {'default': 'False', 'max_length': '100', 'blank': 'True'}),
-            'skype': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
-            'website': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'})
+            'room': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['jqchat.Room']"}),
+            'text': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
+            'unix_timestamp': ('django.db.models.fields.FloatField', [], {}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'jchat_messages'", 'to': "orm['auth.User']"})
+        },
+        'jqchat.room': {
+            'Meta': {'ordering': "['created']", 'object_name': 'Room'},
+            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']", 'null': 'True', 'blank': 'True'}),
+            'created': ('django.db.models.fields.DateTimeField', [], {}),
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'description_modified': ('django.db.models.fields.IntegerField', [], {'null': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'last_activity': ('django.db.models.fields.IntegerField', [], {}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '20', 'null': 'True', 'blank': 'True'}),
+            'object_id': ('django.db.models.fields.PositiveIntegerField', [], {'null': 'True', 'blank': 'True'})
         }
     }
 
-    complete_apps = ['profiles']
+    complete_apps = ['jqchat']
