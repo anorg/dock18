@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+{% load cms_tags %}
+{% load compress %}
+
+<!--head -->
+<head>
+{% include 'skeleton/head.html' %}
+
+<!-- extra hed from sup-templates -->
+{% block extra_head %}{% endblock %}
+
+</head>
+
+<!--body -->
+<body id="body" class="bp base two-col">
+{% block base_content%}
+{% endblock %}
+
+
+<!--
+{% block login %}
+    {% include "_account_bar.html" %}
+{% endblock %}
+-->
+
+
+<script type="text/javascript">
+//<![CDATA[//><!--
+$(document).ready(function() {
+	base.ui.iface();		
+});
+//--><!]]>
+</script>
+
+
+</body>
+  
+</html>

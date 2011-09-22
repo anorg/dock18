@@ -1,0 +1,190 @@
+body.base
+  ul, ol
+    margin: 0
+    padding: 0
+    
+#navigation_top
+  li > a
+    padding: 10px 4px 0px 4px
+    
+#navigation_side
+  margin: 140px 0 0 0
+  li
+    padding: 4px 4px 4px 8px
+    text-align: right
+    > a
+      padding: 4px 10px 4px 8px
+      text-transform: uppercase
+      border-right: 8px solid #000000
+      font-weight: bold
+      text-align: right
+      display: block
+      
+    &:hover
+      display: block
+      
+    &.selected
+      > a
+        background-color: #ff0000
+        color: #fff
+        &:hover
+          color: yellow
+    
+.season.main_title
+  margin: 25px 0 16px 0
+
+.base.content
+  &.cms, &.pinax
+    .columns
+      .column
+        width: 590px
+        
+body
+  background-image: url('/static/img/base/logo.small.png')
+  background-repeat: no-repeat
+  background-position: top right
+  background-attachment: fixed
+        
+body#x
+  background-image: url('/static/img/base/logo.mask.png')
+  background-color: #ff00ff
+  background-repeat: no-repeat
+  background-position: top right
+
+
+
+@import "anorg/typography"
+@import "anorg/interaction"
+
+
+body.base
+  +anorg-typography
+  +anorg-interaction
+  
+
+
+
+div.expandable.main.window
+  margin: 0 0 24px 0
+  border: 4px solid red
+  .header
+    background-color: red
+    h4
+      color: #fff
+      
+  ul.action
+    +icon-24()
+    li
+      float: left
+
+      
+div#player_wrapper
+  > div
+    width: 100%
+    height: 100%
+    background-image: url('/static/img/base/screen.test.png')
+    padding: 80px 70px 0px 0
+    text-align: right
+    span
+      background-color: #000000
+      font-family: Arial
+      font-size: 300%
+      font-weight: bold
+    
+div.expandable.main.window
+  div#chatwindow
+    width: 100%
+    height: 360px
+    overflow: auto
+    
+    border: none
+    border-bottom: 4px solid red
+    
+    font-family: monospace
+    font-size: 100%
+    line-height: 160%
+    
+    .row
+      &:nth-child(even)
+        /* background-color: #efefef
+        
+      .timestamp
+        font-size: 80%
+        color: #999
+        float: left
+        
+      .user
+        display: block
+        width: 80px
+        overflow: hidden
+        color: #5a5a5a
+        font-weight: bold
+        float: left
+        padding: 0 10px 0 4px
+        text-align: right
+        
+      .msg
+        color: #5a5a5a
+        clear: both
+    
+.debug .container
+  width: 100% !important
+  
+
+div.content
+  /* listing / multiple events
+  div.event.listing
+    background-color: #000
+    color: #fff !important
+    margin: 0 0 20px 0
+    padding: 10px
+    a
+      color: white
+      text-transform: uppercase
+      
+    ul.tags
+      text-align: right
+      li.tag
+        padding: 1px 4px
+        text-transform: uppercase
+        background-color: #666
+        margin: 0 0 0 8px
+        
+    &.past
+      background: #000 url('/static/img/base/badge.live.png') top right no-repeat
+      
+    .info
+      > .picture
+        width: auto
+        padding: 0 10px 0 0
+      > .excerpt
+        width: 450px
+        p
+          background: #000
+          
+    &.hover
+      background-color: yellow
+      cursor: pointer
+      p, h1, h2, h3, h4, h5, h6, span
+        color: black
+        background-color: transparent !important
+      .tags > li.tag
+        background-color: transparent !important
+        color: #5a5a5a
+          
+
+  div.event.detail
+      
+    .info
+      > .picture
+        width: auto
+        padding: 0 10px 0 0
+      > .excerpt
+        width: 100%
+        p
+          background: #000
+          padding: 4px 14px
+          color: #fff
+
+
+    

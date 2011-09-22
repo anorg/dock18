@@ -1,0 +1,25 @@
+{% load cms_tags %}
+
+<script type="text/javascript">
+	//<![CDATA[
+
+	WebFontConfig = {
+		custom: {
+			families: ['My Font', 'My Other Font'],
+			urls: ['{{ STATIC_URL }}css/fonts.css']
+		},
+		google : {
+			//families: [ 'Tangerine', 'Cantarell' ]
+			//families: ['Coustard', 'Rationale', 'Kreon', 'Maven+Pro']
+			families : ['Maven+Pro']
+		}
+	}; (function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+	//]]>
+</script>

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+
+{% block extra_head %}
+    {% block extra_head_base %}{% endblock %}
+{% endblock %}
+
+{% load cms_tags %}
+{% load cache menu_tags %}	
+
+
+{% block base_content %}
+
+<div id="container" class="debug">
+	
+	
+	<div id="navigation_top">
+		
+		<ul class="horizontal">
+		    {% show_menu 0 0 0 0 %}
+		</ul>
+		
+	</div>
+	
+	<div id="header">
+		
+		<div class="left">
+			
+			
+			
+			
+			
+		</div>
+		
+		<!--
+		<div id="subline">
+			<div class="right">
+				<div>
+					SUBLINE
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		-->
+		
+		<div class="clear"></div>
+	</div>
+	
+	
+	<div id="content">
+		<div class="col left">
+			
+			<div class="headline">
+				<div class="season main_title"><img src="{{ STATIC_URL }}img/base/header.season.01.png" /></div>
+			</div>
+			
+			<div id="content_2col">
+				
+				<div class="base content pinax">
+					<!-- content from pinax -->
+					{% block body_outer %}
+					    <div id="body">
+					        {% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
+					        {% block body %}
+					        {% endblock %}
+					    </div>
+					{% endblock %}
+				</div>
+				
+				<div class="base content cms">
+					{% placeholder body_content %}
+					{% block body_content%}
+					{% endblock %}
+				</div>
+				
+				
+				
+				
+			</div>
+
+		</div>
+	</div>
+	<div id="sidebar" class="col right">
+		
+
+
+
+		
+		<!--
+		<div id="language_chooser">
+		{% load menu_tags %}
+		{% language_chooser "element/language_chooser.html" %}
+		</div>
+		-->
+
+		
+		<div id="navigation_side">
+			
+			<ul class="vertical">
+				
+				{% show_menu_below_id 'events' 0 100 100 100 "bcast/menu_shows.html" %}
+				
+			</ul>
+			
+		</div>
+		
+		
+		
+		
+	</div>
+	<div id="footer" class="footer">
+		<div class="sitemap clear"></div>
+		<div class="inner">
+			{% placeholder template_footer  or %}
+			<div id="fb_like">
+				{% include 'element/facebook.html' %}
+			</div>
+			{% endplaceholder %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

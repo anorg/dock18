@@ -1,0 +1,79 @@
+/* mixins.sass */
+
+/* input fields */
+
+/* bordered input (4-color) */
+
+@mixin shaded_input
+  border-top: 1px solid #335533
+  border-right: 1px solid #553355
+  border-bottom: 1px solid #553355
+  border-left: 1px solid #333333
+  width: 100%
+  padding: 1px 1px 1px 2px
+  text-align: left
+  color: #5a5a5a
+  background-color: #ffffff
+  
+  
+@mixin ul-action
+  ul > li
+    span,a
+      &.icon-left
+        display: block
+        padding-left: 18px    
+  
+@mixin ul-info
+  ul > li
+    span,a
+      &.icon-left
+        display: block
+        padding-left: 18px   
+
+		
+@mixin ul-2-col($width, $space)
+
+  clear: both
+  > li
+  clear: both
+  span
+    display: block
+    float: left
+    &:first-child
+      font-weight: bold
+      width: $width
+    &:last-child
+      margin-right: $space
+		
+		
+@mixin tag()
+  color: #fff
+  background-color: $color-bg-main
+  padding: 2px 4px 2px 4px
+  line-height: 100%
+  font-size: 100%
+  text-transform: uppercase
+		
+@mixin genre()
+  color:  inherit
+  background-color: transparent
+  line-height: 100%
+  font-size: 100%
+  font-style: italic
+  
+  
+@mixin cornered-br()
+  background-image: url(#{$img}element/corner-br.png)
+  background-position: right bottom
+  background-repeat: no-repeat  
+  
+@mixin cornered($r: 0)
+  -moz-border-radius: #{$r}px
+  border-radius: #{$r}px
+  
+@mixin alpha($a: 1)
+  /*-moz-border-radius: #{$r}px
+  opacity: #{$a}
+          
+		  
+		  
