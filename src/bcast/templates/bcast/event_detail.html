@@ -1,0 +1,151 @@
+{% load vardump %}
+{% load comments %}
+{% load thumbnail %}
+<div class="plugin bcast event detail">
+
+	<h2>{{ event.title }} <span class="superscript">{{ event.type }}</span></h2>
+
+	<h4>{{ event.date_start|date:"D, d. m. y" }}</h4>
+
+
+
+
+	<div class="info" >
+
+		{% if event.excerpt %}
+			<div class="left excerpt">
+				<p>
+					{{ event.excerpt }}
+				</p>
+			</div>
+		{% endif %}
+		<div class="clear"></div>
+	</div>
+	
+	
+	
+	{% if request.user.is_authenticated %}
+	<div class="admin notice">
+		<h5>Stream setup:</h5>
+
+		<ul>
+			<li><span>FMS URL:</span> <span>rtmp://rtmp.dock18.ch/d18live</span></li>
+			<li><span>Stream:</span> <span>{{ event.key }}</span></li>
+		</ul>
+
+	</div>
+	{% endif %}
+
+	{% if event.starts_in >= 0 %}
+	<div id="counter" style="display: none;"></div>
+	<script type="text/javascript">
+		//<![CDATA[//><!--
+		$(function() {
+		$('#counter').countdown({
+			//until: +{{ event.starts_in }},
+			until: +120,
+			onExpiry: countdown_done,
+			compact: true,
+			onTick: countdown_tick
+			});
+		});
+		function countdown_done() {
+			
+			location.reload();
+			
+			$('#container_player').css('display', 'block');
+			$('#stream_countdown').css('display', 'none');
+		}
+		function countdown_tick() {
+			$('#chat_f').html( $('#counter').html() );
+		}
+		//--><!]]>
+	</script>
+	{% endif %}
+
+	
+
+	{% if event.transmission %}
+	<div class="expandable main window" id="screen">
+		
+		<div class="header">
+			<div class="left">
+			<h4>Live</h4>
+			</div>
+			<div class="right">
+				<ul class="action">
+					<li class="folder">[FS]</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="container" id="container_player" {% if event.starts_in > 0 %}style="display: none;"{% endif %}>
+			{% include 'element/jwplayer.html' %}
+		</div>
+	
+	</div>
+	{% endif %}
+	
+	{% if event.chat %}
+	<div class="expandable main window" id="chat">
+		
+		<div class="header">
+			<div class="left">
+			<h4>Chat</h4>
+			</div>
+			<div class="right">
+				<ul class="action horizontal">
+					<li><a class="fullscreen" href="#"></a></li>
+					<li><a class="fullscreen_exit" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="container" id="container_comments">
+			
+	
+			
+			{% block extra_head %}
+			<!-- Load the JS for the chat window and start retrieving messages. -->
+			<script type="text/javascript" src="/static/jqchat/jqchat.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
+				});
+			</script>
+			<style type="text/css">
+				/* Example styling for the chat window */
+			   #chatwindow {
+			     height: 250px;
+			     width: 400px;
+			     border: 1px solid;
+			     padding: 5px;
+			     margin: 10px 0;
+			     overflow: auto;
+			     background-color: white;
+			   }
+			</style>
+			{% endblock %}
+			
+			<div id="chatwindow"><span id="loading">+++</span></div>
+			
+			<form id="chatform">
+				<label for="msg">Message:</label>
+				<input type="text" id="msg" />
+				<input type="submit" value="Send" /><br />
+			</form>
+			
+			<!--
+			<script type="text/javascript">document.getElementById("msg").focus();</script>
+			-->
+	
+			
+		</div>
+	
+	</div>
+	{% endif %}
+	
+
+</div>
