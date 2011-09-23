@@ -1,3 +1,5 @@
+# THIS IS THE 'REAL' ONE !!
+
 # pinax related
 --extra-index-url=http://dist.pinaxproject.com/dev/
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
