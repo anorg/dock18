@@ -165,35 +165,16 @@ INSTALLED_APPS = (
     # filebrowser
     #'filebrowser',
     #'grappelli',
-    
-    'south',
-    
-    # cms base
-    'cms',
-    'menus',
-    'mptt',
-    #'appmedia',
-    #'filer',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.comments',
     'django.contrib.staticfiles',
-    
-    
-    # cms plugins (default)
-    'cms.plugins.text',
-    'cms.plugins.picture',
-    'cms.plugins.link',
-    'cms.plugins.file',
-    'cms.plugins.snippet',
-    'cms.plugins.googlemap',
-    'sekizai',
     
     # pinax required
     'pinax.templatetags',
@@ -217,6 +198,25 @@ INSTALLED_APPS = (
     # pinax apps (project.)
     'about',
     'profiles',
+    
+    
+    # cms base
+    'south',
+    'cms',
+    'menus',
+    'mptt',
+    #'appmedia',
+    #'filer',
+    
+    
+#    # cms plugins (default)
+    'cms.plugins.text',
+    'cms.plugins.picture',
+    'cms.plugins.link',
+    'cms.plugins.file',
+    'cms.plugins.snippet',
+    'cms.plugins.googlemap',
+    'sekizai',
     
     # asset and media handling
     'compressor',

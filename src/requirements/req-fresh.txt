@@ -19,7 +19,7 @@ django-openid==0.2.3.dev1
 python-openid==2.2.5
 django-uni-form==0.7.0
 
-
+django-sekizai==0.4.2
 
 # hm what version?
 easy-thumbnails==1.0-alpha-18
@@ -32,16 +32,9 @@ idios==0.2a1.dev2
 # other
 wsgiref==0.1.2
 
-# cms
-MySQL-python==1.2.3
-South==0.7.3
-django-classy-tags==0.3.4.1
-django-cms==2.2
-django-mptt==0.4.2
 
 
 # additional
-django-dajaxice==0.2
+django-dajaxice>=0.2
 django-filer==0.8.3
 cmsplugin-filer==0.8.0
-html5lib==0.90
