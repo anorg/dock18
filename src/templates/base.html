@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
-{% load cms_tags %}
+{% load cms_tags sekizai_tags %}
 {% load compress %}
 
 <!--head -->
@@ -12,6 +12,8 @@
 
 <!-- extra hed from sup-templates -->
 {% block extra_head %}{% endblock %}
+
+{% render_block "css" %}
 
 </head>
 
@@ -30,13 +32,22 @@
 
 <script type="text/javascript">
 //<![CDATA[//><!--
+
+/*
+jQuery.noConflict();
+(function($) { 
+	$(document).ready(function() {
+		base.ui.iface();		
+	});
+})(jQuery);
+*/
 $(document).ready(function() {
 	base.ui.iface();		
 });
 //--><!]]>
 </script>
 
-
+{% render_block "js" %}
 </body>
   
 </html>

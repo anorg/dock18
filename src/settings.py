@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SERVE_MEDIA = DEBUG
-# COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
 
 # pinax constants
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
@@ -24,19 +24,21 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
-LANGUAGES = [('en', 'en'), ('de', 'de')]
+LANGUAGES = [('en', 'en')]
 DEFAULT_LANGUAGE = 0
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dock18_ch-dev',
+        #'NAME': 'dock18_ch-dev',
+        'NAME': 'fresh',
         'USERNAME': 'root',
         'PASSWORD': 'root',
     },
     'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_DIR, 'mycms.db'),
+        'NAME': os.path.join(PROJECT_DIR, 'dev.db'),
     }
 }
 
@@ -48,8 +50,8 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 USE_I18N = True
-
 USE_L10N = True
+
 
 
 
@@ -76,14 +78,14 @@ MIDDLEWARE_CLASSES = (
     'pinax.middleware.security.HideSensistiveFieldsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     # cms
-    'cms.middleware.multilingual.MultilingualURLMiddleware',
+    #'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.media.PlaceholderMediaMiddleware',
-    'cms_redirects.middleware.RedirectFallbackMiddleware',
+    #'cms.middleware.media.PlaceholderMediaMiddleware',
+    #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
-    'lib.prettify.PrettifyMiddleware',
+    #'lib.prettify.PrettifyMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -101,12 +103,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     # cms
     'cms.context_processors.media',
     # staticfiles
-    'django.core.context_processors.static'
+    'django.core.context_processors.static',
+    'sekizai.context_processors.sekizai',
 )
 
 CMS_TEMPLATES = (
+    ('example.html', 'Example Template'),
     ('base.html', 'Base Template'),
-    ('simple.html', 'Simple Template'),
     ('layout/1col.html', '1 column inner'),
     #('layout/3col.html', '3 column inner'),
 
@@ -138,10 +141,13 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = '/media/admin/'
-#ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+
+ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
+
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'media'),
+    #os.path.join(PROJECT_DIR, "static"),
 )
 
 
@@ -159,17 +165,35 @@ INSTALLED_APPS = (
     # filebrowser
     #'filebrowser',
     #'grappelli',
-                  
-                  
+    
+    'south',
+    
+    # cms base
+    'cms',
+    'menus',
+    'mptt',
+    #'appmedia',
+    #'filer',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.comments',
     'django.contrib.staticfiles',
+    
+    
+    # cms plugins (default)
+    'cms.plugins.text',
+    'cms.plugins.picture',
+    'cms.plugins.link',
+    'cms.plugins.file',
+    'cms.plugins.snippet',
+    'cms.plugins.googlemap',
+    'sekizai',
     
     # pinax required
     'pinax.templatetags',
@@ -184,25 +208,6 @@ INSTALLED_APPS = (
     'announcements',
     'pagination',
     'idios',
-    
-    # cms base
-    'cms',
-    'menus',
-    'mptt',
-    'appmedia',
-    'south',
-    
-    'filer',
-    #'adminfiles',
-
-    
-    # cms plugins (default)
-    'cms.plugins.text',
-    'cms.plugins.picture',
-    'cms.plugins.link',
-    'cms.plugins.file',
-    'cms.plugins.snippet',
-    'cms.plugins.googlemap',
     
     # pinax apps (pinax.)
     'pinax.apps.account',
@@ -222,10 +227,13 @@ INSTALLED_APPS = (
     'dajaxice',
     
     # project apps
-    'bcast',
+    
     'ajax',
     'taggit',
     'jqchat', 
+    
+    'bcast',
+    
 )
 
 
@@ -291,5 +299,5 @@ try:
 except ImportError:
     pass
 
-import logging
-logging.basicConfig(level=logging.DEBUG)
+#import logging
+#logging.basicConfig(level=logging.DEBUG)

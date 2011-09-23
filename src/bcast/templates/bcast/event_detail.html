@@ -35,15 +35,16 @@
 
 	</div>
 	{% endif %}
+	
 
-	{% if event.starts_in >= 0 %}
+	{% if event.starts_in > 0 %}
 	<div id="counter" style="display: none;"></div>
 	<script type="text/javascript">
 		//<![CDATA[//><!--
 		$(function() {
 		$('#counter').countdown({
-			//until: +{{ event.starts_in }},
-			until: +120,
+			until: +{{ event.starts_in }},
+			//until: +120,
 			onExpiry: countdown_done,
 			compact: true,
 			onTick: countdown_tick
@@ -80,7 +81,7 @@
 			<div class="clear"></div>
 		</div>
 		
-		<div class="container" id="container_player" {% if event.starts_in > 0 %}style="display: none;"{% endif %}>
+		<div class="container" id="container_player" >
 			{% include 'element/jwplayer.html' %}
 		</div>
 	

@@ -37,9 +37,9 @@ urlpatterns = patterns('',
     
     #(r'^grappelli/', include('grappelli.urls')),
     
-    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    #(r'^admin/filebrowser/', include('filebrowser.urls')),
     
-    (r'^adminfiles/', include('adminfiles.urls')),
+    #(r'^adminfiles/', include('adminfiles.urls')),
     
     # apps
     (r'^jqchat/', include('jqchat.urls')),
@@ -61,5 +61,5 @@ if settings.SERVE_MEDIA:
 
 if settings.DEBUG:
     urlpatterns = patterns('',
-        (r'^' + settings.MEDIA_URL.lstrip('/'), include('appmedia.urls')),
+        #(r'^' + settings.MEDIA_URL.lstrip('/'), include('appmedia.urls')),
     ) + urlpatterns
