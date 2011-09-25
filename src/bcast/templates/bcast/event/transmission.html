@@ -1,19 +1,92 @@
-	<div class="expandable main window" id="screen">
+{% load sekizai_tags %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+
+//<![CDATA[//><!--
+
+	var player_config = {
+		flashplayer : "{{ STATIC_URL }}swf/jwplayer-5.7.swf",
+		controlbar 	: { position: 'bottom'},
+		skin 		: '/static/swf/modieus.zip',
+		file		: '/static/img/base/screen.test.png',
+		backcolor: '00ff00',
+		frontcolor: '5a5a5a',
+		lightcolor: 'ffffff',
+		logo: "/static/img/base/logo.tv.uncut.png",
 		
-		<div class="header">
-			<div class="left">
-			<h4>Live</h4>
-			</div>
-			<div class="right">
-				<ul class="action">
-					<li class="folder">[FS]</li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</div>
-		
-		<div class="container" id="container_player" >
-			{% include 'element/jwplayer.html' %}
-		</div>
+        plugins		: {
+          '{{ STATIC_URL }}js/base.plugin.js': {
+            text: 'Hello world!'
+          }
+        }, 
+		'playlist.size' : 0,
+		height 		: 400,
+		width 		: 582,
+	};
 	
+	{% if event.state == 'future' %}
+	
+	player_config['autostart'] = true;
+	player_config['playlist.position'] = 'none';
+	player_config['controlbar'] = 'none';
+	player_config['playlist.size'] = 0;
+	// player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
+
+	{% endif %}
+	
+	{% if event.state == 'past' %}
+	
+	player_config['height'] = 600;
+	player_config['plugins'] = false;
+	player_config['playlist.position'] = 'bottom';
+	player_config['controlbar'] = 'bottom';
+	player_config['playlist.size'] = 200;
+	player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
+
+	{% endif %}
+	
+	{% if event.state == 'now' %}
+	
+	player_config['autostart'] = true;
+	player_config['plugins'] = false;
+	player_config['playlist.position'] = 'none';
+	player_config['controlbar'] = 'bottom';
+	player_config['playlist.size'] = 0;
+	player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
+
+	{% endif %}
+	
+	
+	
+
+
+
+	jwplayer("player").setup(player_config);
+//--><!]]>
+
+</script>
+{% endaddtoblock %}
+
+<div class="expandable main window" id="screen">
+	
+	<div class="header">
+		<div class="left">
+		<h4>{{ event.location }} Live</h4>
+		</div>
+		<div class="right">
+			<ul class="action">
+				<li class="folder">[FS]</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
 	</div>
+	
+	<div class="container" id="container_player" >
+		<div id="player">
+			loading player
+		</div>
+	</div>
+
+</div>

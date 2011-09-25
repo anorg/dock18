@@ -2,35 +2,3 @@
 <div id="player">
 	Loading the player ...
 </div>
-<script type="text/javascript">
-
-//<![CDATA[//><!--
-	jwplayer("player").setup({
-		flashplayer : "{{ STATIC_URL }}swf/jwplayer-5.7.swf",
-		streamer	: "rtmp://rtmp.dock18.ch:1935/d18recorded",
-		file 		: "flv:2011-09-15_xyz_3.flv",
-		controlbar 	: { position: 'bottom'},
-		skin 		: 'http://www.longtailvideo.com/files/skins/bekle/5/bekle.zip',
-        plugins		: {
-          '{{ STATIC_URL }}js/base.plugin.js': {
-            text: 'Hello world!'
-          }
-        },
-		height 		: 400,
-		width 		: 582,
-		backcolor: 'ffffff',
-		frontcolor: '5a5a5a',
-		lightcolor: '00ff00',
-		
-		logo: "/media/images/logo_tv_uncut.png",
-		
-
-		
-		//"playlist.position": "bottom",
-        //"playlist.size": 360,
-		// playlistfile: 'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured'
-
-	});
-//--><!]]>
-
-</script>

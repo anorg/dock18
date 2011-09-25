@@ -33,6 +33,9 @@ urlpatterns = patterns('',
     url(r"^notices/", include("notification.urls")),
     url(r"^announcements/", include("announcements.urls")),
 
+
+    (r'^bcast/', include('bcast.urls')),
+
     # admin             
     # (r'^admin/', include(admin.site.urls)),
     

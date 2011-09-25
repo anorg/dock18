@@ -1,0 +1,64 @@
+<rss version="2.0" xmlns:jwplayer="http://developer.longtailvideo.com/">
+  <channel>
+    <title>Playlist with RTMP streams</title>
+
+
+
+
+
+
+	{% if event.state == 'future' %}
+	
+    <item>
+      <title>{{ event.title }}</title>
+      <description>{{ event.excerpt }}</description>
+      <enclosure url="/static/img/base/screen.test.png" type="video/flv" length="3192846" /> 
+    </item>
+
+
+	
+	{% endif %}
+
+
+	{% if event.state == 'now' %}{% endif %}
+	
+	    <item>
+	      <title>{{ event.title }} - LIVE! {{ event.key }}</title>
+	      <description>{{ event.excerpt }}</description>
+	      <enclosure url="flv:{{ event.key }}" type="video/flv" length="3192846" />
+	
+	      <jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18live/</jwplayer:streamer>
+	      
+	    </item>
+
+	
+
+
+
+
+
+	{% if event.state == 'past' %}
+	
+	    <item>
+	      <title>{{ event.title }}</title>
+	      <description>{{ event.excerpt }}</description>
+	      <enclosure url="http://www.youtube.com/watch?v=9vgicLc0W-g" type="video/flv" length="3192846" /> 
+	    </item>
+	
+	
+		{% for track in event.playlist %}
+		    <item>
+		      <title>{{ event.title }}</title>
+		      <description>{{ event.excerpt }}</description>
+		      <enclosure url="flv:2011-09-15_xyz_3.flv" type="video/flv" length="3192846" />
+		
+		      <jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded</jwplayer:streamer>
+		      
+		    </item>
+		{% endfor %}
+	
+	{% endif %}
+
+
+  </channel>
+</rss>

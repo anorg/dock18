@@ -1386,21 +1386,21 @@ div.expandable.main.window ul.action li {
 /* line 99, ../sass/_style.sass */
 div#player_wrapper > div {
   width: 100%;
-  height: 100%;
-  background-image: url("/static/img/base/screen.test.png");
-  padding: 80px 70px 0px 0;
+  height: 400px;
+  padding: 269px 70px 0px 0;
   text-align: right;
 }
-/* line 105, ../sass/_style.sass */
+/* line 104, ../sass/_style.sass */
 div#player_wrapper > div span {
   background-color: black;
   font-family: Arial;
-  font-size: 300%;
+  height: 66px;
+  font-size: 59px;
   font-weight: bold;
 }
 
-/* line 112, ../sass/_style.sass */
-div.expandable.main.window div#chatwindow {
+/* line 113, ../sass/_style.sass */
+div.expandable.main.window div#chatwindow, div.expandable.main.window div#participants_window {
   width: 100%;
   height: 360px;
   overflow: auto;
@@ -1412,18 +1412,18 @@ div.expandable.main.window div#chatwindow {
   font-size: 100%;
   line-height: 160%;
 }
-/* line 127, ../sass/_style.sass */
-div.expandable.main.window div#chatwindow .row:nth-child(even) {
+/* line 128, ../sass/_style.sass */
+div.expandable.main.window div#chatwindow .row:nth-child(even), div.expandable.main.window div#participants_window .row:nth-child(even) {
   /* background-color: #efefef */
 }
-/* line 130, ../sass/_style.sass */
-div.expandable.main.window div#chatwindow .row .timestamp {
+/* line 131, ../sass/_style.sass */
+div.expandable.main.window div#chatwindow .row .timestamp, div.expandable.main.window div#participants_window .row .timestamp {
   font-size: 80%;
   color: #999999;
   float: left;
 }
-/* line 135, ../sass/_style.sass */
-div.expandable.main.window div#chatwindow .row .user {
+/* line 136, ../sass/_style.sass */
+div.expandable.main.window div#chatwindow .row .user, div.expandable.main.window div#participants_window .row .user {
   display: block;
   width: 80px;
   overflow: hidden;
@@ -1433,115 +1433,119 @@ div.expandable.main.window div#chatwindow .row .user {
   padding: 0 10px 0 4px;
   text-align: right;
 }
-/* line 145, ../sass/_style.sass */
-div.expandable.main.window div#chatwindow .row .msg {
+/* line 146, ../sass/_style.sass */
+div.expandable.main.window div#chatwindow .row .msg, div.expandable.main.window div#participants_window .row .msg {
   color: #5a5a5a;
   clear: both;
 }
+/* line 150, ../sass/_style.sass */
+div.expandable.main.window div#participants_window {
+  height: auto;
+}
 
-/* line 149, ../sass/_style.sass */
+/* line 155, ../sass/_style.sass */
 .debug .container {
   width: 100% !important;
 }
 
-/* line 153, ../sass/_style.sass */
+/* line 159, ../sass/_style.sass */
 div.content {
   /* listing / multiple events */
 }
-/* line 155, ../sass/_style.sass */
+/* line 161, ../sass/_style.sass */
 div.content div.event.listing {
   background-color: black;
   color: white !important;
   margin: 0 0 20px 0;
   padding: 10px;
 }
-/* line 160, ../sass/_style.sass */
+/* line 166, ../sass/_style.sass */
 div.content div.event.listing a {
   color: white;
   text-transform: uppercase;
 }
-/* line 164, ../sass/_style.sass */
+/* line 170, ../sass/_style.sass */
 div.content div.event.listing ul.tags {
   text-align: right;
 }
-/* line 166, ../sass/_style.sass */
+/* line 172, ../sass/_style.sass */
 div.content div.event.listing ul.tags li.tag {
   padding: 1px 4px;
   text-transform: uppercase;
   background-color: #666666;
   margin: 0 0 0 8px;
 }
-/* line 172, ../sass/_style.sass */
+/* line 178, ../sass/_style.sass */
 div.content div.event.listing.past {
   background: black url("/static/img/base/badge.live.png") top right no-repeat;
 }
-/* line 176, ../sass/_style.sass */
+/* line 182, ../sass/_style.sass */
 div.content div.event.listing .info > .picture {
   width: auto;
   padding: 0 10px 0 0;
 }
-/* line 179, ../sass/_style.sass */
+/* line 185, ../sass/_style.sass */
 div.content div.event.listing .info > .excerpt {
   width: 450px;
 }
-/* line 181, ../sass/_style.sass */
+/* line 187, ../sass/_style.sass */
 div.content div.event.listing .info > .excerpt p {
   background: black;
 }
-/* line 184, ../sass/_style.sass */
+/* line 190, ../sass/_style.sass */
 div.content div.event.listing.hover {
   background-color: yellow;
   cursor: pointer;
 }
-/* line 187, ../sass/_style.sass */
+/* line 193, ../sass/_style.sass */
 div.content div.event.listing.hover p, div.content div.event.listing.hover h1, div.content div.event.listing.hover h2, div.content div.event.listing.hover h3, div.content div.event.listing.hover h4, div.content div.event.listing.hover h5, div.content div.event.listing.hover h6, div.content div.event.listing.hover span {
   color: black;
   background-color: transparent !important;
 }
-/* line 190, ../sass/_style.sass */
+/* line 196, ../sass/_style.sass */
 div.content div.event.listing.hover .tags > li.tag {
   background-color: transparent !important;
   color: #5a5a5a;
 }
-/* line 198, ../sass/_style.sass */
+/* line 204, ../sass/_style.sass */
 div.content div.event.detail .info > .picture {
   width: auto;
   padding: 0 10px 0 0;
 }
-/* line 201, ../sass/_style.sass */
+/* line 207, ../sass/_style.sass */
 div.content div.event.detail .info > .excerpt {
   width: 100%;
 }
-/* line 203, ../sass/_style.sass */
+/* line 209, ../sass/_style.sass */
 div.content div.event.detail .info > .excerpt p {
   background: black;
   padding: 4px 14px;
   color: white;
 }
 
-/* line 209, ../sass/_style.sass */
+/* line 215, ../sass/_style.sass */
 #footer #footer_account {
   text-align: right;
 }
-/* line 211, ../sass/_style.sass */
+/* line 217, ../sass/_style.sass */
 #footer #footer_account p, #footer #footer_account p > a {
   color: #a5a5a5;
 }
-/* line 213, ../sass/_style.sass */
+/* line 219, ../sass/_style.sass */
 #footer #footer_account p > a {
   text-decoration: underline;
 }
 
-/* line 220, ../sass/_style.sass */
+/* line 226, ../sass/_style.sass */
 #content .column, #content .debug .span-1, .debug #content .span-1, #content .debug .span-2, .debug #content .span-2, #content .debug .span-3, .debug #content .span-3, #content .debug .span-4, .debug #content .span-4, #content .debug .span-5, .debug #content .span-5, #content .debug .span-6, .debug #content .span-6, #content .debug .span-7, .debug #content .span-7, #content .debug .span-8, .debug #content .span-8, #content .debug .span-9, .debug #content .span-9, #content .debug .span-10, .debug #content .span-10, #content .debug .span-11, .debug #content .span-11, #content .debug .span-12, .debug #content .span-12, #content .debug .span-13, .debug #content .span-13, #content .debug .span-14, .debug #content .span-14, #content .debug .span-15, .debug #content .span-15, #content .debug .span-16, .debug #content .span-16, #content .debug .span-17, .debug #content .span-17, #content .debug .span-18, .debug #content .span-18, #content .debug .span-19, .debug #content .span-19, #content .debug .span-20, .debug #content .span-20, #content .debug .span-21, .debug #content .span-21, #content .debug .span-22, .debug #content .span-22, #content .debug .span-23, .debug #content .span-23, #content .debug .span-24, .debug #content .span-24 {
   margin-right: 0;
 }
 
-/* line 224, ../sass/_style.sass */
+/* line 230, ../sass/_style.sass */
 #messages > li {
   padding: 10px;
 }
-/* line 226, ../sass/_style.sass */
+/* line 232, ../sass/_style.sass */
 #messages > li.success {
   background-color: lime;
   text-transform: uppercase;
@@ -2050,42 +2054,46 @@ div.content div.event.detail .info > .excerpt p {
   margin-right: 0;
 }
 
-/* line 237, ../sass/_style.sass */
+/* line 243, ../sass/_style.sass */
 div.inline {
   padding: 4px;
   background-color: red;
 }
-/* line 240, ../sass/_style.sass */
+/* line 246, ../sass/_style.sass */
 div.inline span {
   font: 11px/150% Verdana, sans-serif, "Maven Pro";
   color: white;
   text-transform: uppercase;
 }
-/* line 244, ../sass/_style.sass */
+/* line 250, ../sass/_style.sass */
 div.inline span a {
   color: white;
   font-weight: bold;
 }
 
-/* line 250, ../sass/_style.sass */
+/* line 256, ../sass/_style.sass */
 #chat_holder {
   padding: 4px 8px;
 }
-/* line 252, ../sass/_style.sass */
+/* line 258, ../sass/_style.sass */
 #chat_holder label {
   font: 11px/150% Verdana, sans-serif, "Maven Pro";
 }
-/* line 255, ../sass/_style.sass */
+/* line 261, ../sass/_style.sass */
 #chat_holder .chat {
   display: block;
   float: left;
 }
-/* line 258, ../sass/_style.sass */
+/* line 264, ../sass/_style.sass */
 #chat_holder .chat.user {
   width: 100px;
   overflow: hidden;
 }
-/* line 261, ../sass/_style.sass */
+/* line 267, ../sass/_style.sass */
 #chat_holder .chat.msg {
   width: 300px;
+}
+/* line 269, ../sass/_style.sass */
+#chat_holder .chat.btn {
+  float: right;
 }

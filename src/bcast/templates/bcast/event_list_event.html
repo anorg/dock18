@@ -19,7 +19,12 @@
 		<div class="info" >
 			{% if event.picture %}
 				<div class="left picture">
+					
+					
+					<img src="{{ STATIC_URL }}{{ event.picture }}" style="width: 80px; height: 80px" />
+					<!--
 					<img src="{% thumbnail event.picture 80x80 crop %}" />
+					-->
 				</div>
 			{% endif %}
 			{% if event.excerpt %}

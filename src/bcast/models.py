@@ -50,6 +50,9 @@ class Event(models.Model):
     date_start = models.DateTimeField('date start', default=datetime.datetime.now())
     date_end = models.DateTimeField('date end', default=datetime.datetime.now())
     
+    
+    location = models.CharField(max_length=200, default="Dock18", blank=True, null=True)
+    
     # just to keep track...
     created         = models.DateTimeField(auto_now_add=True, editable=False)
     updated         = models.DateTimeField(auto_now=True, editable=False)
@@ -68,6 +71,10 @@ class Event(models.Model):
     
     Season = models.ForeignKey(Season)
     picture = models.ImageField(upload_to='pictures', blank=True, default=False)
+    
+    
+    intro = models.FileField(upload_to='intros', blank=True, default=0)
+    
     participants = models.ManyToManyField(User, null=True, blank=True, through='Participation')
     
     published       = ActiveEventsManager()
@@ -135,18 +142,18 @@ class Event(models.Model):
         returns 'past', 'today', 'now' or 'future'
         """
         
-        if(self.date_start.date() > datetime.date.today()):
-            return 'future'
-        if(self.date_start.date() < datetime.date.today()):
-            return 'past'
-        
         if self.date_start.date() == datetime.date.today():
-            if self.starts_in() > 0 and self.ends_in() > 0:
+            if self.starts_in() == 0 and self.ends_in() > 0:
                 return 'now'
             elif self.starts_in() > 0:
                 return 'today'
             else:
                 return 'past'
+        
+        if(self.date_start.date() > datetime.date.today()):
+            return 'future'
+        if(self.date_start.date() < datetime.date.today()):
+            return 'past'
         
         return 'unknown'
         
@@ -167,6 +174,13 @@ class Participation(models.Model):
 
 
 # cms plugins
+
+  
+class ParticipantsPlugin(CMSPlugin):
+    limit = models.IntegerField(default=8)
+    
+    def __unicode__(self):
+        return str(self.limit)
 
   
 class EventPlugin(CMSPlugin):

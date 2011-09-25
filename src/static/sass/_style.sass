@@ -98,18 +98,19 @@ div.expandable.main.window
 div#player_wrapper
   > div
     width: 100%
-    height: 100%
-    background-image: url('/static/img/base/screen.test.png')
-    padding: 80px 70px 0px 0
+    height: 400px
+    padding: 269px 70px 0px 0
     text-align: right
     span
       background-color: #000000
       font-family: Arial
-      font-size: 300%
+      height: 66px
+      font-size: 59px
       font-weight: bold
+
     
 div.expandable.main.window
-  div#chatwindow
+  div#chatwindow, div#participants_window
     width: 100%
     height: 360px
     overflow: auto
@@ -145,6 +146,11 @@ div.expandable.main.window
       .msg
         color: #5a5a5a
         clear: both
+    
+  div#participants_window
+    height: auto
+    
+    
     
 .debug .container
   width: 100% !important
@@ -260,3 +266,5 @@ div.inline
       overflow: hidden
     &.msg
       width: 300px
+    &.btn
+      float: right

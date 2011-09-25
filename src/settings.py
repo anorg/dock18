@@ -10,8 +10,8 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-SERVE_MEDIA = DEBUG
-COMPRESS_ENABLED = False
+SERVE_MEDIA = False
+COMPRESS_ENABLED = True
 
 # pinax constants
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
@@ -140,14 +140,15 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+
 
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'media'),
-    #os.path.join(PROJECT_DIR, "static"),
+    # os.path.join(PROJECT_DIR, "static"),
 )
 
 
