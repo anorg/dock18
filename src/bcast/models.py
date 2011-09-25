@@ -86,7 +86,7 @@ class Event(models.Model):
     class Meta:
         verbose_name = _('Event')
         verbose_name_plural = _('Events')
-        ordering = ('-date_start', )
+        ordering = ('date_start', )
         
     # own name
     def __unicode__(self):
@@ -161,7 +161,7 @@ class Event(models.Model):
 class Participation(models.Model):
     user = models.ForeignKey(User)
     event = models.ForeignKey(Event)
-    date_joined = models.DateField()
+    date_joined = models.DateTimeField(auto_now_add=True, editable=False)
 
 
 

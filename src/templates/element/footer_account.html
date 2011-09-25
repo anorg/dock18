@@ -1,0 +1,16 @@
+{% load account_tags %}
+<div id="footer_account">
+	{% if user.is_authenticated %}
+	{% url acct_logout as logout_url %}
+	{% user_display user as user_display %}
+	<p class="a-right">
+		Logged in as: <span class="username">{{ user_display }}</span> | <a href="{{ logout_url }}">logout</a>
+	</p>
+	{% else %}
+	{% url acct_login as login_url %}
+	{% url acct_signup as signup_url %}
+	<p class="a-right">
+		Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a>
+	</p>
+	{% endif %}
+</div>

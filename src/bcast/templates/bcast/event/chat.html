@@ -1,0 +1,79 @@
+{% load account_tags %}
+
+<div class="expandable main window" id="chat">
+	
+	<div class="header">
+		<div class="left">
+		<h4>Chat</h4>
+		</div>
+		<div class="right">
+			<ul class="action horizontal">
+				<li><a class="fullscreen" href="#"></a></li>
+				<li><a class="fullscreen_exit" href="#"></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="container" id="container_comments">
+		
+
+		
+		{% block extra_head %}
+		<!-- Load the JS for the chat window and start retrieving messages. -->
+		<script type="text/javascript" src="/static/jqchat/jqchat.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
+			});
+		</script>
+		<style type="text/css">
+			/* Example styling for the chat window */
+		   #chatwindow {
+		     height: 250px;
+		     width: 400px;
+		     border: 1px solid;
+		     padding: 5px;
+		     margin: 10px 0;
+		     overflow: auto;
+		     background-color: white;
+		   }
+		</style>
+		{% endblock %}
+		
+		<div id="chatwindow"><span id="loading">+++</span></div>
+		
+		
+		
+		
+		
+		{% if user.is_authenticated %}
+		
+		{% load account_tags %}
+		{% user_display user as user_display %}
+		
+		<div id="chat_holder">
+			
+			<form id="chatform">
+				<label class="chat user" for="msg">{{ user_display }}:</label>
+				<input class="chat msg" type="text" id="msg" />
+				<input class="chat btn" type="submit" value="Send" /><br />
+				
+				<div class="clear"></div>
+				
+			</form>
+			
+		</div>
+		
+		{% else %}
+			{% url acct_login as login_url %}
+			{% url acct_signup as signup_url %}
+			<div class="inline">
+				<span class="message login">Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</span>
+			</div>
+		{% endif %}
+		
+	
+	</div>
+
+</div>

@@ -19,35 +19,56 @@
 
 <!--body -->
 <body id="body" class="bp base two-col">
-{% block base_content%}
-{% endblock %}
+	
+	<div id="fb-root"></div>
+	
+	{% block base_content%}
+	{% endblock %}
+	
+	
+	<!--
+	{% block login %}
+	    {% include "_account_bar.html" %}
+	{% endblock %}
+	-->
+	
+	
+	{% load value_from_settings %}
+	{% value_from_settings "FACEBOOK_APP_ID" as fb_app_id %}
+	
+	<script type="text/javascript">
 
-
-<!--
-{% block login %}
-    {% include "_account_bar.html" %}
-{% endblock %}
--->
-
-
-<script type="text/javascript">
-//<![CDATA[//><!--
-
-/*
-jQuery.noConflict();
-(function($) { 
+	//<![CDATA[//><!--
+	
+	// javascript init
 	$(document).ready(function() {
 		base.ui.iface();		
 	});
-})(jQuery);
-*/
-$(document).ready(function() {
-	base.ui.iface();		
-});
-//--><!]]>
-</script>
-
-{% render_block "js" %}
+	
+	
+	
+	// facebook init
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId  : '{{ fb_app_id }}',
+			status : true,
+			cookie : true,
+			xfbml  : true,
+			oauth  : true
+		});
+	};
+	(function(d){
+		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		d.getElementsByTagName('head')[0].appendChild(js);
+	}(document));
+	
+	//--><!]]>
+	</script>
+	
+	{% render_block "js" %}
+	
 </body>
   
 </html>

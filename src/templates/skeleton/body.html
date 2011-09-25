@@ -14,11 +14,77 @@
 <div id="container" class="debug">
 	
 	
-	<div id="navigation_top">
+	<div id="toolbar">
+		
+		<!-- the actual menu -->
+		<div id="navigation_top" class="left navigation menu">
+			<ul class="horizontal">
+			    {% show_menu 0 0 0 0 %}
+			</ul>
+		</div>
+		
+		<!-- profile / login / facebook / etc -->
+		{% load account_tags %}
+		<div class="right navigation profile">
+			
+			
+		{% if user.is_authenticated %}
+		
+		<!-- load tags -->
+		{% url acct_logout as logout_url %}
+		{% user_display user as user_display %}
+		
 		
 		<ul class="horizontal">
-		    {% show_menu 0 0 0 0 %}
+			<li><span class="username">{{ user_display }}</span></li>
+			<li><a href="{% url profile_detail user.username %}">Profile</a></li>
+			
+			{% if user.is_staff %}
+				<li><a href="/admin/">Administration</a></li>
+			{% endif %}
+			
+			<li><a href="{{ logout_url }}">Logout</a></li>
 		</ul>
+
+
+		{% else %}
+		
+		<!-- load tags -->
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		
+		
+
+		
+
+
+		
+		<ul class="horizontal">
+			<li><a href="{{ signup_url }}">signup</a></li>
+			<li><a href="{{ login_url }}">login</a></li>
+			
+			<li><a class="fb_connect" href="/facebook/login">connect</a></li>
+			
+			
+			
+			<!--
+			<li> <fb:login-button size="small">Connect</fb:login-button> </li>
+			-->
+		</ul>
+		
+		{% endif %}
+				
+			
+		<!--
+		<ul>
+			<li><a href="{% url admin_invite_user %}">invite more people to the site</a></li>
+		</ul>
+		-->
+			
+		</div> 
+		
+		<div class="clear"></div>
+		
 		
 	</div>
 	
@@ -60,7 +126,7 @@
 					<!-- content from pinax -->
 					{% block body_outer %}
 					    <div id="body">
-					        {% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
+					        
 					        {% block body %}
 					        {% endblock %}
 					    </div>
@@ -68,6 +134,9 @@
 				</div>
 				
 				<div class="base content cms">
+					
+					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
+					
 					{% placeholder body_content %}
 					{% block body_content%}
 					{% endblock %}
@@ -108,16 +177,42 @@
 		
 		
 	</div>
+	
+	<div>
+		
+
+		
+
+		
+
+		
+	</div>
+	
 	<div id="footer" class="footer">
 		<div class="sitemap clear"></div>
 		<div class="inner">
-			{% placeholder template_footer  or %}
+			
 			<div id="fb_like">
 				{% include 'element/facebook.html' %}
 			</div>
+			
+			<div>
+				{% include 'element/footer_account.html' %}
+			</div>
+			
+			{% placeholder template_footer  or %}
+
 			{% endplaceholder %}
+			
+			
+			
+			
 		</div>
 	</div>
+	
+	
+	
+	
 </div>
 
 {% endblock %}

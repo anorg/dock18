@@ -190,6 +190,9 @@ INSTALLED_APPS = (
     'pagination',
     'idios',
     
+    # auth addon
+    'facebook',
+    
     # pinax apps (pinax.)
     'pinax.apps.account',
     'pinax.apps.signup_codes',
@@ -234,6 +237,8 @@ INSTALLED_APPS = (
     
     'bcast',
     
+    'lib',
+    
 )
 
 
@@ -274,11 +279,14 @@ ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = False
 
 AUTHENTICATION_BACKENDS = [
+    'facebook.backend.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
     'pinax.apps.account.auth_backends.AuthenticationBackend',
 ]
 
 LOGIN_URL = '/account/login/' # @@@ any way this can be a url name?
-LOGIN_REDIRECT_URLNAME = "what_next"
+#LOGIN_REDIRECT_URLNAME = "what_next"
+LOGIN_REDIRECT_URL = "/"
 
 EMAIL_CONFIRMATION_DAYS = 5
 EMAIL_DEBUG = DEBUG
@@ -289,7 +297,17 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
 
+CONTACT_EMAIL = 'root@dock18.ch'
 
+
+
+# facebook oauth settings
+FACEBOOK_APP_ID = "173374022743087"
+FACEBOOK_APP_SECRET = "423e6cee277a1536df4f3ee7195fdfbc"
+FACEBOOK_SCOPE = 'email,publish_stream'
+
+# hm - how to handle multiple...
+# AUTH_PROFILE_MODULE = 'facebook.FacebookProfile'
 
 
 
