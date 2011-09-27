@@ -35,12 +35,18 @@ urlpatterns = patterns('',
 
 
     (r'^bcast/', include('bcast.urls')),
+    
+    
+    # only devel
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT,
+    }),
 
     # admin             
     # (r'^admin/', include(admin.site.urls)),
     
     # filer
-    #(r'^', include('filer.server.urls')),
+    url(r'^', include('filer.server.urls')),
     
     #(r'^grappelli/', include('grappelli.urls')),
     
@@ -70,3 +76,10 @@ if settings.DEBUG:
     urlpatterns = patterns('',
         #(r'^' + settings.MEDIA_URL.lstrip('/'), include('appmedia.urls')),
     ) + urlpatterns
+    
+if 1 == 1:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   )

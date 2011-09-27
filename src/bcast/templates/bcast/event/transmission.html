@@ -6,57 +6,67 @@
 
 //<![CDATA[//><!--
 
+
 	var player_config = {
-		flashplayer : "{{ STATIC_URL }}swf/jwplayer-5.7.swf",
-		controlbar 	: { position: 'bottom'},
-		skin 		: '/static/swf/modieus.zip',
-		file		: '/static/img/base/screen.test.png',
-		backcolor: '00ff00',
-		frontcolor: '5a5a5a',
-		lightcolor: 'ffffff',
-		logo: "/static/img/base/logo.tv.uncut.png",
+		'flashplayer' 		: "{{ STATIC_URL }}swf/jwplayer-licensed-5.7.swf",
+		'controlbar' 		: { position: 'bottom'},
+		'skin' 				: '/static/swf/modieus.zip',
+		'file'				: '/static/img/base/screen.test.png',
+		'backcolor'			: '00ff00',
+		'frontcolor'		: '000000',
+		'lightcolor'		: 'ffffff',
+		'logo.file'				: '/static/img/base/logo.tv.large.png',
+		'logo.hide'				: false,
+		'logo.position'				: 'top-right',
+		'logo.link'				: '/',
+		'logo.linktarget'				: '_self',
+		'logo.out'				: 0.7,
 		
-        plugins		: {
-          '{{ STATIC_URL }}js/base.plugin.js': {
-            text: 'Hello world!'
-          }
-        }, 
-		'playlist.size' : 0,
-		height 		: 400,
-		width 		: 582,
+        plugins				: { '{{ STATIC_URL }}js/base.plugin.js': { text: 'Hello world!' }}, 
+        
+		'playlist.size' 	: 0,
+		'playlist.position' :'none',
+		'playlistfile'		: '/bcast/playlist/{{ event.id }}/' + '?rnd=' + new Date().getTime(),
+		
+		'height' 			: 400,
+		'width'				: 582,
+		'stretching' 		: 'fill',
 	};
 	
-	{% if event.state == 'future' %}
 	
-	player_config['autostart'] = true;
-	player_config['playlist.position'] = 'none';
-	player_config['controlbar'] = 'none';
-	player_config['playlist.size'] = 0;
-	// player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
-
-	{% endif %}
-	
-	{% if event.state == 'past' %}
-	
-	player_config['height'] = 600;
-	player_config['plugins'] = false;
-	player_config['playlist.position'] = 'bottom';
-	player_config['controlbar'] = 'bottom';
-	player_config['playlist.size'] = 200;
-	player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
-
-	{% endif %}
 	
 	{% if event.state == 'now' %}
+	player_config['autostart'] = true;
+	player_config['repeat'] = 'always';
+	player_config['plugins'] = false;
+	player_config['logo.file'] = '/static/img/base/badge/badge.onair.cyan.png';
+	{% endif %}
+
+
+	{% if event.state == 'past' %}
+	player_config['autostart'] = true;
+	player_config['repeat'] = 'always';
+	player_config['plugins'] = false;
+	player_config['height'] = 600;
+	player_config['playlist.size'] = 200;
+	player_config['playlist.position'] = 'bottom';
+	{% endif %}
+	
+	
+
+	{% if event.state == 'future' or event.state == 'today' %}
 	
 	player_config['autostart'] = true;
-	player_config['plugins'] = false;
-	player_config['playlist.position'] = 'none';
-	player_config['controlbar'] = 'bottom';
-	player_config['playlist.size'] = 0;
-	player_config['playlistfile'] = 'http://web.devel.dock18.ch:8000/bcast/playlist/1/?format.xml';
+	player_config['repeat'] = 'always';
+	player_config['controlbar'] = 'none';
+	
+	player_config['logo.out'] = 0;
 
 	{% endif %}
+	
+
+	
+	
 	
 	
 	
@@ -77,16 +87,14 @@
 		</div>
 		<div class="right">
 			<ul class="action">
-				<li class="folder">[FS]</li>
+				<li class="folder"></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
 	</div>
 	
 	<div class="container" id="container_player" >
-		<div id="player">
-			loading player
-		</div>
+		<div id="player"></div>
 	</div>
 
 </div>

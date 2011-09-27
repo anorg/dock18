@@ -1,18 +1,39 @@
+{% load thumbnail %}
 <rss version="2.0" xmlns:jwplayer="http://developer.longtailvideo.com/">
   <channel>
     <title>Playlist with RTMP streams</title>
 
 
+	<!-- state: {{ event.state }} -->
+	<!-- time:   --> 
 
 
 
-
-	{% if event.state == 'future' %}
+	{% if event.state == 'future' or event.state == 'today' %}
 	
     <item>
       <title>{{ event.title }}</title>
-      <description>{{ event.excerpt }}</description>
-      <enclosure url="/static/img/base/screen.test.png" type="video/flv" length="3192846" /> 
+      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
+      
+      
+	  <enclosure url="/static/img/base/screen.test.png" type="video/flv" length="3192846" />
+      
+      
+      {% if event.picture %}
+      <enclosure url="{% thumbnail event.picture 500x400 crop %}" type="video/flv" length="3192846" />
+      {% endif %} 
+           
+      {% if event.intro %}
+      <enclosure url="{{ event.intro.url }}" type="video/flv" length="3192846" />
+      {% endif %}
+      
+
+      
+   
+      
+      
+
+      
     </item>
 
 
@@ -20,41 +41,34 @@
 	{% endif %}
 
 
-	{% if event.state == 'now' %}{% endif %}
+	{% if event.state == 'now' %}
 	
+		<!-- now -->
 	    <item>
 	      <title>{{ event.title }} - LIVE! {{ event.key }}</title>
-	      <description>{{ event.excerpt }}</description>
-	      <enclosure url="flv:{{ event.key }}" type="video/flv" length="3192846" />
+	      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
+	      <enclosure url="flv:{{ event.key }}" />
 	
 	      <jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18live/</jwplayer:streamer>
 	      
 	    </item>
 
 	
-
+	{% endif %}
 
 
 
 
 	{% if event.state == 'past' %}
-	
-	    <item>
-	      <title>{{ event.title }}</title>
-	      <description>{{ event.excerpt }}</description>
-	      <enclosure url="http://www.youtube.com/watch?v=9vgicLc0W-g" type="video/flv" length="3192846" /> 
-	    </item>
-	
+
 	
 		{% for track in event.playlist %}
-		    <item>
-		      <title>{{ event.title }}</title>
-		      <description>{{ event.excerpt }}</description>
-		      <enclosure url="flv:2011-09-15_xyz_3.flv" type="video/flv" length="3192846" />
-		
-		      <jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded</jwplayer:streamer>
-		      
-		    </item>
+	    <item>
+			<title>{{ event.title }}</title>
+			<description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
+			<enclosure url="flv:2011-09-15_xyz_3.flv" type="video/flv" length="3192846" />
+			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded</jwplayer:streamer>
+	    </item>
 		{% endfor %}
 	
 	{% endif %}

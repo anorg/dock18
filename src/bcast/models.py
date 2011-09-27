@@ -9,6 +9,12 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
+from filer.fields.image import FilerImageField
+from filer.fields.file import FilerFileField
+
+from filer.models.filemodels import *
+from filer.models.foldermodels import *
+
 # jqchat
 from jqchat.models import Room
 
@@ -70,10 +76,15 @@ class Event(models.Model):
     type = models.CharField(max_length=24, default='show', choices=TYPE_CHOICES)
     
     Season = models.ForeignKey(Season)
-    picture = models.ImageField(upload_to='pictures', blank=True, default=False)
+    
+    folder = models.ForeignKey(Folder, blank=True, null=True, related_name='event_folder')
     
     
-    intro = models.FileField(upload_to='intros', blank=True, default=0)
+    #picture = models.ImageField(upload_to='pictures', blank=True, default=False)
+    #intro = models.FileField(upload_to='intros', blank=True, default=0)
+    
+    picture = FilerImageField(related_name='event_picture', null=True, blank=True)
+    intro = FilerFileField(related_name='event_intro', null=True, blank=True)
     
     participants = models.ManyToManyField(User, null=True, blank=True, through='Participation')
     
@@ -142,6 +153,10 @@ class Event(models.Model):
         returns 'past', 'today', 'now' or 'future'
         """
         
+        
+        if self.starts_in() == 0 and self.ends_in() > 0:
+            return 'now'
+        
         if self.date_start.date() == datetime.date.today():
             if self.starts_in() == 0 and self.ends_in() > 0:
                 return 'now'
@@ -160,6 +175,21 @@ class Event(models.Model):
         
     def save(self):
         self.key = self.generate_key()
+        
+        if not self.folder:
+            
+            # sorry for this | don't know yet how to do
+            try:
+                folder = Folder.objects.get(name=self.key)
+            except Exception, e:
+                folder = Folder(name=self.key)
+                folder.save()
+
+                
+            
+            self.folder = folder 
+            
+        
         super(Event, self).save()
 
 

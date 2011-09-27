@@ -3,9 +3,9 @@
 {% load thumbnail %}
 <div class="plugin bcast event detail">
 
-	<h2>{{ event.title }} <span class="superscript">{{ event.type }}</span> {{ event.state }}</h2>
+	<h2>{{ event.title }} <span class="superscript">{{ event.type }}</span></h2>
 
-	<h4>{{ event.date_start|date:"D, d. m. y" }}</h4>
+	<h4>{{ event.date_start|date:"D, d. m. y" }} ᚋ {{ event.date_start|date:"H:i" }} - {{ event.date_end|date:"H:i" }}</h4>
 
 
 
@@ -31,6 +31,10 @@
 		<ul>
 			<li><span>FMS URL:</span> <span>rtmp://rtmp.dock18.ch/d18live</span></li>
 			<li><span>Stream:</span> <span>{{ event.key }}</span></li>
+			<li> <span>starts_in:</span> <span>{{ event.starts_in }}</span> | <span>ends_in:</span> <span>{{ event.ends_in }}</span> </li>
+			<li></li>
+			<li> <span>date_start:</span> <span>{{ event.date_start }}</span> | <span>date_end:</span> <span>{{ event.date_end }}</span></li>
+			<li></li>
 		</ul>
 
 	</div>
@@ -78,6 +82,10 @@
 	
 	{% if event.chat and event.room %}
 		{% include 'bcast/event/participants.html' %}
+	{% endif %}
+	
+	{% if event.folder %}
+		{% include 'bcast/event/filebrowser.html' %}
 	{% endif %}
 	
 	

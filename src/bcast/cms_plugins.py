@@ -24,10 +24,13 @@ class EventPlugin(CMSPluginBase):
         
         
         participants = instance.event.participants.all()
+        
+        folder = instance.event.folder
    
         context.update({
             'event':instance.event,
             'participants':participants,
+            'folder':folder,
             'object':instance,
             'placeholder':placeholder
         })

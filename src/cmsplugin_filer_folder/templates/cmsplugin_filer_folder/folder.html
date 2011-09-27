@@ -1,0 +1,84 @@
+{% load i18n thumbnail sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cmsplugin_filer_folder/css/slideshow.css" media="screen, projection" />{% endaddtoblock "css" %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cmsplugin_filer_folder/js/jquery.cycle.lite-1.0.js"></script>{% endaddtoblock "js" %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function ($) {
+    $('.cmsplugin_filer_folder_slidshow').cycle({
+        fx: 'fade'
+    }); 
+});
+//]]>
+</script>
+{% endaddtoblock %}
+
+<div class="plugin filer folder {{ object.view_option }}">
+
+
+
+	<div class="expandable main window" id="screen">
+		
+		<div class="header">
+			<div class="left">
+			<h4>{% firstof object.title object.folder.name  %}</h4>
+			</div>
+			<div class="right">
+				<ul class="action">
+					<li class="folder"></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="container" id="container_folder" >
+	
+	
+		{% if object.view_option == "list" %}
+		    <div class="cmsplugin_filer_folder_list" id="folder_{{ instance.id }}">
+		        <!--The files should go there    -->
+		        {% if folder_children %}
+		        <h4>{% trans "Folders" %}</h4>
+		        <ul>
+		            {% for folder in folder_children %}
+		                <li>{{ folder }}</li>
+		            {% endfor %}
+		        </ul>
+		        {% endif %}
+		        {% if folder_files %}
+		        <h4>{% trans "Files" %}</h4>
+		        <ul>
+		            {% for files in folder_files %}
+		                <li> <a href="{{ files.url }}" >{{ files }} [{{ files.size }}]</a></li>
+		            {% endfor %}
+		        </ul>
+		        {% endif %}
+		        {% if folder_images %}
+		        <h4>{% trans "Images" %}</h4>
+		        <ul class="horizontal">
+		            {% for image in folder_images %}
+		                <li><img src="{% thumbnail image.file 32x32 crop=True upscale=True %}" width="32" height="32" alt="{{ image.label }}"></li>
+		            {% endfor %}
+		        </ul>
+		        {% endif %}
+		    </div>
+		{% else %}
+		    <!-- start: slideshow -->
+		    <div class="cmsplugin_filer_folder_slidshow" id="folder_{{ object.id }}">
+		        {% for image in folder_images %}
+		            <img src="{% thumbnail image.file 200x200 crop=True upscale=True %}">
+		        {% endfor %}
+		    </div>
+		    <!-- end: gallery -->
+		{% endif %}
+	
+	
+		</div>
+	
+	</div>
+
+
+</div>
+
+
+

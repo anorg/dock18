@@ -1,0 +1,35 @@
+# mod_python
+
+NameVirtualHost *
+
+# REDIRECTS -> to running season
+<VirtualHost *>
+
+        ServerName redirect.dock18.ch
+        ServerAlias dock18.ch www.dock18.ch
+
+        RewriteEngine on
+        RewriteRule ^/(.*) http://ulysses.dock18.ch/ [L,R=301]
+
+</VirtualHost>
+
+
+<VirtualHost *>
+
+    ServerAdmin network@anorg.net
+    ServerName 2011-02.dock18.ch
+    ServerAlias ulysses.dock18.ch www.ulysses.dock18.ch
+    
+	<Location "/">
+	    SetHandler python-program
+	    PythonHandler vdjango
+	    PythonPath "['/var/www/django/2011-02_dock18_ch/src', '/srv/2011-02_dock18/bin', '/srv/2011-02_dock18',] + sys.path"
+	    SetEnv DJANGO_SETTINGS_MODULE settings
+	    PythonDebug On
+	</Location>
+
+</VirtualHost>
+
+
+
+

@@ -9,9 +9,12 @@ gettext = lambda s: s
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
+
+
+
 TEMPLATE_DEBUG = DEBUG
-SERVE_MEDIA = False
-COMPRESS_ENABLED = True
+SERVE_MEDIA = True
+COMPRESS_ENABLED = False
 
 # pinax constants
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
@@ -141,14 +144,17 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
 
 
+FILER_STATICMEDIA_PREFIX = '/static/filer/'
+
 
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 
+
+
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'media'),
-    # os.path.join(PROJECT_DIR, "static"),
 )
 
 
@@ -173,6 +179,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.humanize',
+
     'django.contrib.admin',
     'django.contrib.comments',
     'django.contrib.staticfiles',
@@ -212,6 +219,8 @@ INSTALLED_APPS = (
     #'appmedia',
     #'filer',
     
+    'filer',
+    
     
 #    # cms plugins (default)
     'cms.plugins.text',
@@ -221,6 +230,9 @@ INSTALLED_APPS = (
     'cms.plugins.snippet',
     'cms.plugins.googlemap',
     'sekizai',
+    
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
     
     # asset and media handling
     'compressor',
@@ -244,7 +256,15 @@ INSTALLED_APPS = (
 
 
 FILER_IS_PUBLIC_DEFAULT = True
-
+"""
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+"""
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',

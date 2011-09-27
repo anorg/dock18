@@ -120,8 +120,8 @@ div.expandable.main.window
     border: none
     border-bottom: 4px solid red
     
-    font-family: monospace
-    font-size: 100%
+    font: $font-fixed
+    font-size: 12px
     line-height: 160%
     
     .row
@@ -132,20 +132,25 @@ div.expandable.main.window
         font-size: 80%
         color: #999
         float: left
+        display: none
         
       .user
         display: block
-        width: 80px
+        width: 70px
         overflow: hidden
-        color: #5a5a5a
+        color: #333
         font-weight: bold
         float: left
         padding: 0 10px 0 4px
-        text-align: right
+        text-align: left
+        margin: 0 10px 0 0
         
       .msg
-        color: #5a5a5a
-        clear: both
+        color: #333
+        /*clear: both
+        float: left
+        width: 460px 
+        
     
   div#participants_window
     height: auto
@@ -175,8 +180,12 @@ div.content
         background-color: #666
         margin: 0 0 0 8px
         
-    &.past
-      background: #000 url('/static/img/base/badge.live.png') top right no-repeat
+    &.now
+      background: #000 url('/static/img/base/badge/badge.now.green.png') top right no-repeat
+    &.today
+      background: #000 url('/static/img/base/badge/badge.today.cyan.png') top right no-repeat
+    &.future
+      background: #000 url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
       
     .info
       > .picture
