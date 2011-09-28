@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load sekizai_tags %}
 
 {% block extra_head %}
     {% block extra_head_base %}{% endblock %}
@@ -173,6 +174,12 @@
 			
 		</div>
 		
+		{% if user.is_authenticated %}
+		<div id="invitation">
+			{% include 'element/invite.html' %}
+		</div>
+		{% endif %}
+		
 		
 		
 		
@@ -183,7 +190,7 @@
 
 		
 
-		
+
 
 		
 	</div>

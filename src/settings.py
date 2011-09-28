@@ -62,7 +62,8 @@ SECRET_KEY = '0r6%7gip5tmez*vygfv+u14h@4lbt^8e2^26o#5_f_#b7%cm)u'
 
 
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
+    # 'django.template.loaders.filesystem.load_template_source',
+    'django.template.loaders.filesystem.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.Loader',
@@ -184,7 +185,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'django.contrib.staticfiles',
     
-    # pinax required
+    # pinax required/related
     'pinax.templatetags',
     'notification',
     'compressor',
@@ -205,6 +206,7 @@ INSTALLED_APPS = (
     'pinax.apps.account',
     'pinax.apps.signup_codes',
     'pinax.apps.analytics',
+    'kaleo',
     
     # pinax apps (project.)
     'about',

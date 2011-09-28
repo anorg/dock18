@@ -62,6 +62,7 @@ class Event(models.Model):
     # just to keep track...
     created         = models.DateTimeField(auto_now_add=True, editable=False)
     updated         = models.DateTimeField(auto_now=True, editable=False)
+    processed       = models.CharField(max_length=8, default='init', editable=False)
     
     transmission = models.BooleanField('transmission', default=True, help_text=_('Include the stream window?'))
     chat = models.BooleanField('chat', default=True, help_text=_('Include the chat window?'))
@@ -94,7 +95,7 @@ class Event(models.Model):
     room = models.ForeignKey(Room, blank=True, null=True)
 
     # enable tagging
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     
     
     
@@ -112,6 +113,10 @@ class Event(models.Model):
         
     def get_pages_using(self):
         return Page.objects.filter(placeholders__cmsplugin__eventplugin__event=self)
+    
+    def get_folder(self, name):
+        return Folder.objects.get(name=name, parent=self.folder)
+        
     
     def get_absolute_url(self):
         pages = self.get_pages_using()
@@ -177,16 +182,9 @@ class Event(models.Model):
         self.key = self.generate_key()
         
         if not self.folder:
-            
-            # sorry for this | don't know yet how to do
-            try:
-                folder = Folder.objects.get(name=self.key)
-            except Exception, e:
-                folder = Folder(name=self.key)
-                folder.save()
 
-                
-            
+            folder_shows, created = Folder.objects.get_or_create(name='Shows', owner_id=1)
+            folder, created = Folder.objects.get_or_create(name=self.title, owner_id=1, parent_id=folder_shows.id)
             self.folder = folder 
             
         

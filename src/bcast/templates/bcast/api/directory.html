@@ -1,9 +1,9 @@
 <h1>{{ event.state }}</h1>
 
 <ul>
-{% for file in event.playlist %}
+{% for file in folder.files %}
 
-<li>{{ file }}</li>
+<li>{% firstof file.name file %} | {{ file.url }}</li>
 
 {% endfor %}
 </ul>
