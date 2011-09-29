@@ -21,7 +21,8 @@ django-openid==0.2.3.dev1
 python-openid==2.2.5
 django-uni-form==0.7.0
 
-
+kaleo==0.2
+django_polymorphic
 
 # hm what version?
 easy-thumbnails==1.0-alpha-18

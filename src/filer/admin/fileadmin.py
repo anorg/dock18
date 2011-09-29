@@ -118,7 +118,7 @@ else:
             'fields': ('name', 'owner', 'description')
         }),
         (_('Advanced'), {
-            'fields': ('file', 'sha1',),
+            'fields': ('file', 'sha1'),
             'classes': ('collapse',),
         }),
     )

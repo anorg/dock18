@@ -70,6 +70,8 @@ class File(PolymorphicModel, mixins.IconsMixin):
         self._old_is_public = self.is_public
 
     def _move_file(self):
+        
+        
         """
         Move the file from src to dst.
         """
@@ -137,7 +139,10 @@ class File(PolymorphicModel, mixins.IconsMixin):
         # cache the file size
         try:
             self._file_size = self.file.size
-        except:
+            print 'Size: ',
+            print self.file.size
+        except Exception, e:
+            print e
             pass
         if self._old_is_public != self.is_public and self.pk:
             self._move_file()
@@ -145,6 +150,7 @@ class File(PolymorphicModel, mixins.IconsMixin):
         try:
             self.generate_sha1()
         except Exception, e:
+            print e
             pass
         super(File, self).save(*args, **kwargs)
 

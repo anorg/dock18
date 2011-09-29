@@ -1718,3 +1718,10 @@ div.inline span a {
 #chat_holder .chat.btn {
   float: right;
 }
+
+.invites {
+  font: 11px/150% Verdana, sans-serif, "Maven Pro";
+  background-color: cyan;
+  padding: 20px;
+  margin: 20px 0 0 0;
+}

@@ -1,7 +1,12 @@
-#Tue Sep 27 14:24:28 CEST 2011
+#Tue Sep 27 19:39:26 CEST 2011
 eclipse.preferences.version=1
+encoding//src/bcast/management/commands/detransmit.py=utf-8
+encoding//src/bcast/management/commands/event_process.py=utf-8
 encoding//src/bcast/urls.py=utf-8
 encoding//src/filer/__init__.py=utf-8
+encoding//src/filer/admin/fileadmin.py=utf-8
+encoding//src/filer/fields/multistorage_file.py=utf-8
+encoding//src/filer/management/commands/import_files.py=utf-8
 encoding//src/filer/models/filemodels.py=utf-8
 encoding//src/filer/models/foldermodels.py=utf-8
 encoding//src/filer/settings.py=utf-8
