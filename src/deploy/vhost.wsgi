@@ -12,6 +12,9 @@ os.environ['PYTHON_EGG_CACHE'] = '/var/www/django/2011-02_dock18_ch/mod_wsgi/egg
 
 #If your project is not on your PYTHONPATH by default you can add the following
 sys.path.append('/var/www/django/2011-02_dock18_ch/src')
+
+sys.path.insert(0, join(settings.PROJECT_ROOT, "apps"))
+
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 
