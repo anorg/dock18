@@ -115,7 +115,8 @@ class Event(models.Model):
         return Page.objects.filter(placeholders__cmsplugin__eventplugin__event=self)
     
     def get_folder(self, name):
-        return Folder.objects.get_or_create(name=name, parent=self.folder)
+        folder, created = Folder.objects.get_or_create(name=name, parent=self.folder)
+        return folder
         
     
     def get_absolute_url(self):
