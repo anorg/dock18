@@ -48,7 +48,7 @@ urlpatterns = patterns('',
     # (r'^admin/', include(admin.site.urls)),
     
     # filer
-    url(r'^', include('filer.server.urls')),
+    # url(r'^', include('filer.server.urls')),
     
     #(r'^grappelli/', include('grappelli.urls')),
     

@@ -13,14 +13,13 @@ DEBUG = True
 
 
 TEMPLATE_DEBUG = DEBUG
-SERVE_MEDIA = True
 COMPRESS_ENABLED = False
 
 # pinax constants
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
 PINAX_THEME = 'default'
 
-
+SERVE_MEDIA = False
 
 ADMINS = (
     ('anorg', 'network@anorg.net'),
@@ -70,7 +69,10 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware', #
+                      
     'django.middleware.common.CommonMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -90,7 +92,12 @@ MIDDLEWARE_CLASSES = (
     #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
     #'lib.prettify.PrettifyMiddleware',
+    
+#    'django.middleware.cache.FetchFromCacheMiddleware', #
 )
+
+# CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
+CACHE_BACKEND = 'locmem:///'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -127,6 +134,8 @@ TEMPLATE_DIRS = (
 CMS_PLUGIN_PROCESSORS = (
     #'bcast.cms_plugin_processors.wrap_in_colored_box',
 )
+
+CMS_SEO_FIELDS = True
 
 ROOT_URLCONF = 'urls'
 
