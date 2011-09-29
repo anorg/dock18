@@ -1,17 +1,19 @@
-# pinax.wsgi is configured to live in projects/pin/deploy.
-
 import os
 import sys
+sys.stdout = sys.stderr
+# Add the virtual Python environment site-packages directory to the path
+import site
+site.addsitedir('/srv/2011-02_dock18/lib/python2.6/site-packages')
 
-from os.path import abspath, dirname, join
-from site import addsitedir
 
-sys.path.insert(0, abspath(join(dirname(__file__), "../../")))
+# Avoid [Errno 13] Permission denied: '/var/www/.python-eggs' messages
+import os
+os.environ['PYTHON_EGG_CACHE'] = '/var/www/django/2011-02_dock18_ch/mod_wsgi/egg-cache'
 
-from django.conf import settings
-os.environ["DJANGO_SETTINGS_MODULE"] = "settings"
+#If your project is not on your PYTHONPATH by default you can add the following
+sys.path.append('/var/www/django/2011-02_dock18_ch/src')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
-sys.path.insert(0, join(settings.PROJECT_ROOT, "apps"))
 
-from django.core.handlers.wsgi import WSGIHandler
-application = WSGIHandler()
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
