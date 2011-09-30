@@ -1,12 +1,10 @@
 {% load vardump %}
 {% load i18n %}
 <h2>{% trans "Aktuelle Veranstaltungen" %}</h2>
-<div id="slides" class="plugin events list">
+<div class="plugin events list">
 	
 
 
-	
-	<div class="slides_container">
 		{% for event in latest %}
 
 		{% include 'bcast/event_list_event.html' %}
@@ -21,10 +19,10 @@
 
 		{% empty %}
 		<div class="warning">
-			{% trans "No news yet" %}
+			{% trans "No events yet" %}
 		</div>
 		{% endfor %}
-	</div>
+
 	<script>
 		//<![CDATA[//><!--
 		/*$(function() {
