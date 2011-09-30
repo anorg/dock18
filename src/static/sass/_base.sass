@@ -1,94 +1,170 @@
-/* framework imports
+// imports -------------------------------------------------------------------
 
-@import "compass/reset"
-@import "compass/utilities"
+// compass imports
+$use-mozilla-ellipsis-binding: true
+@import 'compass/reset'
+@import 'compass/support'
+@import 'compass/layout'
+@import 'compass/css3'
+@import 'compass/utilities'
+@import 'compass/typography'
 
-/*@import "compass/typography/links"
-/*@import "compass/typography/lists"
-/*@import "compass/layout/grid-background"
-
-@import "blueprint/debug"
-
-@import "blueprint/grid"
-
-
-/* path setup
-/* img base path
-$img: unquote("/media/cmps/img/")
+@import 'compass/utilities/color/contrast'
 
 
-/* debug grid settings
+// framework imports
+@import 'asif/grid'
+@import 'asif/control'
+@import 'asif/typography'
 
-$grid-background-column-color: rgba(100, 100, 225, 0.25)
-$grid-background-gutter-color: rgba(0, 0, 0, 0)
+// site specific imports
+@import 'navigation'
 
-$grid-background-column-width: 20px
-$grid-background-gutter-width: 20px
-$grid-background-offset: 10px
 
-$grid-background-baseline-height: 10px
+// grid ----------------------------------------------------------------------
 
+
+// colors --------------------------------------------------------------------
+
+$color-base-bg: #000
+$color-base-fg: #fff
+
+$color-default: #000
+$color-base-action: #f0f
+$color-base-active: #ff0 
+
+// fonts --------------------------------------------------------------------
+$size-font-base: 1em
+$font-default: 'Verdana'
+$font-heading: 'Helvetica'
+$font-monospace: 'Courier'
+$font-quote: 'Courier'
+$font-pre: 'Courier'
+
+// dimensions ----------------------------------------------------------------
+
+$width-root: 920px
+$with-sidebar: 200px
+$width-base: 600px
+
+$width-padding-base: 10px
+
+$width-gutter-left: 80px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// to: _skeleton.sass --------------------------------------------------------------------
+
+
+/* structure:
+ * body
+ *   #container
+ *     div#root
+ *       div#toolbar
+ *       div#header
+ *       div#content
+ *           div#base
+ *           div#sidebar
+ *     div#footer 
+ *         div.inner
+ */
 
 .debug
-  +blueprint-grid()
+  #root
+    background-color: #ffff00
+  #base
+    background-color: #ff00ff
+  #sidebar
+    background-color: #0000ff
 
-/* dimensions
-$footer-height: 36px
+
+body 
+  padding: 0
+  pargin: 0
+  
+  > #container
+    width: $width-root + $width-gutter-left
+    margin: 0 auto
+    
+  #root
+    width: $width-root
+    #toolbar, #content
+      padding: 0 0 0 $width-gutter-left
+  
+
+div#toolbar
+  //+full()
+  //+alpha()
  
-/* variable setup
-$with-spaceing: 10px
-$with-main: 1100px
-$with-content: 820px
+div#content
+  //+full()
+  //+columns(9)
+  > #base
+    width: 600px
+  > #sidebar
+    width: 200px
+  
+  
+  
 
-$with-sidebar: $with-main - $with-content - (2 * $with-spaceing)
-
-
-/* color setup
-/* $color-bg-main: #2e313a
-$color-bg-main: #ffffff
-$color-fg-main: #ffffff
-$color-bg-inner: #ffffff
-$color-fg-inner: cyan
-/*$color-fg-inner: #00aef0
-
-$color-active: #ff0000
-$color-active-inv: #99FF33
-$color-form-border: #7b7b7b
-
-/* more colors...
-$color-bg-action: #ff00ff
-$color-fg-action: #00ffff
-
-$color-bg-info: yellow
-$color-fg-info: black
-
-$color-bg-notice: #ff00ff
-$color-fg-notice: #ff00ff
-
-$color-bg-error: #ff00ff
-$color-fg-error: #ff00ff
-
-
-/* testing...
-
-
-/* typography
-$font-base: 11px/150% Verdana, sans-serif, 'Maven Pro'
-/*$font-headings: 11px/100% 'DroidSansMonoRegular', Arial, sans-serif
-$font-headings: 250%/150% 'Impact', Arial, sans-serif
-$font-fixed: 11px/150% "Lucida Console","Andale Mono","Monotype.com",monospace
-
+// to: _style.sass --------------------------------------------------------------------
 
 body
-  h1, h2, h3, h4, h5, h6, li
-    font: $font-base
+  +typography()
+
+p
+  //display: block
+  //+contrasted($color-base-bg)
+
+a
+  +link-colors($color-base-action, $color-base-active, $color-base-active, $color-base-action)
+  // +single-text-shadow(#ffffff)
+
+
+
+// content styles
+.base .column
+  
+  
+  
+  
+.base .plugin
+
+  .list.events // list container
+  
+  .listing.event // listing event element
+    background-color: $color-default
+    color: contrast-color($color-default)
     
-  #content
-    h1, h2, h3, h4
-      font: $font-headings
+    &.now
+      background-color: $color-base-active
+      color: contrast-color($color-base-active)
+  
+  .detail.event // event detail page
+  
+  
+.plugin.bcast.detail
+  #screen
+    background-color: $color-default
+    color: contrast-color($color-default)
+  #participants
+    background-color: $color-default
+    color: contrast-color($color-default)
+  #files
+    background-color: $color-default
+    color: contrast-color($color-default)
 
+  
 
-/*
-  font-family: "Andale Mono", "Monotype.com", monospace
-  font: 11px/150% 'DroidSansMonoRegular', Arial, sans-serif
-  font: 11px/150% Verdana, sans-serif

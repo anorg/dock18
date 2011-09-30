@@ -15,114 +15,78 @@
 <div id="container" class="debug">
 	
 	
-	<div id="toolbar">
-		
-		<!-- the actual menu -->
-		<div id="navigation_top" class="left navigation menu">
-			<ul class="horizontal">
-			    {% show_menu 0 0 0 0 %}
-			</ul>
-		</div>
-		
-		<!-- profile / login / facebook / etc -->
-		{% load account_tags %}
-		<div class="right navigation profile">
-			
-			
-		{% if user.is_authenticated %}
-		
-		<!-- load tags -->
-		{% url acct_logout as logout_url %}
-		{% user_display user as user_display %}
-		
-		
-		<ul class="horizontal">
-			<li><span class="username">{{ user_display }}</span></li>
-			<li><a href="{% url profile_detail user.username %}">Profile</a></li>
-			
-			{% if user.is_staff %}
-				<li><a href="/admin/">Administration</a></li>
-			{% endif %}
-			
-			<li><a href="{{ logout_url }}">Logout</a></li>
-		</ul>
-
-
-		{% else %}
-		
-		<!-- load tags -->
-		{% url acct_login as login_url %}
-		{% url acct_signup as signup_url %}
-		
-		
-
-		
-
-
-		
-		<ul class="horizontal">
-			<li><a href="{{ signup_url }}">signup</a></li>
-			<li><a href="{{ login_url }}">login</a></li>
-			
-			<li><a class="fb_connect" href="/facebook/login">connect</a></li>
-			
-			
-			
-			<!--
-			<li> <fb:login-button size="small">Connect</fb:login-button> </li>
-			-->
-		</ul>
-		
-		{% endif %}
-				
-			
-		<!--
-		<ul>
-			<li><a href="{% url admin_invite_user %}">invite more people to the site</a></li>
-		</ul>
-		-->
-			
-		</div> 
-		
-		<div class="clear"></div>
-		
-		
-	</div>
+	<div id="root">
 	
-	<div id="header">
-		
-		<div class="left">
+	
+		<div id="toolbar">
 			
-			
-			
-			
-			
-		</div>
-		
-		<!--
-		<div id="subline">
-			<div class="right">
-				<div>
-					SUBLINE
-				</div>
+			<!-- the actual menu -->
+			<div id="navigation_top" class="left navigation menu">
+				<ul class="horizontal">
+				    {% show_menu 0 0 0 0 %}
+				</ul>
 			</div>
+			
+			
+			<!-- profile / login / facebook / etc -->
+			{% load account_tags %}
+			
+			<div class="right navigation profile">
+				
+				
+				{% if user.is_authenticated %}
+				
+				<!-- load tags -->
+				{% url acct_logout as logout_url %}
+				{% user_display user as user_display %}
+				
+				<ul class="horizontal">
+					<li><span class="username">{{ user_display }}</span></li>
+					<li><a href="{% url profile_detail user.username %}">Profile</a></li>
+					<li><a href="/account/email/">EMail</a></li>
+					
+					{% if user.is_staff %}
+						<li><a href="/admin/">Administration</a></li>
+					{% endif %}
+					
+					<li><a href="{{ logout_url }}">Logout</a></li>
+					
+				</ul>
+				
+				{% else %}
+				
+				<!-- load tags -->
+				{% url acct_login as login_url %}
+				{% url acct_signup as signup_url %}
+				
+				<ul class="horizontal">
+					<li><a href="{{ signup_url }}">signup</a></li>
+					<li><a href="{{ login_url }}">login</a></li>
+					<li><a class="fb_connect" href="/facebook/login">connect</a></li>
+				</ul>
+				
+				{% endif %}
+				
+			</div> 
+
 			<div class="clear"></div>
+
 		</div>
-		-->
 		
-		<div class="clear"></div>
-	</div>
-	
-	
-	<div id="content">
-		<div class="col left">
+		
+		<!-- header -->
+		<div id="header">
+				<div class="headline">
+					<div class="season main_title"><img src="{{ STATIC_URL }}img/base/header.season.01.png" /></div>
+				</div>
+		</div>
+		
+		
+		<div id="content">
 			
-			<div class="headline">
-				<div class="season main_title"><img src="{{ STATIC_URL }}img/base/header.season.01.png" /></div>
-			</div>
-			
-			<div id="content_2col">
-				
+			<div id="base" class="col left">
+
+					
 				<div class="base content pinax">
 					<!-- content from pinax -->
 					{% block body_outer %}
@@ -142,77 +106,57 @@
 					{% block body_content%}
 					{% endblock %}
 				</div>
-				
-				
-				
+
 				
 			</div>
-
-		</div>
-	</div>
-	<div id="sidebar" class="col right">
-		
-
-
-
-		
-		<!--
-		<div id="language_chooser">
-		{% load menu_tags %}
-		{% language_chooser "element/language_chooser.html" %}
-		</div>
-		-->
-
-		
-		<div id="navigation_side">
 			
-			<ul class="vertical">
+			
+			<!-- sidebar -->
+			<div id="sidebar" class="col left">
 				
-				{% show_menu_below_id 'events' 0 100 100 100 "bcast/menu_shows.html" %}
+				<div id="navigation_side">
+					<ul class="vertical">
+						{% show_menu_below_id 'events' 0 100 100 100 "bcast/menu_shows.html" %}
+					</ul>
+				</div>
 				
-			</ul>
+				{% if user.is_authenticated %}
+				<div id="invitation">
+					{% include 'element/invite.html' %}
+				</div>
+				{% endif %}
+	
+			</div>
+		
+
 			
 		</div>
 		
-		{% if user.is_authenticated %}
-		<div id="invitation">
-			{% include 'element/invite.html' %}
-		</div>
-		{% endif %}
+		<div class="clear"></div>
+		
+
 		
 		
-		
-		
+
 	</div>
 	
-	<div>
-		
-
-		
-
-
-
-		
-	</div>
+	
 	
 	<div id="footer" class="footer">
-		<div class="sitemap clear"></div>
+
 		<div class="inner">
 			
 			<div id="fb_like">
 				{% include 'element/facebook.html' %}
 			</div>
-			
 
-			
 			{% placeholder template_footer  or %}
 
 			{% endplaceholder %}
-			
-			
-			
-			
+
 		</div>
+		
+		
 	</div>
 	
 	

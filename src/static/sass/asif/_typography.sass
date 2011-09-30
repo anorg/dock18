@@ -1,0 +1,80 @@
+/* vars
+ * 
+ */
+
+
+@mixin font-styles()
+  .normal 
+    font-style: normal
+  .italic
+    font-style: italic
+  .oblique 
+    font-style: oblique
+  .bold 
+    font-weight: bold
+
+
+
+@mixin font-base()
+  font-family: $font-default
+  +font-styles()
+
+@mixin font-heading()
+  font-family: $font-heading
+  +font-styles()
+
+@mixin font-monospace()
+  font-family: $font-monospace
+  +font-styles()
+
+@mixin font-quote()
+  font-family: $font-quote
+  +font-styles()
+
+@mixin font-pre()
+  font-family: $font-pre
+  +font-styles()
+
+
+@mixin typography()
+
+  font-size: $size-font-base
+
+  +font-base()
+
+
+
+  
+  font-size: $size-font-base
+
+
+
+
+    
+  blockquote
+    color: #666666
+    
+  h1, h2, h3, h4, h5, h6
+    +font-heading()
+    
+  h1
+    font-size: $size-font-base * 4
+  h2
+    font-size: $size-font-base * 3.2
+  h3
+    font-size: $size-font-base * 2.6
+  h4
+    font-size: $size-font-base * 2.2
+  h5
+    font-size: $size-font-base * 1.8
+  h6
+    font-size: $size-font-base * 1.2
+    
+
+
+  .superscript
+    font-size: 50%
+    vertical-align: super
+  .subscript
+    font-size: 90%
+    vertical-align: bottom
