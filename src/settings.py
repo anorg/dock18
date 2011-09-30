@@ -91,7 +91,7 @@ MIDDLEWARE_CLASSES = (
     #'cms.middleware.media.PlaceholderMediaMiddleware',
     #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
-    'lib.prettify.PrettifyMiddleware',
+    'lib.prettify.PrettifyMiddleware', 
     
 #    'django.middleware.cache.FetchFromCacheMiddleware', #
 )
