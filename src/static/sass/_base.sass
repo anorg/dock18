@@ -31,12 +31,13 @@ $color-base-fg: #fff
 
 $color-default: #000
 $color-base-action: #ff0
-$color-base-active: #ff0 
+$color-base-active: #ff0
+$color-base-focus: #0ff
 
 // fonts --------------------------------------------------------------------
 $size-font-base: 12px
 $font-default: 'Verdana'
-$font-heading: 'Helvetica'
+$font-heading: 'frutiger_ultrablack'
 $font-monospace: 'Courier'
 $font-quote: 'Courier'
 $font-pre: 'Courier'
@@ -50,8 +51,9 @@ $width-base: 600px
 $width-padding-base: 10px
 $width-gutter-left: 80px
 
+$default-space: 30px
 
-$width-base: $width-root - $with-sidebar - $width-padding-base - $width-gutter-left
+$width-base: $width-root - $with-sidebar - $width-padding-base - $width-gutter-left - $default-space
 $width-full: $width-root - $width-gutter-left
 
 
@@ -62,13 +64,6 @@ $width-full: $width-root - $width-gutter-left
 
 @import 'uniform/base'
 @import 'uniform/dock18'
-
-
-
-.test
-  color: red
-
-
 
 
 
@@ -112,8 +107,12 @@ body
       margin: 0 0 0 $width-gutter-left
     #content > #base
       width: $width-base
+      margin: 0 $default-space 0 0
     #sidebar
       width: $with-sidebar
+  
+  #footer
+    margin: 0 0 0 $width-gutter-left
   
 
 div#toolbar
@@ -152,13 +151,28 @@ a
     background-color: $color-base-action
     color: contrast-color($color-base-action)
 
-    
-    
+//header styles
+div#header
+  margin: $default-space 0 ($default-space*2) 0
+
+
+//side-bar styles
+div#sidebar
+  margin: 0 
+
+
 // content styles
 .base .column
   
   
-  
+// font / headings
+h1, h2, h3, h4, h5, h6
+  +font-heading()
+  > a
+    font-style: italic
+    &:link
+    
+    &:hover
   
 .base .plugin
 
@@ -167,12 +181,16 @@ a
   .listing.event // listing event element
     background-color: $color-default
     color: contrast-color($color-default)
+    padding: ($default-space/2)
+    margin: 0 0 ($default-space/2) 0
     
     &.now
-      background-color: $color-base-active
+      background-color: $color-base-focus
       color: contrast-color($color-base-active)
   
-  .detail.event // event detail page
+.detail.event // event detail page
+  background-color: $color-base-active
+     
   
   
 .plugin.bcast.detail

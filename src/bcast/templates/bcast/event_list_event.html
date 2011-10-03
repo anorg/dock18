@@ -1,16 +1,16 @@
 {% load thumbnail %}
-<div class="extend event listing {{ event.type }} {{ event.state }}">
-	<h4><a href="{{ event.get_absolute_url }}" class="url_main"> 
-			<span class="date">{{ event.date_start|date:"D, d. m. y" }}</span> 
-			<span class="title">{{ event.title }}</span> <span class="superscript">{{ event.type }} | {{ event.date_start|date:"H:i" }}</span> 
+<div class="extend event listing {{ event.type }} {{ event.state }} hover">
+	<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+	<h3><a href="{{ event.get_absolute_url }}" class="url_main"> 
+			<span class="title">{{ event.title }}</span>  
 		</a>
-	</h4>
+	</h3>
 	<div>
 		<div class="info" >
 			{% if event.picture %}
 			<div class="left picture">
 
-				<img src="{% thumbnail event.picture 80x80 crop %}" />
+				<img src="{% thumbnail event.picture 170x170 crop %}" />
 			</div>
 			{% endif %}
 			{% if event.excerpt %}

@@ -1,7 +1,7 @@
 {% load vardump comments thumbnail sekizai_tags phileo_tags %}
 <div class="plugin bcast event detail">
-	<h2>{{ event.title }} <span class="superscript">{{ event.type }}</span></h2>
-	<h4>{{ event.date_start|date:"D, d. m. y" }} ᚋ {{ event.date_start|date:"H:i" }} - {{ event.date_end|date:"H:i" }}</h4>
+	<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+	<h3><span class="title">{{ event.title }}</span></a></h3>
 	<div class="info" >
 		{% if event.excerpt %}
 		<div class="left excerpt">
