@@ -1,39 +1,14 @@
 {% load vardump %}
-{% load i18n %}
-<h2>{% trans "Aktuelle Veranstaltungen" %}</h2>
-<div id="slides" class="plugin events list">
+{% load i18n %} <h2>{% trans "Aktuelle Veranstaltungen" %}</h2>
+<div class="plugin events list">
+	{% for event in latest %}
+
+	{% include 'bcast/event_list_event.html' %} 
 	
-
-
-	
-	<div class="slides_container">
-		{% for event in latest %}
-
-		{% include 'bcast/event_list_event.html' %}
-
-		
-		<!--<ul>
-			{% for page in event.get_pages_using %}
-			<li>url: {{ page.get_absolute_url }} | title: {{ page.get_title }}</li>
-			{% endfor %}
-		</ul>-->
-		
-
-		{% empty %}
-		<div class="warning">
-			{% trans "No news yet" %}
-		</div>
-		{% endfor %}
+	{% empty %}
+	<div class="notice">
+		{% trans "No events yet" %}
 	</div>
-	<script>
-		//<![CDATA[//><!--
-		/*$(function() {
-			$('#slides').slides({
-				preload : true,
-				generateNextPrev : true,
-				generatePagination : false
-			});
-		});*/
-		//--><!]]>
-	</script>
+	{% endfor %}
+
 </div>

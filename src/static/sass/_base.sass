@@ -18,7 +18,7 @@ $use-mozilla-ellipsis-binding: true
 @import 'asif/typography'
 
 // site specific imports
-@import 'navigation'
+// @import 'navigation'
 
 
 // grid ----------------------------------------------------------------------
@@ -30,11 +30,11 @@ $color-base-bg: #000
 $color-base-fg: #fff
 
 $color-default: #000
-$color-base-action: #f0f
+$color-base-action: #ff0
 $color-base-active: #ff0 
 
 // fonts --------------------------------------------------------------------
-$size-font-base: 1em
+$size-font-base: 12px
 $font-default: 'Verdana'
 $font-heading: 'Helvetica'
 $font-monospace: 'Courier'
@@ -48,14 +48,20 @@ $with-sidebar: 200px
 $width-base: 600px
 
 $width-padding-base: 10px
-
 $width-gutter-left: 80px
 
 
+$width-base: $width-root - $with-sidebar - $width-padding-base - $width-gutter-left
+$width-full: $width-root - $width-gutter-left
 
 
 
 
+// layout imports 
+@import 'navigation'
+
+@import 'uniform/base'
+@import 'uniform/dock18'
 
 
 
@@ -101,7 +107,12 @@ body
   #root
     width: $width-root
     #toolbar, #content
-      padding: 0 0 0 $width-gutter-left
+      +clearfix
+      margin: 0 0 0 $width-gutter-left
+    #content > #base
+      width: $width-base
+    #sidebar
+      width: $with-sidebar
   
 
 div#toolbar
@@ -112,9 +123,9 @@ div#content
   //+full()
   //+columns(9)
   > #base
-    width: 600px
+    // width: 600px
   > #sidebar
-    width: 200px
+    //  width: 200px
   
   
   
@@ -132,8 +143,16 @@ a
   +link-colors($color-base-action, $color-base-active, $color-base-active, $color-base-action)
   // +single-text-shadow(#ffffff)
 
+a
+  &:link
+    color: $color-base-action
+    background: inherit
+  &:hover
+    background-color: $color-base-action
+    color: contrast-color($color-base-action)
 
-
+    
+    
 // content styles
 .base .column
   

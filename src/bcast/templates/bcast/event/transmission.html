@@ -4,9 +4,6 @@
 {% addtoblock "js" %}
 <script type="text/javascript">
 
-//<![CDATA[//><!--
-
-
 	var player_config = {
 		'flashplayer' 		: "{{ STATIC_URL }}swf/jwplayer-licensed-5.7.swf",
 		'controlbar' 		: { position: 'bottom'},
@@ -65,16 +62,9 @@
 	{% endif %}
 	
 
-	
-	
-	
-	
-	
-
 
 
 	jwplayer("player").setup(player_config);
-//--><!]]>
 
 </script>
 {% endaddtoblock %}

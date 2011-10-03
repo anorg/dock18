@@ -1,98 +1,108 @@
-{% load vardump %}
-{% load comments %}
-{% load thumbnail %}
+{% load vardump comments thumbnail sekizai_tags phileo_tags %}
 <div class="plugin bcast event detail">
-
 	<h2>{{ event.title }} <span class="superscript">{{ event.type }}</span></h2>
-
 	<h4>{{ event.date_start|date:"D, d. m. y" }} ᚋ {{ event.date_start|date:"H:i" }} - {{ event.date_end|date:"H:i" }}</h4>
-
-
-
-
 	<div class="info" >
-
 		{% if event.excerpt %}
-			<div class="left excerpt">
-				<p>
-					{{ event.excerpt }}
-				</p>
-			</div>
+		<div class="left excerpt">
+			<p>
+				{{ event.excerpt }}
+			</p>
+		</div>
+		{% endif %} <div class="clear"></div>
+	</div>
+	
+	<div class="like">
+		{% if request.user.is_authenticated %}
+		
+		{% addtoblock "js" %}
+		
+		<script type="text/javascript">
+		
+		{% likes_ajax %}
+		</script>
+		
+		{% endaddtoblock %}
+		
+		{% like_form request.user event "Like,Unlike" %}
 		{% endif %}
-		<div class="clear"></div>
 	</div>
 	
 	
-	
+	<!-- some information for admin -->
 	{% if request.user.is_authenticated %}
 	<div class="admin notice">
 		<h5>Stream setup:</h5>
-
 		<ul>
-			<li><span>FMS URL:</span> <span>rtmp://rtmp.dock18.ch/d18live</span></li>
-			<li><span>Stream:</span> <span>{{ event.key }}</span></li>
-			<li> <span>starts_in:</span> <span>{{ event.starts_in }}</span> | <span>ends_in:</span> <span>{{ event.ends_in }}</span> </li>
+			<li>
+				<span>FMS URL:</span><span>rtmp://rtmp.dock18.ch/d18live</span>
+			</li>
+			<li>
+				<span>Stream:</span><span>{{ event.key }}</span>
+			</li>
+			<li>
+				<span>starts_in:</span><span>{{ event.starts_in }}</span> | <span>ends_in:</span><span>{{ event.ends_in }}</span>
+			</li>
 			<li></li>
-			<li> <span>date_start:</span> <span>{{ event.date_start }}</span> | <span>date_end:</span> <span>{{ event.date_end }}</span></li>
+			<li>
+				<span>date_start:</span><span>{{ event.date_start }}</span> | <span>date_end:</span><span>{{ event.date_end }}</span>
+			</li>
 			<li></li>
 		</ul>
-
 	</div>
 	{% endif %}
-	
 
+
+	<!-- loads the counter to be cloned into player window -->
 	{% if event.starts_in > 0 %}
+	
 	<div id="counter" style="display: none;"></div>
+	
+	{% addtoblock "js" %}
 	<script type="text/javascript">
-		//<![CDATA[//><!--
+
 		$(function() {
 		$('#counter').countdown({
-			until: +{{ event.starts_in }},
-			//until: +120,
-			onExpiry: countdown_done,
-			compact: true,
-			onTick: countdown_tick
-			});
+		until: +{{ event.starts_in }},
+		onExpiry: countdown_done,
+		compact: true,
+		onTick: countdown_tick
+		});
 		});
 		function countdown_done() {
-			
-			// reload if countdown done
-			location.reload();
-			
-			// $('#container_player').css('display', 'block');
-			// $('#stream_countdown').css('display', 'none');
-			
+
+		// reload if countdown done
+		location.reload();
+		// $('#container_player').css('display', 'block');
+		// $('#stream_countdown').css('display', 'none');
+
 		}
 		function countdown_tick() {
-			$('#chat_f').html( $('#counter').html() );
+		$('#chat_f').html( $('#counter').html() );
 		}
-		//--><!]]>
-	</script>
-	{% endif %}
 
+	</script>
+	{% endaddtoblock %}
+
+	{% endif %}
+	
 	
 
 	{% if event.transmission %}
-		{% include 'bcast/event/transmission.html' %}
+	{% include 'bcast/event/transmission.html' %}
 	{% endif %}
-	
-	{% if event.chat and event.room %}
-		{% include 'bcast/event/chat.html' %}
-	{% endif %}
-	
-	<!-- -->
-	{% if event.chat and event.room %}
-		{% include 'bcast/event/participants.html' %}
-	{% endif %}
-	
-	
-	{% if event.folder %}
-		{% include 'bcast/event/filebrowser.html' %}
-	{% endif %}
-	
-	
-	
-	
-	
 
+	{% if event.chat and event.room %}
+	{% include 'bcast/event/chat.html' %}
+	{% endif %}
+	
+	<!-- TODO: make dynamic -->
+	{% if event.chat and event.room %}
+	{% include 'bcast/event/participants.html' %}
+	{% endif %}
+
+	{% if event.folder %}
+	{% include 'bcast/event/filebrowser.html' %}
+	{% endif %}
+	
 </div>

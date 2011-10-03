@@ -1,8 +1,50 @@
-#navigation
+
+$toolbar-top: 10px
+$toolbar-bottom: 20px
+$toolbar-inner: 20px
+
+$height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
+
+
+#toolbar
+  width: $width-full
+  
+  height: $height-toolbar
+  background: repeat-x
+  +background-image(image-url('/static/img/base/layout.toolbar.bg.png'))
+  
+  
+//  +background-image(image-url('/static/img/base/dummy.menu.png'))
+
+
+#toolbar
+  .profile
+    text-transform: uppercase
+    ul > li
+    
+      padding: $toolbar-top 20px $toolbar-bottom 20px
+      line-height: $toolbar-inner
+        
+      // border-left: 1px solid contrast-color($color-default)
+      &:first-child
+        border: none
+  
+      padding: 10px 4px 0px 4px
+      
+      a, span
+        text-decoration: none
+        &.fb_connect
+          padding-left: 16px
+          background: url('/static/img/base/fb.connect.16x16.png') no-repeat top left
+        &.username
+          font-weight: bold
+
 
 
 #navigation, #navigation_top
 
+  a
+    +link-colors(contrast-color($color-default), $color-default, $color-default, contrast-color($color-default))
   
   ul
     list-style-type: none
@@ -12,32 +54,42 @@
     
 
   // first level
-  >ul
-    a
+  > ul
+    a, > li
       display: block
       padding: 0 4px
       text-transform: uppercase
       text-decoration: none
 
       &:hover
-
-        font-weight: bold
+        +contrasted($color-base-active)
+        // font-weight: bold
+        a
+          color: $color-default
 
   
-    >li
+    > li
       margin: 0 0 10px 0
+      padding: $toolbar-top 20px $toolbar-bottom 20px
+      line-height: $toolbar-inner
       
       > a 
+        color: $color-default
 
       // second level   
       >ul
         padding: 0 0 0 20px
     
-    >li.selected,>li.ancestor
-      //background-color: #ffff00
+    >li.selected, >li.ancestor
+      background-color: $color-base-active
       // border-right: $with-spaceing solid $color-active
-      >a
-        font-weight: bold
+
+
+      &:hover
+        +contrasted($color-base-active)
+      > a
+        color: $color-default
+        // font-weight: bold
     
     >li.selected
       >a

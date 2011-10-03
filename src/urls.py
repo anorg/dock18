@@ -56,6 +56,9 @@ urlpatterns = patterns('',
     
     #(r'^adminfiles/', include('adminfiles.urls')),
     
+    
+    url(r"^likes/", include("phileo.urls")),
+    
     # apps
     (r'^jqchat/', include('jqchat.urls')),
     

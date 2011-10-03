@@ -1,54 +1,35 @@
 {% load thumbnail %}
-
 <div class="extend event listing {{ event.type }} {{ event.state }}">
-	
-	<h4>
-		<a href="{{ event.get_absolute_url }}" class="url_main">
-			<span class="date">{{ event.date_start|date:"D, d. m. y" }}</span>
-			<span class="title">{{ event.title }}</span>
-			<span class="superscript">{{ event.type }} | {{ event.date_start|date:"H:i" }}</span>
+	<h4><a href="{{ event.get_absolute_url }}" class="url_main"> 
+			<span class="date">{{ event.date_start|date:"D, d. m. y" }}</span> 
+			<span class="title">{{ event.title }}</span> <span class="superscript">{{ event.type }} | {{ event.date_start|date:"H:i" }}</span> 
 		</a>
 	</h4>
-	
 	<div>
-		
-		
-
-		
-		
 		<div class="info" >
 			{% if event.picture %}
-				<div class="left picture">
-					
-					<!--
-					<img src="{{ STATIC_URL }}{{ event.picture }}" style="width: 80px; height: 80px" />
-					-->
-					<img src="{% thumbnail event.picture 80x80 crop %}" />
-					
-				</div>
+			<div class="left picture">
+
+				<img src="{% thumbnail event.picture 80x80 crop %}" />
+			</div>
 			{% endif %}
 			{% if event.excerpt %}
-				<div class="left excerpt">
-					<p>
-						{{ event.excerpt }}
-					</p>
-				</div>
-			{% endif %}
-			<div class="clear"></div>
+			<div class="left excerpt">
+				<p>
+					{{ event.excerpt }}
+				</p>
+			</div>
+			{% endif %} <div class="clear"></div>
 		</div>
-		
-		
 		<div class="a-right">
 			<ul class="horizontal tags right">
-					{% for tag in event.tags.all %}
-						<li class="tag">{{ tag }}</li>
-					{% endfor %}
-	
-	
+				{% for tag in event.tags.all %}
+				<li class="tag">
+					{{ tag }}
+				</li>
+				{% endfor %}
 			</ul>
 			<div class="clear"></div>
 		</div>
-		
 	</div>
-	
 </div>
