@@ -10,6 +10,7 @@ from bcast.models import EventPlugin as EventPluginModel
 from bcast.models import EventListPlugin as EventListPluginModel
 from bcast.models import ParticipantsPlugin as ParticipantsPluginModel
 from bcast.models import Event
+from bcast.forms import *
 
 """
 EventPlugin - Handles complete events
@@ -24,6 +25,9 @@ class EventPlugin(CMSPluginBase):
         
         
         participants = instance.event.participants.all()
+        participants.form = ParticipateForm
+        
+
         
         folder = instance.event.folder
    

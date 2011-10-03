@@ -2,6 +2,9 @@ from django.utils import simplejson
 from dajaxice.core import dajaxice_functions
 from dajaxice.decorators import dajaxice_register
 
+
+from bcast.models import *
+
 import random
 import urllib
 import urllib2
@@ -42,3 +45,13 @@ def error_example(request):
     raise Exception("Some Exception")
     
 dajaxice_functions.register(error_example)
+
+
+def participate(request, data):
+    
+    print data['id']
+    print data['name']
+    
+    return simplejson.dumps({'user':'xxyyzz'})
+
+dajaxice_functions.register(participate)

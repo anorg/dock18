@@ -361,6 +361,11 @@ $.fn.ajaxSubmit = function(options) {
  */
 $.fn.ajaxForm = function(options) {
     return this.ajaxFormUnbind().bind('submit.form-plugin',function() {
+    	
+    	// console.log($(this).attr('id'), 'this - plugin');
+    	// hackish...
+    	options.data = { form_id: $(this).attr('id') }; 
+    	
         $(this).ajaxSubmit(options);
         return false;
     }).each(function() {

@@ -132,7 +132,7 @@ TEMPLATE_DIRS = (
 )
 
 CMS_PLUGIN_PROCESSORS = (
-    #'bcast.cms_plugin_processors.wrap_in_colored_box',
+    'bcast.cms_plugin_processors.wrap_text',
 )
 
 CMS_SEO_FIELDS = True

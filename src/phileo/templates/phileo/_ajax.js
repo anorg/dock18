@@ -3,10 +3,12 @@ $(document).ready(function() {
 	$("form.phileo").ajaxForm({
 	    dataType: "json",
 	    success: function(data, status, xhr, form) {
-	    	
-	    	console.log(form);
-	    	
-	        if (data.status == "OK") {
+
+	        if (data.status == "OK") {	    	
+
+		    	var form_id = this.extraData.form_id;
+		    	var form = $('#' + form_id);
+	        	
 	            form.find("button[type=submit]")
 	                .attr("class", data.current.toLowerCase())
 	                .text(data.current);
@@ -16,6 +18,7 @@ $(document).ready(function() {
 	                .attr("value", data.current);
 	        }
 	    }
+	    
 	});
 
 }); 

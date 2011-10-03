@@ -1,4 +1,56 @@
-{% load account_tags %}
+{% load account_tags sekizai_tags uni_form_tags %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function() { 
+
+	$("form#bcast_participants_form").ajaxForm({
+		type: 'POST',
+	    dataType: "json",
+	    success: function(data, status, xhr, form) {
+
+	        if (data.status == "OK") {	    	
+
+		    	var form_id = this.extraData.form_id;
+		    	var form = $('#' + form_id);
+	        	
+	            form.find("button[type=submit]")
+	                .attr("class", data.current.toLowerCase())
+	                .text(data.current);
+	            form.find("input[name=opposite]")
+	                .attr("value", data.opposite);
+	            form.find("input[name=current]")
+	                .attr("value", data.current);
+	        }
+	    }
+	    
+	});
+
+}); 
+
+
+
+
+function send_form(){
+	data = $('my_form').serialize(true);
+	// jQuery
+    // If you are using jQuery, you need this form->object serializer
+    // https://github.com/cowboy/jquery-misc/blob/master/jquery.ba-serializeobject.js
+	Dajaxice.examples.send_form(Dajax.process,{'form':data});
+}
+
+</script>
+{% endaddtoblock %}
+
+<div>
+	
+	<form method="post" class="uniForm">
+		{{ participants.form|as_uni_form }}
+	</form>
+	
+</div>
+
 
 <div class="expandable main window" id="participants">
 	
@@ -14,55 +66,61 @@
 		<div class="clear"></div>
 	</div>
 	
-	<div class="container" id="container_participants">
+	
+	
+	
+	
+
+	
+	
+	<div class="panel" >
+		
+		{% if user.is_authenticated %}
+
+		{% load account_tags %}
+
+		<div>
+			<form id="bcast_participants_form">
+				<input type="hidden" name="user_id" value="{{ request.user.id }}" />
+				<input class="participants btn" type="submit" value="Ja - bin auch dabei!" /><br />
+				<br />
+				<div class="clear"></div>
+			</form>
+		</div>
+		{% else %}
+		
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<span class="message login">Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</span>
+		</div>
+		{% endif %}
 		
 
-		<div id="participants_window" class="listing participants">
+		<div id="bcast_participants" class="listing participants">
 		{% for user in participants %}
-		
-		
 
-			
 			{% include 'bcast/event/participant.html' %}
-			
 
-		
 		{% empty %}
 
 			<p>No participants yet.</p>
 		
 		{% endfor %}
 		</div>
-		
-		
-		
-		
-		{% if user.is_authenticated %}
-		
-		{% load account_tags %}
-		{% user_display user as user_display %}
-		
-		<div id="chat_holder">
-			
-			<form id="participants_form">
-				
-				<input class="chat btn" type="submit" value="Ja - bin auch dabei!" /><br />
-				
-				<div class="clear"></div>
-				
-			</form>
-			
-		</div>
-		
-		{% else %}
-			{% url acct_login as login_url %}
-			{% url acct_signup as signup_url %}
-			<div class="inline">
-				<span class="message login">Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</span>
-			</div>
-		{% endif %}
-		
-	
-	</div>
 
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </div>

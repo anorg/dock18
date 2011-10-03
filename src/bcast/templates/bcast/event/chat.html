@@ -28,8 +28,6 @@ InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
 	
 	<div class="panel" >
 		
-
-		
 		{% if user.is_authenticated %}
 
 		{% load account_tags %}
@@ -52,13 +50,13 @@ InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
 		</div>
 		{% endif %}
 		
-		
-		
-		
+
 		<div id="bcast_chatpanel">
 			<span class="loading">+++</span>
 		</div>
-		
-		
+
 	</div>
+	
+	
+	
 </div>
