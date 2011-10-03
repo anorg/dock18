@@ -1,5 +1,7 @@
-<form class="phileo" action="{{ like_url }}" method="post">
+<form id="form_{{ like_url|slugify }}" class="phileo" action="{{ like_url }}" method="post">
     {% csrf_token %}
+    
+    <input type="hidden" name="instance" value="form_x" />
     
     <input type="hidden" name="opposite" value="{{ opposite }}" />
     <input type="hidden" name="current" value="{{ current }}" />
