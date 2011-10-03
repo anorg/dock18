@@ -29,8 +29,8 @@ class PrettifyMiddleware(object):
         if response['Content-Type'].split(';', 1)[0] == 'text/html':
             content = response.content
             # content = str(tidy.parseString(content, **options))
-            content, errors = tidy_document(content, options={'numeric-entities':1})
-            print errors
+            # content, errors = tidy_document(content, options={'numeric-entities':1})
+            # print errors
             response.content = content
             
             

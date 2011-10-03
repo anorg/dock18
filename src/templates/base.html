@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
-{% load cms_tags sekizai_tags %}
-{% load compress %}
+{% load cms_tags sekizai_tags analytics compress %}
 
 <!--head -->
 <head>
@@ -68,6 +67,9 @@
 	</script>
 	
 	{% render_block "js" %}
+	
+	
+	{% analytics 'UA-XXXXXX-XX' %}
 	
 </body>
   

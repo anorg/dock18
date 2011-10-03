@@ -207,6 +207,9 @@ INSTALLED_APPS = (
     'announcements',
     'pagination',
     'idios',
+    'phileo',
+    
+    'analytics',
     
     # auth addon
     'facebook',
@@ -337,6 +340,7 @@ CONTACT_EMAIL = 'root@dock18.ch'
 FACEBOOK_APP_ID = "173374022743087"
 FACEBOOK_APP_SECRET = "423e6cee277a1536df4f3ee7195fdfbc"
 FACEBOOK_SCOPE = 'email,publish_stream'
+
 
 # hm - how to handle multiple...
 # AUTH_PROFILE_MODULE = 'facebook.FacebookProfile'

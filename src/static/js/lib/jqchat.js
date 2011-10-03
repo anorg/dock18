@@ -9,7 +9,7 @@ var timestamp = 0;
 var url = null;
 
 // How often to call updates (in milliseconds)
-var CallInterval = 5000;
+var CallInterval = 10000;
 // ID of the function called at regular intervals.
 var IntervalID = 0;
 
@@ -32,11 +32,14 @@ function processResponse(payload) {
 	// Get the timestamp, store it in global variable to be passed to the server on next call.
 	timestamp = payload.time;
 	for(message in payload.messages) {
-		$("#chatwindow").append('<div class="row">' + payload.messages[message].text + '</div>');
+		$("#bcast_chatpanel").prepend('<div class="row">' + payload.messages[message].text + '</div>');
 	}
+	
+	 $("#bcast_chatpanel").autolink();
+	
 	// Scroll down if messages fill up the div.
-	var objDiv = document.getElementById("chatwindow");
-	objDiv.scrollTop = objDiv.scrollHeight;
+	// var objDiv = document.getElementById("chatwindow");
+	// objDiv.scrollTop = objDiv.scrollHeight;
 
 	// Handle custom data (data other than messages).
 	// This is only called if a callback function has been specified.
@@ -49,7 +52,7 @@ function InitChatWindow(ChatMessagesUrl, ProcessResponseCallback){
 	- A callback function that handles any data in the JSON payload other than the basic messages.
 	  For example, it is used in the example below to handle changes to the room's description. */
 
-	$("#loading").remove(); // Remove the dummy 'loading' message.
+	$("#bcast_chatpanel .loading").remove(); // Remove the dummy 'loading' message.
 
 	// Push the calling args into global variables so that they can be accessed from any function.
 	url = ChatMessagesUrl;
@@ -63,7 +66,7 @@ function InitChatWindow(ChatMessagesUrl, ProcessResponseCallback){
 	callServer();
 
 	// Process messages input by the user & send them to the server.
-	$("form#chatform").submit(function(){
+	$("form#bcast_chatform").submit(function(){
 		// If user clicks to send a message on a empty message box, then don't do anything.
 		if($("#msg").val() == "") return false;
 
@@ -130,4 +133,24 @@ function InitChatDescription(){
 		return false;
 	});
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+jQuery.fn.autolink = function () {
+    return this.each( function(){
+        var re = /((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g;
+        $(this).html( $(this).html().replace(re, '<a href="$1">$1</a> ') );
+    });
 }
