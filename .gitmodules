@@ -1,0 +1,6 @@
+[submodule "src/dajax"]
+	path = src/dajax
+	url = git@github.com:anorg/django-dajax.git
+[submodule "src/dajaxice"]
+	path = src/dajaxice
+	url = git@github.com:anorg/django-dajaxice.git
