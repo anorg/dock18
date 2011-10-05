@@ -19,9 +19,19 @@
   font-family: $font-default
   +font-styles()
 
+@mixin font-nav()
+  font-size: $size-font-base * 0.8
+  +font-base()
+  line-height: normal
+
 @mixin font-heading()
   font-family: $font-heading
   +font-styles()
+
+@mixin font-subheading()
+  font-family:  $font-subheading
+  +font-styles()
+
 
 @mixin font-monospace()
   font-family: $font-monospace
@@ -35,6 +45,8 @@
   font-family: $font-pre
   +font-styles()
 
+@mixin font-link-default()
+  font-style: italic
 
 @mixin typography()
 
@@ -50,21 +62,29 @@
   blockquote
     color: #666666
     
-  h1, h2, h3, h4, h5, h6
+  h1, h2
     +font-heading()
+    margin: 0 0 ($default-space/2) 0
+    padding: 0
+    
+  h3, h4, h5, h6
+    +font-subheading()
+    margin: 0 
+    padding: 0
+  
     
   h1
-    font-size: $size-font-base * 4
+    font-size: $size-font-base * 3.4
   h2
-    font-size: $size-font-base * 3.2
+    font-size: $size-font-base * 2.8 
   h3
-    font-size: $size-font-base * 2.6
+    font-size: $size-font-base * 2.3
   h4
-    font-size: $size-font-base * 2.2
+    font-size: $size-font-base * 1.7
   h5
-    font-size: $size-font-base * 1.8
+    font-size: $size-font-base * 1.6
   h6
-    font-size: $size-font-base * 1.2
+    font-size: $size-font-base * 1.3
     
 
 

@@ -1,6 +1,6 @@
 {% load thumbnail %}
 <div class="extend event listing {{ event.type }} {{ event.state }} hover">
-	<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+	<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }}  /{{event.type }}</h4>
 	<h3><a href="{{ event.get_absolute_url }}" class="url_main"> 
 			<span class="title">{{ event.title }}</span>  
 		</a>
