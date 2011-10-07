@@ -3,7 +3,8 @@ from uni_form.helper import FormHelper
 from uni_form.layout import Layout, Div, ButtonHolder, Submit
 
 class ParticipateForm(forms.Form):   # or class MyForm(forms.ModelForm)
-    form_field_1 = forms.CharField()
+    form_field_1 = forms.CharField(label='Your name')
+    name = forms.CharField()
 
     def __init__(self, *arg, **kwargs):
         self.helper = FormHelper()
@@ -12,7 +13,7 @@ class ParticipateForm(forms.Form):   # or class MyForm(forms.ModelForm)
 
         self.helper.layout = Layout(
             Div(
-                'form_field_4',
+                'name',
                 'form_field_1',
             ),
             Div(

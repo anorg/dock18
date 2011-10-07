@@ -4,14 +4,10 @@ def wrap_text(instance, placeholder, rendered_content, original_context):
     '''
     # Plugins not in the main placeholder should remain unchanged
     # Plugins embedded in Text should remain unchanged in order not to break output
-    if placeholder.slot != 'template_1_content_a' or (instance._render_meta.text_enabled and instance.parent):
+    if (instance._render_meta.text_enabled and instance.parent):
         return rendered_content
     else:
         from django.template import Context, Template
-        
-        print 'INSTANCE'
-        print instance.plugin_type
-        print 'END INSTANCE'
         
         # For simplicity's sake, construct the template from a string:
         t = Template('<div class="' + str(instance.plugin_type).lower() + '_holder">{{ content|safe }}</div>')

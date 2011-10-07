@@ -19,7 +19,7 @@ COMPRESS_ENABLED = False
 PINAX_ROOT = os.path.abspath(os.path.dirname(pinax.__file__))
 PINAX_THEME = 'default'
 
-SERVE_MEDIA = False
+SERVE_MEDIA = True
 
 ADMINS = (
     ('anorg', 'network@anorg.net'),
@@ -91,7 +91,7 @@ MIDDLEWARE_CLASSES = (
     #'cms.middleware.media.PlaceholderMediaMiddleware',
     #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
-    'lib.prettify.PrettifyMiddleware', 
+    #'lib.prettify.PrettifyMiddleware', 
     
 #    'django.middleware.cache.FetchFromCacheMiddleware', #
 )
@@ -119,12 +119,41 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
-    ('example.html', 'Example Template'),
-    ('base.html', 'Base Template'),
-    ('layout/1col.html', '1 column inner'),
+    #('example.html', 'Example Template'),
+    #('base.html', 'Base Template'),
+    ('layout/1col.html', 'Base - One column & Menu'),
+    ('layout/2col.html', 'Base - One column & FlexBox'),
     #('layout/3col.html', '3 column inner'),
 
 )
+
+
+CMS_PLACEHOLDER_CONF = {
+    'template_1_content_a': {
+        #"plugins": ('TeaserPlugin', 'LinkPlugin'),
+        "extra_context": {"width":600},
+        'name':gettext("Main Content"),
+    },
+    'template_1_content_2': {
+        #"plugins": ('TeaserPlugin', 'LinkPlugin'),
+        "extra_context": {"width":300},
+        'name':gettext("FlexBox"),
+    },
+    'sidebar_pre': {
+        #"plugins": ('TeaserPlugin', 'LinkPlugin'),
+        "extra_context": {"width":280},
+        'name':gettext("Sidebar | Pre-Menu"),
+    },
+    'sidebar_post': {
+        #"plugins": ('TeaserPlugin', 'LinkPlugin'),
+        "extra_context": {"width":280},
+        'name':gettext("Sidebar | Post-Menu"),
+    },
+}
+
+
+
+
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
@@ -136,6 +165,18 @@ CMS_PLUGIN_PROCESSORS = (
 )
 
 CMS_SEO_FIELDS = True
+
+
+
+CMS_CACHE_DURATIONS = {
+    'menus': 1,
+    'content': 1,
+}
+
+
+
+
+
 
 ROOT_URLCONF = 'urls'
 
@@ -247,6 +288,9 @@ INSTALLED_APPS = (
     
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
     
     # asset and media handling
     'compressor',

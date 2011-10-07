@@ -91,20 +91,19 @@
 					<!-- content from pinax -->
 					{% block body_outer %}
 					    <div id="body">
-					        
 					        {% block body %}
 					        {% endblock %}
 					    </div>
 					{% endblock %}
+					
 				</div>
 				
 				<div class="base content cms">
 					
 					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
-					
-					{% placeholder body_content %}
 					{% block body_content%}
 					{% endblock %}
+					
 				</div>
 
 				
@@ -112,19 +111,34 @@
 			
 			
 			<!-- sidebar -->
-			<div id="sidebar" class="col left">
+			<div id="sidebar" class="col left sidebar">
+
+				<div id="sidebar_pre">
+				{% placeholder sidebar_pre %}
+				</div>
 				
+				<div id="eventlist_side">
+					{% block event_listing %}{% endblock %}
+				</div>				
+				
+				<!--
 				<div id="navigation_side">
 					<ul class="vertical">
 						{% show_menu_below_id 'events' 0 100 100 100 "bcast/menu_shows.html" %}
 					</ul>
 				</div>
+				-->
 				
 				{% if user.is_authenticated %}
 				<div id="invitation">
 					{% include 'element/invite.html' %}
 				</div>
 				{% endif %}
+				
+				
+				<div id="sidebar_post">
+				{% placeholder sidebar_post %}
+				</div>
 	
 			</div>
 		
@@ -151,9 +165,7 @@
 				{% include 'element/facebook.html' %}
 			</div>
 			-->
-			{% placeholder template_footer  or %}
 
-			{% endplaceholder %}
 
 		</div>
 		

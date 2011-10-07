@@ -2,17 +2,15 @@
 {% load cms_tags %}
 
 
-
 {% block body_content %}
 
-
-  
-  
-<div class="unit on-1 columns">
-    <div class="column">
         {% placeholder template_1_content_a %}
-    </div>
-</div>
-  
-  
+
+{% endblock %}
+
+
+{% block event_listing %}
+
+{% show_placeholder "template_1_content_a" "events" %}
+
 {% endblock %}

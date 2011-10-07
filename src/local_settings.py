@@ -2,7 +2,7 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dock18-dev',
+        'NAME': 'fresh',
         'USERNAME': 'root',
         'PASSWORD': 'root',
     },

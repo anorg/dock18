@@ -1,42 +1,47 @@
 {% load account_tags sekizai_tags %}
 
+
+
+
+{% addtoblock "js" %}
+<script src="{{ STATIC_URL }}js/lib/jquery.default.js" type="text/javascript" charset="utf-8"></script>
+{% endaddtoblock %}
+
 {% addtoblock "js" %}
 <script type="text/javascript">
 $(document).ready(function(){
-InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
+	InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
+	
+	$('#msg').DefaultValue('Type your message here..');
+
+	
 });
 </script>
 
 {% endaddtoblock %}
+
 <div class="expandable main window" id="bcast_chat">
 	
 	<div class="header">
-		<div class="left">
-			<h4>Chat</h4>
+		<div>
+			<h4>Worte zum Bild</h4>
 		</div>
-		<div class="right">
-			<ul class="action horizontal">
-				<!--
-				<li><a class="fullscreen" href="#"></a></li>
-				<li><a class="fullscreen_exit" href="#"></a></li>
-				-->
-			</ul>
-		</div>
-		<div class="clear"></div>
 	</div>
 	
 	
-	<div class="panel" >
+	<div class="panel chat" >
 		
 		{% if user.is_authenticated %}
 
 		{% load account_tags %}
 		{% user_display user as user_display %}
 		<div>
-			<form id="bcast_chatform">
+			<form id="bcast_chatform" class="submit_inside">
+				<!--
 				<label class="chat user" for="msg">{{ user_display }}:</label>
+				-->
 				<input class="chat msg" type="text" id="msg" />
-				<input class="chat btn" type="submit" value="Send" />
+				<input class="chat btn" type="submit" value="SEND" />
 				<br />
 				<div class="clear"></div>
 			</form>
@@ -46,12 +51,12 @@ InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
 		{% url acct_login as login_url %}
 		{% url acct_signup as signup_url %}
 		<div class="inline">
-			<span class="message login">Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</span>
+			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</p></div>
 		</div>
 		{% endif %}
 		
 
-		<div id="bcast_chatpanel">
+		<div id="bcast_chatpanel" class="chatmessages">
 			<span class="loading">+++</span>
 		</div>
 

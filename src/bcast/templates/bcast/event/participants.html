@@ -5,6 +5,7 @@
 <script type="text/javascript">
 $(document).ready(function() { 
 
+	/*
 	$("form#bcast_participants_form").ajaxForm({
 		type: 'POST',
 	    dataType: "json",
@@ -26,6 +27,7 @@ $(document).ready(function() {
 	    }
 	    
 	});
+	*/
 
 }); 
 
@@ -46,7 +48,10 @@ function send_form(){
 <div>
 	
 	<form method="post" class="uniForm">
-		{{ participants.form|as_uni_form }}
+		
+		{% csrf_token %}
+		{% uni_form participants.form  participants.form.helper %}
+		
 	</form>
 	
 </div>

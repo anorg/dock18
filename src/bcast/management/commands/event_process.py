@@ -101,7 +101,7 @@ class FileImporter(object):
         
         path = unicode(os.path.normpath(path))
         
-        key = '2011-09-25_event-now'
+        # key = '2011-09-25_event-now'
 
         
         if base_folder:

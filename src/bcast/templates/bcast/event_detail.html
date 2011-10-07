@@ -1,10 +1,10 @@
 {% load vardump comments thumbnail sekizai_tags phileo_tags %}
 <div class="plugin bcast event detail">
-	<div class="lead">
+	<div class="padded lead">
 		<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
 		<h3><span class="title">{{ event.title }}</span></a></h3>
 	</div>
-	<div class="info" >
+	<div class="padded info" >
 		{% if event.excerpt %}
 		<div class="left excerpt">
 			<p>
@@ -14,7 +14,7 @@
 		{% endif %} <div class="clear"></div>
 	</div>
 	
-	<div class="like">
+	<div class="padded like">
 		{% if request.user.is_authenticated %}
 		
 		{% addtoblock "js" %}
@@ -33,7 +33,7 @@
 	
 	<!-- some information for admin -->
 	{% if request.user.is_authenticated %}
-	<div class="admin notice">
+	<div class="admin padded  notice">
 		<h5>Stream setup:</h5>
 		<ul>
 			<li>
@@ -49,7 +49,7 @@
 			<li>
 				<span>date_start:</span><span>{{ event.date_start }}</span> | <span>date_end:</span><span>{{ event.date_end }}</span>
 			</li>
-			<li></li>
+			<li>&nbsp;</li>
 		</ul>
 	</div>
 	{% endif %}
@@ -98,10 +98,10 @@
 	{% include 'bcast/event/chat.html' %}
 	{% endif %}
 	
-	<!-- TODO: make dynamic -->
+	<!-- TODO: make dynamic 
 	{% if event.chat and event.room %}
 	{% include 'bcast/event/participants.html' %}
-	{% endif %}
+	{% endif %}-->
 
 	{% if event.folder %}
 	{% include 'bcast/event/filebrowser.html' %}

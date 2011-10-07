@@ -118,12 +118,14 @@ body
   
 
 div#content
+  padding-bottom: $default-space
   //+full()
   //+columns(9)
   > #base
     // width: 600px
   > #sidebar
     //  width: 200px
+    
   
   
   
@@ -195,26 +197,50 @@ h3, h4, h5, h6
     padding: ($default-space/2)
     margin: 0 0 ($default-space/2) 0
     
-    &.now
-      background-color: $color-base-focus
-      color: contrast-color($color-base-active)
+        
+    .picture
+      margin: 0 10px 0 0 
       
+      
+
+        
+    &.now
+      color: contrast-color($color-base-active)
+      background: $color-base-focus url('/static/img/base/badge/badge.now.yellow.png') top right no-repeat
       a
         color: $color-base-bg !important
+        
+    &.today
+      background: url('/static/img/base/badge/badge.today.cyan.png') top right no-repeat
+    &.future
+      background: url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
+        
+        
+// event list in sidebar
+#eventlist_side
+  .list.events // list container
+    font-size: $size-font-base *.8
+  .listing.event // listing event element
+    padding: $width-padding-base / 2
+    h3, h4
+      font-size: $size-font-base *1
+    .inner, .picture
+      display: none
+    span.event_type
+      font-size: $size-font-base *.8
+    
   
 .detail.event // event detail page
   background-color: $color-base-active
   color: $color-default
-  padding: 0 0 ($default-space/2) 0
+  // padding: 0 0 ($default-space/2) 0
+  padding: 0
   
-  > div
+  > div.padded
     padding: ($default-space/2) 0 0 ($default-space/2)
-  
-  .header 
-    padding: 0 0 ($default-space/2) 0
-  
-  #screen
-  margin: $default-space 0 0 0  
+
+  // .lead
+
   
   #bcast_chat
     background-color: $color-base-focus
@@ -222,10 +248,66 @@ h3, h4, h5, h6
   //für login   
   .message
     background-color: $color-base-interaction
+    +contrasted($color-base-interaction)
     padding: ($default-space/2)
-    margin: ($default-space/2) 0 ($default-space/2) 0
-      
+    margin: 0 0 ($default-space/2) 0
+
+
+
+
+     
+.expandable.main.window
+  // margin: $default-space 0 0 0
+  margin: 0
+  pading: 0
   
+  .header
+    display: none
+    text-align: right
+    // padding: 0 0 ($default-space/2) 0
+    padding: 0 8px 0 8px
+    +opacity(.5)
+    
+  .panel
+  
+    &.chat
+      padding: ($default-space/2)
+      max-height: 280px
+      overflow: auto
+  
+  
+  
+  
+  
+  
+  .panel .chatmessages
+    .row
+      margin: 8px 0 0 0
+      clear: both
+    
+      .timestamp
+        display: block
+        float: left
+        padding: 5px 10px 0 0
+        color: fuchsia
+        font-size: 70%
+      .user
+        display: block
+        float: left
+        width: 100px
+        overflow: hidden
+        color: yellow
+        padding: 0 10px 0 0
+        font-weight: bold
+      
+      .msg
+        display: block
+        float: left
+        width: 400px
+    
+    
+    
+    
   
 .plugin.bcast.detail
   #screen
@@ -236,26 +318,78 @@ h3, h4, h5, h6
     color: contrast-color($color-default)
   #files
     background-color: $color-default
-    color: contrast-color($color-default)
+    color: contrast-color($color-default) 
 
 //general plug-in style
-.textplugin_holder 
-  background-color: $color-base-active
-  color: $color-default
-  padding: ($default-space/2)
-  margin: ($default-space*2) 0 ($default-space/2) 0
-  font-family: $font-monospace
-  
-  p
-    padding: 0
-    
-  a
+
+// in main template
+.base.content 
+  .textplugin_holder 
+    background-color: $color-base-active
     color: $color-default
-    +font-link-default()
-  
-.textplugin_holder:first-child
-  margin: 0 0 ($default-space/2) 0
+    padding: ($default-space/2)
+    margin: ($default-space*2) 0 ($default-space/2) 0
+    font-family: $font-monospace
+    
+    p
+      padding: 0
+      
+    a
+      color: $color-default
+      +font-link-default()
+    
+    &:first-child
+      margin: 0 0 ($default-space/2) 0
+      
+      
+// in sidebar
+.sidebar 
+  .textplugin_holder 
+    background-color: transparent
+    color: $color-default
+    padding: 0 0 $default-space/2 0
+    margin: 0 0 $default-space 0
+    font-family: $font-monospace
+    // text-align: justify
+    
+    border-bottom: 4px solid $color-default
+    
+    p
+      padding: 0
+      
+    a
+      color: $color-default
+      +font-link-default()
+    
+    &:first-child
+      margin: 0 0 ($default-space/2) 0
   
 
   
 
+// form style
+
+form.submit_inside
+  background-color: $color-base-interaction
+  padding: 6px 6px 6px 10px
+  
+  
+  input.msg
+    width: 300px
+    border: none
+    background-color: inherit
+    font-size: 100%
+  input.btn
+    border: none
+    background-color: inherit
+    float: right
+    
+.expandable.main.window
+  form.submit_inside
+    width: 400px
+    
+
+// hack
+#invitation
+  background-color: cyan
+  padding: 10px

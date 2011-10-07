@@ -68,6 +68,7 @@ function InitChatWindow(ChatMessagesUrl, ProcessResponseCallback){
 	// Process messages input by the user & send them to the server.
 	$("form#bcast_chatform").submit(function(){
 		// If user clicks to send a message on a empty message box, then don't do anything.
+		if($("#msg").val() == "Type your message here..") return false;
 		if($("#msg").val() == "") return false;
 
 		// We don't want to post a call at the same time as the regular message update call,
