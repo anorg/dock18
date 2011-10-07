@@ -1184,11 +1184,10 @@ form.submit_inside input.btn {
 /* line 401, /Users/ohrstrom/Documents/Code/dock18_ch/src/static/sass/_base.sass */
 div#player_wrapper > div {
   width: 100%;
-  height: 400px;
-  padding: 269px 70px 0px 0;
+  padding: 269px 0 0px 0;
   text-align: right;
 }
-/* line 406, /Users/ohrstrom/Documents/Code/dock18_ch/src/static/sass/_base.sass */
+/* line 405, /Users/ohrstrom/Documents/Code/dock18_ch/src/static/sass/_base.sass */
 div#player_wrapper > div span {
   background-color: black;
   font-family: Arial;
