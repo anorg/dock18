@@ -1,1 +1,0 @@
-/tmp/static/swf/python-outfile.txt
