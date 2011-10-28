@@ -92,7 +92,7 @@ class Event(models.Model):
     published       = ActiveEventsManager()
     objects         = models.Manager()
 
-    room = models.ForeignKey(Room, blank=True, null=True)
+    room = models.ForeignKey(Room, blank=True, null=True, related_name='event_room', help_text=_('Automatically created on first save.'))
 
     # enable tagging
     tags = TaggableManager(blank=True)
@@ -187,6 +187,11 @@ class Event(models.Model):
             folder_shows, created = Folder.objects.get_or_create(name='Shows', owner_id=1)
             folder, created = Folder.objects.get_or_create(name=self.title, owner_id=1, parent_id=folder_shows.id)
             self.folder = folder 
+        
+        if not self.room:
+
+            room, created = Room.objects.get_or_create(name=self.title)
+            self.room = room 
             
         
         super(Event, self).save()
@@ -228,10 +233,17 @@ class EventListPlugin(CMSPlugin):
         ('xl', _('X-Large')),
     )
     
+    RANGE_CHOICES = (
+        ('all', _('All')),
+        ('past', _('Past')),
+        ('future', _('Future')),
+    )
+    
     # settings, exposed to admin site / plugin
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
+    range = models.CharField(max_length=10, default='all', choices=RANGE_CHOICES)
     limit = models.IntegerField(default=8)
 
     def __unicode__(self):
-        return self.size
+        return self.range
   

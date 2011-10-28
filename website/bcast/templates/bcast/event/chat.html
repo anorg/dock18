@@ -10,6 +10,7 @@
 {% addtoblock "js" %}
 <script type="text/javascript">
 $(document).ready(function(){
+
 	InitChatWindow("{% url jqchat_ajax event.room.id %}", null);
 	
 	$('#msg').DefaultValue('Type your message here..');
@@ -30,7 +31,8 @@ $(document).ready(function(){
 	
 	
 	<div class="panel chat" >
-		
+	
+		<div class="inner action">
 		{% if user.is_authenticated %}
 
 		{% load account_tags %}
@@ -54,11 +56,18 @@ $(document).ready(function(){
 			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</p></div>
 		</div>
 		{% endif %}
+		</div>
+		
+		<div class="inner display">
+			<div id="bcast_chatpanel" class="chatmessages">
+				<span class="loading">+++</span>
+			</div>
+		</div>
 		
 
-		<div id="bcast_chatpanel" class="chatmessages">
-			<span class="loading">+++</span>
-		</div>
+		
+
+
 
 	</div>
 	

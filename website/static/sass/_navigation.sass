@@ -1,7 +1,7 @@
 
-$toolbar-top: 10px
-$toolbar-bottom: 20px
-$toolbar-inner: 20px
+$toolbar-top: 3px
+$toolbar-bottom: 10px
+$toolbar-inner: 16px
 
 $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
 
@@ -11,7 +11,7 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
   
   height: $height-toolbar
   background: repeat-x
-  +background-image(image-url('/static/img/base/layout.toolbar.bg.png'))
+  +background-image(image-url('/static/img/base/layout.toolbar.bg_24.png'))
   
   
 //  +background-image(image-url('/static/img/base/dummy.menu.png'))
@@ -22,14 +22,13 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
     text-transform: uppercase
     ul > li
     
-      padding: $toolbar-top 20px $toolbar-bottom 20px
+      padding: 1px 20px $toolbar-bottom 20px
       line-height: $toolbar-inner
+      padding: $toolbar-top 4px $toolbar-bottom 4px
         
-      // border-left: 1px solid contrast-color($color-default)
+
       &:first-child
         border: none
-  
-      padding: 10px 4px 0px 4px
       
       a, span
         text-decoration: none

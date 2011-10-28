@@ -1,21 +1,39 @@
-{% load vardump comments thumbnail sekizai_tags phileo_tags %}
+{% load vardump comments thumbnail sekizai_tags phileo_tags in_group %}
 <div class="plugin bcast event detail">
-	<div class="padded lead">
-		<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
-		<h3><span class="title">{{ event.title }}</span></a></h3>
-	</div>
+
+<div class="expandable main window" id="bcast_lead">
+
+	<div class="panel lead">
+
+
+		<div class="action">
+			<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+		</div>
+		
+		<div class="display">
+			<h3><span class="title">{{ event.title }}</span></a></h3>
+		</div>
+	
+
+	
+	
+	
+	{% if event.excerpt %}
 	<div class="padded info" >
-		{% if event.excerpt %}
+		
 		<div class="left excerpt">
 			<p>
 				{{ event.excerpt }}
 			</p>
 		</div>
-		{% endif %} <div class="clear"></div>
+		<div class="clear"></div>
 	</div>
+	{% endif %}
+	
+	{% if request.user.is_authenticated %}
 	
 	<div class="padded like">
-		{% if request.user.is_authenticated %}
+		
 		
 		{% addtoblock "js" %}
 		
@@ -26,13 +44,20 @@
 		
 		{% endaddtoblock %}
 		
+		<!--
 		{% like_form request.user event "Like,Unlike" %}
-		{% endif %}
+		-->
+		
+		
 	</div>
+	{% endif %}
 	
 	
 	<!-- some information for admin -->
 	{% if request.user.is_authenticated %}
+	
+	{% if request.user|in_group:"Streamers" %}
+
 	<div class="admin padded  notice">
 		<h5>Stream setup:</h5>
 		<ul>
@@ -52,36 +77,59 @@
 			<li>&nbsp;</li>
 		</ul>
 	</div>
+	
 	{% endif %}
+	
+	{% endif %}
+	
+	</div>
+	</div>
 
-
+	{% addtoblock "js" %}
+	<script type="text/javascript">
+	
+		function countdown_done() {
+			location.reload();
+		}
+		function countdown_tick() {
+			$('#chat_f').html( $('#counter').html() );
+		}
+		
+		function countdown_reset(seconds) {
+			$('#counter').countdown({
+			until: +seconds,
+			onExpiry: countdown_done,
+			compact: true,
+			onTick: countdown_tick
+			});
+		}
+	
+	
+	</script>
+	{% endaddtoblock %}
+	
+	<div id="counter" style="display: none;"></div>
+	
 	<!-- loads the counter to be cloned into player window -->
 	{% if event.starts_in > 0 %}
 	
-	<div id="counter" style="display: none;"></div>
+	
 	
 	{% addtoblock "js" %}
 	<script type="text/javascript">
 
 		$(function() {
-		$('#counter').countdown({
-		until: +{{ event.starts_in }},
-		onExpiry: countdown_done,
-		compact: true,
-		onTick: countdown_tick
+			countdown_reset({{ event.starts_in }});
+			/*
+			$('#counter').countdown({
+			until: +{{ event.starts_in }},
+			onExpiry: countdown_done,
+			compact: true,
+			onTick: countdown_tick
+			});
+			*/
 		});
-		});
-		function countdown_done() {
 
-		// reload if countdown done
-		location.reload();
-		// $('#container_player').css('display', 'block');
-		// $('#stream_countdown').css('display', 'none');
-
-		}
-		function countdown_tick() {
-		$('#chat_f').html( $('#counter').html() );
-		}
 
 	</script>
 	{% endaddtoblock %}
@@ -98,9 +146,11 @@
 	{% include 'bcast/event/chat.html' %}
 	{% endif %}
 	
-	<!-- TODO: make dynamic -->
+
 	{% if event.chat and event.room %}
+	<!--
 	{% include 'bcast/event/participants.html' %}
+	-->
 	{% endif %}
 
 	{% if event.folder %}

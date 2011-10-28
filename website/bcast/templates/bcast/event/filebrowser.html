@@ -1,24 +1,71 @@
-{% load account_tags %}
-<!--
-<div class="expandable main window" id="participants">
+{% load account_tags sekizai_tags %}
+
+
+
+
+{% addtoblock "js" %}
+<script src="{{ STATIC_URL }}js/lib/fileuploader.js" type="text/javascript" charset="utf-8"></script>
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function(){
+
+var uploader = new qq.FileUploader({
+    // pass the dom node (ex. $(selector)[0] for jQuery users)
+    element: $('#file-uploader')[0],
+    // path to server-side upload script
+    action: '/server/upload'
+}); 
+
+	
+});
+</script>
+
+{% endaddtoblock %}
+
+<div class="expandable main window" id="bcast_filebrowser">
 	
 	<div class="header">
-		<div class="left">
-		<h4>Files</h4>
+		<div>
+			<h4>Worte zum Bild</h4>
 		</div>
-		<div class="right">
-			<ul class="action horizontal">
-
-			</ul>
-		</div>
-		<div class="clear"></div>
 	</div>
 	
-	<div class="container" id="container_participants">
-		
+	
+	<div class="panel filebrowser" >
+	
+		<div class="inner action">
+		{% if user.is_authenticated %}
 
+		{% load account_tags %}
+		{% user_display user as user_display %}
+		<div class="ext-form">
+			
+
+				<div id="file-uploader">
+				<span style="width: 80%">loading upload widget...</span>    
+    			<noscript>          
+        		<p>Please enable JavaScript to use file uploader.</p>
+        		<!-- or put a simple form for upload here -->
+    			</noscript>         
+				</div>
+				
+				<div class="clear"></div>
+
+		</div>
+		{% else %}
 		
-		<div id="participants_window" class="listing participants">
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
+		</div>
+		{% endif %}
+		</div>
+		
+		<div class="inner display">
+			<div id="bcast_filebrowserpanel" class="filebrowsermessages">
 			
 			<ul>
 			{% for file in folder.files %}
@@ -26,42 +73,20 @@
 			{% empty %}
 				<li>No files yet.</li>
 			{% endfor %}
-			
-
 			</ul>
+			
 
-		</div>
-		
-		
-		
-		
-		{% if user.is_authenticated %}
-		
-		{% load account_tags %}
-		{% user_display user as user_display %}
-		
-		<div id="chat_holder">
 			
-			<form id="participants_form">
-				
-				<input class="chat btn" type="submit" value="UPLOAD" /><br />
-				
-				<div class="clear"></div>
-				
-			</form>
-			
-		</div>
-		
-		{% else %}
-			{% url acct_login as login_url %}
-			{% url acct_signup as signup_url %}
-			<div class="inline">
-				<span class="message login">Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join the Chat.</span>
 			</div>
-		{% endif %}
+		</div>
 		
-	
-	</div>
 
+		
+
+
+
+	</div>
+	
+	
+	
 </div>
--->

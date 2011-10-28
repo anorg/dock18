@@ -60,9 +60,9 @@ base.ui.iface = function() {
 	
 	
 	// Prevent disabled / locked clicks
-	$('.action a').live('click', function(e) {
+	$('.action_ a').live('click', function(e) {
 		
-		console.log($(this).attr('href'));
+		// console.log($(this).attr('href'));
 		e.preventDefault();
 		return false;
 	});

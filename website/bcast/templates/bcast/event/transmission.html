@@ -4,6 +4,10 @@
 {% addtoblock "js" %}
 <script type="text/javascript">
 
+
+
+
+
 	var player_config = {
 		'flashplayer' 		: "{{ STATIC_URL }}swf/jwplayer-licensed-5.7.swf",
 		'controlbar' 		: { position: 'bottom'},
@@ -21,6 +25,18 @@
 		
         plugins				: { '{{ STATIC_URL }}js/base.plugin.js': { text: 'Hello world!' }}, 
         
+        
+        events				: { onError: function(event) {
+        
+        							if((event.message.indexOf("Stream not found") != -1)) {
+        								countdown_reset(60);
+        							}
+        
+ 									
+ 							  }},
+        
+        
+        
 		'playlist.size' 	: 0,
 		'playlist.position' :'none',
 		'playlistfile'		: '/bcast/playlist/{{ event.id }}/' + '?rnd=' + new Date().getTime(),
@@ -35,7 +51,7 @@
 	{% if event.state == 'now' %}
 	player_config['autostart'] = true;
 	player_config['repeat'] = 'always';
-	player_config['plugins'] = false;
+	// player_config['plugins'] = false;
 	player_config['logo.file'] = '/static/img/base/badge/badge.onair.cyan.png';
 	{% endif %}
 

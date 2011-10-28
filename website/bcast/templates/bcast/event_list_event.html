@@ -2,6 +2,7 @@
 <div class="extend event listing {{ event.type }} {{ event.state }} hover">
 
 	
+	<!--
 	{% if event.picture %}
 		<div class="left wrap">
 			<div class="left picture">
@@ -10,14 +11,32 @@
 			</div>
 		</div>
 	{% endif %}
-	
+	-->
 	
 	<div class="left wrap">
-		<h4 class="date">{{ event.date_start|date:"d. m. y" }} - {{ event.date_start|date:"H:i" }}  <span class="event_type">/{{event.type }}</span></h4>
+	
 		<h3><a href="{{ event.get_absolute_url }}" class="url_main"> 
 				<span class="title">{{ event.title }}</span>  
 			</a>
 		</h3>
+	
+		<h4 class="date">
+		 
+		
+		{% if event.state == 'today' %}
+			{{ event.date_start|date:"d. m. y" }} - {{ event.date_start|date:"H:i" }}
+		{% else %}{% if event.state == 'now' %}
+			{{ event.date_start|date:"H:i" }}
+		{% else %}
+			{{ event.date_start|date:"d. m. y" }}
+		{% endif %}{% endif %}
+		
+		
+		
+		
+		
+		<span class="event_type">/{{event.type }}</span></h4>
+
 	</div>
 	
 	<div class="clear"></div>

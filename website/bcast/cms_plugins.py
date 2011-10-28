@@ -5,6 +5,10 @@ from cms.models.pluginmodel import CMSPlugin
 
 from django.utils.translation import ugettext as _
 
+from django.db.models import Q
+
+from datetime import datetime
+
 # app specific imports
 from bcast.models import EventPlugin as EventPluginModel
 from bcast.models import EventListPlugin as EventListPluginModel
@@ -54,11 +58,20 @@ class EventListingPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
 
-        latest = Event.published.all()[:instance.limit]
+        # latest = Event.published.all()[:instance.limit]
+        
+        if instance.range == 'past':
+            # objects = Event.published.filter(date_start__lte=datetime.now())[:instance.limit]
+            objects = Event.published.filter(date_start__lte=datetime.now()).filter(date_end__lte=datetime.now())[:instance.limit]
+        
+        if instance.range == 'future':    
+            # objects = Event.published.filter(date_start__gte=datetime.now()).filter(date_start__gte=datetime.now())[:instance.limit]
+            objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).order_by('-date_end')[:instance.limit]
+
         
         context.update({
             'instance': instance,
-            'latest': latest,
+            'objects': objects,
             'placeholder': placeholder,
         })
         

@@ -35,6 +35,15 @@ $color-base-active: #ff0
 $color-base-focus: #0ff
 $color-base-interaction: #f00
 
+$color-base-notice: #ff9000
+
+$color-base-a: yellow
+$color-base-b: #0ff
+$color-base-c: #F0F
+$color-base-d: #F0F
+$color-base-e: #F0F
+
+
 // fonts --------------------------------------------------------------------
 $size-font-base: 14px
 $font-default: 'Verdana'
@@ -66,6 +75,10 @@ $width-full: $width-root - $width-gutter-left
 
 @import 'uniform/base'
 @import 'uniform/dock18'
+
+
+
+@import 'asif/qq-upload'
 
 
 
@@ -111,7 +124,7 @@ body
       width: $width-base
       margin: 0 $default-space 0 0
     #sidebar
-      width: $with-sidebar
+      width: $with-sidebar + 10px
   
   #footer
     margin: 0 0 0 $width-gutter-left
@@ -163,6 +176,7 @@ div#toolbar
 //header styles
 div#header
   margin: $default-space 0 ($default-space*2) 0
+  display: none
 
 
 //side-bar styles
@@ -195,7 +209,18 @@ h3, h4, h5, h6
     background-color: $color-default
     color: $color-base-fg
     padding: ($default-space/2)
-    margin: 0 0 ($default-space/2) 0
+    margin: 0 0 2px 0
+    
+    h3
+      float: left
+      display: inline
+    
+    h4
+      float: right
+      display: inline
+      font-size: 140%
+      padding-left: 40px
+      text-transform: uppercase
     
         
     .picture
@@ -211,7 +236,12 @@ h3, h4, h5, h6
         color: $color-base-bg !important
         
     &.today
+      color: $color-base-b
       background: $color-default url('/static/img/base/badge/badge.today.cyan.png') top right no-repeat
+      a
+        color: $color-base-b !important
+      
+      
     &.future
       background: $color-default url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
         
@@ -236,19 +266,18 @@ h3, h4, h5, h6
   // padding: 0 0 ($default-space/2) 0
   padding: 0
   
-  > div.padded
+  div.padded
     padding: ($default-space/2) 0 0 ($default-space/2)
 
   // .lead
 
   
-  #bcast_chat
-    background-color: $color-base-focus
+
     
   //für login   
   .message
-    background-color: $color-base-interaction
-    +contrasted($color-base-interaction)
+    // background-color: $color-base-notice
+    +contrasted($color-base-notice)
     padding: ($default-space/2)
     margin: 0 0 ($default-space/2) 0
 
@@ -270,10 +299,57 @@ h3, h4, h5, h6
     
   .panel
   
+    &.lead
+
+      background-color: adjust-lightness($color-base-a, 35)
+      
+      > .action
+        background-color: $color-base-a
+        padding: ($default-space/4) ($default-space/2)
+      
+      > .display
+        padding: ($default-space/4) ($default-space/2)
+        
+  
     &.chat
-      padding: ($default-space/2)
+      // padding: ($default-space/2)
+      padding: 0
       max-height: 280px
       overflow: auto
+      
+
+      background-color: adjust-lightness($color-base-b, 35)
+      
+      > .action
+        background-color: $color-base-b
+      
+      > .display
+        padding: ($default-space/2)
+        
+  
+    &.filebrowser
+      // padding: ($default-space/2)
+      padding: 0
+      max-height: 280px
+      overflow: auto
+      
+
+      background-color: adjust-lightness($color-base-c, 35)
+      
+      > .action
+        background-color: $color-base-c
+        
+        .ext-form
+          padding: ($default-space/4) ($default-space/2) 
+          // height: 30px
+        
+      
+      > .display
+        padding: ($default-space/2)
+        a 
+          color: black
+          text-decoration: none
+        
   
   
   
@@ -328,7 +404,11 @@ h3, h4, h5, h6
     background-color: $color-base-active
     color: $color-default
     padding: ($default-space/2)
-    margin: ($default-space*2) 0 ($default-space/2) 0
+    
+    // margin: ($default-space*2) 0 ($default-space/2) 0
+    
+    margin: 16px 0 2px 
+    
     font-family: $font-monospace
     
     p
@@ -347,8 +427,8 @@ h3, h4, h5, h6
   .textplugin_holder 
     background-color: transparent
     color: $color-default
-    padding: 0 0 $default-space/2 0
-    margin: 0 0 $default-space 0
+    padding: $default-space/2 0 2px 0
+    margin: 0 0 4px 0
     font-family: $font-monospace
     // text-align: justify
     
@@ -370,23 +450,35 @@ h3, h4, h5, h6
 // form style
 
 form.submit_inside
-  background-color: $color-base-interaction
+  // background-color: $color-base-interaction
   padding: 6px 6px 6px 10px
   
   
   input.msg
-    width: 300px
+    // width: 300px
     border: none
     background-color: inherit
     font-size: 100%
+    
+    border: 1px inset #ABABAB
+    padding: 2px
+    width: 84%
+    
+    
+    
   input.btn
     border: none
     background-color: inherit
     float: right
+    padding: 4px 16px 0 0
+    
+    background-image: url(/static/img/base/submit_16x16.png)
+    background-repeat: no-repeat
+    background-position: right 4px
     
 .expandable.main.window
   form.submit_inside
-    width: 400px
+    // width: 400px
     
 
 // hack
@@ -408,3 +500,40 @@ div#player_wrapper
       height: 66px
       font-size: 59px
       font-weight: bold
+      
+      
+      
+      
+      
+      
+      
+.base.content.pinax
+  background-color: $color-base-a
+  padding: $width-padding-base
+  color: black
+  a:link, a:visited
+    // background-color: black
+    // text-decoration: none
+    color: black
+    padding: 0 4px
+    
+  p
+    padding: 4px 0 8px
+    line-height: 150%
+    
+  .ctrlHolder
+    padding: 4px 0
+    border-bottom: none
+    margin: 0 0 10px 0
+    
+    
+  input[type=submit]
+    background-color: black
+    padding: 2px 0 2px 4px
+    text-align: left
+    text-transform: uppercase
+    color: white
+    width: 50%
+    border: none
+    &:hover
+      color: $color-base-a
