@@ -211,9 +211,9 @@ h3, h4, h5, h6
         color: $color-base-bg !important
         
     &.today
-      background: url('/static/img/base/badge/badge.today.cyan.png') top right no-repeat
+      background: $color-default url('/static/img/base/badge/badge.today.cyan.png') top right no-repeat
     &.future
-      background: url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
+      background: $color-default url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
         
         
 // event list in sidebar
@@ -303,7 +303,7 @@ h3, h4, h5, h6
       .msg
         display: block
         float: left
-        width: 400px
+        width: 360px
     
     
     
@@ -393,3 +393,18 @@ form.submit_inside
 #invitation
   background-color: cyan
   padding: 10px
+  
+
+
+// another hack...
+div#player_wrapper
+  > div
+    width: 100%
+    padding: 269px 0 0px 0
+    text-align: right
+    span
+      background-color: #000000
+      font-family: Arial
+      height: 66px
+      font-size: 59px
+      font-weight: bold

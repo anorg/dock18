@@ -74,7 +74,8 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
       line-height: $toolbar-inner
       
       > a 
-        color: $color-default
+        color: +contrasted($color-default)
+        background-color: $color-default
 
       // second level   
       >ul
@@ -89,6 +90,7 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
         +contrasted($color-base-active)
       > a
         color: $color-default
+        background-color: $color-base-active
         // font-weight: bold
     
     >li.selected

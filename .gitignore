@@ -5,3 +5,6 @@ src/apps/profiles/locale
 src/apps/profiles/locale
 src/static/CACHE
 src/media
+.DS_Store
+*.pyc
+.sass-cache*
