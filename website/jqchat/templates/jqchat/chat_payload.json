@@ -5,7 +5,7 @@
 {% if NewDescription %}	"description": {{ NewDescription }},{% endif %}
 	"messages": [
 {% for row in NewMessages %}{# The localtime filter is part of Django timezone and adjusts a datetime to the given timezone #}
-	{ "text": "<span class='timestamp' >{{ row.created|localtime:user_tz|date:TimeDisplayFormat }}</span> {{ row.text|safe }}"}{% if not forloop.last %},{% endif %}
+	{ "text": "<span class='timestamp' ><span class=\"time\">{{ row.get_time }}</span><span class=\"date\">{{ row.get_day }}</span></span> {{ row.text|safe }}"}{% if not forloop.last %},{% endif %}
 {% endfor %}
 	]
 {{ CustomPayload|default:""|safe }}

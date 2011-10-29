@@ -40,8 +40,9 @@ $color-base-notice: #ff9000
 $color-base-a: yellow
 $color-base-b: #0ff
 $color-base-c: #F0F
-$color-base-d: #F0F
+$color-base-d: #acff00 
 $color-base-e: #F0F
+
 
 
 // fonts --------------------------------------------------------------------
@@ -225,10 +226,20 @@ h3, h4, h5, h6
         
     .picture
       margin: 0 10px 0 0 
-      
-      
 
+
+    // activity
+    &.hover
+      cursor: pointer
+      background-color: $color-base-a !important
+      border-left: 10px solid black
+      padding: ($default-space/2) ($default-space/2) ($default-space/2) ($default-space/2 - 10px)
+      // color: black 
+      h3, h3 > a, h4, h4 > span
+        color: black !important
         
+
+    // event states 
     &.now
       color: contrast-color($color-base-active)
       background: $color-base-focus url('/static/img/base/badge/badge.now.yellow.png') top right no-repeat
@@ -244,7 +255,12 @@ h3, h4, h5, h6
       
     &.future
       background: $color-default url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
-        
+
+
+
+	
+
+   
         
 // event list in sidebar
 #eventlist_side
@@ -258,6 +274,14 @@ h3, h4, h5, h6
       display: none
     span.event_type
       font-size: $size-font-base *.8
+      
+    &.hover
+      cursor: pointer
+      background-color: $color-base-a !important
+      border-left: 4px solid black
+      padding-left: $width-padding-base / 2 - 4px
+      // color: black 
+      h3, h3 > a, h4, h4 > span
     
   
 .detail.event // event detail page
@@ -277,9 +301,13 @@ h3, h4, h5, h6
   //für login   
   .message
     // background-color: $color-base-notice
-    +contrasted($color-base-notice)
+    +contrasted(#333)
+    color: white
     padding: ($default-space/2)
     margin: 0 0 ($default-space/2) 0
+    
+    a
+      text-decoration: none
 
 
 
@@ -314,8 +342,6 @@ h3, h4, h5, h6
     &.chat
       // padding: ($default-space/2)
       padding: 0
-      max-height: 280px
-      overflow: auto
       
 
       background-color: adjust-lightness($color-base-b, 35)
@@ -324,7 +350,7 @@ h3, h4, h5, h6
         background-color: $color-base-b
       
       > .display
-        padding: ($default-space/2)
+        padding: 0
         
   
     &.filebrowser
@@ -355,10 +381,15 @@ h3, h4, h5, h6
   
   
   
-  
+  // TODO: move up! 
   .panel .chatmessages
+ 
+ 
+    max-height: 280px
+    overflow: auto
+  
     .row
-      margin: 8px 0 0 0
+      margin: 4px 0 4px 10px
       clear: both
     
       .timestamp
@@ -367,19 +398,35 @@ h3, h4, h5, h6
         padding: 5px 10px 0 0
         color: fuchsia
         font-size: 70%
+        
+        .date, .time
+          display: block
+          border-right: 1px solid fuchsia
+          padding: 0 4px 0 0
+          text-align: right
+        .time
+          display: block
+        
       .user
         display: block
         float: left
         width: 100px
         overflow: hidden
-        color: yellow
-        padding: 0 10px 0 0
+        color: #5a5a5a
+        padding: 7px 10px 0 0
         font-weight: bold
       
       .msg
         display: block
         float: left
         width: 360px
+        padding: 7px 0 0 0
+        overflow: hidden
+        
+        a
+          color: black !important
+          font-weight: bold
+          font-size: 80%
     
     
     
@@ -401,15 +448,21 @@ h3, h4, h5, h6
 // in main template
 .base.content 
   .textplugin_holder 
-    background-color: $color-base-active
+    
     color: $color-default
-    padding: ($default-space/2)
+    
     
     // margin: ($default-space*2) 0 ($default-space/2) 0
     
-    margin: 16px 0 2px 
+    margin: 2px 0 2px 
     
     font-family: $font-monospace
+    
+    padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
+    
+    &:first-child
+      background-color: $color-base-a
+      padding: ($default-space/2)
     
     p
       padding: 0
@@ -419,7 +472,7 @@ h3, h4, h5, h6
       +font-link-default()
     
     &:first-child
-      margin: 0 0 ($default-space/2) 0
+      margin: 0 0 2px 0
       
       
 // in sidebar
@@ -442,7 +495,7 @@ h3, h4, h5, h6
       +font-link-default()
     
     &:first-child
-      margin: 0 0 ($default-space/2) 0
+      margin: 0 0 2px 0
   
 
   
@@ -481,11 +534,53 @@ form.submit_inside
     // width: 400px
     
 
-// hack
+// hacks
 #invitation
-  background-color: cyan
+  background-color: $color-base-d
+  background-color: $color-base-b
   padding: 10px
   
+  ul.errorlist
+    li
+      font-size: 80%
+  
+  div.display
+    .small
+      font-size: 80%
+  
+  div input
+    border: none
+    height: 18px
+    background-color: adjust-lightness($color-base-b, 35)
+  
+  div.input
+    margin: 10px 0 0 0
+    width: $with-sidebar - (2 * 10px) - 30px
+    
+  div.action
+    margin: 10px 0 0 0
+    width: 30px
+    input
+      height: 20px
+      
+      
+.window .action
+  .social
+    
+    ul 
+      > li
+        overflow: hidden
+        &.facebook
+          width: 110px
+          padding: 6px 0 0 0
+        &.google
+          padding: 6px 0 0 0
+          width: 62px
+    
+
+
+
+    
 
 
 // another hack...
@@ -504,7 +599,19 @@ div#player_wrapper
       
       
       
+.base.content.cms
+  ul#messages
+    li
+      padding: $width-padding-base
       
+      background-color: #CCFF63
+      font-weight: bold
+      
+      a > small
+        display: none
+      
+      &.success
+        
       
       
 .base.content.pinax

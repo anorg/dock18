@@ -386,6 +386,15 @@ FACEBOOK_APP_SECRET = "423e6cee277a1536df4f3ee7195fdfbc"
 FACEBOOK_SCOPE = 'email,publish_stream'
 
 
+JQCHAT_DATE_FORMAT={
+    "date_groups": "F Y",
+    "not_this_year": "jS F Y",
+    "not_this_month": "jS F",    
+    "this_month": "jS",  
+    "test": "F Y hh:mm:ss",
+}
+
+
 # hm - how to handle multiple...
 # AUTH_PROFILE_MODULE = 'facebook.FacebookProfile'
 

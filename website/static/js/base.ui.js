@@ -46,7 +46,7 @@ base.ui.player.setup = function() {
  */
 base.ui.iface = function() {
 	
-	window.setInterval(base.ui.interval, 50000);
+	window.setInterval(base.ui.interval, 5000);
 	// base.ui.interval();
 	
 	// $('#player_base.plugin').html('asdasda');

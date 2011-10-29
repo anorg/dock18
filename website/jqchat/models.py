@@ -6,8 +6,12 @@ from django.contrib.contenttypes import generic
 from django.utils.safestring import mark_safe
 from django.conf import settings
 
+from django.contrib.humanize.templatetags.humanize import naturalday
+
 import datetime
 import time
+
+from time import gmtime, strftime
 
 class Room(models.Model):
     """Conversations can take place in one of many rooms.
@@ -157,6 +161,24 @@ class Message(models.Model):
 
     class Meta:
         ordering = ['unix_timestamp']
+        
+    def get_day(self, **kw):
+        
+        date_format = "F Y"
+        date = self.created
+        
+        datestring = naturalday(date, date_format)
+        
+        return datestring and datestring[0].upper() + datestring[1:]
+        
+    def get_time(self, **kw):
+        
+        time_format = "hh:mm:ss"
+        time = self.created
+        
+        timestring = time.strftime("%H:%M:%S")
+        
+        return timestring
 
     objects = messageManager()
 

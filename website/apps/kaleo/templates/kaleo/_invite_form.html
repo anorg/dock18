@@ -3,16 +3,16 @@
 <div id="invitation-form-messages"></div>
 <div class="invitation_form">
     {% if user.invitationstat.can_send %}
-        <form action="{% url kaleo_invite %}" method="POST" accept-charset="utf-8">
+        <form action="{% url kaleo_invite %}" method="POST" accept-charset="utf-8" class="">
             {% csrf_token %}
             
             <div>
             
-	            <div class="left">
+	            <div class="left input">
 	            	{{ form|as_uni_form }}
 	            </div>
-	            <div class="right">
-	            	<input type="submit" value="Invite">
+	            <div class="left action">
+	            	<input type="submit" value="GO">
 	            </div>
 	            
 	            <div class="clear"></div>

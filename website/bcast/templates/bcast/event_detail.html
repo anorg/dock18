@@ -7,7 +7,13 @@
 
 
 		<div class="action">
-			<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} - {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+		    <div class="left">
+				<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} * {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+			</div>
+		    <div class="right social">
+				{% include 'element/social.html' %}
+			</div>
+		    <div class="clear"></div>
 		</div>
 		
 		<div class="display">
