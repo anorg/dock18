@@ -69,7 +69,18 @@ var uploader = new qq.FileUploader({
 			
 			<ul>
 			{% for file in folder.files %}
-				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size }}]</a></li>
+				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>
+			{% empty %}
+				<li>No files yet.</li>
+			{% endfor %}
+			</ul>
+			
+			
+			
+			<p><span style="font-weight: bold; padding: 10px 0 5px">Recorded stream</span></p>
+			<ul>
+			{% for file in folder_recordings.files %}
+				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>
 			{% empty %}
 				<li>No files yet.</li>
 			{% endfor %}

@@ -49,12 +49,13 @@
 			<title>{% firstof file.name file %}</title>
 			<description>{% firstof file.description event.excerpt|escape %}</description>
 			
-			<enclosure url="{{ file.url }}" type="video/flv" length="{{ file.size }}" />
-			
 			<!--
-			<enclosure url="flv:2011-09-15_xyz_3.flv" type="video/flv" length="{{ file.size }}" />
-			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded</jwplayer:streamer>
+			<enclosure url="{{ file.url }}" type="video/flv" length="{{ file.size }}" />
 			-->
+			<!-- -->
+			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
+			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded/</jwplayer:streamer>
+			
 	    </item>
 		{% endfor %}
 	

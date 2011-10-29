@@ -3,6 +3,9 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 
+from filer.models.filemodels import *
+from filer.models.foldermodels import *
+
 from django.utils.translation import ugettext as _
 
 from django.db.models import Q
@@ -31,14 +34,15 @@ class EventPlugin(CMSPluginBase):
         participants = instance.event.participants.all()
         participants.form = ParticipateForm
         
-
-        
         folder = instance.event.folder
+        # folder_recordings, created = Folder.objects.get_or_create(name='recorded', parent=folder)
+        folder_recordings = instance.event.get_folder('recorded')
    
         context.update({
             'event':instance.event,
             'participants':participants,
             'folder':folder,
+            'folder_recordings':folder_recordings,
             'object':instance,
             'placeholder':placeholder
         })

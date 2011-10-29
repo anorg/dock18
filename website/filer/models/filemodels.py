@@ -12,6 +12,8 @@ from polymorphic import PolymorphicModel, PolymorphicManager
 import hashlib
 import os
 
+from os.path import basename
+
 
 class FileManager(PolymorphicManager):
     def find_all_duplicates(self):
@@ -221,6 +223,13 @@ class File(PolymorphicModel, mixins.IconsMixin):
     def path(self):
         try:
             return self.file.path
+        except:
+            return ""
+
+    @property
+    def filename(self):
+        try:
+            return basename(self.file.path)
         except:
             return ""
 
