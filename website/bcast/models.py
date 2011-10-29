@@ -78,7 +78,7 @@ class Event(models.Model):
     
     Season = models.ForeignKey(Season)
     
-    folder = models.ForeignKey(Folder, blank=True, null=True, related_name='event_folder')
+    folder = models.ForeignKey(Folder, blank=True, null=True, related_name='event_folder', help_text=_('Don\'t change manually until you _know_ what you are doing!!!'))
     
     
     #picture = models.ImageField(upload_to='pictures', blank=True, default=False)
