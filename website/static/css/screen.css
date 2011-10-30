@@ -334,17 +334,17 @@ body h3 .oblique, body h4 .oblique, body h5 .oblique, body h6 .oblique { font-st
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000313}}
 body h3 .bold, body h4 .bold, body h5 .bold, body h6 .bold { font-weight: bold; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000376}}
-body h1 { font-size: 47.6px; }
+body h1 { font-size: 36.4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000378}}
-body h2 { font-size: 39.2px; }
+body h2 { font-size: 30.8px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000380}}
-body h3 { font-size: 32.2px; }
+body h3 { font-size: 28px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000382}}
-body h4 { font-size: 23.8px; }
+body h4 { font-size: 21px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000384}}
-body h5 { font-size: 22.4px; }
+body h5 { font-size: 19.6px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000386}}
-body h6 { font-size: 18.2px; }
+body h6 { font-size: 16.8px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000392}}
 body .superscript { font-size: 50%; vertical-align: super; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000395}}
