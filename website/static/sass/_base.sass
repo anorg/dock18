@@ -205,12 +205,15 @@ h3, h4, h5, h6
 .base .plugin
 
   .list.events // list container
-    font-family: $font-monospace
+    // font-family: $font-monospace    
+    font-family: $font-default
+    p 
+      line-height: 140%
   
   .listing.event // listing event element
     background-color: $color-default
     color: $color-base-fg
-    padding: 2px 4px
+    padding: 4px 4px 4px 10px
     margin: 0 0 2px 0
     
     h3
@@ -233,8 +236,7 @@ h3, h4, h5, h6
     &.hover
       cursor: pointer
       background-color: $color-base-a !important
-      border-left: 10px solid black
-      padding: ($default-space/2) ($default-space/2) ($default-space/2) ($default-space/2 - 10px)
+
       // color: black 
       h3, h3 > a, h4, h4 > span
         color: black !important
@@ -501,7 +503,10 @@ h3, h4, h5, h6
     
     margin: 2px 0 2px 
     
-    font-family: $font-monospace
+    // font-family: $font-monospace
+    font-family: $font-default
+    p 
+      line-height: 140%
     
     padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
     
@@ -527,7 +532,9 @@ h3, h4, h5, h6
     color: $color-default
     padding: $default-space/2 0 2px 0
     margin: 0 0 4px 0
-    font-family: $font-monospace
+    font-family: $font-default
+    p
+      line-height: 140%
     // text-align: justify
     
     border-bottom: 4px solid $color-default
@@ -641,7 +648,9 @@ div#player_wrapper
       font-size: 59px
       font-weight: bold
       
-      
+.horizontal.tags
+  li.tag
+    font-size: 100%      
       
       
 .base.content.cms
