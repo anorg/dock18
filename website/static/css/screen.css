@@ -302,7 +302,7 @@ body #footer { margin: 0 0 0 80px; }
 div#content { padding-bottom: 30px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003149}}
-body { font-size: 14px; font-family: "Verdana"; line-height: normal; }
+body { font-size: 12px; font-family: "Lucida Console"; line-height: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\000037}}
 body .normal { font-style: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\000039}}
@@ -334,17 +334,17 @@ body h3 .oblique, body h4 .oblique, body h5 .oblique, body h6 .oblique { font-st
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000313}}
 body h3 .bold, body h4 .bold, body h5 .bold, body h6 .bold { font-weight: bold; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000376}}
-body h1 { font-size: 36.4px; }
+body h1 { font-size: 31.2px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000378}}
-body h2 { font-size: 30.8px; }
+body h2 { font-size: 26.4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000380}}
-body h3 { font-size: 28px; }
+body h3 { font-size: 24px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000382}}
-body h4 { font-size: 21px; }
+body h4 { font-size: 18px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000384}}
-body h5 { font-size: 19.6px; }
+body h5 { font-size: 16.8px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000386}}
-body h6 { font-size: 16.8px; }
+body h6 { font-size: 14.4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000392}}
 body .superscript { font-size: 50%; vertical-align: super; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\0000395}}
@@ -365,7 +365,7 @@ a:link { color: yellow; }
 a:hover { background-color: yellow; color: black; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003169}}
-div#toolbar { font-size: 11.2px; font-family: "Verdana"; line-height: normal; }
+div#toolbar { font-size: 9.6px; font-family: "Lucida Console"; line-height: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\000037}}
 div#toolbar .normal { font-style: normal; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_typography\.sass}line{font-family:\000039}}
@@ -387,7 +387,7 @@ div#sidebar { margin: 0; }
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decoration: none; color: white !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003207}}
-.base .plugin .list.events { font-family: "Verdana"; }
+.base .plugin .list.events { font-family: "Lucida Console"; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003210}}
 .base .plugin .list.events p { line-height: 140%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003213}}
@@ -414,15 +414,15 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 .base .plugin .listing.event.future { background: black url("/static/img/base/badge/badge.week.yellow.png") top right no-repeat; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003270}}
-#eventlist_side .list.events { font-size: 11.2px; }
+#eventlist_side .list.events { font-size: 9.6px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003272}}
 #eventlist_side .listing.event { padding: 5px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003274}}
-#eventlist_side .listing.event h3, #eventlist_side .listing.event h4 { font-size: 14px; }
+#eventlist_side .listing.event h3, #eventlist_side .listing.event h4 { font-size: 12px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003276}}
 #eventlist_side .listing.event .inner, #eventlist_side .listing.event .picture { display: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003278}}
-#eventlist_side .listing.event span.event_type { font-size: 11.2px; }
+#eventlist_side .listing.event span.event_type { font-size: 9.6px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003281}}
 #eventlist_side .listing.event.hover { cursor: pointer; background-color: yellow !important; border-left: 4px solid black; padding-left: 1px; }
 
@@ -504,7 +504,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 .plugin.bcast.detail #files { background-color: black; color: white; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003497}}
-.base.content .textplugin_holder { color: black; margin: 2px 0 2px; font-family: "Verdana"; padding: 15px 0 15px 2px; }
+.base.content .textplugin_holder { color: black; margin: 2px 0 2px; font-family: "Lucida Console"; padding: 15px 0 15px 2px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003508}}
 .base.content .textplugin_holder p { line-height: 140%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003513}}
@@ -517,7 +517,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 .base.content .textplugin_holder:first-child { margin: 0 0 2px 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003530}}
-.sidebar .textplugin_holder { background-color: transparent; color: black; padding: 15px 0 2px 0; margin: 0 0 4px 0; font-family: "Verdana"; border-bottom: 4px solid black; }
+.sidebar .textplugin_holder { background-color: transparent; color: black; padding: 15px 0 2px 0; margin: 0 0 4px 0; font-family: "Lucida Console"; border-bottom: 4px solid black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003536}}
 .sidebar .textplugin_holder p { line-height: 140%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003542}}

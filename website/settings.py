@@ -175,7 +175,7 @@ CMS_CACHE_DURATIONS = {
 }
 
 
-
+CMS_FLAT_URLS = True
 
 
 
