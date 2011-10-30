@@ -393,7 +393,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003214}}
 .base .plugin .listing.event { background-color: black; color: white; padding: 4px 4px 4px 15px; margin: 0 0 2px 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003221}}
-.base .plugin .listing.event.now, .base .plugin .listing.event.today, .base .plugin .listing.event.future { padding: 15px; }
+.base .plugin .listing.event.now, .base .plugin .listing.event.today, .base .plugin .listing.event.future { padding: 22px 15px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003224}}
 .base .plugin .listing.event h3 { float: left; display: inline; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003228}}
