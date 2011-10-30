@@ -1,0 +1,88 @@
+{% load account_tags sekizai_tags spectators_tags %}
+
+
+
+	{% if request.user.is_authenticated %}
+	{% addtoblock "js" %}
+	<script type="text/javascript">
+		{% spectates_js request.user event %}
+	</script>
+	{% endaddtoblock %}
+	{% endif %}
+	
+	<!-- spectators / participants whatever -->
+	{% addtoblock "css" %}
+		{% spectates_css %}
+	{% endaddtoblock %}
+	
+
+
+
+
+
+
+
+
+<div class="expandable main window" id="bcast_spectator">
+	
+	<div class="header">
+		<div>
+			<h4>Die Gäste</h4>
+		</div>
+	</div>
+	
+	
+	<div class="panel spectator" >
+	
+		<div class="inner action">
+		{% if user.is_authenticated %}
+
+		{% load account_tags %}
+		{% user_display user as user_display %}
+		<div class="ext-form">
+			
+
+				<div class="spectators">
+					{% spectates_widget request.user event %}
+				</div>
+				
+				<div class="clear"></div>
+
+		</div>
+		{% else %}
+		
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
+		</div>
+		{% endif %}
+		</div>
+		
+		<div class="inner display">
+		
+			<div id="bcast_spectatorpanel" class="spectatormessages">
+			
+			
+
+			
+
+			
+
+
+			
+
+			
+			</div>
+		</div>
+		
+
+		
+
+
+
+	</div>
+	
+	
+	
+</div>

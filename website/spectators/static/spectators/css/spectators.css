@@ -1,0 +1,24 @@
+div.spectators {
+    float: right;
+    height: 24px;
+}
+a.spectators {
+    color: #AAA;
+    font-size: 30px;
+    text-decoration: none;
+    height: 24px;
+    float: left;
+}
+a.spectators:hover {
+    color: #7DE692;
+    text-decoration: none;
+}
+a.spectators-spectated {
+    color: #20A93B;
+    text-decoration: none;
+}
+span.spectators-count {
+    font-size: 20px;
+    font-weight: bold;
+    height: 24px;
+}

@@ -1,0 +1,23 @@
+<script type="text/javascript" src="{{ STATIC_URL }}spectators/js/ajax_csrf.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("{{ spectate_link }}")
+            .addClass("iconic")
+            .addClass("check")
+            .addClass("spectators")
+            .addClass("{{ is_spectated }}");
+        $("{{ spectate_link }}").click(function() {
+            $.ajax({
+                url: "{{ spectate_url }}",
+                type: "POST",
+                data: {},
+                statusCode: {
+                    200: function(data, textStatus, jqXHR) {
+                        $("{{ spectate_span_total }}").text(data.spectates_count);
+                        $("{{ spectate_link }}").toggleClass("{{ toggle_class }}");
+                    }
+                }
+            });
+        });
+    });
+</script>

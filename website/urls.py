@@ -58,6 +58,7 @@ urlpatterns = patterns('',
     
     
     url(r"^likes/", include("phileo.urls")),
+    url(r"^spectate/", include("spectators.urls")),
     
     # apps
     (r'^jqchat/', include('jqchat.urls')),

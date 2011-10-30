@@ -250,6 +250,9 @@ INSTALLED_APPS = (
     'idios',
     'phileo',
     
+    # spectacors aka participants, guests, etc
+    'spectators',
+    
     'analytics',
     
     # auth addon

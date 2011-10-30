@@ -291,7 +291,7 @@ h3, h4, h5, h6
   padding: 0
   
   div.padded
-    padding: ($default-space/2) 0 0 ($default-space/2)
+    padding: ($default-space/2) 0 ($default-space/2) ($default-space/2)
 
   // .lead
 
@@ -364,6 +364,50 @@ h3, h4, h5, h6
       
       > .action
         background-color: $color-base-c
+        
+        .ext-form
+          padding: ($default-space/4) ($default-space/2) 
+          // height: 30px
+        
+      
+      > .display
+        padding: ($default-space/2)
+        a 
+          color: black
+          text-decoration: none
+        
+  
+    &.spectator
+      // padding: ($default-space/2)
+      padding: 0
+      max-height: 280px
+      overflow: auto
+      
+
+      background-color: adjust-lightness($color-base-d, 35)
+      
+      a#spectates
+        color: black
+        
+        span
+          background-image: url(/static/img/base/hack.check_p.png)
+          background-position: 0 1px
+          background-repeat: no-repeat
+          padding: 0 0 0 24px
+        
+        
+        // border: 1px solid black
+        padding: 3px
+        
+        
+        &.spectators-spectated
+          // color: #ff00ff
+          font-weight: bold
+          span
+            background-image: url(/static/img/base/hack.check_a.png)
+      
+      > .action
+        background-color: $color-base-d
         
         .ext-form
           padding: ($default-space/4) ($default-space/2) 

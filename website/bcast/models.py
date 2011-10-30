@@ -68,10 +68,13 @@ class Event(models.Model):
     chat = models.BooleanField('chat', default=True, help_text=_('Include the chat window?'))
     filebrowser = models.BooleanField('filebrowser', default=True, help_text=_('Include the filebrowser window?'))
     
-    key = models.CharField(max_length=50)
+    show_spectators = models.BooleanField('show_spectators', default=True, help_text=_('Include the paricipants window?'))
+    
+    key = models.CharField(max_length=50, help_text=_('Automatically created on first save. Not possible to change afterwards - so use a smart name from the beginning...'))
     TYPE_CHOICES = (
         ('show', _('Show')),
         ('workshop', _('Workshop')),
+        ('concert', _('Concert')),
         ('other', _('Other')),
     )
     type = models.CharField(max_length=24, default='show', choices=TYPE_CHOICES)
@@ -180,7 +183,9 @@ class Event(models.Model):
         
         
     def save(self):
-        self.key = self.generate_key()
+        
+        if not self.key:
+            self.key = self.generate_key()
         
         if not self.folder:
 
@@ -234,14 +239,14 @@ class EventListPlugin(CMSPlugin):
     )
     
     RANGE_CHOICES = (
-        ('all', _('All')),
+        #('all', _('All')),
         ('past', _('Past')),
         ('future', _('Future')),
     )
     
     # settings, exposed to admin site / plugin
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
-    range = models.CharField(max_length=10, default='all', choices=RANGE_CHOICES)
+    range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
     limit = models.IntegerField(default=8)
 
     def __unicode__(self):

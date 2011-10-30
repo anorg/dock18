@@ -1,4 +1,4 @@
-{% load vardump comments thumbnail sekizai_tags phileo_tags in_group %}
+{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group %}
 <div class="plugin bcast event detail">
 
 <div class="expandable main window" id="bcast_lead">
@@ -37,7 +37,6 @@
 	{% endif %}
 	
 	{% if request.user.is_authenticated %}
-	
 	<div class="padded like">
 		
 		
@@ -59,6 +58,9 @@
 	{% endif %}
 	
 	
+		
+
+	
 	<!-- some information for admin -->
 	{% if request.user.is_authenticated %}
 	
@@ -74,11 +76,7 @@
 				<span>Stream:</span><span>{{ event.key }}</span>
 			</li>
 			<li>
-				<span>starts_in:</span><span>{{ event.starts_in }}</span> | <span>ends_in:</span><span>{{ event.ends_in }}</span>
-			</li>
-			<li></li>
-			<li>
-				<span>date_start:</span><span>{{ event.date_start }}</span> | <span>date_end:</span><span>{{ event.date_end }}</span>
+				<span>start:</span><span>{{ event.date_start|date:"Y/m/d H:i" }}</span> | <span>end:</span><span>{{ event.date_end|date:"Y/m/d H:i" }}</span>
 			</li>
 			<li>&nbsp;</li>
 		</ul>
@@ -151,16 +149,13 @@
 	{% if event.chat and event.room %}
 	{% include 'bcast/event/chat.html' %}
 	{% endif %}
-	
-
-	{% if event.chat and event.room %}
-	<!--
-	{% include 'bcast/event/participants.html' %}
-	-->
-	{% endif %}
 
 	{% if event.folder %}
 	{% include 'bcast/event/filebrowser.html' %}
+	{% endif %}
+
+	{% if event.show_spectators %}
+	{% include 'bcast/event/spectators.html' %}
 	{% endif %}
 	
 </div>
