@@ -94,6 +94,7 @@ MIDDLEWARE_CLASSES = (
     #'lib.prettify.PrettifyMiddleware', 
     
 #    'django.middleware.cache.FetchFromCacheMiddleware', #
+    'cms.middleware.toolbar.ToolbarMiddleware',
 )
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'

@@ -360,7 +360,7 @@ a:hover { color: yellow; }
 a:active { color: yellow; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003161}}
-a:link { color: yellow; background: inherit; }
+a:link { color: yellow; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003164}}
 a:hover { background-color: yellow; color: black; }
 
