@@ -78,7 +78,7 @@ ul.horizontal > li.last { padding-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000366}}
 #navigation > ul a:hover a, #navigation > ul > li:hover a, #navigation_top > ul a:hover a, #navigation_top > ul > li:hover a { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000370}}
-#navigation > ul > li, #navigation_top > ul > li { margin: 0 0 10px 0; padding: 3px 20px 10px 20px; line-height: 16px; }
+#navigation > ul > li, #navigation_top > ul > li { margin: 0 0 10px 0; padding: 3px 5px 10px 5px; line-height: 16px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000375}}
 #navigation > ul > li > a, #navigation_top > ul > li > a { color: +contrasted(black); background-color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000380}}
