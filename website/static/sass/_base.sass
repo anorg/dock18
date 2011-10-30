@@ -193,6 +193,7 @@ div#sidebar
 h1, h2, h3, h4, h5, h6
   // +font-heading()
   > a
+
     font-style: italic
     text-decoration: none
     color: $color-base-fg !important
@@ -213,8 +214,12 @@ h3, h4, h5, h6
   .listing.event // listing event element
     background-color: $color-default
     color: $color-base-fg
-    padding: 4px 4px 4px 10px
+    padding: 4px 4px 4px 15px
     margin: 0 0 2px 0
+      
+    
+    &.now, &.today, &.future
+      padding: 15px
     
     h3
       float: left
