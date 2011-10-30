@@ -58,9 +58,13 @@ var uploader = new qq.FileUploader({
 		
 		{% url acct_login as login_url %}
 		{% url acct_signup as signup_url %}
+		
+		<!--
 		<div class="inline">
 			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
 		</div>
+		-->
+		
 		{% endif %}
 		</div>
 		

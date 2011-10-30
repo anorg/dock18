@@ -52,26 +52,7 @@
 	</div>
 	{% endif %}
 	
-	{% if request.user.is_authenticated %}
-	<div class="padded like">
-		
-		
-		{% addtoblock "js" %}
-		
-		<script type="text/javascript">
-		
-		{% likes_ajax %}
-		</script>
-		
-		{% endaddtoblock %}
-		
-		<!--
-		{% like_form request.user event "Like,Unlike" %}
-		-->
-		
-		
-	</div>
-	{% endif %}
+
 	
 	
 		
