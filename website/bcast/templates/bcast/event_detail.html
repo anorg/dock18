@@ -3,6 +3,15 @@
 
 <div class="expandable main window" id="bcast_lead">
 
+
+
+
+
+	{% if event.show_spectators %}
+	{% include 'bcast/event/spectators.html' %}
+	{% endif %}
+
+
 	<div class="panel lead">
 
 
@@ -149,10 +158,6 @@
 
 	{% if event.folder %}
 	{% include 'bcast/event/filebrowser.html' %}
-	{% endif %}
-
-	{% if event.show_spectators %}
-	{% include 'bcast/event/spectators.html' %}
 	{% endif %}
 	
 </div>

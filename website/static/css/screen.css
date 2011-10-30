@@ -574,7 +574,7 @@ div#player_wrapper > div span { background-color: black; font-family: Arial; hei
 .base.content.cms ul#messages li a > small { display: none; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003679}}
-.base.content.pinax { background-color: yellow; padding: 10px; color: black; }
+.base.content.pinax { background-color: yellow; color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003683}}
 .base.content.pinax a:link, .base.content.pinax a:visited { color: black; padding: 0 4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003689}}
