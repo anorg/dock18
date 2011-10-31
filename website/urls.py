@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     (r'^%s/' % settings.DAJAXICE_MEDIA_PREFIX, include('dajaxice.urls')),
     
     
-    (r'^crossdomain.xml/$',
+    (r'^crossdomain.xml$',
         'flashpolicies.views.simple',
         {'domains': ['*']}),
     
