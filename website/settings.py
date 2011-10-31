@@ -383,7 +383,7 @@ DEBUG_TOOLBAR_CONFIG = {
 
 CONTACT_EMAIL = 'root@dock18.ch'
 
-
+APPEND_SLASH = True
 
 # facebook oauth settings
 FACEBOOK_APP_ID = "173374022743087"
