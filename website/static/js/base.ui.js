@@ -22,6 +22,12 @@ base.vars.section = 'none';
 base.ui = function() {
 };
 
+base.log = function(message) {
+	if (window.console) {
+		console.log('[base] ' + message)
+	}
+}
+
 base.ui.use_effects = true;
 
 /* AJAX Indicator */
@@ -36,8 +42,20 @@ base.ui.loading = function() {
 };
 
 
-base.ui.player = function() {};
-base.ui.player.setup = function() {
+base.player = function() {};
+base.player.init = function() {
+	
+	base.log('player init');
+	
+	this.track = function(action, event) {
+		var item = jwplayer().getPlaylist(event.index)
+		_gaq.push(['_trackEvent', 'stream', action, item[0].file]);
+	}
+ 	
+	return this;
+	
+};
+base.player.setup = function() {
 
 };
 

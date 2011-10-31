@@ -34,7 +34,10 @@
         							}
         
  									
- 							  }},
+ 							  },
+ 							  onPlaylistItem: function(event) { pase_player.track('play', event) }
+ 							  
+ 							  },
         
         
         
@@ -79,9 +82,13 @@
 	{% endif %}
 	
 
-
-
-	jwplayer("player").setup(player_config);
+	jQuery(document).ready(function($) {
+	
+		pase_player = base.player.init();
+	
+  		jwplayer("player").setup(player_config);
+	});
+	
 	
 
 
