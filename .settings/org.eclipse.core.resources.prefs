@@ -1,7 +1,8 @@
-#Sun Oct 30 14:58:45 CET 2011
+#Mon Oct 31 12:21:52 CET 2011
 eclipse.preferences.version=1
 encoding//website/bcast/management/commands/event_process.py=utf-8
 encoding//website/bcast/urls.py=utf-8
+encoding//website/filer/admin/fileadmin.py=utf-8
 encoding//website/filer/models/filemodels.py=utf-8
 encoding//website/filer/models/foldermodels.py=utf-8
 encoding//website/jqchat/models.py=utf-8

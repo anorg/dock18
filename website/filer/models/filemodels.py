@@ -60,6 +60,9 @@ class File(PolymorphicModel, mixins.IconsMixin):
                     help_text=_('Disable any permission checking for this ' +\
                                 'file. File will be publicly accessible ' +\
                                 'to anyone.'))
+    
+    cue_in = models.IntegerField(_('Cue-In'), null=True, blank=True, default=0)
+    cue_out = models.IntegerField(_('Cue-Out'), null=True, blank=True, default=0)
 
     objects = FileManager()
 

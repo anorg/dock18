@@ -104,6 +104,9 @@ if settings.FILER_ENABLE_PERMISSIONS:
         (None, {
             'fields': ('name', 'owner', 'description')
         }),
+        ('Cueing (Video only)', {
+            'fields': ('cue_in','cue_out',)
+        }),
         (None, {
             'fields': ('is_public',)
         }),
@@ -116,6 +119,9 @@ else:
     FileAdmin.fieldsets = (
         (None, {
             'fields': ('name', 'owner', 'description')
+        }),
+        ('Cueing (Video only)', {
+            'fields': ('cue_in','cue_out',)
         }),
         (_('Advanced'), {
             'fields': ('file', 'sha1'),
