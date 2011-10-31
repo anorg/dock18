@@ -1,6 +1,6 @@
-<?xml version="1.0" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 
 {% load cms_tags sekizai_tags analytics compress %}
@@ -11,6 +11,13 @@
 
 <!-- extra hed from sup-templates -->
 {% block extra_head %}{% endblock %}
+
+{% block og_head %}{% endblock %}
+
+<!-- og start -->
+{% render_block "opengraph" %}
+<!-- og end -->
+
 
 {% render_block "css" %}
 
@@ -23,7 +30,11 @@
 	
 	<div id="fb-root"></div>
 	
+	
+	<h1>{{ request.current_page.plugins.all.0.title }}</h1>
+	
 	{% block base_content%}{% endblock %}
+	
 	
 	
 	<!--

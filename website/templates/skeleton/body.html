@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% load sekizai_tags %}
+{% load sekizai_tags streamstat %}
 
 {% block extra_head %}
     {% block extra_head_base %}{% endblock %}
+    {% block og_head %}{% endblock %}
 {% endblock %}
 
 {% load cms_tags %}
@@ -26,6 +27,7 @@
 				    {% show_menu 0 0 0 0 %}
 				</ul>
 			</div>
+			
 			
 			
 			<!-- profile / login / facebook / etc -->
@@ -112,6 +114,11 @@
 			
 			<!-- sidebar -->
 			<div id="sidebar" class="col left sidebar">
+
+
+				<div id="streamstat">
+                {% streamstat rtmp.dock18.ch %}
+                </div>
 
 				<div id="sidebar_pre">
 				{% placeholder sidebar_pre %}

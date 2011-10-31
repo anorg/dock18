@@ -64,7 +64,11 @@ base.player.setup = function() {
  */
 base.ui.iface = function() {
 	
-	window.setInterval(base.ui.interval, 5000);
+	window.setInterval(base.ui.interval, 10000);
+	
+	// first toggle
+	Dajaxice.ajax.loopcount(base.ui.refresh);
+	
 	// base.ui.interval();
 	
 	// $('#player_base.plugin').html('asdasda');
@@ -123,8 +127,9 @@ base.ui.iface = function() {
 };
 
 base.ui.interval = function() {
-	
+
 	// Dajaxice.ajax.chat(base.ui.refresh);
+	Dajaxice.ajax.loopcount(base.ui.refresh);
 
 	// reload comments | temporary here, refactor do djaxice
 	$('#comments_list').load('/shows/supershow/ #comments_list');
@@ -133,8 +138,12 @@ base.ui.interval = function() {
 
 base.ui.refresh = function(data) {
 	if (data != Dajaxice.EXCEPTION) {
-		// $('#subline #loopcounter h2').html(data.message);
-		$('#chat_p').html(data.message);
+
+		console.log(data.target, 'target');
+		console.log(data.content, 'content');
+
+		$(data.target).html(data.content);
+		
 	} else {
 		// alert('Error');
 	}

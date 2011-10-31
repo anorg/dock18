@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
+from django.contrib.sites.models import Site
+
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 
@@ -127,9 +129,25 @@ class Event(models.Model):
         
         url = None
         for page in pages:
-            url = page.get_absolute_url()
+            #url = page.get_absolute_url()
             
-        return url
+            abs_url = 'http://%s%s' % (Site.objects.get_current().domain, page.get_absolute_url())
+            
+        return abs_url
+        
+    
+    def get_playlist_url(self):
+        pages = self.get_pages_using()
+        
+        url = '/bcast/playlist/' + str(self.id)
+
+        abs_url = 'http://%s%s' % (Site.objects.get_current().domain, url)
+            
+        return abs_url
+    
+    
+    
+    
 
     def generate_key(self):
         return '%s-%s-%s_%s' % (self.date_start.strftime("%Y"), self.date_start.strftime("%m"), self.date_start.strftime("%d"), slugify(self.title))

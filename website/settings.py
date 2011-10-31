@@ -255,6 +255,7 @@ INSTALLED_APPS = (
     'spectators',
     
     'analytics',
+    'streamstat',
     
     # auth addon
     'facebook',
