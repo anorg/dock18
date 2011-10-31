@@ -53,8 +53,9 @@
 			<enclosure url="{{ file.url }}" type="video/flv" length="{{ file.size }}" />
 			-->
 			<!-- -->
-			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" start="{{ file.cue_in }}" />
+			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
 			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded/</jwplayer:streamer>
+			<jwplayer:start>{{ file.cue_in }}</jwplayer:start>
 			
 	    </item>
 		{% endfor %}
