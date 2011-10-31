@@ -48,7 +48,7 @@ def loopcount(request):
                 
                 total = element[1].text
                 current = element[0].text
-                bw = str(float(element[5].text) / 1000) + 'Kbps'
+                bw = str(float(element[5].text) / 100) + 'kbps'
             
         except Exception, e:
             total = 'error'
