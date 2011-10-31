@@ -56,9 +56,9 @@
 			
 			
 			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
-			<!---->
+			<!--
 			<enclosure url="flv:2011-10-05_rhizome-iii.flv" type="video/flv" length="{{ file.size }}" />
-			
+			-->
 			
 			<jwplayer:start>{{ file.cue_in }}</jwplayer:start>
 			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded/</jwplayer:streamer>
