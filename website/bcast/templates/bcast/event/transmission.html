@@ -35,7 +35,7 @@
         
  									
  							  },
- 							  onPlaylistItem: function(event) { pase_player.track('play', event) }
+ 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) }
  							  
  							  },
         
