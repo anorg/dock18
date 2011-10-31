@@ -69,6 +69,10 @@ $width-base: $width-root - $with-sidebar - $width-padding-base - $width-gutter-l
 $width-full: $width-root - $width-gutter-left
 
 
+$space-inner-s: 2px
+$space-inner-m: 4px
+$space-inner-l: 12px
+
 
 
 // layout imports 
@@ -215,22 +219,29 @@ h3, h4, h5, h6
     background-color: $color-default
     color: $color-base-fg
     padding: 4px 4px 4px 15px
-    // margin: 0 0 2px 0
-    margin: 0 0 0 0
+    margin: 0 0 $space-inner-s 0
+    //margin: 0 0 0 0
       
     
     &.now, &.today, &.future
-      padding: 22px 15px
+      padding: 22px 80px 22px 15px
+      
+    
+    div.wrap
+      width: 100%
     
     h3
       float: left
-      display: inline
+      //display: inline
+      display: block
     
     h4
       float: right
-      display: inline
+      //display: inline
+      display: block
       font-size: 140%
-      padding-left: 40px
+      padding-right: 10px
+      padding-left: 8px
       text-transform: uppercase
     
         
@@ -274,7 +285,7 @@ h3, h4, h5, h6
 // event list in sidebar
 #eventlist_side
   .list.events // list container
-    font-size: $size-font-base *.8
+    font-size: $size-font-base *.9
   .listing.event // listing event element
     padding: $width-padding-base / 2
     h3, h4
@@ -400,9 +411,9 @@ h3, h4, h5, h6
         
         span
           background-image: url(/static/img/base/hack.check_p.png)
-          background-position: 0 1px
+          background-position: 0 0px
           background-repeat: no-repeat
-          padding: 0 0 0 24px
+          padding: 0 0 2px 24px
         
         
         // border: 1px solid black
@@ -425,6 +436,7 @@ h3, h4, h5, h6
       
       > .display
         padding: ($default-space/2)
+        padding: 0
         a 
           color: black
           text-decoration: none
@@ -448,9 +460,10 @@ h3, h4, h5, h6
       .timestamp
         display: block
         float: left
-        padding: 5px 10px 0 0
+        padding: 5px 10px 5px 0
         color: fuchsia
-        font-size: 70%
+        width: 90px
+        font-size: 80%
         
         .date, .time
           display: block
@@ -531,8 +544,8 @@ h3, h4, h5, h6
       +font-link-default()
     
     &:first-child
-      // margin: 0 0 2px 0
-      margin: 0 0 0 0
+      margin: 0 0 2px 0
+      // margin: 0 0 0 0
       
       
 // in sidebar

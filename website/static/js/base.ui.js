@@ -105,11 +105,10 @@ base.ui.iface = function() {
 };
 
 base.ui.interval = function() {
-	Dajaxice.ajax.chat(base.ui.refresh);
 	
-	
+	// Dajaxice.ajax.chat(base.ui.refresh);
+
 	// reload comments | temporary here, refactor do djaxice
-	
 	$('#comments_list').load('/shows/supershow/ #comments_list');
 	
 };
