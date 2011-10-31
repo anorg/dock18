@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     
     (r'^crossdomain.xml/$',
         'flashpolicies.views.simple',
-        {'domains': ['ulysses.dock18.ch']}),
+        {'domains': ['*']}),
     
     
     # facebook connect
