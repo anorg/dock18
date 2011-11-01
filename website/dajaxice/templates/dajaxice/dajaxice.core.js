@@ -77,7 +77,7 @@ var Dajaxice = {
     },
 
     default_exception_callback: function(data){
-        alert('Something goes wrong');
+        // alert('Something goes wrong');
     },
 
     valid_http_responses: function(){
