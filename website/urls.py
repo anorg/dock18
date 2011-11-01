@@ -25,6 +25,9 @@ urlpatterns = patterns('',
         {'domains': ['*']}),
     
     
+    (r'^feedback', include('feedback.urls')),
+    (r'^poll/', include('cmsplugin_poll.urls')),
+    
     # facebook connect
     url(r'^facebook/login$', 'facebook.views.login'),
     url(r'^facebook/authentication_callback$', 'facebook.views.authentication_callback'),

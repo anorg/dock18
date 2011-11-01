@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 
-{% load cms_tags sekizai_tags analytics compress %}
+{% load cms_tags sekizai_tags ganalytics compress %}
 
 <!--head -->
 <head>
@@ -29,9 +29,7 @@
 	
 	
 	<div id="fb-root"></div>
-	
-	
-	<h1>{{ request.current_page.plugins.all.0.title }}</h1>
+
 	
 	{% block base_content%}{% endblock %}
 	
@@ -81,7 +79,7 @@
 	{% render_block "js" %}
 	
 	
-	{% analytics 'UA-26170095-1' %}
+	{% ganalytics 'UA-26170095-1' %}
 	
 
 </body>

@@ -254,7 +254,7 @@ INSTALLED_APPS = (
     # spectacors aka participants, guests, etc
     'spectators',
     
-    'analytics',
+    'ganalytics',
     'streamstat',
     
     # auth addon
@@ -297,6 +297,9 @@ INSTALLED_APPS = (
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
     
+    # poll
+    'cmsplugin_poll',
+    
     # asset and media handling
     'compressor',
     'easy_thumbnails',
@@ -312,6 +315,10 @@ INSTALLED_APPS = (
     'jqchat', 
     
     'bcast',
+    
+    'feedback',
+    
+    'newsletter',
     
     'lib',
     
@@ -349,6 +356,8 @@ GOOGLE_MAPS_API_KEY = 'ABQIAAAAOHPJc2-0TzaYgfOquRJgtRR2_LvdznTgfqpGEUf18uq-dm_lm
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 EMAIL_BACKEND = 'mailer.backend.DbBackend'
+
+
 
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda o: '/profiles/profile/%s/' % o.username,

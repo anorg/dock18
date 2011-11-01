@@ -1,0 +1,14 @@
+{% load i18n %}
+
+
+
+<form action="{% url ajax_feedback %}" method="post" id="id_feedback_form">
+	<div>
+        {{ form.as_p }}
+        
+        <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="{% trans 'Send' %}" />
+        </p>
+	</div>
+</form>

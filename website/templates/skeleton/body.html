@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load sekizai_tags streamstat %}
+{% load sekizai_tags streamstat feedback_tags %}
 
 {% block extra_head %}
     {% block extra_head_base %}{% endblock %}
@@ -103,6 +103,14 @@
 				<div class="base content cms">
 					
 					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
+					
+					
+					
+					<div class="apps">
+					{% block app_content%}
+					{% endblock %}
+					</div>				
+					
 					{% block body_content%}
 					{% endblock %}
 					
@@ -179,6 +187,11 @@
 		</div>
 		
 		
+	</div>
+	
+	<div id="wrapper_feedback" class="loading">
+	<a class="handle" href="http://link-for-non-js-users">Content</a>
+	<p>{% show_feedback %}</p>
 	</div>
 	
 	

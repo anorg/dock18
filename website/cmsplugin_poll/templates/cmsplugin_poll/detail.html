@@ -1,0 +1,14 @@
+{% load i18n %}
+<h6>{% trans "Poll" %}</h6>
+<p><a href="{% url cmsplugin_poll.views.results poll.id %}">{{ poll.question }}</a></p>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url cmsplugin_poll.views.vote poll.id %}" method="post">
+  {% csrf_token %}
+  {% for choice in poll.choice_set.all %}
+  <p>
+  <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+  <label for="choice{{ forloop.counter }}">{{ choice.choice }}</label>
+  </p>
+  {% endfor %}
+  <p><input type="submit" value='{% trans "Vote" %}' /></p>
+</form>

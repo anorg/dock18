@@ -7,8 +7,6 @@
 
 function my_js_callback(data){
     // alert(data.message);
-    
-    
     $('#chat_p').html(data.message);
 }
 
@@ -41,24 +39,6 @@ base.ui.loading = function() {
 	});
 };
 
-
-base.player = function() {};
-base.player.init = function() {
-	
-	base.log('player init');
-	
-	this.track = function(action, event) {
-		var item = jwplayer().getPlaylist(event.index)
-		_gaq.push(['_trackEvent', 'stream', action, item[0].file]);
-	}
- 	
-	return this;
-	
-};
-base.player.setup = function() {
-
-};
-
 /*
  * global interface things
  */
@@ -69,28 +49,16 @@ base.ui.iface = function() {
 			
 			if(window.console) {
 				// log
-				console.log('ehm - unknown error. Something went wrong, but not too badly...', 'Dajaxice')
+				console.log('ehm - unknown error. Something went wrong, but not too bad...', 'Dajaxice')
 			}
-			
-			alert('Error! Something happens!'); 
+
 		}
 	});
 
 	
 	window.setInterval(base.ui.interval, 10000);
-	
 	// first toggle
 	Dajaxice.ajax.loopcount(base.ui.refresh);
-	
-	
-	// base.ui.interval();
-	// $('#player_base.plugin').html('asdasda');
-	
-	
-	
-	// pimp some elements...
-
-	
 
 	
 	
@@ -121,7 +89,6 @@ base.ui.iface = function() {
 	});
 	
 	
-	
 	// select
 	$('div.listview.container div.list_body_row.selectable').live('click', function(event) {
 		 
@@ -136,6 +103,9 @@ base.ui.iface = function() {
 		}
 
 	});
+
+	base.feedback();
+	base.plugins();
 	
 };
 
@@ -155,6 +125,76 @@ base.ui.refresh = function(data) {
 
 };
 
+
+
+
+
+base.feedback = function() {
+	
+    $('#id_feedback_form').live('submit', function(){
+        var data = {};
+        var feedback_url = $(this).attr('action');
+        $(this).find(':input').each(function(){
+            var key = $(this).attr('name');
+            var value = $(this).attr('value');
+            data[key] = value;
+        });
+        $.post(feedback_url, data, load_feedback);
+        return false;
+    });
+};
+
+function load_feedback(data, textStatus){
+    $('#id_feedback_form').replaceWith(data).show();
+}
+
+
+
+
+
+
+
+
+
+
+
+base.plugins = function() {
+	
+	// global slideout
+	$('#wrapper_feedback').tabSlideOut({
+	    tabHandle: '.handle',                              //class of the element that will be your tab
+	    pathToTabImage: '/static/img/base/text.feedback.png',          //path to the image for the tab *required*
+	    imageHeight: '122px',                               //height of tab image *required*
+	    imageWidth: '18px',                               //width of tab image *required*    
+	    tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
+	    speed: 300,                                        //speed of animation
+	    action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+	    topPos: '29px',                                   //position from the top
+	    fixedPosition: true                               //options: true makes it stick(fixed position) on scroll
+	});
+
+	$('#wrapper_feedback').removeClass('loading');
+	// $('#wrapper_feedback form').addClass('uniForm');
+};
+
+
+// player
+base.player = function() {};
+base.player.init = function() {
+	
+	base.log('player init');
+	
+	this.track = function(action, event) {
+		var item = jwplayer().getPlaylist(event.index)
+		_gaq.push(['_trackEvent', 'stream', action, item[0].file]);
+	}
+ 	
+	return this;
+	
+};
+base.player.setup = function() {
+
+};
 
 /*
  * uploader things

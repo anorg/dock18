@@ -571,6 +571,66 @@ h3, h4, h5, h6
     
     &:first-child
       margin: 0 0 2px 0
+      
+      
+  .cmspollplugin_holder 
+    background-color: transparent
+    color: $color-default
+    padding: $default-space/2 0 2px 0
+    margin: 0 0 4px 0
+    font-family: $font-default
+    p
+      line-height: 140%
+    
+    > p > a
+      font-size: 110%
+    // text-align: justify
+    
+    border-bottom: 4px solid $color-default
+    
+    input
+      margin: 4px 0 4px 0
+    
+    p
+      padding: 0
+      
+    a
+      color: $color-default
+      +font-link-default()
+    
+    &:first-child
+      margin: 0 0 2px 0
+      
+      
+
+  
+    label
+      width: 100px
+      //display: block
+      //float: left
+    
+    p
+      margin: 0 0 2px 0
+  
+    ul.errorlist
+      li
+        font-size: 90%
+        padding: 10px 0 2px 100px
+  
+    p.display
+      .small
+        font-size: 80%
+  
+    p
+      input, textarea
+        border: none
+        background-color: $color-base-b
+        //width: 100px
+      
+      input
+        // height: 18px
+      textarea
+        height: 100px
   
 
   
@@ -611,7 +671,7 @@ form.submit_inside
 
 // hacks
 #invitation
-  background-color: $color-base-d
+
   background-color: $color-base-b
   padding: 10px
   
@@ -638,6 +698,64 @@ form.submit_inside
     input
       height: 20px
       
+   
+    
+    
+$feedback-width: 400px
+      
+#wrapper_feedback
+  &.loading
+    display: none
+    
+  min-height: 122px
+    
+  a.handle
+    background-color: $color-base-b !important
+
+  background-color: $color-base-b
+  padding: 10px
+  
+  width: $feedback-width
+  
+  label
+    width: 100px
+    display: block
+    float: left
+    
+  p
+    margin: 0 0 2px 0
+  
+  ul.errorlist
+    li
+      font-size: 90%
+      padding: 10px 0 2px 100px
+  
+  p.display
+    .small
+      font-size: 80%
+  
+  p
+    input, textarea
+      border: none
+      background-color: adjust-lightness($color-base-b, 35)
+      width: $feedback-width - 100px
+      
+    input
+      height: 18px
+    textarea
+      height: 100px
+
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
       
 .window .action
   .social
@@ -694,10 +812,20 @@ div#player_wrapper
         
       
       
-.base.content.pinax
+.base.content.pinax, .base.content.cms .apps
   background-color: $color-base-a
   // padding: $width-padding-base
   color: black
+  
+  > *
+    padding: 15px
+    
+  > #body
+    padding: 0 !important
+    
+  li
+    padding: 4px 0
+  
   a:link, a:visited
     // background-color: black
     // text-decoration: none
@@ -724,3 +852,9 @@ div#player_wrapper
     border: none
     &:hover
       color: $color-base-a
+      
+      
+      
+      
+      
+      
