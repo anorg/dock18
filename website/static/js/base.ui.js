@@ -64,13 +64,26 @@ base.player.setup = function() {
  */
 base.ui.iface = function() {
 	
+	Dajaxice.setup({
+		'default_exception_callback': function() { 
+			
+			if(window.console) {
+				// log
+				console.log('ehm - unknown error. Something went wrong, but not too badly...', 'Dajaxice')
+			}
+			
+			alert('Error! Something happens!'); 
+		}
+	});
+
+	
 	window.setInterval(base.ui.interval, 10000);
 	
 	// first toggle
 	Dajaxice.ajax.loopcount(base.ui.refresh);
 	
-	// base.ui.interval();
 	
+	// base.ui.interval();
 	// $('#player_base.plugin').html('asdasda');
 	
 	
@@ -137,16 +150,9 @@ base.ui.interval = function() {
 };
 
 base.ui.refresh = function(data) {
-	if (data != Dajaxice.EXCEPTION) {
 
-		console.log(data.target, 'target');
-		console.log(data.content, 'content');
+	$(data.target).html(data.content);
 
-		$(data.target).html(data.content);
-		
-	} else {
-		// alert('Error');
-	}
 };
 
 
