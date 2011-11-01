@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load sekizai_tags streamstat feedback_tags %}
+{% load sekizai_tags streamstat feedback_tags announcement_tags %}
 
 {% block extra_head %}
     {% block extra_head_base %}{% endblock %}
@@ -93,8 +93,10 @@
 					<!-- content from pinax -->
 					{% block body_outer %}
 					    <div id="body">
+					    	<div class="inner">
 					        {% block body %}
 					        {% endblock %}
+					        </div>
 					    </div>
 					{% endblock %}
 					
@@ -104,6 +106,43 @@
 					
 					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
 					
+					
+    {% if site_wide_announcements %}
+        <span id="site_wide_announcements">
+            <div class="container announcments">
+                {% for announcement in site_wide_announcements %}
+                <div div class="announcment action">
+                
+                <ul class="horizontal">
+                
+                <li>
+                    <a href="{{ announcement.get_absolute_url }}">{{ announcement }}</a>
+                </li>
+                
+                <li>
+                    <a href="{% url announcement_hide announcement.pk %}?next={{ request.path }}">Hide</a>
+                </li>
+                
+                <li>
+                    <span>{{ announcement.creator }}</span>
+                </li>
+                
+                <li>
+                    <span>{{ announcement.creation_date }}</span>
+                </li>
+                
+                
+                </ul>
+                </div>
+                
+                <div div class="announcment display">
+                	<p>{{ announcement.content }}</p>
+                </div>
+                
+                {% endfor %}
+            </div>
+        </span>
+    {% endif %}
 					
 					
 					<div class="apps">

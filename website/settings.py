@@ -251,6 +251,8 @@ INSTALLED_APPS = (
     'idios',
     'phileo',
     
+    'notification',
+    
     # spectacors aka participants, guests, etc
     'spectators',
     
