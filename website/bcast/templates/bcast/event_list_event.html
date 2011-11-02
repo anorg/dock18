@@ -24,6 +24,7 @@
 		 
 		 <span class="event_type">{{event.type }} /</span>
 		
+		<span class="event_date">
 		{% if event.state == 'today' %}
 			{{ event.date_start|date:"d. m. y" }} - {{ event.date_start|date:"H:i" }}
 		{% else %}{% if event.state == 'now' %}
@@ -31,7 +32,9 @@
 		{% else %}
 			{{ event.date_start|date:"d. m. y" }}
 		{% endif %}{% endif %}
-		
+		</span>
+		<br />
+		<span id="countdown_{{event.key }}">&nbsp;</span>
 		
 		
 		

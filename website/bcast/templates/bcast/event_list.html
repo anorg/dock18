@@ -1,9 +1,23 @@
-{% load vardump i18n %}
+{% load vardump sekizai_tags i18n %}
 
 <div class="plugin events list">
 	{% for event in objects %}
 
 	{% include 'bcast/event_list_event.html' %} 
+	
+	{% addtoblock "js" %}
+	<script type="text/javascript">
+	$(function() {
+		
+		$('.future #countdown_{{ event.key }}').countdown({
+			until: +{{ event.starts_in }},
+			compact: true
+		});
+			
+	});
+	</script>
+	{% endaddtoblock %}
+	
 	
 	{% empty %}
 	<div class="notice">
