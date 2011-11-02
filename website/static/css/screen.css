@@ -524,7 +524,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003528}}
 .base.content .textplugin_holder p { line-height: 140%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003533}}
-.base.content .textplugin_holder:nth-child(2) { background-color: yellow; padding: 15px; }
+.base.content .textplugin_holder:nth-child(3) { background-color: yellow; padding: 15px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003537}}
 .base.content .textplugin_holder p, .base.content .textplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003540}}
@@ -532,7 +532,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003543}}
 .base.content .textplugin_holder a { color: black; font-style: italic; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003547}}
-.base.content .textplugin_holder:nth-child(2) { margin: 0 0 2px 0; }
+.base.content .textplugin_holder:nth-child(3) { margin: 0 0 2px 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003554}}
 .sidebar .textplugin_holder { background-color: transparent; color: black; padding: 15px 0 2px 0; margin: 0 0 4px 0; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; border-bottom: 4px solid black; }

@@ -184,10 +184,9 @@ base.plugins = function() {
 
 
 	$(".announcment.action li.hide a").live("click", function(event) { 
-		$.get($(this).attr('href'), function(data){
-    		$(this).closest('div.container').fadeOut(400);
-		});
-		event.preventDefault();
+		$(this).closest('div.container').fadeOut(500);
+		$.get($(this).attr('href'), function() {});
+		// event.preventDefault();
 		return false;
 	});
 	
