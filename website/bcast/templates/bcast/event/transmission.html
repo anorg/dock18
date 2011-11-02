@@ -33,8 +33,9 @@
         
  									
  							  },
- 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) },
- 							  onPlay: function(event) { $('#chat_f').remove(); }
+ 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) }
+ 							  
+ 							  //onPlay: function(event) { $('#chat_f').remove(); }
  							  
  							  },
         
