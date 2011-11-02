@@ -6,8 +6,6 @@
 
 
 
-
-
 	var player_config = {
 		'flashplayer' 		: "{{ STATIC_URL }}swf/jwplayer-licensed-5.7.swf",
 		'controlbar' 		: { position: 'bottom'},
@@ -35,7 +33,8 @@
         
  									
  							  },
- 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) }
+ 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) },
+ 							  onPlay: function(event) { $('#chat_f').remove(); }
  							  
  							  },
         
