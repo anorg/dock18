@@ -1,0 +1,24 @@
+{% load uni_form_tags %}
+
+<div id="subscription-form-messages"></div>
+<div class="subscription_form">
+
+        <form action="{% url subscription_subscribe %}" method="POST" accept-charset="utf-8" class="">
+            {% csrf_token %}
+            
+            <div>
+            
+	            <div class="left input">
+	            	{{ form|as_uni_form }}
+	            </div>
+	            <div class="left action">
+	            	<input type="submit" value="GO">
+	            </div>
+	            
+	            <div class="clear"></div>
+            
+            </div>
+            
+        </form>
+
+</div>

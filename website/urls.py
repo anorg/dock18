@@ -43,6 +43,8 @@ urlpatterns = patterns('',
     url(r"^announcements/", include("announcements.urls")),
     
     url(r"^invites/", include("kaleo.urls")),
+    
+    url(r"^subscribe/", include("subscribe.urls")),
 
 
     (r'^bcast/', include('bcast.urls')),

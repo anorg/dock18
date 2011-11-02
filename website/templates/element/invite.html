@@ -25,10 +25,18 @@ $(function () {
 {% endaddtoblock %}
 
 
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#invitation div input').DefaultValue('freund@vbs.admin.ch');
+});
+</script>
+{% endaddtoblock %}
+
 <div class="invites">
 	
 	<div class="display">
-	Leute einladen <span class="small">EMail</span>
+	<strong>Leute einladen</strong> <span class="small"></span>
 	</div>
 	
     {% invite_form request.user %}

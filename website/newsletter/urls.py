@@ -12,9 +12,6 @@ urlpatterns = patterns('newsletter.views',
         name='download_csv',
     ),
     
-    url (r'^$', 
-        view='subscribe_detail',
-        name='subscribe_detail',
-    ),
+    url (r'^$', view='subscribe_detail', name='subscribe_detail',),
 
 )

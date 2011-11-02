@@ -1,0 +1,32 @@
+<div id="site_wide_announcements">
+	<div class="container announcments">
+		{% for announcement in site_wide_announcements %}
+		<div class="container">
+			<div div class="announcment action">
+				<ul class="horizontal left main">
+					<li class="subject">
+						<span>{{ announcement }}</span>
+					</li>
+					<li class="creator">
+						<span>von {{ announcement.creator }}</span>
+					</li>
+				</ul>
+				<ul class="horizontal right sub">
+					<li class="date">
+						<span>{{ announcement.creation_date }}</span>
+					</li>
+					<li class="hide">
+						<a href="{% url announcement_hide announcement.pk %}?next={{ request.path }}">X</a>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div div class="announcment display">
+				<p>
+					{{ announcement.content }}
+				</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

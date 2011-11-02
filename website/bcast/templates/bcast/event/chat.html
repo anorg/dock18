@@ -3,9 +3,6 @@
 
 
 
-{% addtoblock "js" %}
-<script src="{{ STATIC_URL }}js/lib/jquery.default.js" type="text/javascript" charset="utf-8"></script>
-{% endaddtoblock %}
 
 {% addtoblock "js" %}
 <script type="text/javascript">
@@ -47,13 +44,6 @@ $(document).ready(function(){
 				<br />
 				<div class="clear"></div>
 			</form>
-		</div>
-		{% else %}
-		
-		{% url acct_login as login_url %}
-		{% url acct_signup as signup_url %}
-		<div class="inline">
-			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to join!</p></div>
 		</div>
 		{% endif %}
 		</div>

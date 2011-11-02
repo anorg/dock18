@@ -92,12 +92,7 @@
 				<div class="base content pinax">
 					<!-- content from pinax -->
 					{% block body_outer %}
-					    <div id="body">
-					    	<div class="inner">
-					        {% block body %}
-					        {% endblock %}
-					        </div>
-					    </div>
+					    <div id="body">{% block body %}{% endblock %}</div>
 					{% endblock %}
 					
 				</div>
@@ -107,42 +102,9 @@
 					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
 					
 					
-    {% if site_wide_announcements %}
-        <span id="site_wide_announcements">
-            <div class="container announcments">
-                {% for announcement in site_wide_announcements %}
-                <div div class="announcment action">
-                
-                <ul class="horizontal">
-                
-                <li>
-                    <a href="{{ announcement.get_absolute_url }}">{{ announcement }}</a>
-                </li>
-                
-                <li>
-                    <a href="{% url announcement_hide announcement.pk %}?next={{ request.path }}">Hide</a>
-                </li>
-                
-                <li>
-                    <span>{{ announcement.creator }}</span>
-                </li>
-                
-                <li>
-                    <span>{{ announcement.creation_date }}</span>
-                </li>
-                
-                
-                </ul>
-                </div>
-                
-                <div div class="announcment display">
-                	<p>{{ announcement.content }}</p>
-                </div>
-                
-                {% endfor %}
-            </div>
-        </span>
-    {% endif %}
+					{% if site_wide_announcements %}{% include "announcements/announcement_list.html" %}{% endif %}
+					
+
 					
 					
 					<div class="apps">
@@ -166,6 +128,10 @@
 				<div id="streamstat">
                 {% streamstat rtmp.dock18.ch %}
                 </div>
+                
+				<div id="flatr">
+                {% include "element/button_flatr.html" %}
+                </div>
 
 				<div id="sidebar_pre">
 				{% placeholder sidebar_pre %}
@@ -188,6 +154,15 @@
 					{% include 'element/invite.html' %}
 				</div>
 				{% endif %}
+				
+
+				<div id="newsletter">
+					{% include 'element/newsletter.html' %}
+				</div>
+
+				
+				
+				
 				
 				{% block widget_spectators %}
 				{% endblock %}
@@ -229,7 +204,7 @@
 	</div>
 	
 	<div id="wrapper_feedback" class="loading">
-	<a class="handle" href="http://link-for-non-js-users">Content</a>
+	<a class="handle" href="#">Content</a>
 	<p>{% show_feedback %}</p>
 	</div>
 	

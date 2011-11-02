@@ -1,0 +1,40 @@
+/* vars
+ * 
+ */
+
+
+@mixin simple-form($color-base, $width-base, $padding-base)
+
+  background-color: $color-base
+  padding: $padding-base
+  
+  ul.errorlist
+    li
+      font-size: 80%
+  
+  div.display
+    .small
+      font-size: 80%
+  
+  div input
+    border: none
+    height: 18px
+    background-color: adjust-lightness($color-base, 35)
+    padding-left: 4px
+  
+  div.input
+    margin: $padding-base 0 0 0
+    width: $width-base - (2 * $padding-base) - 30px
+    
+  div.action
+    margin: $padding-base 0 0 0
+    width: 30px
+    input
+      height: 20px
+      font-weight: normal
+      //color: $color-base
+      color: black
+      
+      &:hover
+        background-color: $color-base
+        color: black

@@ -47,10 +47,10 @@ $color-base-e: #F0F
 
 // fonts --------------------------------------------------------------------
 $size-font-base: 12px
-$font-default: 'Lucida Console'
-$font-heading: 'frutiger_ultrablack'
-$font-subheading: 'frutiger_extrablack'
-$font-monospace: 'Courier New', 'Courier'
+$font-default: 'Lucida Console', Monaco, 'Courier New', 'Courier'
+$font-heading: 'frutiger_ultrablack', Helvetica, Arial
+$font-subheading: 'frutiger_extrablack', Helvetica, Arial
+$font-monospace: 'Lucida Console', Monaco, 'Courier New', 'Courier'
 $font-quote: 'Courier New', 'Courier'
 $font-pre: 'Courier New', 'Courier'
 
@@ -84,6 +84,9 @@ $space-inner-l: 12px
 
 
 @import 'asif/qq-upload'
+
+// site specific mixins
+@import 'mixin'
 
 
 
@@ -169,12 +172,6 @@ a
     background-color: $color-base-action
     color: contrast-color($color-base-action)
 
-//toolbar styles
-div#toolbar
-  +font-nav()
-  .profile
-    margin: 0 ($default-space/2) 0 0 
-    ul li
       
 
 
@@ -274,7 +271,7 @@ h3, h4, h5, h6
       
       
     &.future
-      background: $color-default url('/static/img/base/badge/badge.week.yellow.png') top right no-repeat
+      background: $color-default url('/static/img/base/badge/badge.week.cyan.png') top right no-repeat
 
 
 
@@ -287,6 +284,7 @@ h3, h4, h5, h6
   .list.events // list container
     font-size: $size-font-base *.9
   .listing.event // listing event element
+    background-image: none !important
     padding: $width-padding-base / 2
     h3, h4
       font-size: $size-font-base *1
@@ -311,7 +309,10 @@ h3, h4, h5, h6
   padding: 0
   
   div.padded
-    padding: ($default-space/2) 0 ($default-space/2) ($default-space/2)
+    padding: 0 0 ($default-space/2) ($default-space/2)
+    
+    p
+      line-height: 150%
 
   // .lead
 
@@ -324,8 +325,8 @@ h3, h4, h5, h6
     +contrasted(#333)
     color: white
     padding: ($default-space/2)
-    margin: 0 0 ($default-space/2) 0
-    
+    //margin: 0 0 ($default-space/2) 0
+    margin: 0
     a
       text-decoration: none
 
@@ -671,36 +672,21 @@ form.submit_inside
 
 // hacks
 #invitation
+  +simple-form($color-base-b, $with-sidebar, $width-padding-base)
 
-  background-color: $color-base-b
-  padding: 10px
-  
-  ul.errorlist
-    li
-      font-size: 80%
-  
-  div.display
-    .small
-      font-size: 80%
-  
-  div input
-    border: none
-    height: 18px
-    background-color: adjust-lightness($color-base-b, 35)
-  
-  div.input
-    margin: 10px 0 0 0
-    width: $with-sidebar - (2 * 10px) - 30px
-    
-  div.action
-    margin: 10px 0 0 0
-    width: 30px
-    input
-      height: 20px
+  //border-bottom: 4px solid black
+  margin-bottom: 2px
       
-   
-    
-    
+      
+
+#newsletter
+  +simple-form($color-base-b, $with-sidebar, $width-padding-base)
+
+
+
+
+
+
 $feedback-width: 400px
       
 #wrapper_feedback
@@ -753,7 +739,8 @@ $feedback-width: 400px
    
    
    
-   
+.fb_edge_widget_with_comment
+  position: absolute !important
    
    
       
@@ -762,9 +749,9 @@ $feedback-width: 400px
     
     ul 
       > li
-        overflow: hidden
+        // overflow: hidden
         &.facebook
-          width: 110px
+          width: 134px
           padding: 6px 0 0 0
         &.google
           padding: 6px 0 0 0
@@ -821,7 +808,9 @@ div#player_wrapper
     padding: 15px
     
   > #body
-    padding: 0 !important
+    // padding: 0 !important
+    &:empty
+      display: none
     > * 
       padding: 15px
     
@@ -873,9 +862,27 @@ div#player_wrapper
       padding: $width-padding-base/2 $width-padding-base
      
   
-  
+    ul
+    
+      &.main
+        padding-left: 20px
+        background: no-repeat url('/static/img/base/icon/bolt_12x12.png')
+        
+      li.subject
+        font-weight: bold
+        
+      li.date
+        font-size: 90%
+        padding: 1px 0 0 0
+        
+      li.hide
+        // background: no-repeat url('/static/img/base/icon/minus_12x3.png')
+        a
+          font-weight: bold
+          text-decoration: none
+          // color: transparent
     li 
-      font-weight: bold
+      // font-weight: bold
       
       a
         color: black

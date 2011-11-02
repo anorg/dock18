@@ -1,0 +1,48 @@
+{% load sekizai_tags %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+
+jwplayer("player").setup({
+	file: "Extremists.m4v",
+	height: 270,
+	width: 480,
+	'provider':'rtmp',
+	'streamer':'rtmp://osric.net:1533/myapplication/_definst',
+	'modes': [
+		{ 
+			type:'flash',
+			src:'player.swf' 
+		},
+		{ 
+			type:'html5',
+			config:{
+				//'file':'http://88.198.82.193:1935/d18recorded/_definst_/flv:2011-10-05_rhizome-iii.flv/playlist.m3u8',
+				'file':'http://88.198.82.193:1935/live/myStream/playlist.m3u8',
+				'provider':'video'
+				}
+		}
+	]
+});
+
+</script>
+{% endaddtoblock %}
+
+<div class="expandable main window" id="screen">
+	
+	<div class="header">
+		<div>
+			<h4>{{ event.location }} Live</h4>
+		</div>
+	</div>
+	
+	<div class="container" id="container_player" >
+		<div id="player"></div>
+	</div>
+	
+	<div class="container" id="container_mplayer" >
+		<div id="mplayer">MOBILE PLAYER</div>
+	</div>
+
+</div>

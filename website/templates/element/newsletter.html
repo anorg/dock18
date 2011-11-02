@@ -1,0 +1,45 @@
+{% load sekizai_tags subscribe_tags %}
+
+{% addtoblock "js" %}
+<script src="{{ STATIC_URL }}js/lib/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(function () {
+    $('.subscription form').ajaxForm(function(data) {
+        if (data.status == "OK") {
+            $('#subscription-form-messages').html("<p>Abonniert: " + data.email + "</p>");
+            $('.empty-subscription').remove();
+            $('.invite-list').append("<li>" + data.email + "</li>");
+            $('.subscription form input[type=text]').val("");
+            $('.invitations_remaining').html("(" + data.invitations_remaining + ")");
+            if (data.invitations_remaining == 0) {
+                $('.invitation_form form').hide();
+            }
+        } else {
+            $('#subscription-form-messages').html(data.errors);
+        }
+    });
+});
+</script>
+{% endaddtoblock %}
+
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#newsletter div input').DefaultValue('ich@bauernzmorge.ch');
+});
+</script>
+{% endaddtoblock %}
+
+
+<div class="subscription">
+	
+	<div class="display">
+	<strong>Newsletter JA!</strong><span class="small"></span>
+	</div>
+	
+    {% subscribe_form request.user %}
+</div>

@@ -1,6 +1,6 @@
 
 $toolbar-top: 3px
-$toolbar-bottom: 10px
+$toolbar-bottom: 2px
 $toolbar-inner: 16px
 
 $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
@@ -10,15 +10,25 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
   width: $width-full
   
   height: $height-toolbar
-  // height: 24px
-  background: repeat-x
-  +background-image(image-url('/static/img/base/layout.toolbar.bg_24.png'))
+  
+  background: black
+
+  // background: repeat-x
+  // +background-image(image-url('/static/img/base/layout.toolbar.bg_24.png'))
   
   
 //  +background-image(image-url('/static/img/base/dummy.menu.png'))
 
 
 #toolbar
+  +font-nav()
+  
+  margin-bottom: 8px !important
+  
+  .profile
+    margin: 0 ($default-space/2) 0 0 
+    ul li
+
   .profile
     text-transform: uppercase
     ul > li
@@ -38,6 +48,7 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
           background: url('/static/img/base/fb.connect.16x16.png') no-repeat top left
         &.username
           font-weight: bold
+
 
 
 
@@ -75,7 +86,7 @@ $height-toolbar: $toolbar-top + $toolbar-bottom + $toolbar-inner
       
       > a 
         color: +contrasted($color-default)
-        background-color: $color-default
+        // background-color: $color-default
 
       // second level   
       >ul

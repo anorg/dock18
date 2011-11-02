@@ -1,7 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 
 {% load cms_tags sekizai_tags ganalytics compress %}
 
@@ -72,6 +70,17 @@
 		js.src = "//connect.facebook.net/en_US/all.js";
 		d.getElementsByTagName('head')[0].appendChild(js);
 	}(document));
+	
+	
+	// flatr init
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+
 	
 	//--><!]]>
 	</script>

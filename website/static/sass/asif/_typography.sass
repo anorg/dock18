@@ -57,12 +57,32 @@
   line-height: normal
 
 
-
+  strong
+    font-weight: bold
+  em
+    font-style: italic
+    
+  sup
+    font-size: 70%
+    vertical-align: text-bottom
+    //font-weight: bold
+  sub
+    font-size: 70%
+    vertical-align: sub
+    //font-weight: bold
     
   blockquote
-    color: #666666
+    color: #333
+    margin: 4px 0 12px 0
+    padding: 0 0 0 12px
+    border-left: 4px solid #000
+    
+    
+    p
+      padding: 0 !important
     
   h1, h2
+    text-transform: uppercase
     +font-heading()
     margin: 0 0 0 0
     padding: 0

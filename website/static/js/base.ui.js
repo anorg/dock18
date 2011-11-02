@@ -113,6 +113,9 @@ base.ui.interval = function() {
 
 	// Dajaxice.ajax.chat(base.ui.refresh);
 	Dajaxice.ajax.loopcount(base.ui.refresh);
+	
+	
+	$('#site_wide_announcements').load('/ #site_wide_announcements');
 
 	// reload comments | temporary here, refactor do djaxice
 	$('#comments_list').load('/shows/supershow/ #comments_list');
@@ -175,6 +178,20 @@ base.plugins = function() {
 
 	$('#wrapper_feedback').removeClass('loading');
 	// $('#wrapper_feedback form').addClass('uniForm');
+	
+	
+	
+
+
+	$(".announcment.action li.hide a").live("click", function(event) { 
+		$.get($(this).attr('href'), function(data){
+    		$(this).closest('div.container').fadeOut(400);
+		});
+		event.preventDefault();
+		return false;
+	});
+	
+	
 };
 
 

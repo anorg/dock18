@@ -92,6 +92,7 @@ MIDDLEWARE_CLASSES = (
     #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
     #'lib.prettify.PrettifyMiddleware', 
+    'minidetector.Middleware',
     
 #    'django.middleware.cache.FetchFromCacheMiddleware', #
     'cms.middleware.toolbar.ToolbarMiddleware',
@@ -320,7 +321,9 @@ INSTALLED_APPS = (
     
     'feedback',
     
-    'newsletter',
+    #'newsletter',
+    
+    'subscribe',
     
     'lib',
     

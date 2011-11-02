@@ -151,9 +151,24 @@
 	{% endif %}
 	
 	
+	{% if not user.is_authenticated %}
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<div class="message login"><p>Für soziale Interaktion bitte <a href="{{ login_url }}">anmelden</a> und/oder <a href="{{ signup_url }}">registrieren</a>!!</p></div>
+		</div>
+	{% endif %}
+	
 
 	{% if event.transmission %}
-	{% include 'bcast/event/transmission.html' %}
+	
+	{% if not request.mobile %}
+		{% include 'bcast/event/transmission.html' %}
+	{% else %}
+		{% include 'bcast/event/transmission_mobile.html' %}
+	{% endif %}
+	
+	
 	{% endif %}
 
 	{% if event.chat and event.room %}
