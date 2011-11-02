@@ -637,7 +637,7 @@ form.submit_inside input.btn { border: none; background-color: inherit; float: r
 .fb_edge_widget_with_comment { position: absolute !important; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003753}}
-.window .action .social ul > li.facebook { width: 134px; padding: 6px 0 0 0; }
+.window .action .social ul > li.facebook { width: 140px; padding: 6px 0 0 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003756}}
 .window .action .social ul > li.google { padding: 6px 0 0 0; width: 62px; }
 
