@@ -33,9 +33,11 @@
 			{{ event.date_start|date:"d. m. y" }}
 		{% endif %}{% endif %}
 		</span>
+		
+		{% if event.state == 'future' %}
 		<br />
 		<span id="countdown_{{event.key }}">&nbsp;</span>
-		
+		{% endif %}
 		
 		
 		
