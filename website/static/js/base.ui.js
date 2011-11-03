@@ -56,7 +56,7 @@ base.ui.iface = function() {
 	});
 
 	
-	window.setInterval(base.ui.interval, 10000);
+	window.setInterval(base.ui.interval, 20000);
 	// first toggle
 	Dajaxice.ajax.loopcount(base.ui.refresh);
 

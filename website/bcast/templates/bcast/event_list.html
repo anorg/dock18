@@ -5,18 +5,20 @@
 
 	{% include 'bcast/event_list_event.html' %} 
 	
+	
+	
+	{% if event.state == 'future' %}
 	{% addtoblock "js" %}
 	<script type="text/javascript">
-	$(function() {
-		
 		$('.future #countdown_{{ event.key }}').countdown({
 			until: +{{ event.starts_in }},
 			compact: true
 		});
-			
-	});
 	</script>
 	{% endaddtoblock %}
+	{% endif %}
+	
+	
 	
 	
 	{% empty %}

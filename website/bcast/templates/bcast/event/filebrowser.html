@@ -7,9 +7,12 @@
 <script src="{{ STATIC_URL }}js/lib/fileuploader.js" type="text/javascript" charset="utf-8"></script>
 {% endaddtoblock %}
 
+
+{% if user.is_authenticated %}
 {% addtoblock "js" %}
 <script type="text/javascript">
 $(document).ready(function(){
+
 
 var uploader = new qq.FileUploader({
     // pass the dom node (ex. $(selector)[0] for jQuery users)
@@ -17,12 +20,11 @@ var uploader = new qq.FileUploader({
     // path to server-side upload script
     action: '/server/upload'
 }); 
-
 	
 });
 </script>
-
 {% endaddtoblock %}
+{% endif %}
 
 <div class="expandable main window" id="bcast_filebrowser">
 	

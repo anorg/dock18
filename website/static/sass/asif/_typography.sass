@@ -17,10 +17,11 @@
 
 @mixin font-base()
   font-family: $font-default
+  font-size: $size-font-base * 1.1
   +font-styles()
 
 @mixin font-nav()
-  font-size: $size-font-base * 1
+  font-size: $size-font-base * 1.2
   +font-base()
   line-height: normal
 

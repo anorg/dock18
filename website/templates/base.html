@@ -17,7 +17,7 @@
 <!-- og end -->
 
 
-{% render_block "css" %}
+{% render_block "css" postprocessor "lib.postprocess_sekizai.compress" %}
 
 </head>
 
@@ -49,7 +49,7 @@
 	
 	// javascript init
 	$(document).ready(function() {
-		base.ui.iface();		
+		base.ui.iface();
 	});
 	
 	
@@ -85,7 +85,9 @@
 	//--><!]]>
 	</script>
 	
+
 	{% render_block "js" %}
+	{% render_block "js_external" %}
 	
 	
 	{% ganalytics 'UA-26170095-1' %}
