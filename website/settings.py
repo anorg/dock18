@@ -300,8 +300,9 @@ INSTALLED_APPS = (
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_video',
     
-    # poll
+
     'cmsplugin_poll',
+    #'cmsplugin_userlist',
     
     # asset and media handling
     'compressor',
