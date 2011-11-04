@@ -8,7 +8,7 @@ class EventInline(admin.TabularInline):
 class EventAdmin(admin.ModelAdmin): 
     fieldsets = [
         (None,               {'fields': ['title', 'excerpt', 'location']}),
-        ('Tags & co',               {'fields': ['type', 'tags', 'picture', 'intro', 'folder', 'key']}),
+        ('Tags & co',               {'fields': ['type', 'tags', 'picture', 'intro', 'folder', 'key', 'unsertestfeld']}),
         ('Date information', {'fields': ['Season', 'date_start', 'date_end'], 'classes': ['false']}),
         ('Gadgets',   {'fields': ['transmission', 'chat', 'room', 'filebrowser', 'show_spectators']}),
     ]

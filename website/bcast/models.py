@@ -55,6 +55,9 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     excerpt = models.TextField(blank=True)
     
+    
+    unsertestfeld = models.TextField(blank=True)
+    
     date_start = models.DateTimeField('date start', default=datetime.datetime.now())
     date_end = models.DateTimeField('date end', default=datetime.datetime.now())
     
