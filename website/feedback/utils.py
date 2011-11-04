@@ -9,6 +9,8 @@ from django.conf import settings
 
 # we add another one
 
+# even more test:
+
 
 def email_backend(recipient_list, message, subject='Feedback'):
     subject = settings.EMAIL_SUBJECT_PREFIX + subject
