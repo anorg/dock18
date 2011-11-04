@@ -275,6 +275,7 @@ INSTALLED_APPS = (
     
     
     # cms base
+    
     'south',
     'cms',
     'menus',
