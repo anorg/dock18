@@ -61,7 +61,7 @@
 			-->
 			
 			<jwplayer:start>{{ file.cue_in }}</jwplayer:start>
-			<jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18recorded/</jwplayer:streamer>
+			<jwplayer:streamer>rtmp://88.198.82.243:1935/fastplay/</jwplayer:streamer>
 			
 			
 			
