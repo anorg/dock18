@@ -33,7 +33,7 @@
 	      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
 	      <enclosure url="flv:{{ event.key }}" />
 	
-	      <jwplayer:streamer>rtmp://rtmp.dock18.ch:1935/d18live/</jwplayer:streamer>
+	      <jwplayer:streamer>rtmp://88.198.82.243.ch:1935/d18live/</jwplayer:streamer>
 	      
 	    </item>
 
