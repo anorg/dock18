@@ -4,7 +4,6 @@ from django.template import loader
 from django.core.exceptions import ImproperlyConfigured
 from django.conf import settings
 
-
 def email_backend(recipient_list, message, subject='Feedback'):
     subject = settings.EMAIL_SUBJECT_PREFIX + subject
     if type(recipient_list) is not list:

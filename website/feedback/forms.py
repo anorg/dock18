@@ -4,6 +4,7 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
 
+# some fufu
 
 class FeedbackWidget(forms.Textarea):
 

@@ -1,4 +1,9 @@
-import json, urllib
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
+import urllib
 
 from django.db import models
 from django.contrib.auth.models import User
