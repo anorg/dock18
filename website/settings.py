@@ -10,6 +10,8 @@ PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 
+TESTING_X = False
+
 
 
 TEMPLATE_DEBUG = DEBUG
