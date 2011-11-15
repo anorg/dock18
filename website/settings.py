@@ -243,7 +243,7 @@ INSTALLED_APPS = (
     'pinax.templatetags',
     'notification',
     'compressor',
-    'debug_toolbar',
+    #'debug_toolbar',
     'mailer',
     'uni_form',
     'django_openid',

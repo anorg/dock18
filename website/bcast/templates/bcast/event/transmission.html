@@ -26,15 +26,22 @@
         plugins				: { '{{ STATIC_URL }}js/base.plugin.js': { text: 'Hello world!' }}, 
         
         
-        events				: { onError: function(event) {
-        
+        events				: {
+        	 
+        					  onError: function(event) {
         							if((event.message.indexOf("Stream not found") != -1)) {
         								countdown_reset(60);
         							}
-        
- 									
  							  },
- 							  onPlaylistItem: function(event) { pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event) }
+ 							  
+ 							  onPlaylistItem: function(event) { 
+ 							  	pase_player.track('play - {% if event.state == "past" %}archive{% else %}live{% endif %}', event);
+ 							  	pase_player.metadata(event);
+ 							  },
+ 							  
+ 							  onReady: function(event) {
+ 							  	pase_player.seek_anchor(event);
+ 							  }
  							  
  							  //onPlay: function(event) { $('#chat_f').remove(); }
  							  
@@ -65,8 +72,8 @@
 	player_config['autostart'] = true;
 	player_config['repeat'] = 'always';
 	player_config['plugins'] = false;
-	player_config['height'] = 621;
-	player_config['playlist.size'] = 200;
+	player_config['height'] = 501;
+	player_config['playlist.size'] = 80;
 	player_config['playlist.position'] = 'bottom';
 	{% endif %}
 	
@@ -107,6 +114,7 @@
 	
 	<div class="container" id="container_player" >
 		<div id="player">...trying to load the player...</div>
+		<div id="cuepoints">... loading queue-points ...</div>
 	</div>
 
 </div>

@@ -6,6 +6,9 @@ from django.conf import settings
 
 from django.middleware.csrf import get_token
 
+
+from filer.models.videomodels import Video
+
 import json
 
 from bcast.models import Event
@@ -25,8 +28,10 @@ def playlist(request, id):
     
     folder = event.get_folder('recorded')
     
+    videos = folder.files.instance_of(Video)
+    
 
-    r = render_to_response('bcast/api/playlist.xml', {'event': event, 'folder': folder}, mimetype="application/xml",
+    r = render_to_response('bcast/api/playlist.xml', {'event': event, 'folder': folder, 'videos': videos}, mimetype="application/xml",
                               context_instance=RequestContext(request))
 
     return r

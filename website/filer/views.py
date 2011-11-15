@@ -70,6 +70,17 @@ def edit_image(request, folder_id):
 
 
 @login_required
+def edit_video(request, folder_id):
+    # TODO: implement edit_image view
+    folder = None
+    return render_to_response('filer/video_edit.html', {
+            'folder': folder,
+            'is_popup': '_popup' in request.REQUEST or \
+                        'pop' in request.REQUEST,
+        }, context_instance=RequestContext(request))
+
+
+@login_required
 def make_folder(request, folder_id=None):
     if not folder_id:
         folder_id = request.REQUEST.get('parent_id', None)

@@ -1,7 +1,10 @@
 {% load i18n admin_modify adminmedia filermedia %}
 <script type="text/javascript">
 //<![CDATA[
-$(function() {
+
+
+(function($) {
+	
     var uploader = new qq.FileUploaderBasic({
         action: '{% url admin:filer-ajax_upload %}',
         button: document.getElementById('id_upload_button'),
@@ -34,6 +37,6 @@ $(function() {
             $('#fileUpload-' + id).hide();
         }
     });
-});
+})(jQuery);
 //]]>
 </script>
