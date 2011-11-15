@@ -53,7 +53,7 @@
 		{% for video in videos %}
 	    <item>
 			<title>{% firstof video.name video %} | FLV-Plugin</title>
-			<description>{% firstof video.description event.excerpt|escape %}</description>			
+			<description>{% firstof video.description %}</description>			
 			<enclosure url="flv:{{ video.filename }}" type="video/flv" length="{{ video.size }}" />
 			
 			<!-- extended properties for jwplayer-->
@@ -67,7 +67,7 @@
 		{% for file in folder.files %}
 	    <item>
 			<title>{% firstof file.name file %}</title>
-			<description>{% firstof file.description event.excerpt|escape %}</description>			
+			<description>{% firstof file.description %}</description>			
 			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
 			
 			<!-- extended properties for jwplayer-->
