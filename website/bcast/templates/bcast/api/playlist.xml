@@ -11,7 +11,7 @@
 	
     <item>
       <title>{{ event.title }}</title>
-      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
+      <description></description>
       
 	  <enclosure url="/static/img/base/screen.test.png" type="video/flv" length="3192846" />
       
@@ -32,7 +32,7 @@
 		<!-- now -->
 	    <item>
 	      <title>{{ event.title }} - LIVE! {{ event.key }}</title>
-	      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
+	      <description></description>
 	      
 	      
 	      <enclosure url="flv:{{ event.key }}" />
