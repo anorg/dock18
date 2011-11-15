@@ -257,7 +257,7 @@ ul.horizontal > li.last { padding-right: 0; }
 .qq-uploader { position: relative; width: 100%; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_qq-upload\.sass}line{font-family:\000035}}
-.qq-upload-button { display: block; /* or inline-block */ width: 105px; padding: 0 0; text-align: center; border: 1px solid #dddddd; color: white; }
+.qq-upload-button { display: block; /* or inline-block */ width: 100%; padding: 6px 0; text-align: center; border: 1px solid #dddddd; color: white; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000317}}
 .qq-upload-button-focus { outline: 1px dotted black; }
@@ -276,7 +276,7 @@ ul.horizontal > li.last { padding-right: 0; }
 .qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text { margin-right: 7px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000357}}
-.qq-upload-spinner { display: inline-block; background: url("loading.gif"); width: 15px; height: 15px; vertical-align: text-bottom; }
+.qq-upload-spinner { display: inline-block; background: url("/static/img/base/ajax-loaderXF0F.gif"); width: 20px; height: 11px; vertical-align: text-bottom; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000364}}
 .qq-upload-size, .qq-upload-cancel { font-size: 11px; }
@@ -472,7 +472,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: italic; text-decora
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003387}}
 .expandable.main.window .panel.chat > .display { padding: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003391}}
-.expandable.main.window .panel.filebrowser { padding: 0; max-height: 280px; overflow: auto; background-color: #ffb3ff; }
+.expandable.main.window .panel.filebrowser { padding: 0; max-height: 580px; overflow: auto; background-color: #ffb3ff; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003400}}
 .expandable.main.window .panel.filebrowser > .action { background-color: fuchsia; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003403}}

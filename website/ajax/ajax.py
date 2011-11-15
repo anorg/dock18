@@ -19,7 +19,8 @@ from xml.etree import ElementTree as ET
 
 def loopcount(request):
     
-    api_url = "http://" + RTMP_IP + ":8086/connectioncounts"
+    # api_url = "http://" + RTMP_IP + ":8086/connectioncounts"
+    api_url = "http://" + '127.0.0.1' + ":8086/connectioncounts"
     api_key = "xyz"
     
     
