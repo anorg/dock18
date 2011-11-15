@@ -8,3 +8,4 @@ website/media
 .DS_Store
 *.pyc
 .sass-cache*
+scripts/local_config.cfg

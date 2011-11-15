@@ -105,7 +105,7 @@ if settings.FILER_ENABLE_PERMISSIONS:
             'fields': ('name', 'owner', 'description')
         }),
         ('Cueing (Video only)', {
-            'fields': ('cue_in','cue_out',)
+            'fields': ('cue_in','cue_out','preview_pos','apply_permanent',)
         }),
         (None, {
             'fields': ('is_public',)
@@ -121,7 +121,7 @@ else:
             'fields': ('name', 'owner', 'description')
         }),
         ('Cueing (Video only)', {
-            'fields': ('cue_in','cue_out',)
+            'fields': ('cue_in','cue_out','preview_pos','apply_permanent',)
         }),
         (_('Advanced'), {
             'fields': ('file', 'sha1'),

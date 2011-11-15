@@ -125,8 +125,11 @@
 			<div id="sidebar" class="col left sidebar">
 
 
+				{% load value_from_settings %}
+				{% value_from_settings "RTMP_IP" as rtmp_ip %}
+
 				<div id="streamstat">
-                {% streamstat 88.198.82.243 %}
+                {% streamstat rtmp_ip %}
                 </div>
                 
 				<div id="flatr">

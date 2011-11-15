@@ -63,6 +63,10 @@ class File(PolymorphicModel, mixins.IconsMixin):
     
     cue_in = models.IntegerField(_('Cue-In'), null=True, blank=True, default=0)
     cue_out = models.IntegerField(_('Cue-Out'), null=True, blank=True, default=0)
+    
+    preview_pos = models.IntegerField(_('Position of preview-frame'), null=True, blank=True, default=0)
+    
+    apply_permanent = models.BooleanField('Apply cue-points', default=True, help_text=_('Cut file permanently. (Takes a while to complete)'))
 
     objects = FileManager()
 

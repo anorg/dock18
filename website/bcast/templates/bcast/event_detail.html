@@ -1,4 +1,5 @@
-{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group %}
+{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group value_from_settings %}
+{% value_from_settings "RTMP_IP" as rtmp_ip %}
 <div class="plugin bcast event detail">
 
 <div class="expandable main window" id="bcast_lead">
@@ -87,7 +88,7 @@
 		<h5>Stream setup:</h5>
 		<ul>
 			<li>
-				<span>FMS URL:</span><span>rtmp://rtmp.dock18.ch/d18live</span>
+				<span>FMS URL:</span><span>rtmp://{{ rtmp_ip  }}/d18live</span>
 			</li>
 			<li>
 				<span>Stream:</span><span>{{ event.key }}</span>

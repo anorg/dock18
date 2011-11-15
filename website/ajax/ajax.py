@@ -5,6 +5,8 @@ from django.core.cache import cache
 
 from bcast.models import *
 
+from settings import *
+
 import random
 import urllib
 import urllib2
@@ -17,7 +19,7 @@ from xml.etree import ElementTree as ET
 
 def loopcount(request):
     
-    api_url = "http://88.198.82.243:8086/connectioncounts"
+    api_url = "http://" + RTMP_IP + ":8086/connectioncounts"
     api_key = "xyz"
     
     

@@ -4,7 +4,7 @@
 
 
 {% addtoblock "js" %}
-<script src="{{ STATIC_URL }}js/lib/fileuploader.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}js/lib/fileuploader_mod.js" type="text/javascript" charset="utf-8"></script>
 {% endaddtoblock %}
 
 
@@ -18,7 +18,34 @@ var uploader = new qq.FileUploader({
     // pass the dom node (ex. $(selector)[0] for jQuery users)
     element: $('#file-uploader')[0],
     // path to server-side upload script
-    action: '/server/upload'
+    // action: '/bcast/upload/{{ event.id }}/',
+    action: '{% url ajax_uploader %}',
+    
+    
+    // multiple: true,
+    onComplete: function( id, fileName, responseJSON ) {
+      if( responseJSON.success ) {
+        // alert( "success!" ) ;
+      } else  {
+        alert( "upload failed!" ) ;
+       }
+    },
+    onAllComplete: function( uploads ) {
+      // uploads is an array of maps
+      // the maps look like this: { file: FileObject, response: JSONServerResponse }
+      // alert( "All complete!" ) ;
+      
+      base.ui.interval();
+      
+    },
+    params: {
+      'csrf_token': '{{ csrf_token }}',
+      'csrf_name': 'csrfmiddlewaretoken',
+      'csrf_xname': 'X-CSRFToken',
+      'event_id': '{{ event.id }}',
+    },
+    
+    
 }); 
 	
 });
@@ -83,7 +110,21 @@ var uploader = new qq.FileUploader({
 			
 			
 			
-			<p><span style="font-weight: bold; padding: 10px 0 5px">Recorded stream</span></p>
+			<h4>User uploads</h4>
+			<ul>
+			{% for file in folder_uploads.files %}
+				<li><a href="{{ file.url }}" >
+					{{ file }} [{{ file.size|filesizeformat }}]
+					| uploaded by {{ file.owner }}
+				</a></li>
+			{% empty %}
+				<li>No files yet.</li>
+			{% endfor %}
+			</ul>
+			
+			
+			
+			<h4>Stream recordings</h4>
 			<ul>
 			{% for file in folder_recordings.files %}
 				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>

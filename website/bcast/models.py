@@ -9,6 +9,8 @@ from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
 
+from django.core.files import File as DjangoFile
+
 from django.contrib.sites.models import Site
 
 from filer.fields.image import FilerImageField
@@ -125,18 +127,59 @@ class Event(models.Model):
     def get_folder(self, name):
         folder, created = Folder.objects.get_or_create(name=name, parent=self.folder)
         return folder
+    
+    def add_file(self, src, folder_name, name, user):
+        
+        print 'add_file()'
+        
+        folder, created = Folder.objects.get_or_create(name=folder_name, parent=self.folder)
+        
+        print 'folder_name', 
+        print folder_name
+        print 'name', 
+        print name
+        print 'user', 
+        print user
+        
+        file = DjangoFile(open(src),name=name)
+        
+        obj, created = File.objects.get_or_create(
+                            original_filename=name,
+                            file=file,
+                            owner=user,
+                            folder=folder,
+                            is_public=True)
+        
+        
+        return True
+        # return file
         
     
     def get_absolute_url(self):
         pages = self.get_pages_using()
         
-        url = None
-        for page in pages:
-            #url = page.get_absolute_url()
-            
-            abs_url = 'http://%s%s' % (Site.objects.get_current().domain, page.get_absolute_url())
+        abs_url = False
+        try:
+            for page in pages:
+                #url = page.get_absolute_url()
+                abs_url = 'http://%s%s' % (Site.objects.get_current().domain, page.get_absolute_url())
+        except Exception, e:
+            abs_url = False
             
         return abs_url
+        
+    
+    def get_page_published(self):
+        pages = self.get_pages_using()
+        
+        published = False
+        try:
+            for page in pages:
+                published = page.published
+        except Exception, e:
+            published = False
+            
+        return published
         
     
     def get_playlist_url(self):

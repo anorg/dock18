@@ -1,4 +1,6 @@
-{% load thumbnail %}
+{% load thumbnail value_from_settings %}
+{% value_from_settings "RTMP_IP" as rtmp_ip %}
+
 <rss version="2.0" xmlns:jwplayer="http://developer.longtailvideo.com/">
   <channel>
     <title>Playlist with RTMP streams</title>
@@ -31,10 +33,14 @@
 	    <item>
 	      <title>{{ event.title }} - LIVE! {{ event.key }}</title>
 	      <description>{{ event.excerpt|escape }} | state: {{ event.state }} | key: {{ event.key }}</description>
-	      <enclosure url="flv:{{ event.key }}" />
-	
-	      <jwplayer:streamer>rtmp://88.198.82.243:1935/d18live/</jwplayer:streamer>
 	      
+	      
+	      <enclosure url="flv:{{ event.key }}" />
+	      <jwplayer:streamer>rtmp://{{ rtmp_ip }}:1935/d18live/</jwplayer:streamer>
+	      <!--
+	      <enclosure url="flv:combine.flv" />
+	      <jwplayer:streamer>rtmp://{{ rtmp_ip }}:1935/d18recorded/</jwplayer:streamer>
+	      -->
 	    </item>
 
 	
@@ -61,7 +67,7 @@
 			-->
 			
 			<jwplayer:start>{{ file.cue_in }}</jwplayer:start>
-			<jwplayer:streamer>rtmp://88.198.82.243:1935/fastplay/</jwplayer:streamer>
+			<jwplayer:streamer>rtmp://{{ rtmp_ip }}:1935/d18recorded/</jwplayer:streamer>
 			
 			
 			

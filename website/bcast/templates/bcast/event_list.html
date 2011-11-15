@@ -2,29 +2,39 @@
 
 <div class="plugin events list">
 	{% for event in objects %}
+	
+	
+		{% if event.get_page_published or request.user.is_staff %}
+	
+		{% include 'bcast/event_list_event.html' %} 
+		
+		
+		
+		{% if event.state == 'future' or event.state == 'today' %}
+		{% addtoblock "js" %}
+		<script type="text/javascript">
+			// alert(123);
+		
+			$('.event #countdown_{{ event.key }}').countdown({
+				until: +{{ event.starts_in }},
+				compact: true
+			});
+		</script>
+		{% endaddtoblock %}
+		{% endif %}
+		
+		
+		
+		
 
-	{% include 'bcast/event_list_event.html' %} 
-	
-	
-	
-	{% if event.state == 'future' %}
-	{% addtoblock "js" %}
-	<script type="text/javascript">
-		$('.future #countdown_{{ event.key }}').countdown({
-			until: +{{ event.starts_in }},
-			compact: true
-		});
-	</script>
-	{% endaddtoblock %}
-	{% endif %}
-	
-	
-	
+		
+		{% endif %}
 	
 	{% empty %}
-	<div class="notice">
-		{% trans "No events yet" %}
-	</div>
+		<div class="notice">
+			{% trans "Keine Events gefunden zu diesen Kriterien" %}
+		</div>
+	
 	{% endfor %}
 
 </div>

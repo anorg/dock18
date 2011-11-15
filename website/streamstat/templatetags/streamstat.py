@@ -11,12 +11,16 @@ register = template.Library()
 
 @register.tag
 def get_streamstat(parser, token):
+    
+    print token
 
     try:
         # split_contents() knows not to split quoted strings.
         tag_name, stream_server = token.split_contents()
     except ValueError:
         stream_server = None
+
+    print stream_server
 
     return StreamstatsNode(stream_server)
     

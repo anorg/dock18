@@ -321,6 +321,8 @@ INSTALLED_APPS = (
     'taggit',
     'jqchat', 
     
+    'ajaxuploader',
+    
     'bcast',
     
     'feedback',
@@ -418,8 +420,11 @@ JQCHAT_DATE_FORMAT={
 }
 
 
+RTMP_IP = '192.168.200.128'
+
+
 # hm - how to handle multiple...
-# AUTH_PROFILE_MODULE = 'facebook.FacebookProfile'
+# AUTH_PROFILE_MODULE = 'facebook.FacebookProfile'  
 
 
 

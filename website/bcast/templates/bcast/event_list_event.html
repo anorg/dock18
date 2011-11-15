@@ -15,7 +15,8 @@
 	
 	<div class="left wrap">
 	
-		<h3><a href="{{ event.get_absolute_url }}" class="url_main"> 
+		<h3>
+			<a href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}" class="url_main"> 
 				<span class="title">{{ event.title }}</span>  
 			</a>
 		</h3>
@@ -34,7 +35,7 @@
 		{% endif %}{% endif %}
 		</span>
 		
-		{% if event.state == 'future' %}
+		{% if event.state == 'future' or event.state == 'today' %}
 		<br />
 		<span id="countdown_{{event.key }}">&nbsp;</span>
 		{% endif %}

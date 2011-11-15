@@ -116,9 +116,12 @@ base.ui.interval = function() {
 	
 	
 	$('#site_wide_announcements').load('/ #site_wide_announcements');
+	
+	// filebrowser
+	$('#bcast_filebrowserpanel').load($(location).attr('href') + ' #bcast_filebrowserpanel');
 
 	// reload comments | temporary here, refactor do djaxice
-	$('#comments_list').load('/shows/supershow/ #comments_list');
+	// $('#comments_list').load('/shows/supershow/ #comments_list');
 	
 };
 
