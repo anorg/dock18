@@ -58,6 +58,9 @@ class Event(models.Model):
     excerpt = models.TextField(blank=True)
     
     
+    # movie_index = models.TextField('Movie index', blank=True)
+    
+    
     unsertestfeld = models.TextField(blank=True)
     
     date_start = models.DateTimeField('date start', default=datetime.datetime.now())
