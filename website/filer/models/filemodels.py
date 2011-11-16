@@ -284,4 +284,4 @@ class File(PolymorphicModel, mixins.IconsMixin):
         verbose_name = _('file')
         verbose_name_plural = _('files')
         
-        ordering = ['name']
+        ordering = ['name', 'original_filename']

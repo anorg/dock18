@@ -80,9 +80,14 @@
 
 	
 	<!-- some information for admin -->
+	
+	
+	
 	{% if request.user.is_authenticated %}
 	
 	{% if request.user|in_group:"Streamers" %}
+	
+	{% if event.state == 'future' or event.state == 'today' or event.state == 'now' %}
 
 	<div class="admin padded  notice">
 		<h5>Stream setup:</h5>
@@ -99,6 +104,8 @@
 			<li>&nbsp;</li>
 		</ul>
 	</div>
+	
+	{% endif %}
 	
 	{% endif %}
 	

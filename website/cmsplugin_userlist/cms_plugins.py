@@ -8,7 +8,7 @@ from django.contrib.auth.models import User, Group, Permission
 class CMSUserlistPlugin(CMSPluginBase):
     model = UserlistPlugin
     name = _("Userlist plugin, show users in group x")
-    render_template = "cmsplugin_Userlist/user_list.html"
+    render_template = "cmsplugin_userlist/user_list.html"
     
     # instance.userlist = 
 
