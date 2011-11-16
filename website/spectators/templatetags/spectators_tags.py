@@ -35,14 +35,15 @@ class SpectatorsNode(template.Node):
     
     def __init__(self, object_id, varname):
         self.object_id = template.Variable(object_id)
-        # self.object_id = self.object.id
         
         self.varname = varname
     
     def render(self, context):
-        # user = self.user.resolve(context)
+        # object_id = self.object_id.resolve(self.object_id)
         
-        print self.object_id
+        object_id = self.object_id.resolve(context)
+        
+        print object_id
         
         
         
@@ -51,8 +52,8 @@ class SpectatorsNode(template.Node):
             
         context[self.varname] = Spectate.objects.filter(
             # sender=user,
-            receiver_object_id__in=(self.object_id,)
-            #receiver_content_type__in=(56,)
+            receiver_object_id__in=(object_id,)
+            # receiver_content_type__in=(56,)
         )
         return ""
 
@@ -71,12 +72,9 @@ def spectates(parser, token):
 
 @register.tag
 def spectators(parser, token):
-    """
-    {% spectators object as spectate_users %}
-    """
-    tokens = token.split_contents()
-    object_id = tokens[1]
-    varname = tokens[-1]
+
+    tag_name, object_id, xas,  varname  = token.split_contents()
+
     return SpectatorsNode(object_id, varname)
 
 

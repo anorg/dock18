@@ -42,7 +42,7 @@ class VideoAdmin(FileAdmin):
     fieldsets = (
         FileAdmin.fieldsets[0],
         (_('Video related'), {
-            'fields': ('offset',),
+            'fields': ('offset','position',),
             #'classes': ('collapse',),
         }),
         (_('Advanced'), {

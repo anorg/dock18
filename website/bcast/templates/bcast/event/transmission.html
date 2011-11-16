@@ -72,9 +72,13 @@
 	player_config['autostart'] = true;
 	player_config['repeat'] = 'always';
 	player_config['plugins'] = false;
-	player_config['height'] = 501;
-	player_config['playlist.size'] = 80;
-	player_config['playlist.position'] = 'bottom';
+	
+		{% if event.num_recordings > 1 %}
+		player_config['height'] = 421 + ( {{ event.num_recordings }} * 40 );
+		player_config['playlist.size'] = {{ event.num_recordings }} * 40;
+		player_config['playlist.position'] = 'bottom';
+		{% endif %}
+	
 	{% endif %}
 	
 	
@@ -90,14 +94,17 @@
 	{% endif %}
 	
 
-	jQuery(document).ready(function($) {
-	
-		pase_player = base.player.init();
-	
-  		jwplayer("player").setup(player_config);
 
+	{% if event.state == 'past' and event.processed == 'init' %}
+	
+	{% else %}
+
+	jQuery(document).ready(function($) {
+		pase_player = base.player.init();
+  		jwplayer("player").setup(player_config);
 	});
 	
+	{% endif %}
 	
 
 
@@ -113,8 +120,15 @@
 	</div>
 	
 	<div class="container" id="container_player" >
+		
+		{% if event.state == 'past' and event.processed == 'init' %}
+		<div id="process_wait">
+			<p style="padding: 10px;">Die Aufnahmen zu diesem Anlass wurden noch nicht bearbeitet. Bitte in ein paar Minuten nochmals versuchen.</p>
+		</div>
+		{% else %}
 		<div id="player">...trying to load the player...</div>
 		<div id="cuepoints">... loading queue-points ...</div>
+		{% endif %}
 	</div>
 
 </div>

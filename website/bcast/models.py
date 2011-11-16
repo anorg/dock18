@@ -131,6 +131,13 @@ class Event(models.Model):
         folder, created = Folder.objects.get_or_create(name=name, parent=self.folder)
         return folder
     
+    def num_recordings(self):
+        try:
+            return self.get_folder('recorded').files.count()
+        except Exception, e:
+            return 0
+
+    
     def add_file(self, src, folder_name, name, user):
         
         print 'add_file()'

@@ -1,0 +1,58 @@
+{% load thumbnail sekizai_tags in_group %}
+		<div class="panel user">
+	
+	
+			<div class="action">
+			    <div class="left">
+					<h4 class="username">
+						{% firstof obj.get_profile.name obj.username %}{% if obj.get_profile.function %}, {{ obj.get_profile.function }}{% endif %}
+					</h4>
+				</div>
+			    <div class="right social">
+			    	<!--
+					{% include 'element/social.html' %}
+					-->
+				</div>
+			    <div class="clear"></div>
+			</div>
+			
+			<div class="display">
+				<p>{{ obj.get_profile.about|linebreaksbr }}</p>
+				
+							
+				
+				{% if obj.get_profile.websites %}
+				<div class="group">
+					<div class="value">
+						
+					{% if obj.get_profile.facebook %}
+						<a href="{{ obj.get_profile.facebook }}">{{ obj.get_profile.facebook }}</a>
+					{% endif %}
+					
+					{% if obj.get_profile.soundcloud %}
+						<a href="{{ obj.get_profile.soundcloud }}">{{ obj.get_profile.soundcloud }}</a>
+					{% endif %}
+					
+					{{ obj.get_profile.websites|urlize }}
+					</div>
+				</div>
+				{% endif %}
+				
+				{% if request.user|in_group:"Streamers" %}
+					{% if obj.get_profile.skype %}
+					<div class="group">
+						<div class="label left">Skype:</div>
+						<div class="value left"><a href="callto://{{ obj.get_profile.skype }}">{{ obj.get_profile.skype }}</a></div>
+						<div class="clear"></div>
+					</div>
+					{% endif %}
+				{% endif %}
+
+				
+				
+				
+				
+			</div>
+	
+		
+		</div>

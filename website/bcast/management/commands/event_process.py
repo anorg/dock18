@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand, NoArgsCommand
 from filer.models.filemodels import File
 from filer.models.foldermodels import Folder
 from filer.models.imagemodels import Image
+from filer.models.videomodels import Video
 from filer.settings import FILER_IS_PUBLIC_DEFAULT
 
 # from bcast.settings import *
@@ -21,24 +22,25 @@ class FileImporter(object):
         self.verbosity = int(kwargs.get('verbosity', 1))
         self.file_created = 0
         self.image_created = 0
+        self.video_created = 0
         self.folder_created = 0
 
     def import_file(self, file, folder):
         """
-        Create a File or an Image into the given folder
+        Create a File or a Video/FLV into the given folder
         """
         try:
             iext = os.path.splitext(file.name)[1].lower()
         except:
             iext = ''
-        if iext in ['.jpg', '.jpeg', '.png', '.gif']:
-            obj, created = Image.objects.get_or_create(
+        if iext in ['.flv']:
+            obj, created = Video.objects.get_or_create(
                                 original_filename=file.name,
                                 file=file,
                                 folder=folder,
                                 is_public=FILER_IS_PUBLIC_DEFAULT)
             if created:
-                self.image_created += 1
+                self.video_created += 1
         else:
             obj, created = File.objects.get_or_create(
                                 original_filename=file.name,
@@ -48,8 +50,8 @@ class FileImporter(object):
             if created:
                 self.file_created += 1
         if self.verbosity >= 2:
-            print u"file_created #%s / image_created #%s -- file : %s -- created : %s" % (self.file_created,
-                                                        self.image_created,
+            print u"file_created #%s / video_created #%s -- file : %s -- created : %s" % (self.file_created,
+                                                        self.video_created,
                                                         obj, created)
         return obj
 
@@ -90,7 +92,7 @@ class FileImporter(object):
             
             # TODO: use config file!!
             import_path = os.path.join('/storage/tvdock18/recorded/')
-            self.linker(import_path, 'shows' + '/' + event.title + '/', event.key)
+            self.linker(import_path, 'Shows' + '/' + event.title + '/', event.key)
             
             event.processed = 'done'
             event.save()

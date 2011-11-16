@@ -441,8 +441,18 @@ h3, h4, h5, h6
       // padding: ($default-space/2)
       padding: 0
       max-height: 280px
-      overflow: auto
+      // overflow: auto
       
+
+      .spectatormessages
+        padding: 10px
+        &:empty
+          display: none
+          
+        span
+          padding: 0 10px 0 0
+        
+        // color: white
 
       background-color: adjust-lightness($color-base-d, 35)
       
@@ -480,6 +490,33 @@ h3, h4, h5, h6
         a 
           color: black
           text-decoration: none
+          
+          
+  
+    &.user
+
+      background-color: adjust-lightness($color-base-a, 35)
+      
+      > .action
+        background-color: $color-base-a
+        padding: ($default-space/4) ($default-space/2)
+      
+      > .display
+        padding: ($default-space/4) ($default-space/2)
+        
+        p, div.group
+          padding: 4px 0
+          line-height: 140% !important
+          
+        a:link, a:visited
+          color: black
+          
+        div.group
+          .label
+            display: block
+            // width: 80px
+            padding: 0 4px 0 0
+          .value
         
   
   
@@ -883,6 +920,25 @@ div#player_wrapper
     border: none
     &:hover
       color: $color-base-a
+      
+  .user.profile 
+    div.group
+      padding: 1px 0
+      line-height: 140% !important
+    
+    h1, h2, h3, h4, h5, h6
+      padding: 10px 0 4px 0
+      
+    a:link, a:visited
+      color: black
+      padding: 0
+      
+    div.group
+      .label
+        display: block
+        width: 100px
+        padding: 0 4px 0 0
+      .value
       
 
       

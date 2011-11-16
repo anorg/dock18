@@ -43,6 +43,7 @@ class Video(File):
     
     offset = models.IntegerField(_('Cue-In'), null=True, blank=True, default=0, help_text=_('In _SECONDS_! | where the video should start.'))
     
+    position = models.IntegerField(_('Position'), null=True, blank=True, default=0, help_text=_('Set number to override the ordering. (DESC)'))
 
     @classmethod
     def matches_file_type(cls, iname, ifile, request):

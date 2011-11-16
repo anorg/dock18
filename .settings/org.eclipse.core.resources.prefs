@@ -1,4 +1,4 @@
-#Tue Nov 15 13:38:07 CET 2011
+#Wed Nov 16 17:32:24 CET 2011
 eclipse.preferences.version=1
 encoding//website/ajaxuploader/models.py=utf-8
 encoding//website/bcast/management/commands/event_process.py=utf-8
@@ -12,6 +12,7 @@ encoding//website/filer/admin/imageadmin.py=utf-8
 encoding//website/filer/admin/tools.py=utf-8
 encoding//website/filer/admin/videoadmin.py=utf-8
 encoding//website/filer/fields/file.py=utf-8
+encoding//website/filer/management/commands/import_files.py=utf-8
 encoding//website/filer/models/__init__.py=utf-8
 encoding//website/filer/models/filemodels.py=utf-8
 encoding//website/filer/models/foldermodels.py=utf-8

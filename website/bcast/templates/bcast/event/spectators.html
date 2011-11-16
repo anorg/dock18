@@ -63,19 +63,13 @@
 		
 		<div class="inner display">
 		
-			<div id="bcast_spectatorpanel" class="spectatormessages">
+		
+			{% spectators event.id as spectate_users %}
 			
+			{% if spectate_users %}
+				<div id="bcast_spectatorpanel" class="spectatormessages">Teilnehmend: {% for obj in  spectate_users %}<span>{% firstof obj.sender.get_profile.name obj.sender %}{% if not forloop.last %},{% endif %}</span>{% endfor %}</div>			
+			{% endif %}
 			
-
-			
-
-			
-
-
-			
-
-			
-			</div>
 		</div>
 		
 

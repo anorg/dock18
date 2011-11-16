@@ -32,7 +32,7 @@ function processResponse(payload) {
 	// Get the timestamp, store it in global variable to be passed to the server on next call.
 	timestamp = payload.time;
 	for(message in payload.messages) {
-		$("#bcast_chatpanel").prepend('<div class="row">' + payload.messages[message].text + '</div>');
+		$("#bcast_chatpanel").prepend('<div class="row">' + util.parse_description(payload.messages[message].text) + '</div>');
 	}
 	
 	 $("#bcast_chatpanel").autolink();

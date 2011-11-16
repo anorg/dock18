@@ -2,18 +2,66 @@
 <div class="profile user info">
 	
 	{% if profile.name %}
-	<div>
+	<div class="group">
 		<div class="label left">Name:</div>
 		<div class="value left">{{ profile.name }}</div>
 		<div class="clear"></div>
 	</div>
 	{% endif %}
 	
+	{% if profile.function %}
+	<div class="group">
+		<div class="label left">Function:</div>
+		<div class="value left">{{ profile.function }}</div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
 	
-    {% if profile.name %}<p><b>{% trans "Name" %}</b>: {{ profile.name }}</p>{% endif %}
-    {% if profile.about %}<p><b>{% trans "About" %}</b>: {{ profile.about }}</p>{% endif %}
-    {% if profile.location %}<p><b>{% trans "Location" %}</b>: {{ profile.location }}</p>{% endif %}
-    {% if profile.website %}<p><b>{% trans "Website" %}</b>: <a href="{{ profile.website }}">{{ profile.website }}</a></p>{% endif %}
+	{% if profile.skype %}
+	<div class="group">
+		<div class="label left">Skype:</div>
+		<div class="value left">{{ profile.skype }}</div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	
+	{% if profile.facebook %}
+	<div class="group">
+		<div class="label left">Facebook:</div>
+		<div class="value left"><a href="{{ profile.facebook }}">{{ profile.facebook }}</a></div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	
+	{% if profile.soundcloud %}
+	<div class="group">
+		<div class="label left">Soundcloud:</div>
+		<div class="value left"><a href="{{ profile.soundcloud }}">{{ profile.soundcloud }}</a></div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	
+	{% if profile.location %}
+	<div class="group">
+		<div class="label left">Location:</div>
+		<div class="value left">{{ profile.location }}</div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	
+	{% if profile.websites %}
+	<div class="group">
+		<div class="value">{{ profile.websites|urlize }}</div>
+	</div>
+	{% endif %}
+	
+	{% if profile.about %}
+	<div class="group">
+		<h4>Profile:</h4>
+		<div class="value">{{ profile.about }}</div>
+	</div>
+	{% endif %}
+
 </div>
 
 <div>
