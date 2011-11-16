@@ -209,15 +209,18 @@ base.player.init = function() {
 	}
 	
 	this.metadata = function(event) {
-		var item = jwplayer().getPlaylist(event.index)
-		// _gaq.push(['_trackEvent', 'stream', action, item[0].file]);
 		
-		// console.log(item[0].description);
+		var item = jwplayer().getPlaylist(event.index)		
 		
-		var description = parse_description(item[0].description);
+		var description = util.parse_description(item[event.index].description, true);
 		
-		$('#cuepoints').html(description);
-		
+		if(description) {
+			$('#cuepoints').html('<p>' + description + '</p>');
+			$('#cuepoints').show();
+		} else {
+			$('#cuepoints').hide();
+		}
+
 	}
 	
 	this.seek_anchor = function(event) {
@@ -260,15 +263,7 @@ base.player.setup = function() {
 };
 
 
-parse_description = function(text) {
 
-    var re = /(([0-9]{2}):[0-9]{2})/g;        
-    text = text.replace(re, '<a class="cuepoint" href="#$1">$1</a> ');
-    
-    text = text.replace(/\n/g,'<br />'); 
-	
-	return '<p>' + text + '</p>';
-}
 
 /*
  * uploader things
@@ -563,6 +558,30 @@ util.string_random = function(length) {
 	}
 	return str;
 };
+
+
+util.parse_description = function(text, convert_linebreaks) {
+
+	if(text.length < 1) {
+		return false;
+	}
+
+    var re = /(([0-9]{2}):[0-9]{2})/g;        
+    text = text.replace(re, '<a class="cuepoint" href="#$1">$1</a> ');
+    
+    if(convert_linebreaks) {
+    	text = text.replace(/\n/g,'<br />'); 
+	}
+	
+	
+	return text;
+}
+
+
+
+
+
+
 
 $.fn.serializeObject = function()
 

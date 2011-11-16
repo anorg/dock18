@@ -12,7 +12,7 @@ class CMSUserlistPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context.update({
-                "userlist" : [],
+                "objects" : [1, 2],
                 })
         return context
 

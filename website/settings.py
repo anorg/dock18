@@ -305,7 +305,7 @@ INSTALLED_APPS = (
     
 
     'cmsplugin_poll',
-    #'cmsplugin_userlist',
+    'cmsplugin_userlist',
     
     # asset and media handling
     'compressor',
