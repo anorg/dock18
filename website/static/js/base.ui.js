@@ -566,8 +566,8 @@ util.parse_description = function(text, convert_linebreaks) {
 		return false;
 	}
 
-    var re = /(([0-9]{2}):[0-9]{2})/g;        
-    text = text.replace(re, '<a class="cuepoint" href="#$1">$1</a> ');
+    var re = / (([0-9]{2}):[0-9]{2})/g;        
+    text = text.replace(re, ' <a class="cuepoint" href="#$1">$1</a>');
     
     if(convert_linebreaks) {
     	text = text.replace(/\n/g,'<br />'); 

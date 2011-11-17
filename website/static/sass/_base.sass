@@ -26,22 +26,39 @@ $use-mozilla-ellipsis-binding: true
 
 // colors --------------------------------------------------------------------
 
-$color-base-bg: #000
-$color-base-fg: #fff
 
-$color-default: #000
-$color-base-action: #ff0
-$color-base-active: #ff0
-$color-base-focus: #0ff
-$color-base-interaction: #f00
-
-$color-base-notice: #ff9000
 
 $color-base-a: yellow
 $color-base-b: #0ff
 $color-base-c: #F0F
 $color-base-d: #acff00 
 $color-base-e: #F0F
+
+ 
+
+
+// fore- & background
+$color-base-bg: #000
+$color-base-fg: #fff
+
+// color pallette
+$color-base-a: #ffff00
+$color-base-b: #00ffff
+$color-base-c: #ffff00 // was d7ff00
+$color-base-d: #00ff00
+$color-base-e: #ff00ff
+
+
+// mappings
+$color-default: #000
+$color-base-action: $color-base-a
+$color-base-active: $color-base-a
+$color-base-focus: $color-base-b
+$color-base-interaction: $color-base-a
+
+
+// elements
+$color-base-notice: #ff9000
 
 
 
@@ -356,6 +373,8 @@ h3, h4, h5, h6
   margin: 0
   pading: 0
   
+  border-bottom: 8px solid white
+  
   .header
     display: none
     text-align: right
@@ -368,7 +387,7 @@ h3, h4, h5, h6
 
   // screen / player
   #cuepoints
-    border-top: 1px solid yellow
+    // border-top: 1px solid yellow
     // background-color: #ffff02
     p
       padding: 10px
@@ -414,6 +433,7 @@ h3, h4, h5, h6
       
 
       background-color: adjust-lightness($color-base-c, 35)
+      color: contrast-color($color-base-c)
       
       > .action
         background-color: $color-base-c
@@ -437,7 +457,8 @@ h3, h4, h5, h6
           
         h4
           background: $color-base-c
-          color: white
+          color: contrast-color($color-base-c)
+          // color: white
         
   
     &.spectator
@@ -725,10 +746,10 @@ form.submit_inside
   input.msg
     // width: 300px
     border: none
-    background-color: inherit
+    background-color: white
     font-size: 100%
     
-    border: 1px inset #ABABAB
+    border: 1px solid black
     padding: 2px
     width: 84%
     

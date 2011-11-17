@@ -66,13 +66,22 @@ class EventListingPlugin(CMSPluginBase):
 
         # latest = Event.published.all()[:instance.limit]
         
-        if instance.range == 'past':
-            # objects = Event.published.filter(date_start__lte=datetime.now())[:instance.limit]
-            objects = Event.published.filter(date_start__lte=datetime.now()).filter(date_end__lte=datetime.now()).order_by('-date_end')[:instance.limit]
+        # print instance.channel
         
-        if instance.range == 'future':    
-            # objects = Event.published.filter(date_start__gte=datetime.now()).filter(date_start__gte=datetime.now())[:instance.limit]
-            objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).order_by('date_start')[:instance.limit]
+        kwargs = {}
+        
+        """
+        if instance.channel not None:
+            print 'channel'
+        """
+        
+        if instance.range == 'past':
+            objects = Event.published.filter(date_start__lte=datetime.now()).filter(date_end__lte=datetime.now()).filter(channel=instance.channel).filter( **kwargs ).order_by('-date_end')[:instance.limit]
+            
+            
+        
+        if instance.range == 'future': 
+            objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('date_start')[:instance.limit]
 
         
         context.update({

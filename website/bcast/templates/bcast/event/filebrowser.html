@@ -114,7 +114,7 @@ var uploader = new qq.FileUploader({
 			<ul>
 			{% for file in folder_uploads.files %}
 				<li><a href="{{ file.url }}" >
-					{{ file }} [{{ file.size|filesizeformat }}]
+					[{{ file.size|filesizeformat }}] {{ file }}
 					| uploaded by {{ file.owner }}
 				</a></li>
 			{% empty %}
@@ -127,7 +127,7 @@ var uploader = new qq.FileUploader({
 			<h4>Stream recordings</h4>
 			<ul>
 			{% for file in folder_recordings.files %}
-				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>
+				<li> <a href="{{ file.url }}" >[{{ file.size|filesizeformat }}] {{ file }}</a></li>
 			{% empty %}
 				<li>No files yet.</li>
 			{% endfor %}

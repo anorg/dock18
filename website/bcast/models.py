@@ -33,8 +33,13 @@ class Season(models.Model):
         return self.title
     def is_today(self):
         return self.date_start.date() == datetime.date.today()
-    
-    
+
+
+class Channel(models.Model):
+    title = models.CharField(max_length=200)
+    excerpt = models.TextField(blank=True, null=True)
+    def __unicode__(self):
+        return self.title
 
 class ActiveEventsManager(models.Manager):
     """
@@ -90,6 +95,8 @@ class Event(models.Model):
     type = models.CharField(max_length=24, default='show', choices=TYPE_CHOICES)
     
     Season = models.ForeignKey(Season)
+    
+    channel = models.ForeignKey(Channel, default="Dock18", blank=True, null=True)
     
     folder = models.ForeignKey(Folder, blank=True, null=True, related_name='event_folder', help_text=_('Don\'t change manually until you _know_ what you are doing!!!'))
     
@@ -321,6 +328,9 @@ class EventListPlugin(CMSPlugin):
     # settings, exposed to admin site / plugin
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
     range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
+    
+    channel = models.ForeignKey(Channel, default="Dock18", blank=True, null=True)
+    
     limit = models.IntegerField(default=8)
 
     def __unicode__(self):
