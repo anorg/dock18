@@ -17,7 +17,7 @@ class Migration(SchemaMigration):
         db.send_create_signal('bcast', ['Channel'])
 
         # Adding field 'Event.channel'
-        db.add_column('bcast_event', 'channel', self.gf('django.db.models.fields.related.ForeignKey')(default='Dock18', to=orm['bcast.Channel'], null=True, blank=True), keep_default=False)
+        db.add_column('bcast_event', 'channel', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bcast.Channel'], null=True, blank=True), keep_default=False)
 
 
     def backwards(self, orm):
@@ -68,7 +68,7 @@ class Migration(SchemaMigration):
         'bcast.event': {
             'Meta': {'ordering': "('date_start',)", 'object_name': 'Event'},
             'Season': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bcast.Season']"}),
-            'channel': ('django.db.models.fields.related.ForeignKey', [], {'default': "'Dock18'", 'to': "orm['bcast.Channel']", 'null': 'True', 'blank': 'True'}),
+            'channel': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bcast.Channel']", 'null': 'True', 'blank': 'True'}),
             'chat': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'date_end': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime(2011, 11, 16, 19, 9, 26, 736450)'}),

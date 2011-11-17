@@ -1,7 +1,9 @@
-#Wed Nov 16 17:32:24 CET 2011
+#Thu Nov 17 15:43:31 CET 2011
 eclipse.preferences.version=1
 encoding//website/ajaxuploader/models.py=utf-8
 encoding//website/bcast/management/commands/event_process.py=utf-8
+encoding//website/bcast/migrations/0014_auto__add_channel__add_field_event_channel.py=utf-8
+encoding//website/bcast/migrations/0015_auto__add_field_eventlistplugin_channel.py=utf-8
 encoding//website/bcast/urls.py=utf-8
 encoding//website/feedback/urls.py=utf-8
 encoding//website/feedback/views.py=utf-8

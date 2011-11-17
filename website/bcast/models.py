@@ -96,7 +96,7 @@ class Event(models.Model):
     
     Season = models.ForeignKey(Season)
     
-    channel = models.ForeignKey(Channel, default="Dock18", blank=True, null=True)
+    channel = models.ForeignKey(Channel, blank=True, null=True)
     
     folder = models.ForeignKey(Folder, blank=True, null=True, related_name='event_folder', help_text=_('Don\'t change manually until you _know_ what you are doing!!!'))
     
@@ -329,7 +329,7 @@ class EventListPlugin(CMSPlugin):
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
     range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
     
-    channel = models.ForeignKey(Channel, default="Dock18", blank=True, null=True)
+    channel = models.ForeignKey(Channel, blank=True, null=True)
     
     limit = models.IntegerField(default=8)
 

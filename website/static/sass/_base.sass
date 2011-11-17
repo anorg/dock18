@@ -245,10 +245,14 @@ h3, h4, h5, h6
     padding: 4px 4px 4px 15px
     margin: 0 0 $space-inner-s 0
     //margin: 0 0 0 0
+    
+    
+    .inner
+      display: none
       
     
     &.now, &.today, &.future
-      min-height: 50px
+      min-height: 30px
       padding: 12px 80px 12px 15px
       h3
         padding-top: 10px
@@ -319,8 +323,15 @@ h3, h4, h5, h6
     padding: $width-padding-base / 2
     h3, h4
       font-size: $size-font-base *1
-    .inner, .picture
+    .picture
       display: none
+      
+    &.past .inner
+      display: block
+      .tags
+        padding: 2px 8px 0 0
+        opacity: 0.8
+        text-transform: uppercase
     span.event_type
       font-size: $size-font-base *.8
       
