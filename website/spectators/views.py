@@ -6,6 +6,9 @@ from django.utils import simplejson as json
 from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.http import require_POST
 
+# hack in notifications / oservations
+from notification import models as notification
+
 from spectators.models import Spectate
 from spectators.signals import object_spectated, object_unspectated
 
@@ -23,14 +26,21 @@ def spectate_toggle(request, content_type_id, object_id):
     
     if created:
         object_spectated.send(sender=Spectate, spectate=spectate)
+        
+        object=content_type.get_object_for_this_type(pk=object_id)
+        notification.observe(object, request.user, 'event_processed', signal='observe_processed')
+        
     else:
         spectate.delete()
+        
+        object=content_type.get_object_for_this_type(pk=object_id)
+        
         object_unspectated.send(
             sender=Spectate,
-            object=content_type.get_object_for_this_type(
-                pk=object_id
-            )
+            object=object
         )
+        
+        notification.stop_observing(object, request.user, signal='observe_processed')
     
     if request.is_ajax():
         return HttpResponse(json.dumps({

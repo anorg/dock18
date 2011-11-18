@@ -84,8 +84,8 @@ class FileImporter(object):
         
         for event in events:
             
-            #event.processed = 'init'
-            #event.save()
+            event.lock = True
+            event.save()
             
             print event.title
             print event.date_end
@@ -94,7 +94,10 @@ class FileImporter(object):
             import_path = os.path.join('/storage/tvdock18/recorded/')
             self.linker(import_path, 'Shows' + '/' + event.title + '/', event.key)
             
-            event.processed = 'done'
+            event.set_processed('done')
+            
+            event.lock = False
+            
             event.save()
             
             

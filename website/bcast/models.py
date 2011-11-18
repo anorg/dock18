@@ -13,6 +13,9 @@ from django.core.files import File as DjangoFile
 
 from django.contrib.sites.models import Site
 
+import django.dispatch
+from notification import models as notification
+
 from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 
@@ -24,6 +27,9 @@ from jqchat.models import Room
 
 # django-filer (https://github.com/stefanfoulis/django-filer/blob/develop/docs/usage.rst)
 
+
+# custom signal definitions
+event_processing_done = django.dispatch.Signal(providing_args=["name"])
 
 class Season(models.Model):
     title = models.CharField(max_length=200)
@@ -84,6 +90,8 @@ class Event(models.Model):
     filebrowser = models.BooleanField('filebrowser', default=True, help_text=_('Include the filebrowser window?'))
     
     show_spectators = models.BooleanField('show_spectators', default=True, help_text=_('Include the paricipants window?'))
+    
+    lock = models.BooleanField('lock', default=False, editable=False)
     
     key = models.CharField(max_length=50, help_text=_('Automatically created on first save. Not possible to change afterwards - so use a smart name from the beginning...'))
     TYPE_CHOICES = (
@@ -207,6 +215,13 @@ class Event(models.Model):
         abs_url = 'http://%s%s' % (Site.objects.get_current().domain, url)
             
         return abs_url
+    
+    def set_processed(self, status):
+        self.processed = status
+        
+        extra = {'event': self}
+        
+        notification.send_observation_notices_for(self, signal='observe_processed', extra_context=extra)
     
     
     

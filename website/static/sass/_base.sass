@@ -878,13 +878,18 @@ $feedback-width: 400px
 div#player_wrapper
   > div
     width: 100%
-    padding: 266px 0 0px 0
+    padding: 278px 0 0px 0
     text-align: right
     
     #chat_f
       // background-color: black
       height: 71px
       padding-right: 8px
+      
+      &.short
+        color: red
+        text-decoration: blink
+      
     span
       // background-color: black
       font-family: Arial
@@ -917,7 +922,7 @@ div#player_wrapper
   color: black
   
   > *
-    padding: 15px
+    // padding: 15px
     
   > #body
     // padding: 0 !important
@@ -925,6 +930,11 @@ div#player_wrapper
       display: none
     > * 
       padding: 15px
+      
+    > table
+      margin-left: 15px
+      td
+        padding: 2px 15px 2px 0
     
   li
     padding: 4px 0
@@ -955,6 +965,12 @@ div#player_wrapper
     border: none
     &:hover
       color: $color-base-a
+      
+    // placement
+    display: block
+    margin-right: 4px
+    width: 65%
+    float: right
       
   .user.profile 
     div.group

@@ -1,0 +1,5 @@
+{{ event.title }}
+
+Die Videoaufnahmen für "{{ event.title }}" sind nun online verfügbar: 
+-> {{ event.get_absolute_url }}
+

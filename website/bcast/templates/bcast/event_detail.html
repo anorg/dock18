@@ -120,8 +120,17 @@
 		function countdown_done() {
 			location.reload();
 		}
-		function countdown_tick() {
+		function countdown_tick(periods) {
 			$('#chat_f').html( $('#counter').html() );
+			
+			var left = (parseFloat(periods[3]) * 24 * 60 * 60 ) + (parseFloat(periods[4]) * 60 * 60 ) + (parseFloat(periods[5]) * 60 ) + (parseFloat(periods[6]));
+			
+			if(left < 31) {
+				$('#chat_f').addClass('short');
+			} else {
+				$('#chat_f').removeClass('short');
+			}
+			
 		}
 		
 		function countdown_reset(seconds) {

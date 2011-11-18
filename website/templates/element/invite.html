@@ -36,8 +36,11 @@ $(document).ready(function(){
 <div class="invites">
 	
 	<div class="display">
-	<strong>Leute einladen</strong> <span class="small"></span>
+	<strong>Leute einladen</strong> <span class="small">[{% remaining_invites request.user %}]</span>
 	</div>
 	
     {% invite_form request.user %}
+    
+    
+    
 </div>

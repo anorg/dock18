@@ -1,6 +1,15 @@
 {% load i18n phileo_tags %}
 <div class="profile user info">
 	
+	
+	
+	{% if profile.about %}
+	<div class="group">
+		<div class="value">{{ profile.about }}</div>
+		<p>&nbsp;</p>
+	</div>
+	{% endif %}
+	
 	{% if profile.name %}
 	<div class="group">
 		<div class="label left">Name:</div>
@@ -54,21 +63,5 @@
 		<div class="value">{{ profile.websites|urlize }}</div>
 	</div>
 	{% endif %}
-	
-	{% if profile.about %}
-	<div class="group">
-		<h4>Profile:</h4>
-		<div class="value">{{ profile.about }}</div>
-	</div>
-	{% endif %}
 
-</div>
-
-<div>
-	
-{% likes profile.user "bcast.Event" as objs %}
-{% for obj in objs %}
-    <div>{{ obj }} | {{ obj.get_absolute_url }} </div>
-{% endfor %}
-	
 </div>
