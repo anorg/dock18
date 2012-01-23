@@ -96,7 +96,7 @@ ls -l ${RUN_DIR}smedia
 . $VE_ACTIVATE
 
 # requirements
-pip install -q -r ${RUN_DIR}requirements/requirements.txt
+pip install -r ${RUN_DIR}requirements/requirements.txt
 
 
 # info file
