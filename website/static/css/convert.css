@@ -1,31 +1,136 @@
-.qq-uploader { position:relative; width: 100%;}
 
-.qq-upload-button {
-    display:block; /* or inline-block */
-    width: 105px; padding: 7px 0; text-align:center;    
-    background:#880000; border-bottom:1px solid #ddd;color:#fff;
-}
-.qq-upload-button-hover {background:#cc0000;}
-.qq-upload-button-focus {outline:1px dotted black;}
-
-.qq-upload-drop-area {
-    position:absolute; top:0; left:0; width:100%; height:100%; min-height: 70px; z-index:2;
-    background:#FF9797; text-align:center; 
-}
-.qq-upload-drop-area span {
-    display:block; position:absolute; top: 50%; width:100%; margin-top:-8px; font-size:16px;
-}
-.qq-upload-drop-area-active {background:#FF7171;}
-
-.qq-upload-list {margin:15px 35px; padding:0; list-style:disc;}
-.qq-upload-list li { margin:0; padding:0; line-height:15px; font-size:12px;}
-.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
-    margin-right: 7px;
+div.jGrowl {
+	z-index: 			9999;
+	color: 				#fff;
+	font-size: 			12px;
 }
 
-.qq-upload-file {}
-.qq-upload-spinner {display:inline-block; background: url("loading.gif"); width:15px; height:15px; vertical-align:text-bottom;}
-.qq-upload-size,.qq-upload-cancel {font-size:11px;}
+/** Special IE6 Style Positioning **/
+div.ie6 {
+	position: 			absolute;
+}
 
-.qq-upload-failed-text {display:none;}
-.qq-upload-fail .qq-upload-failed-text {display:inline;}
+div.ie6.top-right {
+	right: 				auto;
+	bottom: 			auto;
+	left: 				expression( ( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+div.ie6.top-left {
+	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+div.ie6.bottom-right {
+	left: 				expression( ( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top: 				expression( ( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+div.ie6.bottom-left {
+	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top: 				expression( ( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+}
+
+div.ie6.center {
+	left: 				expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top: 				expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+	width: 				100%;
+}
+
+/** Normal Style Positions **/
+div.jGrowl {
+	position:			absolute;
+}
+
+body > div.jGrowl {
+	position:			fixed;
+}
+
+div.jGrowl.top-left {
+	left: 				0px;
+	top: 				0px;
+}
+
+div.jGrowl.top-right {
+	right: 				0px;
+	top: 				0px;
+}
+
+div.jGrowl.bottom-left {
+	left: 				0px;
+	bottom:				0px;
+}
+
+div.jGrowl.bottom-right {
+	right: 				0px;
+	bottom: 			0px;
+}
+
+div.jGrowl.center {
+	top: 				0px;
+	width: 				50%;
+	left: 				25%;
+}
+
+/** Cross Browser Styling **/
+div.center div.jGrowl-notification, div.center div.jGrowl-closer {
+	margin-left: 		auto;
+	margin-right: 		auto;
+}
+
+div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
+	background-color: 		#000;
+	opacity: 				.85;
+	-ms-filter: 			"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; 
+	filter: 				progid:DXImageTransform.Microsoft.Alpha(Opacity=85); 
+	zoom: 					1;
+	width: 					235px;
+	padding: 				10px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	font-family: 			Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 				1em;
+	text-align: 			left;
+	display: 				none;
+	-moz-border-radius: 	5px;
+	-webkit-border-radius:	5px;
+}
+
+div.jGrowl div.jGrowl-notification {
+	min-height: 			40px;
+}
+
+div.jGrowl div.jGrowl-notification,
+div.jGrowl div.jGrowl-closer {
+	margin: 				10px;
+}
+
+div.jGrowl div.jGrowl-notification div.jGrowl-header {
+	font-weight: 			bold;
+	font-size:				.85em;
+}
+
+div.jGrowl div.jGrowl-notification div.jGrowl-close {
+	z-index:				99;
+	float: 					right;
+	font-weight: 			bold;
+	font-size: 				1em;
+	cursor:					pointer;
+}
+
+div.jGrowl div.jGrowl-closer {
+	padding-top: 			4px;
+	padding-bottom: 		4px;
+	cursor: 				pointer;
+	font-size:				.9em;
+	font-weight: 			bold;
+	text-align: 			center;
+}
+
+/** Hide jGrowl when printing **/
+@media print {
+	div.jGrowl {
+		display: 			none;
+	}
+}

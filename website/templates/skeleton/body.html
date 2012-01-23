@@ -99,7 +99,7 @@
 				
 				<div class="base content cms">
 					
-					{% block flash_messages %}{% include "_flash_messages.html" %}{% endblock %}
+					{% block flash_messages %}{% include "pinax/_flash_messages_jgrowl.html" %}{% endblock %}
 					
 					<div id="site_wide_announcements">
 					{% if site_wide_announcements %}{% include "announcements/announcement_list.html" %}{% endif %}

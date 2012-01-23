@@ -4,9 +4,11 @@
 {% addtoblock "js" %}
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
+    /*
     $('.cmsplugin_filer_folder_slidshow').cycle({
         fx: 'fade'
-    }); 
+    });
+    */ 
 });
 </script>
 {% endaddtoblock %}
@@ -64,8 +66,19 @@ jQuery(document).ready(function ($) {
 		    <!-- start: slideshow -->
 		    <div class="cmsplugin_filer_folder_slidshow" id="folder_{{ object.id }}">
 		        {% for image in folder_images %}
-		            <img src="{% thumbnail image.file 200x200 crop=True upscale=True %}">
+		            <a href="{{ image.url }}" >
+		            
+		            <!---->
+		            <div class="wrapper">
+		            	<img src="{% thumbnail image.file 295x204 crop='scale' upscale=True %}">
+		            </div>
+		            
+		             
+		            
+		            <div class="info">{% firstof image.name image.filename %}</div>
+		            </a>
 		        {% endfor %}
+		        <div class="clear"></div>
 		    </div>
 		    <!-- end: gallery -->
 		{% endif %}

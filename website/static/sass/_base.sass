@@ -111,6 +111,7 @@ $space-inner-l: 12px
 
 
 @import 'asif/qq-upload'
+@import 'asif/jgrowl' 
 
 // site specific mixins
 @import 'mixin'
@@ -640,6 +641,104 @@ h3, h4, h5, h6
       line-height: 140%
     
     padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
+    
+    &:nth-child(3)
+      background-color: $color-base-a
+      padding: ($default-space/2)
+    
+    p, ul
+      padding: 4px 0 12px 0
+      list-style: square inside
+      > li
+        padding: 2px 0 2px 0
+      
+    a
+      color: $color-default
+      +font-link-default()
+    
+    &:nth-child(3)
+      margin: 0 0 2px 0
+      // margin: 0 0 0 0
+      
+      
+      
+      
+      
+      
+  .filerfolderplugin_holder 
+
+    color: $color-default
+    margin: 2px 0 2px 
+    
+    background-color: transparent
+    
+    .expandable.main.window
+      border: none
+      
+    .cmsplugin_filer_folder_slidshow 
+      padding: 0
+      
+      > a
+        display: block
+        float: left
+        
+        margin: 0 10px 10px 0
+        
+        background-color: #000
+        
+        &:hover
+          background-color: $color-base-a
+          
+          .info, .info a
+            color: black !important
+        
+        
+        width: 295px
+        height: 222px
+        overflow: hidden
+        
+        &:nth-child(even)
+          margin-right: 0 !important
+      
+      img
+        background-color: #000
+        border: none
+        padding: 0
+        width: 295px
+      
+      .wrapper
+        height: 204px
+        overflow: hidden
+          
+      .info
+        //height: 16px
+        color: white !important
+        padding: 5px 8px 0 0
+        text-align: right
+        font-size: 82%
+        color: $color-base-a
+        text-decoration: none
+        
+        a
+          text-decoration: none
+        
+          
+      
+    font-family: $font-default
+    
+    > div.slideshow
+    
+      > div
+        clear: both
+    
+      
+    
+    p 
+      line-height: 140%
+      
+    padding: 10px 0 
+    
+    // padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
     
     &:nth-child(3)
       background-color: $color-base-a

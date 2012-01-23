@@ -13,8 +13,9 @@ import os
 class Image(File):
     SIDEBAR_IMAGE_WIDTH = 210
     DEFAULT_THUMBNAILS = {
-        'admin_clipboard_icon': {'size': (32, 32), 'crop': True,
-                                 'upscale': True},
+        
+        'admin_clipboard_icon': {'size': (32, 32), 'crop': True,'upscale': True},
+        
         'admin_sidebar_preview': {'size': (SIDEBAR_IMAGE_WIDTH, 10000)},
         'admin_directory_listing_icon': {'size': (48, 48),
                                          'crop': True, 'upscale': True},

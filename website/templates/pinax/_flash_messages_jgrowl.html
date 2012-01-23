@@ -1,0 +1,11 @@
+{% load i18n %}
+{% if messages %}
+        {% for message in messages %}
+        
+        <script type="text/javascript">
+        $.jGrowl("{{ message }}", { position: 'top-left' });
+        </script>
+        
+        {% endfor %}
+
+{% endif %}
