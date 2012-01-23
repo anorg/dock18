@@ -1,11 +1,13 @@
 website/static/CACHE
 website/media
+website/smedia
 website/taggit/locale
 website/apps/profiles/locale
 website/apps/profiles/locale
 websitestatic/CACHE
-website/media
+websitestatic/local_settings.py
 .DS_Store
 *.pyc
+*.db
 .sass-cache*
 scripts/local_config.cfg

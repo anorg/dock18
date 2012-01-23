@@ -20,8 +20,6 @@ def get_streamstat(parser, token):
     except ValueError:
         stream_server = None
 
-    print stream_server
-
     return StreamstatsNode(stream_server)
     
 class StreamstatsNode(template.Node):

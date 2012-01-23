@@ -36,7 +36,7 @@ idios==0.2a1.dev2
 wsgiref==0.1.2
 
 # cms
-MySQL-python==1.2.3
+# MySQL-python==1.2.3
 South==0.7.3
 django-classy-tags==0.3.4.1
 django-cms==2.2

@@ -1,7 +1,8 @@
 #!/bin/sh
 # Platform Install-Script
 #
-# Author: Jonas Ohrstrom
+# Copyright 2012, Jonas Ohrstrom  - ohrstrom@gmail.com
+# See LICENSE.txt
 #
 # use at your own risk. can lead to big data loss if not configured propperly
 # (eg it could delete / when using wrong settings...)
@@ -32,30 +33,27 @@ fi
 
 if [ ! -d "$PROJECT_ROOT" ]; then
     echo
-	echo 'Could not find the given path.' 1>&2
-	echo
+        echo 'Could not find the given path.' 1>&2
+        echo
    exit 1
 fi
 
 
-# kill fcgi server
-
-. $CUR_PATH/cgi_kill.sh
 
 cd $PROJECT_ROOT
 
 
 # virtualenv
 if [ ! -d "$VE_BASE" ]; then
-	echo "init virtualenv in: $VE_BASE"
+        echo "init virtualenv in: $VE_BASE"
     virtualenv --no-site-packages $VE_BASE
 fi
 
 # config dir
 if [ ! -d "$CONFIG_DIR" ]; then
-	echo "mkdir $CONFIG_DIR"
-	mkdir $CONFIG_DIR
-	ls -l $CONFIG_DIR
+        echo "mkdir $CONFIG_DIR"
+        mkdir $CONFIG_DIR
+        ls -l $CONFIG_DIR
 fi
 
 # copy config files away
@@ -67,8 +65,13 @@ done
 
 # remove app
 rm -Rf ${REPO_DIR} 
-git clone ${GIT_URL} ${REPO_DIR} 
+
+# git clone ${GIT_URL} ${REPO_DIR} 
+mkdir  ${REPO_DIR} 
 cd ${REPO_DIR} 
+
+git init
+git remote add -t $GIT_BRANCH -f origin $GIT_URL
 git checkout ${GIT_BRANCH}
 
 cd $PROJECT_ROOT
@@ -81,9 +84,13 @@ do
     cp -p ${CONFIG_DIR}${SCRIPT_TIME}_${i} ${RUN_DIR}${i}
 done
 
-# link media directory
+# link media directories
 ln -s ${DATA_ROOT}media ${RUN_DIR}media
 ls -l ${RUN_DIR}media
+
+ln -s ${DATA_ROOT}smedia ${RUN_DIR}smedia
+ls -l ${RUN_DIR}smedia
+
 
 # django tasks
 . $VE_ACTIVATE
@@ -110,13 +117,16 @@ cd $RUN_DIR
 # db / static
 # python manage.py syncdb
 python manage.py migrate
-python manage.py collectstatic --verbosity=2 --noinput
+python manage.py collectstatic --verbosity=2 --noinput --ignore=2011
 
 cd ${PROJECT_ROOT}scripts/
 
 
 ls -l
-. $CUR_PATH/cgi_run.sh
+
+
+supervisorctl restart ${APP_ID}
+supervisorctl status 
 
 
 

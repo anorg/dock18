@@ -1,0 +1,9 @@
+;supervised conf -> symlink to /etc/supervisord/django_alabel.conf
+[program:django_alabel]
+directory=/var/www/ende.dock18.ch/src/website/
+command=/srv/ende.dock18.ch/bin/gunicorn_django -c directory=/var/www/ende.dock18.ch/src/website/conf/gunicorn.conf
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=True
+environment=HOME='/var/www/ende.dock18.ch/src/website/'
