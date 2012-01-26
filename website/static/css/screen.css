@@ -1,27 +1,27 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000320}}
 body { line-height: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
 ol, ul { list-style: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
 table { border-collapse: collapse; border-spacing: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
 caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
 q, blockquote { quotes: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003101}}
 q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
 a img { border: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003114}}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_control\.sass}line{font-family:\000031}}
@@ -36,12 +36,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_control\.sass}line{font-family:\0000314}}
 ul.horizontal { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/asif\/_control\.sass}line{font-family:\0000316}}
-ul.horizontal > li { list-style-image: none; list-style-type: none; margin-left: 0px; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000348}}
+ul.horizontal > li { list-style-image: none; list-style-type: none; margin-left: 0; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000348}}
 ul.horizontal > li:first-child, ul.horizontal > li.first { padding-left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000349}}
 ul.horizontal > li:last-child { padding-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000350}}
 ul.horizontal > li.last { padding-right: 0; }
 
 /* vars  */
@@ -75,11 +75,11 @@ ul.horizontal > li.last { padding-right: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000357}}
 #navigation a, #navigation_top a { color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000318}}
 #navigation a:visited, #navigation_top a:visited { color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000324}}
 #navigation a:hover, #navigation_top a:hover { color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000327}}
 #navigation a:active, #navigation_top a:active { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000360}}
 #navigation ul, #navigation_top ul { list-style-type: none; list-style-position: inside; list-style-image: none; }
@@ -90,7 +90,7 @@ ul.horizontal > li.last { padding-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000378}}
 #navigation > ul a:hover a, #navigation > ul > li:hover a, #navigation_top > ul a:hover a, #navigation_top > ul > li:hover a { color: black; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000382}}
-#navigation > ul > li, #navigation_top > ul > li { margin: 0 0 10px 0; padding: 3px 5px 2px 5px; line-height: 16px; }
+#navigation > ul > li, #navigation_top > ul > li { padding: 3px 5px 2px 5px; line-height: 16px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000387}}
 #navigation > ul > li > a, #navigation_top > ul > li > a { color: +contrasted(black); }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_navigation\.sass}line{font-family:\0000392}}
@@ -426,11 +426,11 @@ body .subscript { font-size: 90%; vertical-align: bottom; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003191}}
 a { color: yellow; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000318}}
 a:visited { color: yellow; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000324}}
 a:hover { color: yellow; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.11\.5\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/local\/lib\/ruby\/gems\/1\.8\/gems\/compass-0\.11\.7\/frameworks\/compass\/stylesheets\/compass\/typography\/links\/_link-colors\.scss}line{font-family:\0000327}}
 a:active { color: yellow; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/static\/sass\/_base\.sass}line{font-family:\00003196}}
