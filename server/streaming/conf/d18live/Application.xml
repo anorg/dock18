@@ -25,7 +25,7 @@
 		-->
 		<Streams>
 			<StreamType>live-record</StreamType>
-			<StorageDir>/storage/tvdock18/recorded</StorageDir>
+			<StorageDir>/storage/www_data/ende.dock18.ch/recorded</StorageDir>
 			<KeyDir>${com.wowza.wms.context.VHostConfigHome}/keys</KeyDir>
 			<!-- LiveStreamPacketizers (separate with commas): cupertinostreamingpacketizer, smoothstreamingpacketizer, sanjosestreamingpacketizer, cupertinostreamingrepeater, smoothstreamingrepeater, sanjosestreamingrepeater -->
 			<LiveStreamPacketizers>cupertinostreamingpacketizer,smoothstreamingpacketizer</LiveStreamPacketizers>			

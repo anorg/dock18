@@ -74,6 +74,7 @@ class EventListingPlugin(CMSPluginBase):
         if instance.channel not None:
             print 'channel'
         """
+        objects = {}
         
         if instance.range == 'past':
             objects = Event.published.filter(date_start__lte=datetime.now()).filter(date_end__lte=datetime.now()).filter( **kwargs ).filter( **kwargs ).order_by('-date_end')[:instance.limit]

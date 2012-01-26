@@ -91,7 +91,7 @@ class FileImporter(object):
             print event.date_end
             
             # TODO: use config file!!
-            import_path = os.path.join('/storage/tvdock18/recorded/')
+            import_path = os.path.join('/storage/www_data/ende.dock18.ch/recorded/')
             self.linker(import_path, 'Shows' + '/' + event.title + '/', event.key)
             
             event.set_processed('done')
