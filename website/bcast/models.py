@@ -72,7 +72,7 @@ class Event(models.Model):
     # movie_index = models.TextField('Movie index', blank=True)
     
     
-    unsertestfeld = models.TextField(blank=True)
+    #unsertestfeld = models.TextField(blank=True)
     
     date_start = models.DateTimeField('date start', default=datetime.datetime.now())
     date_end = models.DateTimeField('date end', default=datetime.datetime.now())
@@ -91,7 +91,7 @@ class Event(models.Model):
     
     show_spectators = models.BooleanField('show_spectators', default=True, help_text=_('Include the paricipants window?'))
     
-    lock = models.BooleanField('lock', default=False, editable=False)
+    #lock = models.BooleanField('lock', default=False, editable=False)
     
     key = models.CharField(max_length=50, help_text=_('Automatically created on first save. Not possible to change afterwards - so use a smart name from the beginning...'))
     TYPE_CHOICES = (
