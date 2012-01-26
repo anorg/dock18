@@ -12,7 +12,7 @@ register = template.Library()
 @register.tag
 def get_streamstat(parser, token):
     
-    print token
+    # print token
 
     try:
         # split_contents() knows not to split quoted strings.
