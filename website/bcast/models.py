@@ -344,7 +344,7 @@ class EventListPlugin(CMSPlugin):
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
     range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
     
-    channel = models.ForeignKey(Channel, blank=True, null=True)
+    #channel = models.ForeignKey(Channel, blank=True, null=True)
     
     limit = models.IntegerField(default=8)
 

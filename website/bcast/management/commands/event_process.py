@@ -84,7 +84,7 @@ class FileImporter(object):
         
         for event in events:
             
-            event.lock = True
+            #event.lock = True
             event.save()
             
             print event.title
@@ -96,7 +96,7 @@ class FileImporter(object):
             
             event.set_processed('done')
             
-            event.lock = False
+            #event.lock = False
             
             event.save()
             
