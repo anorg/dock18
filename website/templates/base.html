@@ -23,7 +23,7 @@
 
 <!--body -->
 <body id="body" class="bp base two-col">
-
+	{% cms_toolbar %}
 	
 	
 	<div id="fb-root"></div>
@@ -43,18 +43,36 @@
 	{% load value_from_settings %}
 	{% value_from_settings "FACEBOOK_APP_ID" as fb_app_id %}
 	
-	<script type="text/javascript">
-
-	//<![CDATA[//><!--
+	{% render_block "js" %}
 	
+	
+	
+
+	
+	
+	{% render_block "js_libs" %}
+	
+	
+	<script type="text/javascript">
 	// javascript init
 	$(document).ready(function() {
 		base.ui.iface();
 	});
+	</script>
+	{% render_block "js_main" %}
+	<script src="{{ STATIC_URL }}js/base.ui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ STATIC_URL }}js/base.ajax.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	
+	<script type="text/javascript">
+
+	//<![CDATA[//><!--
 	
 	
 	
 	// facebook init
+	/*
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId  : '{{ fb_app_id }}',
@@ -70,6 +88,16 @@
 		js.src = "//connect.facebook.net/en_US/all.js";
 		d.getElementsByTagName('head')[0].appendChild(js);
 	}(document));
+	*/
+	
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ fb_app_id }}";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+	
 	
 	
 	// flatr init
@@ -86,13 +114,17 @@
 	</script>
 	
 
-	{% render_block "js" %}
+	
 	{% render_block "js_external" %}
 	
+	{% render_block "js_post" %}
 	
 	{% ganalytics 'UA-26170095-1' %}
 	
-
+	
+	
+	
+	
 </body>
   
 </html>

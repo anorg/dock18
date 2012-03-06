@@ -1,0 +1,112 @@
+
+
+
+
+
+div.table
+  width: $width-base
+  display: table
+  background: green
+  
+  margin: 0 0 2px
+  
+  .row
+    display: table-row
+  .cell
+    display: table-cell
+    
+    h1, h2, h3, h4
+      font-size: 112%
+      
+      text-align: right
+      
+      margin-top: 8px
+      
+      a, span
+        padding: 0px 4px
+      
+      a, a:link, a:visited
+        background-color: yellow
+        color: red !important
+      a:hover, a:active
+        background-color: red
+        color: yellow !important
+        
+    p
+      +font-heading()
+      padding-right: 2px
+      margin-top: 8px
+      line-height: 150%
+      text-align: right
+      color: red
+      text-transform: uppercase
+      font-size: 112%
+        
+    
+    .wrapper
+      padding: 4px
+    
+    &.x1
+      width: $width-base / 4
+      background: #ff00ff
+      .wrapper
+        height: $width-base / 6
+    
+    &.x2
+      width: $width-base / 2
+      .wrapper
+        height: ($width-base / 3) + 8px
+    
+
+
+div.social.relations
+
+  +simple-form($color-base-b, $with-sidebar, $width-padding-base)
+
+
+  > h1
+    margin-bottom: 14px
+  h1
+    font-size: 110%
+
+  .container
+    min-height: 24px
+    cursor: pointer
+    padding: 8px 0 4px 
+    border-bottom: 1px solid white
+    
+    a.permalink
+      // display: none
+    
+    &.hover
+      background-color: yellow
+    
+    .icon
+      width: 26px
+      height: 24px
+    .wrapper
+      padding: 0 2px 0 4px
+      h2
+        font-size: 110%
+        
+    > .icon
+      background-position: 2px 1px
+      background-repeat: no-repeat
+        
+    &.facebook > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.facebook.png')
+    &.youtube > .icon
+      background-image: url('/static/img/icons/allauth24/icon.youtube.png')
+    &.twitter > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.facebook.png')
+    &.flattr > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.facebook.png')
+      
+
+  .ajax.newsletter
+    h1
+      margin-bottom: 4px
+    > ul
+      padding: 4px 0 !important
+      >li > ul
+        padding: 4px 0 !important

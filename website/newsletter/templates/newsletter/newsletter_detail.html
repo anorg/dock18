@@ -1,0 +1,15 @@
+{% extends "newsletter/common.html" %}
+{% load i18n %}
+{% block title %}{% trans "Newsletter detail" %}{% endblock title %}
+{% block body %}
+
+<h1>{{ object.title }}</h1>
+
+<ul>
+	<li><a href="{% url newsletter_subscribe_request object.slug %}">Subscribe</a></li>
+	<li><a href="{% url newsletter_unsubscribe_request object.slug %}">Unsubscribe</a></li>
+	<li><a href="{% url newsletter_list %}">{% trans "Back to list" %}</a></li>
+</ul>
+
+{% endblock body %}
+

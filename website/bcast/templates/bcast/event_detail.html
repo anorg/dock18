@@ -1,5 +1,12 @@
-{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group value_from_settings %}
+{% extends "site_base.html" %}
+
+{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group value_from_settings placeholder_tags %}
 {% value_from_settings "RTMP_IP" as rtmp_ip %}
+
+
+
+{% block body_content%}
+
 <div class="plugin bcast event detail">
 
 <div class="expandable main window" id="bcast_lead">
@@ -13,14 +20,11 @@
 	{% addtoblock "js_external" %}
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	{% endaddtoblock %}
-	
-	
 
 
 
-	{% if event.show_spectators %}
 	{% include 'bcast/event/spectators.html' %}
-	{% endif %}
+
 
 
 	<div class="panel lead">
@@ -114,7 +118,7 @@
 	</div>
 	</div>
 
-	{% addtoblock "js" %}
+	{% addtoblock "js_main" %}
 	<script type="text/javascript">
 	
 		function countdown_done() {
@@ -153,7 +157,7 @@
 	
 	
 	
-	{% addtoblock "js" %}
+	{% addtoblock "js_main" %}
 	<script type="text/javascript">
 
 		$(function() {
@@ -175,16 +179,17 @@
 	{% endif %}
 	
 	
-	{% if not user.is_authenticated %}
-		{% url acct_login as login_url %}
-		{% url acct_signup as signup_url %}
-		<div class="inline">
-			<div class="message login"><p>Für soziale Interaktion bitte <a href="{{ login_url }}">anmelden</a> und/oder <a href="{{ signup_url }}">registrieren</a>!!</p></div>
-		</div>
-	{% endif %}
+	
+	{% if 1 == 2 %}
+	<div id="widescreen">
+		<div class="left">{% include 'bcast/event/transmission.html' %}</div>
+		<div class="left">{% include 'bcast/event/chat.html' %}</div>
+		<div class="clear"></div>
+	</div>
+	{% else %}
 	
 
-	{% if event.transmission %}
+	{% with width=680 %}
 	
 	{% if not request.mobile %}
 		{% include 'bcast/event/transmission.html' %}
@@ -192,15 +197,39 @@
 		{% include 'bcast/event/transmission_mobile.html' %}
 	{% endif %}
 	
+	{% endwith %}
+	
+
+	
+	{% if not user.is_authenticated %}
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<div class="message login"><p>Für soziale Interaktion bitte <a href="{{ login_url }}">anmelden</a> und/oder <a href="{{ signup_url }}">registrieren</a>!!</p></div>
+		</div>
+	{% endif %}
+
+
+	{% include 'bcast/event/chat.html' %}
+
 	
 	{% endif %}
 
-	{% if event.chat and event.room %}
-	{% include 'bcast/event/chat.html' %}
-	{% endif %}
 
-	{% if event.folder %}
-	{% include 'bcast/event/filebrowser.html' %}
-	{% endif %}
+
+	<div class="wrapper ">
+		<div class="container placeholder ">
+			{% render_placeholder event.placeholder_1 %}
+		</div>
+	</div>
+	
+
 	
 </div>
+
+{% endblock %}
+
+
+{% block sidebar_pre %}
+{% include 'bcast/event/filebrowser.html' %}
+{% endblock %}

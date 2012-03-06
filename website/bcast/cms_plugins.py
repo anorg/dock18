@@ -26,7 +26,7 @@ EventPlugin - Handles complete events
 class EventPlugin(CMSPluginBase):
     model = EventPluginModel
     name = _("Event Plugin")
-    render_template = "bcast/event_detail.html"
+    render_template = "bcast/plugins/event_detail.html"
 
     def render(self, context, instance, placeholder):
         
@@ -82,7 +82,9 @@ class EventListingPlugin(CMSPluginBase):
             
         
         if instance.range == 'future': 
-            objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('date_start')[:instance.limit]
+            objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('-date_start')[:instance.limit]
+            # Use following for reversed order
+            # objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('date_start')[:instance.limit]
 
         
         context.update({

@@ -1,0 +1,217 @@
+{% load vardump comments thumbnail sekizai_tags phileo_tags spectators_tags in_group value_from_settings %}
+{% value_from_settings "RTMP_IP" as rtmp_ip %}
+<div class="plugin bcast event detail">
+
+<div class="expandable main window" id="bcast_lead">
+
+	{% addtoblock "opengraph" %}
+	
+	{% include 'element/opengraph.html' %}
+	
+	{% endaddtoblock %}
+	
+	{% addtoblock "js_external" %}
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	{% endaddtoblock %}
+	
+	
+
+
+
+	{% if event.show_spectators %}
+	{% include 'bcast/event/spectators.html' %}
+	{% endif %}
+
+
+	<div class="panel lead">
+
+
+		<div class="action">
+		    <div class="left">
+				<h4 class="date">{{ event.date_start|date:"D, d. m. y" }} * {{ event.date_start|date:"H:i" }} / {{ event.type }}</h4>
+			</div>
+		    <div class="right social">
+				{% include 'element/social.html' %}
+			</div>
+		    <div class="clear"></div>
+		</div>
+		
+		<div class="display">
+			<h3>
+			<span class="title">{{ event.title }}</span>
+		
+		<!--	
+		<span class="a-right">
+			<ul class="horizontal tags right">
+				{{ object.event.title }}
+				{% for tag in event.tags.all %}
+				<li class="tag">
+					{{ tag }}
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="clear"></div>
+		</span>
+		-->	
+			</h3>
+			
+		</div>
+	
+
+	
+	
+	
+	{% if event.excerpt %}
+	<div class="padded info" >
+		
+		<div class="left excerpt">
+			<p>
+				{{ event.excerpt|urlize|linebreaks }}
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	
+
+	
+	
+		
+
+	
+	<!-- some information for admin -->
+	
+	
+	
+	{% if request.user.is_authenticated %}
+	
+	{% if request.user|in_group:"Streamers" %}
+	
+	{% if event.state == 'future' or event.state == 'today' or event.state == 'now' %}
+
+	<div class="admin padded  notice">
+		<h5>Stream setup:</h5>
+		<ul>
+			<li>
+				<span>FMS URL:</span><span>rtmp://{{ rtmp_ip  }}/d18live</span>
+			</li>
+			<li>
+				<span>Stream:</span><span>{{ event.key }}</span>
+			</li>
+			<li>
+				<span>start:</span><span>{{ event.date_start|date:"Y/m/d H:i" }}</span> | <span>end:</span><span>{{ event.date_end|date:"Y/m/d H:i" }}</span>
+			</li>
+			<li>&nbsp;</li>
+		</ul>
+	</div>
+	
+	{% endif %}
+	
+	{% endif %}
+	
+	{% endif %}
+	
+	</div>
+	</div>
+
+	{% addtoblock "js_main" %}
+	<script type="text/javascript">
+	
+		function countdown_done() {
+			location.reload();
+		}
+		function countdown_tick(periods) {
+			$('#chat_f').html( $('#counter').html() );
+			
+			var left = (parseFloat(periods[3]) * 24 * 60 * 60 ) + (parseFloat(periods[4]) * 60 * 60 ) + (parseFloat(periods[5]) * 60 ) + (parseFloat(periods[6]));
+			
+			if(left < 31) {
+				$('#chat_f').addClass('short');
+			} else {
+				$('#chat_f').removeClass('short');
+			}
+			
+		}
+		
+		function countdown_reset(seconds) {
+			$('#counter').countdown({
+			until: +seconds,
+			onExpiry: countdown_done,
+			compact: true,
+			onTick: countdown_tick
+			});
+		}
+	
+	
+	</script>
+	{% endaddtoblock %}
+	
+	<div id="counter" style="display: none;"></div>
+	
+	<!-- loads the counter to be cloned into player window -->
+	{% if event.starts_in > 0 %}
+	
+	
+	
+	{% addtoblock "js_main" %}
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			countdown_reset({{ event.starts_in }});
+			/*
+			$('#counter').countdown({
+			until: +{{ event.starts_in }},
+			onExpiry: countdown_done,
+			compact: true,
+			onTick: countdown_tick
+			});
+			*/
+		});
+
+
+	</script>
+	{% endaddtoblock %}
+
+	{% endif %}
+	
+	
+	
+	{% if 1 == 2 %}
+	<div id="widescreen">
+		<div class="left">{% include 'bcast/event/transmission.html' %}</div>
+		<div class="left">{% include 'bcast/event/chat.html' %}</div>
+		<div class="clear"></div>
+	</div>
+	{% else %}
+	
+
+	{% if event.transmission %}
+	
+	{% if not request.mobile %}
+		{% include 'bcast/event/transmission.html' %}
+	{% else %}
+		{% include 'bcast/event/transmission_mobile.html' %}
+	{% endif %}
+	
+	
+	{% endif %}
+	
+	{% if not user.is_authenticated %}
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		<div class="inline">
+			<div class="message login"><p>Für soziale Interaktion bitte <a href="{{ login_url }}">anmelden</a> und/oder <a href="{{ signup_url }}">registrieren</a>!!</p></div>
+		</div>
+	{% endif %}
+
+	{% if event.chat and event.room %}
+	{% include 'bcast/event/chat.html' %}
+	{% endif %}
+	
+	{% endif %}
+
+	{% if event.folder %}
+	{% include 'bcast/event/filebrowser.html' %}
+	{% endif %}
+	
+</div>

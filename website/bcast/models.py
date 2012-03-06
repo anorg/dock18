@@ -3,6 +3,7 @@ import datetime
 
 from cms.models import CMSPlugin, Page
 from cms.utils.placeholder import get_page_from_placeholder_if_exists
+from cms.models.fields import PlaceholderField
 
 from taggit.managers import TaggableManager
 from django.template.defaultfilters import slugify
@@ -12,6 +13,8 @@ from django.utils.translation import ugettext as _
 from django.core.files import File as DjangoFile
 
 from django.contrib.sites.models import Site
+
+from django_extensions.db.fields import *
 
 import django.dispatch
 from notification import models as notification
@@ -67,6 +70,12 @@ class Event(models.Model):
     
     title = models.CharField(max_length=200)
     excerpt = models.TextField(blank=True)
+    
+    slug = AutoSlugField(populate_from='title', blank=True, null=True, editable=True)
+    
+    
+    # cms field
+    placeholder_1 = PlaceholderField('placeholder_1')
     
     
     # movie_index = models.TextField('Movie index', blank=True)

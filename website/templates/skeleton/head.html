@@ -1,4 +1,4 @@
-{% load dajaxice_templatetags uni_form_tags %}
+{% load dajaxice_templatetags uni_form_tags sekizai_tags %}
 	
 {% load cms_tags %}
 {% load compress %}
@@ -25,17 +25,34 @@
 	{% compress js %}
 	<!-- libs -->
 	<!-- -->
+
+	
+	
+	
+
+	
+	{% endcompress %}
+
+	
+	{% addtoblock "js_libs" %}
+	
 	<script src="{{ STATIC_URL }}js/lib/jquery-1.6.4.min.js" type="text/javascript" charset="utf-8"></script>
 	
-	<script src="{{ STATIC_URL }}js/lib/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="{{ STATIC_URL }}js/lib/jquery.slides.min.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="{{ STATIC_URL }}js/lib/jquery.uniform.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="{{ STATIC_URL }}js/lib/jquery.serialize.js" type="text/javascript" charset="utf-8"></script>
-	
+	<script src="{{ STATIC_URL }}js/lib/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="{{ STATIC_URL }}js/lib/superfish.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ STATIC_URL }}js/lib/supersubs.js" type="text/javascript" charset="utf-8"></script>
 	<script src="{{ STATIC_URL }}js/lib/jquery.tabslide-1.3.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="{{ STATIC_URL }}js/lib/jwplayer-5.8.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="{{ STATIC_URL }}js/lib/jqchat.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script src="{{ STATIC_URL }}js/lib/jquery.default.js" type="text/javascript" charset="utf-8"></script>
 	
@@ -43,22 +60,14 @@
 	
 	
 	
+	<script src="{{ STATIC_URL }}js/lib/hoverIntent.js" type="text/javascript" charset="utf-8"></script>
 	
 	
 	
-	
-	
-	<script src="{{ STATIC_URL }}js/lib/jwplayer-5.8.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script src="{{ STATIC_URL }}js/lib/jqchat.js" type="text/javascript" charset="utf-8"></script>
 
 	<!-- base interface -->
-	<script src="{{ STATIC_URL }}js/base.ui.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ STATIC_URL }}js/base.ajax.js" type="text/javascript" charset="utf-8"></script>
-	{% endcompress %}
 
-	
-	
+	{% endaddtoblock %}
 	
 	
 	

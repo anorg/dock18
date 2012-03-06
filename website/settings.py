@@ -87,6 +87,7 @@ MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     # cms
     #'cms.middleware.multilingual.MultilingualURLMiddleware',
+    'cms.middleware.multilingual.MultilingualURLMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
@@ -122,11 +123,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'sekizai.context_processors.sekizai',
 )
 
+CMS_USE_TINYMCE = False
+
 CMS_TEMPLATES = (
     #('example.html', 'Example Template'),
     #('base.html', 'Base Template'),
-    ('layout/1col.html', 'Base - One column & Menu'),
-    ('layout/2col.html', 'Base - One column & FlexBox'),
+    ('layout/base_1col.html', 'Base - One column & Menu'),
+    ('layout/home_1col.html', 'Home - One column & Menu'),
     #('layout/3col.html', '3 column inner'),
 
 )
@@ -135,7 +138,7 @@ CMS_TEMPLATES = (
 CMS_PLACEHOLDER_CONF = {
     'template_1_content_a': {
         #"plugins": ('TeaserPlugin', 'LinkPlugin'),
-        "extra_context": {"width":600},
+        "extra_context": {"width":680},
         'name':gettext("Main Content"),
     },
     'template_1_content_2': {
@@ -190,27 +193,26 @@ ROOT_URLCONF = 'urls'
 
 DAJAXICE_MEDIA_PREFIX = 'dajaxice'
 
-# media deliver
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
-MEDIA_URL = '/media/'
+
 
 # static files (application js/img etc)
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, 'site-static'),
+)
 
-
-FILER_STATICMEDIA_PREFIX = '/static/filer/'
-
+# media deliver
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+MEDIA_URL = '/media/'
 
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 
+FILER_STATICMEDIA_PREFIX = '/static/filer/'
 
 
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR, 'media'),
-)
 
 
 STATICFILES_FINDERS = (
@@ -292,20 +294,25 @@ INSTALLED_APPS = (
     'cms.plugins.text',
     'cms.plugins.picture',
     'cms.plugins.link',
-    'cms.plugins.file',
+    #'cms.plugins.file',
     'cms.plugins.snippet',
-    'cms.plugins.googlemap',
+    #'cms.plugins.googlemap',
     'sekizai',
     
-    'cmsplugin_filer_file',
+    #'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
-    'cmsplugin_filer_teaser',
-    'cmsplugin_filer_video',
+    #'cmsplugin_filer_teaser',
+    #'cmsplugin_filer_video',
     
 
-    'cmsplugin_poll',
+    #'cmsplugin_poll',
     'cmsplugin_userlist',
+    'cmsplugin_iframe',
+    'cmsplugin_soundcloud',
+    'cmsplugin_youtube',
+    'cmsplugin_vimeo',
+    
     
     # asset and media handling
     'compressor',
@@ -327,7 +334,9 @@ INSTALLED_APPS = (
     
     'feedback',
     
-    #'newsletter',
+    'tinymce',
+    'django_extensions',
+    'newsletter',
     
     'subscribe',
     
@@ -408,8 +417,8 @@ APPEND_SLASH = True
 KALEO_DEFAULT_INVITE_ALLOCATION = 10
 
 # facebook oauth settings
-FACEBOOK_APP_ID = "173374022743087"
-FACEBOOK_APP_SECRET = "423e6cee277a1536df4f3ee7195fdfbc"
+FACEBOOK_APP_ID = "317088171674477"
+FACEBOOK_APP_SECRET = "84b65bb7274384494bf226a2d2c92df1"
 FACEBOOK_SCOPE = 'email,publish_stream'
 
 

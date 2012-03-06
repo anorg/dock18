@@ -1,9 +1,9 @@
 {% load sekizai_tags kaleo_tags %}
 
-{% addtoblock "js" %}
+{% addtoblock "js_main" %}
 <script src="{{ STATIC_URL }}js/lib/jquery.form.js" type="text/javascript" charset="utf-8"></script>
 {% endaddtoblock %}
-{% addtoblock "js" %}
+{% addtoblock "js_main" %}
 <script type="text/javascript">
 $(function () {
     $('.invites form').ajaxForm(function(data) {
@@ -25,10 +25,10 @@ $(function () {
 {% endaddtoblock %}
 
 
-{% addtoblock "js" %}
+{% addtoblock "js_main" %}
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#invitation div input').DefaultValue('freund@vbs.admin.ch');
+	$('#invitation div input').DefaultValue('friends email here');
 });
 </script>
 {% endaddtoblock %}

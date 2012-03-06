@@ -1,0 +1,71 @@
+{% extends "newsletter/common.html" %}
+{% load i18n %}
+{% block title %}{% trans "Newsletter list" %}{% endblock title %}
+{% block body %}
+{% if user.is_authenticated %}
+
+
+
+<h1>{% trans "Newsletter" %}</h1>
+
+
+
+
+<form method="POST" action="{% url newsletter_list %}" class="">
+  {% csrf_token %}
+  {{ formset.management_form }}
+  
+  
+	<ul class="horizontal">
+		<li>{% trans "Newsletter" %}</li>
+		<li>{% trans "Subscribe" %}</li>
+	</ul>
+	
+    {% for form in formset.forms %}
+	<ul class="horizontal">
+		<li>{{ form.id }}{{ form.newsletter }}{{ form.instance.newsletter.title }}</li>
+		<li>{{ form.subscribed }}</li>
+	</ul>
+	{% if form.instance.newsletter.description %}
+	<ul>
+		<li>{{ form.instance.newsletter.description }}</li>
+	</ul>
+	{% endif %}
+    {% endfor %}
+	
+	
+  
+	<ul class="horizontal">
+		<li>&nbsp;</li>
+		<li><input id="id_submit" name="submit" value="{% trans "Update subscriptions" %}" type="submit" /></li>
+	</ul>
+
+  
+  
+  
+</form>
+
+
+{% else %}
+
+<h1>{% trans "Newsletter" %}</h1>
+
+	<ul>
+    {% for newsletter in object_list %}
+    <li>
+    	<ul class="horizontal">
+    		<li>{{ newsletter.title }}</li>
+	        <li><a href="{% url newsletter_subscribe_request newsletter.slug %}">{% trans "Subscribe" %}</a></li>
+	        <li><a href="{% url newsletter_unsubscribe_request newsletter.slug %}">{% trans "Cancel" %}</a></li>
+    	</ul>
+    	{% if newsletter.description %}
+    	<ul>
+    		<li>{{ newsletter.description }}</li>
+    	</ul>
+    	{% endif %}
+    </li>
+    {% endfor %}
+	</ul>
+{% endif %}
+{% endblock body %}
+

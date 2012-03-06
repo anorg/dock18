@@ -3,13 +3,13 @@
 
 
 
-{% addtoblock "js" %}
+{% addtoblock "js_post" %}
 <script src="{{ STATIC_URL }}js/lib/fileuploader_mod.js" type="text/javascript" charset="utf-8"></script>
 {% endaddtoblock %}
 
 
 {% if user.is_authenticated %}
-{% addtoblock "js" %}
+{% addtoblock "js_main" %}
 <script type="text/javascript">
 $(document).ready(function(){
 

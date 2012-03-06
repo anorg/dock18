@@ -3,7 +3,7 @@
 
 
 	{% if request.user.is_authenticated %}
-	{% addtoblock "js" %}
+	{% addtoblock "js_main" %}
 
 		{% spectates_js request.user event %}
 

@@ -1,0 +1,273 @@
+// setup
+
+
+$height-nav: 21px
+
+$static-url: '/static/'
+
+$default-padding: 0px
+
+
+// TODO: find smart way to define in color.sass 
+$nav-bg-base: #000
+$nav-fg-base: #fff
+$nav-bg-selected: yellow
+$nav-bg-active: yellow
+$nav-bg-hover: yellow
+
+
+#topbar
+  z-index: 1000
+  background-color: $nav-bg-base
+
+#subbar
+  // margin-top: 1px
+  border-top: 2px solid $nav-bg-selected
+  z-index: 0
+  background-color: $nav-bg-base
+
+  .holder.navigation
+    z-index: 1
+    
+
+    &.sub
+      background-color: transparent
+      height: 21px
+      
+      width: $width-base - $default-padding
+      
+      padding-left: $default-padding
+  
+      // background-color: #ffffff
+      a
+        text-decoration: none
+        text-transform: uppercase
+        
+        +font-nav()
+        
+        padding: 5px 10px 0
+        height: ($height-nav - 5px)
+      
+      
+      // additional styleing for hovered submenus
+      // TODO: refactor
+      li
+        &:hover ul, &.sfHover > ul
+          top: $height-nav
+        &:hover a, &.sfHover a
+          background: $nav-bg-active
+          color: black
+        &:hover ul a, &.sfHover ul a
+          background: $nav-bg-base
+          color: white
+        &:hover ul a:hover, &.sfHover ul a:hover
+          background: $nav-bg-active
+          color: black
+          
+      // hack
+      li.sibling > ul > li > ul
+        top: 0px  
+        
+      
+
+      
+      li.selected,>li.ancestor
+        >a
+          background-color: $nav-bg-selected
+          color: #000
+      
+
+    
+
+
+
+
+.navigation-js
+  
+
+        
+
+
+
+
+
+
+
+   
+.holder.navigation
+  list-style: none
+  margin: 0
+  padding: 0
+
+  z-index: 1001
+  position: relative
+
+  height: $height-nav
+  padding-left: 0
+  > ul
+    height: $height-nav
+
+  //background-color: green
+  
+    ul
+    list-style: none
+    margin: 0
+    padding: 0
+    background: transparent
+
+    list-style: none
+    position: absolute
+    top: -999em
+    
+    li
+      float: none
+    a
+      width: 100%
+      white-space: nowrap
+    
+    
+  li
+    float: left
+    margin: 0
+    padding: 0
+    position: relative
+    a
+      display: block
+
+      &:link
+
+  // override default link style
+  a
+    color: $nav-fg-base
+
+      
+
+  &.base
+  
+    // background-color: #ffffff
+    a
+      text-decoration: none
+      text-transform: uppercase
+      
+      +font-nav()
+      
+      padding: 5px 10px 0
+      height: ($height-nav - 5px)
+    
+    
+    // additional styleing for hovered submenus
+    // TODO: refactor
+    li
+      &:hover ul, &.sfHover > ul
+        top: $height-nav
+      &:hover a, &.sfHover a
+        background: $nav-bg-active
+        color: black
+      &:hover ul a, &.sfHover ul a
+        background: $nav-bg-base
+        color: white
+      &:hover ul a:hover, &.sfHover ul a:hover
+        background: $nav-bg-active
+        color: black
+        
+    // hack
+    li.sibling > ul > li > ul
+      top: 0px  
+
+    
+  
+    /* first level
+    >ul
+      
+    
+      margin-left: 0
+      a
+        display: block
+        
+        //height: $height-nav
+      
+        
+        &:hover
+          background-color: $color-base-active
+          // color: white
+  
+    
+      >li
+        margin: 0 0 0 0
+        padding: 0
+        // width: 110px
+        
+        /* second level   
+        >a
+
+          
+          
+        >ul
+          // padding: 0 0 0 20px
+          margin-top: 2px
+          padding: 0
+      
+      >li.selected,>li.ancestor
+        >a
+
+      
+      >li.selected,>li.ancestor
+        >a
+          background-color: $nav-bg-selected
+          color: #000
+  
+      
+      >li.ancestor
+        ul
+          >li.selected
+            >a
+              background-color: $nav-bg-selected
+  
+        
+
+      >li ul >li >ul
+        padding: 0 0 0 20px
+        display: none
+        &.ancestor
+          ul >li >ul
+            padding: 0 0 0 20px
+            display: block
+            
+            
+      // hackish override
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+  &.profile
+    
+    li a
+      height: 21px
+      display: block
+      padding: 4px
+      color: grey
+      text-decoration: none
+      &:hover
+        color: black
+    
+    li.selected a
+      color: white
+
+
+
+   
+
+

@@ -24,6 +24,11 @@ django-uni-form==0.7.0
 kaleo==0.2
 django_polymorphic
 
+django-extensions
+vobject
+django-tinymce
+chardet
+
 # hm what version?
 easy-thumbnails==1.0-alpha-18
 

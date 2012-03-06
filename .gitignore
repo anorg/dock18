@@ -3,9 +3,7 @@ website/media
 website/smedia
 website/taggit/locale
 website/apps/profiles/locale
-website/apps/profiles/locale
-websitestatic/CACHE
-websitestatic/local_settings.py
+website/static/*
 .DS_Store
 *.pyc
 *.db

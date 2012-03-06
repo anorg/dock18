@@ -2,6 +2,8 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.views.generic.simple import direct_to_template
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 # pinax
 from pinax.apps.account.openid_consumer import PinaxConsumer
 handler500 = "pinax.views.server_error"
@@ -45,6 +47,8 @@ urlpatterns = patterns('',
     url(r"^invites/", include("kaleo.urls")),
     
     url(r"^subscribe/", include("subscribe.urls")),
+    
+    (r'^newsletter/', include('newsletter.urls')),
 
 
     (r'^bcast/', include('bcast.urls')),
@@ -77,6 +81,8 @@ urlpatterns = patterns('',
     # plugins
     (r'^comments/', include('django.contrib.comments.urls')),
     
+    # bcast base
+    (r'^', include('bcast.urls')),
     # cms base
     (r'^', include('cms.urls')),
     

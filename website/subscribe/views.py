@@ -7,7 +7,7 @@ from django.db.models import get_model
 from subscribe.forms import SubscribeForm
 from subscribe.models import Subscription
 
-from newsletter.core import csv
+#from newsletter.core import csv
 
 from django.contrib.admin.views.decorators import staff_member_required
 

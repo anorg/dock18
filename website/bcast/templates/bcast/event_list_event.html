@@ -1,4 +1,4 @@
-{% load thumbnail %}
+{% load thumbnail truncate %}
 <div class="extend event listing {{ event.type }} {{ event.state }}">
 
 	
@@ -15,62 +15,45 @@
 	
 	<div class="left wrap">
 	
-		<h3>
-			<a href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}" class="url_main"> 
-				<span class="title">{{ event.title }}</span>  
-			</a>
-		</h3>
-	
 		<h4 class="date">
 		 
-		 <span class="event_type">{{event.type }} /</span>
+		<!--
+		<span class="event_type">{{event.type }} /</span>
+		-->
 		
 		<span class="event_date">
 		{% if event.state == 'today' %}
+			<!--
 			{{ event.date_start|date:"d. m. y" }} - {{ event.date_start|date:"H:i" }}
+			-->
 		{% else %}{% if event.state == 'now' %}
 			{{ event.date_start|date:"H:i" }}
 		{% else %}
-			{{ event.date_start|date:"d. m. y" }}
+			{{ event.date_start|date:"d. m. Y" }}
 		{% endif %}{% endif %}
 		</span>
 		
-		{% if event.state == 'future' or event.state == 'today' %}
-		<br />
-		<span id="countdown_{{event.key }}">&nbsp;</span>
+		{% if event.state == 'today' %}
+		<span id="countdown_{{event.key }}">{{ event.date_start|date:"H:i" }}</span>
 		{% endif %}
 		
 		
 		
 		</h4>
+	
+		<h3 class="title">
+			<a href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}" class="url_main"> 
+				<span class="title">{{ event.title|truncate_chars_inner:40 }}</span>  
+			</a>
+		</h3>
 
 	</div>
 
 	<div class="clear"></div>
 	
 	
-	
-	<div class="inner">
-		<!--
-		<div class="info" >
-			{% if event.picture %}
-			<div class="left picture">
-
-				<img src="{% thumbnail event.picture 70x70 crop %}" />
-			</div>
-			{% endif %}
-			
-			{% if event.excerpt %}
-			<div class="left excerpt">
-				<p>
-					{{ event.excerpt }}
-				</p>
-			</div>
-			{% endif %} <div class="clear"></div>
-		</div>
-		-->
-		
-		
+	<!--
+	<div class="inner">	
 		<div class="a-right">
 			<ul class="horizontal tags right">
 				{% for tag in event.tags.all %}
@@ -81,9 +64,8 @@
 			</ul>
 			<div class="clear"></div>
 		</div>
-		
-		
-		
 	</div>
+	-->
+	
 	
 </div>

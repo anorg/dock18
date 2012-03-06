@@ -1,13 +1,15 @@
 from django.contrib import admin
+from cms.admin.placeholderadmin import PlaceholderAdmin
 from bcast.models import Season, Event, Channel
 
 class EventInline(admin.TabularInline):
     model = Event
     extra = 1
     
-class EventAdmin(admin.ModelAdmin): 
+class EventAdmin(PlaceholderAdmin): 
     fieldsets = [
-        (None,               {'fields': ['title', 'excerpt', 'location']}),
+        (None,               {'fields': ['title', 'excerpt', 'location', 'slug']}),
+        ('CMS content', {'fields': ['placeholder_1'], 'classes': ['plugin-holder', 'plugin-holder-nopage']}),
         ('Tags & co',               {'fields': ['type', 'tags', 'picture', 'intro', 'folder', 'key']}),
         ('Date information', {'fields': ['Season', 'channel', 'date_start', 'date_end'], 'classes': ['false']}),
         ('Gadgets',   {'fields': ['transmission', 'chat', 'room', 'filebrowser', 'show_spectators']}),

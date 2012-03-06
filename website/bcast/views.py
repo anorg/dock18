@@ -7,6 +7,14 @@ from django.conf import settings
 from django.middleware.csrf import get_token
 
 
+    
+    
+from django.views.generic import DetailView, ListView, FormView
+from django.views.generic.detail import SingleObjectTemplateResponseMixin
+from django.shortcuts import get_object_or_404, render_to_response
+
+
+
 from filer.models.videomodels import Video
 
 import json
@@ -113,3 +121,26 @@ def upload(request, id):
     else:
         ret_json = {'success': False, 'filename': None}
         return HttpResponse(json.dumps(ret_json))
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+class EventDetailView(DetailView):
+
+    context_object_name = "event"
+    model = Event
+
+    def get_context_data(self, **kwargs):
+        context = super(EventDetailView, self).get_context_data(**kwargs)
+        #context['release_list'] = Release.objects.all()
+        return context
+    

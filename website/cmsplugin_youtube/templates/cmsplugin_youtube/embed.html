@@ -1,0 +1,10 @@
+<!-- start: youtube embedd -->
+<div class="wrapper">
+	{% if object.name %}
+	<h1>{{ object.name }}</h1>
+	{% endif %}
+	<div class="iframe">
+		<iframe width="{{ object.width }}" height="{{ object.height }}" src="http://www.youtube.com/embed/{{ video_id }}?rel=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+<!-- end: youtube embedd -->
