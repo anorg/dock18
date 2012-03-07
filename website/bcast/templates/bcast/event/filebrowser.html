@@ -1,150 +1,142 @@
-{% load account_tags sekizai_tags %}
+{% load account_tags sekizai_tags truncate  %}
 
-
-
-
-{% addtoblock "js_post" %}
-<script src="{{ STATIC_URL }}js/lib/fileuploader_mod.js" type="text/javascript" charset="utf-8"></script>
+{% addtoblock "js_post" %} <script src="{{ STATIC_URL }}js/lib/fileuploader_mod.js" type="text/javascript" charset="utf-8"></script>
 {% endaddtoblock %}
-
 
 {% if user.is_authenticated %}
 {% addtoblock "js_main" %}
 <script type="text/javascript">
-$(document).ready(function(){
+	$(document).ready(function() {
 
+		var uploader = new qq.FileUploader({
+			// pass the dom node (ex. $(selector)[0] for jQuery users)
+			element : $('#file-uploader')[0],
+			// path to server-side upload script
+			// action: '/bcast/upload/{{ event.id }}/',
+			action : '{% url ajax_uploader %}',
 
-var uploader = new qq.FileUploader({
-    // pass the dom node (ex. $(selector)[0] for jQuery users)
-    element: $('#file-uploader')[0],
-    // path to server-side upload script
-    // action: '/bcast/upload/{{ event.id }}/',
-    action: '{% url ajax_uploader %}',
-    
-    
-    // multiple: true,
-    onComplete: function( id, fileName, responseJSON ) {
-      if( responseJSON.success ) {
-        // alert( "success!" ) ;
-      } else  {
-        alert( "upload failed!" ) ;
-       }
-    },
-    onAllComplete: function( uploads ) {
-      // uploads is an array of maps
-      // the maps look like this: { file: FileObject, response: JSONServerResponse }
-      // alert( "All complete!" ) ;
-      
-      base.ui.interval();
-      
-    },
-    params: {
-      'csrf_token': '{{ csrf_token }}',
-      'csrf_name': 'csrfmiddlewaretoken',
-      'csrf_xname': 'X-CSRFToken',
-      'event_id': '{{ event.id }}',
-    },
-    
-    
-}); 
-	
-});
+			// multiple: true,
+			onComplete : function(id, fileName, responseJSON) {
+				if(responseJSON.success) {
+					// alert( "success!" ) ;
+				} else {
+					alert("upload failed!");
+				}
+			},
+			onAllComplete : function(uploads) {
+				// uploads is an array of maps
+				// the maps look like this: { file: FileObject, response: JSONServerResponse }
+				// alert( "All complete!" ) ;
+
+				base.ui.interval();
+
+			},
+			params : {
+				'csrf_token' : '{{ csrf_token }}',
+				'csrf_name' : 'csrfmiddlewaretoken',
+				'csrf_xname' : 'X-CSRFToken',
+				'event_id' : '{{ event.id }}',
+			},
+
+		});
+
+	});
+
 </script>
 {% endaddtoblock %}
 {% endif %}
-
-<div class="expandable main window" id="bcast_filebrowser">
-	
-	<div class="header">
-		<div>
-			<h4>Worte zum Bild</h4>
-		</div>
+<div class="wrapper panel filebrowser">
+	<div class="header stacked">
+		<h1>Digitales</h1>
+		<h2>Happy Mash-Up</h2>
 	</div>
-	
-	
-	<div class="panel filebrowser" >
-	
-		<div class="inner action">
-		{% if user.is_authenticated %}
-
-		{% load account_tags %}
-		{% user_display user as user_display %}
-		<div class="ext-form">
-			
-
-				<div id="file-uploader">
-				<span style="width: 80%">loading upload widget...</span>    
-    			<noscript>          
-        		<p>Please enable JavaScript to use file uploader.</p>
-        		<!-- or put a simple form for upload here -->
-    			</noscript>         
-				</div>
+	{% if event.folder.files %}
+	<div class="container files show">
+		<div class="wrapper">
+			<h2>Files zur Show</h2>
+			<p>
+				dock18 on Facebook
+			</p>
+			<ul class="listing files">
+				{% for file in event.folder.files %}
+				<li class="file hoverable">
+					<a href="{{ file.url }}" >
+						<span class="right filesize">{{ file.size|filesizeformat }}</span>
+						<span class=" filename">{{ file.filename|truncate_chars_inner:20 }}</span>
+						<span class="clear"></span>
+					</a>
+				</li>
+				{% empty %}
+				<li>
+					Keine Daten bis jetzt...
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	{% endif %}
+	<div class="container files recorded">
+		<div class="wrapper">
+			<h2>Recordings</h2>
+			<p>
+				Videoaufnahmen
+			</p>
+			<ul class="listing files">
+				{% for file in folder_recordings.files %}
+				<li class="file hoverable">
+					<a href="{{ file.url }}" >
+						<span class="right filesize">{{ file.size|filesizeformat }}</span>
+						<span class=" filename">{{ file.filename|truncate_chars_inner:20 }}</span>
+						<span class="clear"></span>
+					</a>
+				</li>
+				{% empty %}
+				<li>
+					Jeweils am Folgetag Verfügbar
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="container files user">
+		<div class="wrapper">
+			<h2>User-uploads</h2>
+			<p>
+				Beigesteuertes
+				{% if not user.is_authenticated %}<br />(Registrieren/Anmelden zum hochladen){% endif %}
 				
-				<div class="clear"></div>
-
-		</div>
-		{% else %}
-		
-		{% url acct_login as login_url %}
-		{% url acct_signup as signup_url %}
-		
-		<!--
-		<div class="inline">
-			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
-		</div>
-		-->
-		
-		{% endif %}
-		</div>
-		
-		<div class="inner display">
-			<div id="bcast_filebrowserpanel" class="filebrowsermessages">
-			
-			<ul>
-			{% for file in folder.files %}
-				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>
-			{% empty %}
-				<li>No files yet.</li>
-			{% endfor %}
+			</p>
+			<ul class="listing files">
+				{% for file in folder_uploads.files %}
+				<li class="file hoverable">
+					<a href="{{ file.url }}" >
+						<span class="right filesize">{{ file.size|filesizeformat }}</span>
+						<span class=" filename">{{ file.filename|truncate_chars_inner:20 }}</span>
+						<span class="clear"></span>
+					</a>
+				</li>
+				{% empty %}
+				<li>
+					No files yet.
+				</li>
+				{% endfor %}
 			</ul>
-			
-			
-			
-			<h4>User uploads</h4>
-			<ul>
-			{% for file in folder_uploads.files %}
-				<li><a href="{{ file.url }}" >
-					[{{ file.size|filesizeformat }}] {{ file }}
-					| uploaded by {{ file.owner }}
-				</a></li>
-			{% empty %}
-				<li>No files yet.</li>
-			{% endfor %}
-			</ul>
-			
-			
-			
-			<h4>Stream recordings</h4>
-			<ul>
-			{% for file in folder_recordings.files %}
-				<li> <a href="{{ file.url }}" >[{{ file.size|filesizeformat }}] {{ file }}</a></li>
-			{% empty %}
-				<li>No files yet.</li>
-			{% endfor %}
-			</ul>
-			
-
-			
+			{% if user.is_authenticated %}
+	
+			{% load account_tags %}
+			{% user_display user as user_display %}
+			<div id="file-uploader">
+				<span style="width: 80%">loading upload widget...</span>
+				<noscript>
+					<p>
+						Please enable JavaScript to use file uploader.
+					</p>
+				</noscript>
 			</div>
+			{% endif %}
 		</div>
-		
-
-		
-
-
-
+		<div class="clear"></div>
 	</div>
-	
-	
-	
 </div>

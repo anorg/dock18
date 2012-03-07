@@ -13,7 +13,7 @@
 	{% endif %}
 	-->
 	
-	<div class="left wrap">
+	<div class="left wrap"  title="{{ event.excerpt }}">
 	
 		<h4 class="date">
 		 
@@ -37,16 +37,28 @@
 		<span id="countdown_{{event.key }}">{{ event.date_start|date:"H:i" }}</span>
 		{% endif %}
 		
+
 		
 		
 		</h4>
 	
 		<h3 class="title">
 			<a href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}" class="url_main"> 
-				<span class="title">{{ event.title|truncate_chars_inner:40 }}</span>  
+				<span class="title">{{ event.title|truncate_chars_inner:32 }}</span>  
+				{% if event.channel and event.type %}
+				<span class="channel">{{ event.channel }}/{{ event.type }}</span>
+				{% endif %}
 			</a>
 		</h3>
-
+		
+		<div class="clear"></div>
+		{% if event.excerpt or event.state == 'now' or event.state == 'today' %}
+		<p class="left time">{{ event.date_start|date:"H:i" }}</p>
+		
+		
+		<p class="left excerpt">{{ event.excerpt|truncatewords:10 }}</p>
+		{% endif %}
+		<div class="clear"></div>
 	</div>
 
 	<div class="clear"></div>

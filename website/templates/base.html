@@ -1,130 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+	{% load cms_tags sekizai_tags ganalytics compress %} <!--head -->
+	<head>
+		{% include 'skeleton/head.html' %} <!-- extra hed from sup-templates -->
+		{% block extra_head %}{% endblock %}
 
-{% load cms_tags sekizai_tags ganalytics compress %}
+		{% block og_head %}{% endblock %} <!-- og start -->
+		{% render_block "opengraph" %} <!-- og end -->
+		{% render_block "css" postprocessor "lib.postprocess_sekizai.compress" %}
+	</head>
+	<!--body -->
+	<body id="body" class="bp base two-col">
+		{% cms_toolbar %} <div id="fb-root"></div>
+		{% block base_content%}{% endblock %}
 
-<!--head -->
-<head>
-{% include 'skeleton/head.html' %}
+		{% load value_from_settings %}
+		{% value_from_settings "FACEBOOK_APP_ID" as fb_app_id %} <!-- PRE BLOCK js -->
+		{% render_block "js" %} <!-- POST BLOCK js -->
+		<!-- PRE BLOCK js_libs -->
+		{% render_block "js_libs" %} <!-- POST BLOCK js_libs -->
+		<script type="text/javascript">
+			// javascript init
+			$(document).ready(function() {
+				base.ui.iface();
+			});
 
-<!-- extra hed from sup-templates -->
-{% block extra_head %}{% endblock %}
+		</script>
+		<!-- PRE BLOCK js_main -->
+		{% render_block "js_main" %} <!-- POST BLOCK js_main -->
+		<script type="text/javascript">
+			( function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if(d.getElementById(id))
+					return;
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ fb_app_id }}";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
 
-{% block og_head %}{% endblock %}
+			// flatr init
+			(function() {
+				var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+				t.parentNode.insertBefore(s, t);
+			})();
 
-<!-- og start -->
-{% render_block "opengraph" %}
-<!-- og end -->
-
-
-{% render_block "css" postprocessor "lib.postprocess_sekizai.compress" %}
-
-</head>
-
-<!--body -->
-<body id="body" class="bp base two-col">
-	{% cms_toolbar %}
-	
-	
-	<div id="fb-root"></div>
-
-	
-	{% block base_content%}{% endblock %}
-	
-	
-	
-	<!--
-	{% block login %}
-	    {% include "_account_bar.html" %}
-	{% endblock %}
-	-->
-	
-	
-	{% load value_from_settings %}
-	{% value_from_settings "FACEBOOK_APP_ID" as fb_app_id %}
-	
-	{% render_block "js" %}
-	
-	
-	
-
-	
-	
-	{% render_block "js_libs" %}
-	
-	
-	<script type="text/javascript">
-	// javascript init
-	$(document).ready(function() {
-		base.ui.iface();
-	});
-	</script>
-	{% render_block "js_main" %}
-	<script src="{{ STATIC_URL }}js/base.ui.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{{ STATIC_URL }}js/base.ajax.js" type="text/javascript" charset="utf-8"></script>
-	
-	
-	
-	<script type="text/javascript">
-
-	//<![CDATA[//><!--
-	
-	
-	
-	// facebook init
-	/*
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId  : '{{ fb_app_id }}',
-			status : true,
-			cookie : true,
-			xfbml  : true,
-			oauth  : true
-		});
-	};
-	(function(d){
-		var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-		js = d.createElement('script'); js.id = id; js.async = true;
-		js.src = "//connect.facebook.net/en_US/all.js";
-		d.getElementsByTagName('head')[0].appendChild(js);
-	}(document));
-	*/
-	
-	(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ fb_app_id }}";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-	
-	
-	
-	// flatr init
-    (function() {
-        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-        t.parentNode.insertBefore(s, t);
-    })();
-
-	
-	//--><!]]>
-	</script>
-	
-
-	
-	{% render_block "js_external" %}
-	
-	{% render_block "js_post" %}
-	
-	{% ganalytics 'UA-26170095-1' %}
-	
-	
-	
-	
-	
-</body>
-  
+		</script>
+		<!-- PRE BLOCK js_external -->
+		{% render_block "js_external" %}$ <!-- POST BLOCK js_external -->
+		<!-- PRE BLOCK js_post -->
+		{% render_block "js_post" %} <!-- POST BLOCK js_post -->
+		<!-- PRE BLOCK GA -->
+		{% ganalytics 'UA-26170095-1' %} <!-- POST BLOCK GA -->
+	</body>
 </html>

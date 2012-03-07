@@ -3,9 +3,8 @@
  */
 
 
-@mixin simple-form($color-base, $width-base, $padding-base)
+@mixin simple-form($width-base, $padding-base)
 
-  background-color: $color-base
   padding: $padding-base
   
   ul.errorlist
@@ -19,7 +18,6 @@
   div input
     border: none
     height: 18px
-    background-color: adjust-lightness($color-base, 35)
     padding-left: 4px
   
   div.input
@@ -32,9 +30,7 @@
     input
       height: 20px
       font-weight: normal
-      //color: $color-base
       color: black
       
       &:hover
-        background-color: $color-base
         color: black

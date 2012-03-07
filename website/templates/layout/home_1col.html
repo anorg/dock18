@@ -10,7 +10,60 @@
 
 {% block special %}
 
-        {% include "special/_overview.html" %}
+        <!-- full wrapper -->
+<div class="wrapper table overview">
+
+	<div class="row">
+		
+		<div class="cell x3">
+			<div class="wrapper">
+				{% with width=680 height=242 %}
+				{% placeholder special_a %}
+				{% endwith %}
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--
+<div class="wrapper table overview">
+	<div class="row">
+		asd
+	</div>
+</div>
+-->
+<div class="wrapper table overview">
+
+	<div class="row">
+		
+		<div class="cell x1">
+			<div class="wrapper">
+				{% with width=227 height=140 %}
+				{% placeholder special_b %}
+				{% endwith %}
+			</div>
+		</div>
+		
+		<div class="cell x1">
+			<div class="wrapper">
+				{% with width=227 height=140 %}
+				{% placeholder special_c %}
+				{% endwith %}
+			</div>
+		</div>
+		
+		<div class="cell x1">
+			<div class="wrapper">
+				{% with width=227 height=140 %}
+				{% placeholder special_d %}
+				{% endwith %}
+			</div>
+		</div>
+		
+	</div>
+	
+
+</div>
 
 {% endblock %}
 

@@ -1,0 +1,411 @@
+
+html
+  background: url(/static/img/base/bg.c.jpg) no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  
+  background-color: #9a9a9a !important
+  
+body
+  background: url(/static/img/base/logo.a.png) no-repeat 10px 10px fixed
+
+  
+.content.base
+  // background-color: white
+
+
+
+.simple-button
+  input[type=submit]
+    background-color: inherit
+    border: 1px solid $color-base-bg
+    &:hover
+      background-color: $col-interaction-d
+
+
+
+.linkable
+  cursor: pointer
+
+
+// swatch debug
+div.swatches
+  ul > li.swatch
+    display: block
+    height: 20px
+    width: 336px
+    padding: 2px 2px 0 2px
+    
+    &.col-interaction-d
+      background-color: $col-interaction-d
+    &.col-interaction-l
+      background-color: $col-interaction-l
+    
+    &.col-content-d
+      background-color: $col-content-d
+    &.col-content-l
+      background-color: $col-content-l
+    
+    &.col-social-d
+      background-color: $col-social-d
+      // background-color: green !important
+    &.col-social-l
+      background-color: $col-social-l
+    
+    &.col-marker-d
+      background-color: $col-marker-d
+    &.col-marker-l
+      background-color: $col-marker-l
+
+
+div.table
+
+  @extend .sizes-boxed
+  
+  .filerteaserplugin_holder > div
+    background-repeat: no-repeat
+
+
+  width: $width-base
+  display: table
+  // background: $color-b-l
+  
+  margin: 0 0
+  
+  .row
+    display: table-row
+    
+  .cell
+    display: table-cell
+    padding-bottom: 4px
+    
+    h1, h2, h3, h4
+      
+      > span
+        color: $col-content-d
+        @extend .shaded-black
+        padding: $padding-inner
+      
+      // font-size: 192%
+      
+      
+      text-align: right
+      
+
+      a, span
+        padding: 0px 4px
+      
+      a, a:link, a:visited
+        // color: red !important
+      a:hover, a:active
+        // color: yellow !important
+        
+    p
+      
+      @extend .shaded-black
+      
+      padding: $padding-inner / 2 $padding-inner
+      margin-top: $padding-inner * 2
+      
+      color: white
+      
+      line-height: 150%
+      text-align: right
+      // text-transform: uppercase
+      font-size: 112%
+        
+    
+    .wrapper
+      // padding: 4px
+    
+    &.x1
+      width: $width-base / 3
+
+      .wrapper
+        //height: $width-base / 5
+    
+    &.x2
+      width: $width-base / 2
+      .wrapper
+        //height: ($width-base / 3) + 8px
+    
+    &.x3
+      width: $width-base
+      .wrapper
+        //height: ($width-base / 3) + 8px
+    
+
+  .hoverable.hover
+    
+    h1, h2, h3, h4
+      > span
+        color: $col-content-l
+    p
+      color: $col-content-l
+
+
+
+
+
+
+
+
+
+
+
+div.social.relations
+
+  // +simple-form($with-sidebar, $width-padding-base)
+  
+  @extend .sizes-boxed
+
+  div.header.stacked
+    padding: 1px $padding-inner
+    text-align: right
+    @extend .shaded-black
+    
+    > h1
+      color: $col-social-d
+      
+    > h2
+      color: $col-social-l
+      
+    
+    
+  > h1
+    margin-bottom: 14px
+    text-align: right
+    > span
+      // color: $col-content-d
+    @extend .shaded-black
+    padding: $padding-inner
+      
+  h1
+    // font-size: 110%
+
+  .container
+    min-height: 24px
+    
+    padding: 8px 0 4px 
+    // border-bottom: 1px solid white
+    background-color: $col-social-l
+    margin-top: $space-inner-s
+    
+    a.permalink
+      // display: none
+    
+    &.hover
+      background-color: $col-interaction-d
+    
+    .icon
+      width: 36px
+      height: 24px
+    .wrapper
+      @extend .sizes-small
+      padding: 0 2px 0 4px
+
+        
+    > .icon
+      background-position: 10px 1px
+      background-repeat: no-repeat
+        
+    &.facebook > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.facebook.png')
+    &.youtube > .icon
+      background-image: url('/static/img/icons/allauth24/icon.youtube.png')
+    &.twitter > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.twitter.png')
+    &.newsletter > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.newsletter.png')
+    &.flattr
+      min-height: 22px
+      padding-left: 4px
+      padding-top: 8px
+      #flattr
+        height: 18px
+        overflow: hidden
+      
+
+  .ajax.newsletter
+  
+    padding: 4px 2px 4px 38px
+
+    @extend .sizes-small
+    
+    @extend .simple-button
+    .submit > li
+      padding: 4px 4px 0 0
+      float: right
+    > ul
+    
+
+    
+      .description
+        padding-top: 3px
+        padding-bottom: 3px
+        +opacity(0.8)
+      //padding: 4px 0 !important
+      >li
+        padding: 4px 0 2px
+        // border-bottom: 1px solid #ff00ff
+        > ul
+          &.action
+            padding-top: 3px
+            padding-bottom: 3px
+            a
+              padding: 2px
+              border: 1px solid $color-base-bg
+              color: $color-base-bg
+              //background-color: $col-interaction-d
+              //color: contrast-color($col-interaction-d)
+              &:hover, &:active
+                background-color: $col-interaction-l
+                color: contrast-color($col-interaction-d)
+
+
+
+
+
+
+.qq-upload-button
+  //display: block
+  /* or inline-block
+  width: 40%
+  padding: 4px 2px 2px
+  text-align: center
+  border: 1px solid $color-base-bg
+  color: $color-base-bg
+  background-color: $col-content-l
+  &:hover
+    background-color: $col-interaction-d
+    
+  float: right
+  margin-bottom: 10px
+  
+.qq-upload-drop-area
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  min-height: 70px
+  z-index: 2
+
+  text-align: center
+  span
+    display: block
+    position: absolute
+    top: 50%
+    width: 100%
+    margin-top: -8px
+    font-size: 11px
+  
+  
+div.sidebar div.panel
+
+  // +simple-form($with-sidebar, $width-padding-base)
+  
+  @extend .sizes-boxed
+
+  div.header.stacked
+    padding: 1px $padding-inner
+    text-align: right
+    @extend .shaded-black
+    
+    > h1
+      color: $col-content-d
+      
+    > h2
+      color: $col-content-l 
+      
+    
+    
+  > h1
+    margin-bottom: 14px
+    text-align: right
+    > span
+      // color: $col-content-d
+    @extend .shaded-black
+    padding: $padding-inner
+      
+  h1
+    // font-size: 110%
+
+  .container
+    min-height: 24px
+    
+    padding: 8px 10px 4px 
+    background-color: $col-content-l
+    margin-top: $space-inner-s
+
+    
+    &.hover
+      background-color: $col-interaction-d
+    
+    .icon
+      width: 26px
+      height: 24px
+      
+    .wrapper
+      @extend .sizes-small
+      padding: 0 2px 0 4px
+
+        
+    > .icon
+      background-position: 2px 1px
+      background-repeat: no-repeat
+        
+    &.files
+      
+      .listing.files
+        padding: 4px 0
+        ul, li.file
+          list-style: square inside
+        li.file
+          color: $color-base-bg
+          padding: 2px 0 2px 4px
+          margin-bottom: 1px
+          a
+            color: $color-base-bg
+          span
+            &.filesize
+            
+          &:hover
+            background-color: $col-interaction-d
+            color: contrast-color($col-interaction-d)
+            a
+              color: contrast-color($col-interaction-d) !important
+
+            
+
+      
+
+  .ajax.newsletter
+  
+    padding: 4px 2px 4px 30px
+
+    @extend .sizes-small
+    > ul
+      //padding: 4px 0 !important
+      >li
+        padding: 4px 0 2px
+        // border-bottom: 1px solid #ff00ff
+        > ul
+          &.description
+            padding-top: 3px
+            padding-bottom: 3px
+            +opacity(0.5)
+          &.action
+            padding-top: 3px
+            padding-bottom: 3px
+            a
+              padding: 2px
+              border: 1px solid $color-base-bg
+              color: $color-base-bg
+              //background-color: $col-interaction-d
+              //color: contrast-color($col-interaction-d)
+              &:hover, &:active
+                background-color: $col-interaction-l
+                color: contrast-color($col-interaction-d)

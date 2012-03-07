@@ -3,260 +3,198 @@
 {% load sekizai_tags streamstat feedback_tags announcement_tags %}
 
 {% block extra_head %}
-    {% block extra_head_base %}{% endblock %}
-    {% block og_head %}{% endblock %}
+{% block extra_head_base %}{% endblock %}
+{% block og_head %}{% endblock %}
 {% endblock %}
 
 {% load cms_tags %}
-{% load cache menu_tags %}	
-
+{% load cache menu_tags %}
 
 {% block base_content %}
 
 {% addtoblock "js_main" %}
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"></script>
 {% endaddtoblock %}
-
-
 <div id="container" class="_debug">
-	
-	
 	<div id="root">
-	
-	
 		<div id="topbar">
-			
-            <div class="clearfix container navigation">
-            	
-                <div class="left holder navigation base">
-                {% block navigation %}
+			<div class="clearfix container navigation">
+				<div class="left holder navigation base">
+					{% block navigation %}
 					{% include "skeleton/_navigation.html" %}
-                {% endblock %}
-                </div>
-                
-
+					{% endblock %}
+				</div>
 				<!-- profile / login / facebook / etc -->
 				{% load account_tags %}
-			
 				<div class="right holder navigation profile">
-					
-					
-					{% if user.is_authenticated %}
-					
-					<!-- load tags -->
+					{% if user.is_authenticated %} <!-- load tags -->
 					{% url acct_logout as logout_url %}
 					{% user_display user as user_display %}
-					
 					<ul class="horizontal">
-						<li><span class="username">{{ user_display }}</span></li>
-						<li><a href="{% url profile_detail user.username %}">Profile</a></li>
-						<li><a href="/account/email/">EMail</a></li>
-						
+						<li>
+							<span class="username">{{ user_display }}</span>
+						</li>
+						<li>
+							<a href="{% url profile_detail user.username %}">Profile</a>
+						</li>
+						<li>
+							<a href="/account/email/">EMail</a>
+						</li>
 						{% if user.is_staff %}
-							<li><a href="/admin/">Administration</a></li>
+						<li>
+							<a href="/admin/">Administration</a>
+						</li>
 						{% endif %}
-						
-						<li><a href="{{ logout_url }}">Logout</a></li>
-						
+						<li>
+							<a href="{{ logout_url }}">Logout</a>
+						</li>
 					</ul>
-					
-					{% else %}
-					
-					<!-- load tags -->
+					{% else %} <!-- load tags -->
 					{% url acct_login as login_url %}
 					{% url acct_signup as signup_url %}
-					
 					<ul class="horizontal">
-						<li><a href="{{ signup_url }}">signup</a></li>
-						<li><a href="{{ login_url }}">login</a></li>
-						<li><a class="fb_connect" href="/facebook/login">connect</a></li>
+						<li>
+							<a href="{{ signup_url }}">signup</a>
+						</li>
+						<li>
+							<a href="{{ login_url }}">login</a>
+						</li>
+						<li>
+							<a class="fb_connect" href="/facebook/login">connect</a>
+						</li>
 					</ul>
-					
 					{% endif %}
-					
-				</div> 
-				
-                <div class="clear"></div>
-                
-                
-                
-
-                
-                
-            </div>
-
-		</div>
-	
-	
-	
-		{% show_menu 1 1 0 1 "skeleton/_subbar_if_children.html" %}
-	
-
-		
-		
-		
-		
-		<!-- header -->
-		<div id="header">
-				<div class="headline">
-					<h1>DOCK18.CH</h1>
 				</div>
+				<div class="clear"></div>
+			</div>
 		</div>
-		
-		
+		{% show_menu 1 1 0 1 "skeleton/_subbar_if_children.html" %} <!-- header -->
+		<div id="header">
+			<div class="headline">
+				<h1>DOCK18.CH</h1>
+			</div>
+		</div>
 		<div id="content">
-			
-			
 			<div id="base" class="col left">
-
-					
 				<div class="base content pinax">
 					<!-- content from pinax -->
 					{% block body_outer %}
-					    <div id="body">{% block body %}{% endblock %}</div>
+					<div id="body">
+						{% block body %}{% endblock %}
+					</div>
 					{% endblock %}
-					
 				</div>
-				
 				<div class="base content cms">
-					
 					{% block flash_messages %}{% include "pinax/_flash_messages_jgrowl.html" %}{% endblock %}
-					
 					<div id="site_wide_announcements">
-					{% if site_wide_announcements %}{% include "announcements/announcement_list.html" %}{% endif %}
+						{% if site_wide_announcements %}{% include "announcements/announcement_list.html" %}{% endif %}
 					</div>
-
-					
-					
 					<div class="apps">
-					{% block app_content%}
-					{% endblock %}
+						{% block app_content%}
+						{% endblock %}
 					</div>
-					
 					{% block special%}
 					{% endblock %}
-					
-					
+
 					{% block body_content%}
 					{% endblock %}
-					
 				</div>
-
-				
 			</div>
-			
-			
 			<!-- sidebar -->
 			<div id="sidebar" class="col left sidebar">
-
-
 				{% load value_from_settings %}
 				{% value_from_settings "RTMP_IP" as rtmp_ip %}
-
 				<div id="streamstat">
-                {% streamstat rtmp_ip %}
-                </div>
-
-				<div id="sidebar_pre">
-				{% placeholder sidebar_pre %}
+					{% streamstat rtmp_ip %}
 				</div>
-				
+				<div id="sidebar_pre">
+					{% placeholder sidebar_pre %}
+				</div>
 				<div class="sidebar_side">
 					{% block sidebar_pre %}{% endblock %}
-				</div>	
+				</div>
+				{% include "special/_social.html" %}
 				
+
 				<div id="eventlist_side">
 					{% block event_listing %}{% endblock %}
 					{% show_placeholder "template_1_content_a" "events" %}
-				</div>				
-				
-				<!--
-				<div id="navigation_side">
-					<ul class="vertical">
-						{% show_menu_below_id 'events' 0 100 100 100 "bcast/menu_shows.html" %}
-					</ul>
 				</div>
-				-->
+				
 				
 				<!--
 				{% if user.is_authenticated %}
 				<div id="invitation">
-					{% include 'element/invite.html' %}
+				{% include 'element/invite.html' %}
 				</div>
 				{% endif %}
 				-->
-				
 				<!--
 				<div id="newsletter">
-					
-					{% include 'element/newsletter.html' %}
-					
+				{% include 'element/newsletter.html' %}
 				</div>
 				-->
-				
-				
-				
-				
 				{% block widget_spectators %}
 				{% endblock %}
-				
 				<div id="sidebar_post">
-				{% placeholder sidebar_post %}
-				</div>	
-				
+					{% placeholder sidebar_post %}
+				</div>
 				<div class="sidebar_side">
 					{% block sidebar_post %}{% endblock %}
-				</div>	
-				
-				
-				{% include "special/_social.html" %}
-                
-
-	
+				</div>
 			</div>
-		
 			<div class="clear"></div>
-			
 		</div>
-		
-		
-		
-
-		
-		
-
 	</div>
-	
-	
-
-	
-	
 	<div id="footer" class="footer">
-
 		<div class="inner">
-			
-			<!--
+ 
+ 			<div class="swatches">
+ 				<ul>
+ 					<li>
+ 						<ul class="horizontal">
+ 							<li class="swatch col-interaction-d">col-interaction-d</li>
+ 							<li class="swatch col-interaction-l">col-interaction-l</li>
+ 						</ul>
+ 					</li>
+ 					
+ 					<li>
+ 						<ul class="horizontal">
+ 							<li class="swatch col-content-d">col-content-d</li>
+ 							<li class="swatch col-content-l">col-content-l</li>
+ 						</ul>
+ 					</li>
+ 					
+ 					<li>
+ 						<ul class="horizontal">
+ 							<li class="swatch col-social-d">col-social-d</li>
+ 							<li class="swatch col-social-l">col-social-l</li>
+ 						</ul>
+ 					</li>
+ 					
+ 					<li>
+ 						<ul class="horizontal">
+ 							<li class="swatch col-marker-d">col-marker-d</li>
+ 							<li class="swatch col-marker-l">col-marker-l</li>
+ 						</ul>
+ 					</li>
+ 					
+ 				</ul>
+ 				
+ 			</div>
+ 
+ 
 			<div id="fb_like">
-				{% include 'element/facebook.html' %}
+			{% include 'element/facebook.html' %}
 			</div>
-			-->
-
 
 		</div>
-		
-		
 	</div>
-	
 	<div id="wrapper_feedback" class="loading">
-	<a class="handle" href="#">Content</a>
-	<p>{% show_feedback %}</p>
+		<a class="handle" href="#">Content</a>
+		<p>
+			{% show_feedback %}
+		</p>
 	</div>
-	
-	
-	
-	
 </div>
-
 {% endblock %}

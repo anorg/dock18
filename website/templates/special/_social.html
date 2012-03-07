@@ -1,137 +1,78 @@
 {% load sekizai_tags %}
 
-
 {% addtoblock "js_main" %}
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		$('.hoverable').live('hover', function(e) {
-			$(this).addClass("hover");
-		});
-		$('.hoverable').live('mouseleave', function(e) {
-			$(this).removeClass("hover");
-		});
-		
-		$('.linkable').live('click', function(e) {
-			var href = $(this).find('a.permalink').attr('href');
-			if(href) {
-				$(window.location).attr('href', href);
-			}
-		});
-		
-		$('a.permalink').css('display', 'none');
-		
+
 	});
+
 </script>
-
-
-
-
-
 {% endaddtoblock %}
 {% addtoblock "css" %}
 <style type="text/css">
-	
-
 </style>
-{% endaddtoblock %}
-
-
-
-
-<!-- width: 680px -->
-
+{% endaddtoblock %} <!-- width: 680px -->
 <!-- full wrapper -->
 <div class="wrapper social relations">
-	
-	<h1>Sozialisieren durch Kunst</h1>
-	
-	<div class="container newsletter">
-		<div class="" id="ajax_newsletter"></div>
+	<div class="header stacked">
+		<h1>Sozialisieren</h1>
+		<h2>durch Kunst</h2>
 	</div>
-	
-	<div class="container facebook">
-		<div class="fb-like" data-href="http://node02.daj.anorg.net/" data-send="true" data-layout="button_count" data-width="210" data-show-faces="true" data-font="lucida grande"></div>
-		
+	<div class="container flattr">
+		<div id="flattr">
+			{% include "element/button_flatr.html" %}
+		</div>
 	</div>
-	
-	
-	<!--
 	<div class="container facebook hoverable linkable">
 		<a class="permalink" href="http://google.ch">dock18 on Facebook</a>
-		<div class="left icon">&nbsp;</div>
+		<div class="left icon">
+			&nbsp;
+		</div>
 		<div class="left wrapper">
 			<h2>Facebook</h2>
-			<p>dock18 on Facebook</p>
+			<p>
+				dock18 on Facebook
+			</p>
 		</div>
 		<div class="clear"></div>
 	</div>
-	
 	<div class="container youtube hoverable linkable">
 		<a class="permalink" href="http://google.ch">dock18 on YouTube</a>
-		<div class="left icon">&nbsp;</div>
+		<div class="left icon">
+			&nbsp;
+		</div>
 		<div class="left wrapper">
 			<h2>Youtube</h2>
-			<p>dock18 on YouTube</p>
+			<p>
+				dock18 on YouTube
+			</p>
 		</div>
 		<div class="clear"></div>
 	</div>
-	-->
-	
-	
-	<div class="container flatr">
-		<div id="flatr">
-			{% include "element/button_flatr.html" %}
-	    </div>
-   </div>
-   
-
-	
-	<div class="container youtube hoverable linkable">
-		<a class="permalink" href="http://google.ch">dock18 on YouTube</a>
-		<div class="left icon">&nbsp;</div>
+	<div class="container twitter hoverable linkable">
+		<a class="permalink" href="http://google.ch">dock18 on Twitter</a>
+		<div class="left icon">
+			&nbsp;
+		</div>
 		<div class="left wrapper">
-			<h2>Youtube</h2>
-			<p>dock18 on YouTube</p>
+			<h2>Twitter</h2>
+			<p>
+				dock18 on Twitter
+			</p>
 		</div>
 		<div class="clear"></div>
 	</div>
-	
-	<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-	<div class="container twitter">
-		<script>
-		new TWTR.Widget({
-		  version: 2,
-		  type: 'profile',
-		  rpp: 2,
-		  interval: 30000,
-		  width: 'auto',
-		  height: 200,
-		  theme: {
-		    shell: {
-		      background: '#0bffff',
-		      color: '#000000'
-		    },
-		    tweets: {
-		      background: '#0bffff',
-		      color: '#616161',
-		      links: '#ff1e00'
-		    }
-		  },
-		  features: {
-		    scrollbar: false,
-		    loop: false,
-		    live: true,
-		    behavior: 'all'
-		  }
-		}).render().setUser('dock18').start();
-		</script>
-		
+	<div class="container newsletter">
+		<div class="left icon">
+			&nbsp;
+		</div>
+		<div class="left wrapper">
+			<h2>Newsletter</h2>
+			<p>
+				dock18 newsletter!
+			</p>
+		</div>
+		<div class="clear"></div>
+		<div class="" id="ajax_newsletter"></div>
 	</div>
-	
-
-	
-	
-	
-	
-	
 </div>

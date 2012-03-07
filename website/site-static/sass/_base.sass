@@ -17,6 +17,11 @@ $use-mozilla-ellipsis-binding: true
 @import 'asif/control'
 @import 'asif/typography'
 
+
+
+
+
+
 // site specific imports
 // @import 'navigation'
 
@@ -24,90 +29,22 @@ $use-mozilla-ellipsis-binding: true
 // grid ----------------------------------------------------------------------
 
 
+
+
+
+
+
+@import 'mixins/base' 
+
+@import 'site/base'
+@import 'site/work-in-progress'
+
+@import 'lib/jqtip'
+
 // colors --------------------------------------------------------------------
 
 
 
-$color-base-a: yellow
-$color-base-b: #0ff
-$color-base-c: #F0F
-$color-base-d: #acff00 
-$color-base-e: #F0F
-
-$color-base-a: #C3FF68
-$color-base-b: #7ED0D6
-$color-base-c: #87D69B
-$color-base-d: #4E9689 
-$color-base-e: #F4FCE8
-
-
-// color pallette
-$color-base-a: #ffff00
-$color-base-b: #00ffff
-$color-base-c: #ffff00 // was d7ff00
-$color-base-d: #00ff00
-$color-base-e: #ff00ff
-
- 
-
-
-// fore- & background
-$color-base-bg: #000
-$color-base-fg: #fff
-
-
-// mappings
-$color-default: #000
-$color-base-action: $color-base-a
-$color-base-active: $color-base-a
-$color-base-focus: $color-base-b
-$color-base-interaction: $color-base-a
-
-
-// elements
-$color-base-notice: #ff9000
-
-
-
-// fonts --------------------------------------------------------------------
-$size-font-base: 14px
-//$font-default: 'Lucida Console', Monaco, 'Courier New', 'Courier'
-$font-heading: 'frutiger_ultrablack', Helvetica, Arial
-$font-subheading: 'frutiger_extrablack', Helvetica, Arial
-
-// 'FrutigerLTW01-95UltraBl'
-// 'FrutigerNeueW02-BlkIt'
-// 'Arial W01 Monospaced'
-
-$size-font-base: 11px
-$font-default: 'Helvetica'
-$font-heading: 'FrutigerLTW01-95UltraBl', Helvetica, Arial, sans-serif
-//$font-heading: 'Frutiger Neue W01 Bd', Helvetica, Arial, sans-serif
-$font-subheading: 'Frutiger Neue W01 Bd', Helvetica, Arial, sans-serif
-$font-subheading: 'FrutigerLTW01-95UltraBl', Helvetica, Arial, sans-serif
-
-$font-monospace: 'Lucida Console', Monaco, 'Courier New', 'Courier'
-$font-quote: 'Courier New', 'Courier'
-$font-pre: 'Courier New', 'Courier'
-
-// dimensions ----------------------------------------------------------------
-
-$width-root: 960px
-$with-sidebar: 240px
-$width-base: 600px
-
-$width-padding-base: 10px
-$width-gutter-left: 0px
-
-$default-space: 30px
-
-$width-base: $width-root - $with-sidebar - $width-padding-base - $width-gutter-left - $default-space
-$width-full: $width-root - $width-gutter-left
-
-
-$space-inner-s: 2px
-$space-inner-m: 4px
-$space-inner-l: 12px
 
 
 
@@ -123,9 +60,10 @@ $space-inner-l: 12px
 @import 'asif/jgrowl' 
 
 // site specific mixins
-@import 'mixin'
 
-@import 'extras'
+
+
+
 
 
 
@@ -145,13 +83,7 @@ $space-inner-l: 12px
  *         div.inner
  */
 
-.debug
-  #root
-    background-color: #ffff00
-  #base
-    background-color: #ff00ff
-  #sidebar
-    background-color: #0000ff
+
 
 
 body 
@@ -196,23 +128,24 @@ div#content
 // to: _style.sass --------------------------------------------------------------------
 
 body
-  +typography()
 
 p
   //display: block
-  //+contrasted($color-base-bg)
+
 
 a
-  +link-colors($color-base-action, $color-base-active, $color-base-active, $color-base-action)
+  //+link-colors($color-a-dction, $color-a-dctive, $color-a-dctive, $color-a-dction)
   // +single-text-shadow(#ffffff)
 
 a
-  &:link
-    color: $color-base-action
-    // background: inherit
-  &:hover
-    background-color: $color-base-action
-    color: contrast-color($color-base-action)
+  padding: 0 2px
+  text-decoration: none
+  &:link, &:visited
+    color: $col-interaction-d
+
+  &:hover, &:active
+    background-color: $col-interaction-d
+    color: contrast-color($col-interaction-d)
 
       
 
@@ -234,153 +167,28 @@ div#sidebar
   
 // font / headings
 h1, h2, h3, h4, h5, h6
-  // +font-heading()
+
   > a
 
     font-style: normal
     text-decoration: none
-    color: $color-base-fg !important
     &:link
     
     &:hover
 h3, h4, h5, h6 
-  //+font-subheading()
+
   
-.base .plugin
-
-  .list.events // list container
-    // font-family: $font-monospace    
-    font-family: $font-default
-    p 
-      line-height: 140%
-  
-  .listing.event // listing event element
-    background-color: $color-default
-    color: $color-base-fg
-    // padding: 4px 4px 4px 15px
-    margin: 0 0 $space-inner-s 0
-    //margin: 0 0 0 0
-    
-    
-    .inner
-      display: none
-      
-    
-    
-    // 
-      &.now, &.today, &.future
-        min-height: 36px
-        //padding: 12px 80px 12px 15px
-        h3
-          //padding-top: 10px
-        h4
-          //padding-bottom: 6px
-          
-        
-    &.now, &.today
-      height: 48px
-      //padding: 12px 80px 12px 15px
-      h3.title
-        padding-top: 14px
-      h4.date
-        padding-top: 16px
-        
-        
-        
-    
-    div.wrap
-      width: 100%
-    
-    h3.title
-      float: left
-      //display: inline
-      display: block
-      padding: 2px 2px 2px 0px
-    
-    h4.date
-      float: left
-      width: 140px
-      //display: inline
-      display: block
-      font-size: 140%
-      padding: 4px 2px 2px 8px
-      text-transform: uppercase
-    
-        
-    .picture
-      margin: 0 10px 0 0 
-
-
-    // activity
-    &.hover
-      cursor: pointer
-      background-color: $color-base-a !important
-
-      // color: black 
-      h3, h3 > a, h4, h4 > span
-        color: black !important
-        
-
-    // event states 
-    &.now
-      color: contrast-color($color-base-active)
-      background: $color-base-focus url('/static/img/base/badge/badge48.now.red.png') top right no-repeat
-      a
-        color: $color-base-bg !important
-        
-    &.today
-      color: $color-base-b
-      background: $color-default url('/static/img/base/badge/badge48.today.cyan.png') top right no-repeat
-      a
-        color: $color-base-b !important
-      
-      
-    &.future
-      background: $color-default url('/static/img/base/badge/badge_small.week.cyan.png') top right no-repeat
-
-
 
 	
 
    
         
-// event list in sidebar
-#eventlist_side
-  .list.events // list container
-    font-size: $size-font-base *.9
-  .listing.event // listing event element
-    height: auto
-    background-image: none !important
-    padding: 2px $width-padding-base / 2
-    h3, h4
-      font-size: $size-font-base *1
-      padding: 0 !important
-    .picture
-      display: none
-      
-    h4.date
-      width: 70px
 
-
-    .tags
-      display: none
-      
-    span.event_type
-      font-size: $size-font-base *.8
-      
-    &.hover
-      cursor: pointer
-      background-color: $color-base-a !important
-      //border-left: 4px solid black
-      //padding-left: $width-padding-base / 2 - 4px
-      // color: black 
-      h3, h3 > a, h4, h4 > span
     
   
 .detail.event // event detail page
-  background-color: $color-base-active
-  color: $color-default
-  // padding: 0 0 ($default-space/2) 0
+
+
   padding: 0
   
   div.padded
@@ -390,7 +198,7 @@ h3, h4, h5, h6
       line-height: 150%
       
       a:link, a:visited
-        color: black
+
 
   // .lead
 
@@ -399,9 +207,7 @@ h3, h4, h5, h6
     
   //für login   
   .message
-    // background-color: $color-base-notice
-    +contrasted(#333)
-    color: white
+
     padding: ($default-space/2)
     //margin: 0 0 ($default-space/2) 0
     margin: 0
@@ -431,8 +237,7 @@ h3, h4, h5, h6
 
   // screen / player
   #cuepoints
-    // border-top: 1px solid yellow
-    // background-color: #ffff02
+
     p
       padding: 10px
       line-height: 150%
@@ -441,37 +246,7 @@ h3, h4, h5, h6
         text-decoration: none
       
     
-  .panel
-  
-    &.lead
 
-      background-color: adjust-lightness($color-base-a, 35)
-      
-      > .action
-        background-color: $color-base-a
-        padding: ($default-space/4) ($default-space/2)
-      
-      > .display
-        padding: ($default-space/4) ($default-space/2)
-  
-  
-    &.chat
-      // old blue style
-        padding: 0
-        background-color: adjust-lightness($color-base-b, 35)
-        > .action
-          background-color: $color-base-b
-        
-        > .display
-          padding: 0
-      // new black style...
-      padding: 0
-      background-color: #000
-      > .action
-        background-color: #333
-      
-      > .display
-        padding: 0
         
         
         
@@ -484,12 +259,8 @@ h3, h4, h5, h6
       max-height: 580px
       overflow: auto
       
-
-      background-color: adjust-lightness($color-base-c, 35)
-      color: contrast-color($color-base-c)
       
       > .action
-        background-color: $color-base-c
         
         .ext-form
           padding: ($default-space/4) ($default-space/2) 
@@ -499,7 +270,6 @@ h3, h4, h5, h6
       > .display
         padding: ($default-space/2 0)
         a 
-          color: black
           text-decoration: none
           
         h4, h5, p
@@ -509,8 +279,7 @@ h3, h4, h5, h6
           padding: 10px 10px
           
         h4
-          background: $color-base-c
-          color: contrast-color($color-base-c)
+
           // color: white
         
   
@@ -529,9 +298,6 @@ h3, h4, h5, h6
         span
           padding: 0 10px 0 0
         
-        // color: white
-
-      background-color: adjust-lightness($color-base-d, 35)
       
       a#spectates
         color: black
@@ -554,7 +320,7 @@ h3, h4, h5, h6
             background-image: url(/static/img/base/hack.check_a.png)
       
       > .action
-        background-color: $color-base-d
+
         
         .ext-form
           padding: ($default-space/4) ($default-space/2) 
@@ -565,17 +331,16 @@ h3, h4, h5, h6
         padding: ($default-space/2)
         padding: 0
         a 
-          color: black
+
           text-decoration: none
           
           
   
     &.user
 
-      background-color: adjust-lightness($color-base-a, 35)
       
       > .action
-        background-color: $color-base-a
+
         padding: ($default-space/4) ($default-space/2)
       
       > .display
@@ -586,7 +351,6 @@ h3, h4, h5, h6
           line-height: 140% !important
           
         a:link, a:visited
-          color: black
           
         div.group
           .label
@@ -601,53 +365,7 @@ h3, h4, h5, h6
   
   
   // TODO: move up! 
-  .panel .chatmessages
- 
- 
-    max-height: 280px
-    overflow: auto
-  
-    .row
-      margin: 4px 0 4px 10px
-      clear: both
-    
-      .timestamp
-        display: block
-        float: left
-        padding: 5px 10px 5px 0
-        color: white
-        width: 90px
-        font-size: 80%
-        
-        .date, .time
-          display: block
-          border-right: 1px solid fuchsia
-          padding: 0 4px 0 0
-          text-align: right
-        .time
-          display: block
-        
-      .user
-        display: block
-        float: left
-        width: 100px
-        overflow: hidden
-        color: #5a5a5a
-        padding: 7px 10px 0 0
-        font-weight: bold
-      
-      .msg
-        color: white
-        display: block
-        float: left
-        width: 360px
-        padding: 7px 0 0 0
-        overflow: hidden
-        
-        a
-          color: white !important
-          font-weight: bold
-          font-size: 80%
+
     
     
     
@@ -655,52 +373,17 @@ h3, h4, h5, h6
   
 .plugin.bcast.detail
   #screen
-    background-color: $color-default
-    color: contrast-color($color-default)
+
   #participants
-    background-color: $color-default
-    color: contrast-color($color-default)
+
   #files
-    background-color: $color-default
-    color: contrast-color($color-default) 
+
 
 //general plug-in style
 
 // in main template
 .base.content 
-  .textplugin_holder 
-    
-    color: $color-default
-    
-    
-    // margin: ($default-space*2) 0 ($default-space/2) 0
-    
-    margin: 2px 0 2px 
-    
-    // font-family: $font-monospace
-    font-family: $font-default
-    p 
-      line-height: 140%
-    
-    padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
-    
-    &:nth-child(3)
-      background-color: $color-base-a
-      padding: ($default-space/2)
-    
-    p, ul
-      padding: 4px 0 12px 0
-      list-style: square inside
-      > li
-        padding: 2px 0 2px 0
-      
-    a
-      color: $color-default
-      +font-link-default()
-    
-    &:nth-child(3)
-      margin: 0 0 2px 0
-      // margin: 0 0 0 0
+
       
       
       
@@ -709,7 +392,6 @@ h3, h4, h5, h6
       
   .filerfolderplugin_holder 
 
-    color: $color-default
     margin: 2px 0 2px 
     
     background-color: transparent
@@ -729,7 +411,6 @@ h3, h4, h5, h6
         background-color: #000
         
         &:hover
-          background-color: $color-base-a
           
           .info, .info a
             color: black !important
@@ -753,12 +434,10 @@ h3, h4, h5, h6
         overflow: hidden
           
       .info
-        //height: 16px
-        color: white !important
+
         padding: 5px 8px 0 0
         text-align: right
         font-size: 82%
-        color: $color-base-a
         text-decoration: none
         
         a
@@ -783,7 +462,7 @@ h3, h4, h5, h6
     // padding: ($default-space/2) 0 ($default-space/2) 2px // 2 for visual compensation / font
     
     &:nth-child(3)
-      background-color: $color-base-a
+
       padding: ($default-space/2)
     
     p, ul
@@ -793,8 +472,7 @@ h3, h4, h5, h6
         padding: 2px 0 2px 0
       
     a
-      color: $color-default
-      +font-link-default()
+
     
     &:nth-child(3)
       margin: 0 0 2px 0
@@ -805,22 +483,21 @@ h3, h4, h5, h6
 .sidebar 
   .textplugin_holder 
     background-color: transparent
-    color: $color-default
+
     padding: $default-space/2 0 $default-space/2 0
     margin: 0 0 4px 0
-    font-family: $font-default
+    //font-family: $font-default
     p
       line-height: 140%
     // text-align: justify
     
-    border-bottom: 4px solid $color-default
+    // border-bottom: 4px solid $color-default
     
     p
       padding: 0
       
     a
-      color: $color-default
-      +font-link-default()
+
     
     &:first-child
       margin: 0 0 2px 0
@@ -828,7 +505,6 @@ h3, h4, h5, h6
       
   .cmspollplugin_holder 
     background-color: transparent
-    color: $color-default
     padding: $default-space/2 0 2px 0
     margin: 0 0 4px 0
     font-family: $font-default
@@ -838,8 +514,7 @@ h3, h4, h5, h6
     > p > a
       font-size: 110%
     // text-align: justify
-    
-    border-bottom: 4px solid $color-default
+
     
     input
       margin: 4px 0 4px 0
@@ -848,8 +523,6 @@ h3, h4, h5, h6
       padding: 0
       
     a
-      color: $color-default
-      +font-link-default()
     
     &:first-child
       margin: 0 0 2px 0
@@ -877,7 +550,6 @@ h3, h4, h5, h6
     p
       input, textarea
         border: none
-        background-color: $color-base-b
         //width: 100px
       
       input
@@ -890,41 +562,12 @@ h3, h4, h5, h6
 
 // form style
 
-form.submit_inside
-  // background-color: $color-base-interaction
-  padding: 6px 6px 6px 10px
-  
-  
-  input.msg
-    // width: 300px
-    border: none
-    background-color: white
-    font-size: 100%
-    
-    border: 1px solid black
-    padding: 2px
-    width: 84%
-    
-    
-    
-  input.btn
-    border: none
-    background-color: inherit
-    float: right
-    padding: 4px 16px 0 0
-    
-    background-image: url(/static/img/base/submit_16x16.png)
-    background-repeat: no-repeat
-    background-position: right 4px
-    
-.expandable.main.window
-  form.submit_inside
-    // width: 400px
+
     
 
 // hacks
 #invitation
-  +simple-form($color-base-b, $with-sidebar, $width-padding-base)
+  +simple-form($with-sidebar, $width-padding-base)
 
   //border-bottom: 4px solid black
   margin-bottom: 2px
@@ -932,7 +575,7 @@ form.submit_inside
       
 
 #newsletter
-  +simple-form($color-base-b, $with-sidebar, $width-padding-base)
+  +simple-form($with-sidebar, $width-padding-base)
 
 
 
@@ -948,9 +591,8 @@ $feedback-width: 400px
   min-height: 122px
     
   a.handle
-    background-color: $color-base-b !important
 
-  background-color: $color-base-b
+
   padding: 10px
   
   width: $feedback-width
@@ -975,7 +617,6 @@ $feedback-width: 400px
   p
     input, textarea
       border: none
-      background-color: adjust-lightness($color-base-b, 35)
       width: $feedback-width - 100px
       
     input
@@ -1046,8 +687,7 @@ div#player_wrapper
   ul#messages
     li
       padding: $width-padding-base
-      
-      background-color: #CCFF63
+
       font-weight: bold
       
       a > small
@@ -1058,10 +698,8 @@ div#player_wrapper
       
       
 .base.content.pinax, .base.content.cms .apps
-  background-color: $color-base-a
   // padding: $width-padding-base
-  color: black
-  
+
   > *
     // padding: 15px
     
@@ -1105,7 +743,7 @@ div#player_wrapper
     width: 50%
     border: none
     &:hover
-      color: $color-base-a
+
       
     // placement
     display: block
@@ -1142,11 +780,11 @@ div#player_wrapper
     display: block
   
     .announcment.action
-      background-color: $color-base-d
+
       padding: $width-padding-base/2 $width-padding-base
   
     .announcment.display
-      background-color: adjust-lightness($color-base-d, 35)
+
       padding: $width-padding-base/2 $width-padding-base
      
   

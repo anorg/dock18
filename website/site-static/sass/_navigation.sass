@@ -1,7 +1,8 @@
 // setup
 
 
-$height-nav: 21px
+$height-nav: 24px
+$fontsize-nav: 13px
 
 $static-url: '/static/'
 
@@ -9,12 +10,11 @@ $default-padding: 0px
 
 
 // TODO: find smart way to define in color.sass 
-$nav-bg-base: #000
-$nav-fg-base: #fff
-$nav-bg-selected: yellow
-$nav-bg-active: yellow
-$nav-bg-hover: yellow
 
+.holder.navigation
+  a
+    font-size: 13px
+    font-family: $font-navigation
 
 #topbar
   z-index: 1000
@@ -28,11 +28,11 @@ $nav-bg-hover: yellow
 
   .holder.navigation
     z-index: 1
-    
+
 
     &.sub
       background-color: transparent
-      height: 21px
+      height: $height-nav
       
       width: $width-base - $default-padding
       
@@ -42,8 +42,7 @@ $nav-bg-hover: yellow
       a
         text-decoration: none
         text-transform: uppercase
-        
-        +font-nav()
+
         
         padding: 5px 10px 0
         height: ($height-nav - 5px)
@@ -80,12 +79,6 @@ $nav-bg-hover: yellow
     
 
 
-
-
-.navigation-js
-  
-
-        
 
 
 
@@ -148,9 +141,7 @@ $nav-bg-hover: yellow
     a
       text-decoration: none
       text-transform: uppercase
-      
-      +font-nav()
-      
+
       padding: 5px 10px 0
       height: ($height-nav - 5px)
     
@@ -188,7 +179,7 @@ $nav-bg-hover: yellow
       
         
         &:hover
-          background-color: $color-base-active
+          background-color: $nav-bg-hover
           // color: white
   
     

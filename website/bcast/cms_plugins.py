@@ -39,6 +39,9 @@ class EventPlugin(CMSPluginBase):
         folder_recordings = instance.event.get_folder('recorded')
         folder_uploads = instance.event.get_folder('uploads')
    
+        print "event folder:"
+        print folder
+   
         context.update({
             'event':instance.event,
             'participants':participants,
@@ -64,27 +67,27 @@ class EventListingPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
 
-        # latest = Event.published.all()[:instance.limit]
-        
-        # print instance.channel
         
         kwargs = {}
         
-        """
-        if instance.channel not None:
-            print 'channel'
-        """
+        if instance.channel is not None:
+            kwargs[ 'channel' ] = instance.channel
+            
+        if instance.season is not None:
+            kwargs[ 'Season' ] = instance.season
+        
+
         objects = {}
         
         if instance.range == 'past':
             objects = Event.published.filter(date_start__lte=datetime.now()).filter(date_end__lte=datetime.now()).filter( **kwargs ).filter( **kwargs ).order_by('-date_end')[:instance.limit]
             
-            
-        
         if instance.range == 'future': 
             objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('-date_start')[:instance.limit]
-            # Use following for reversed order
-            # objects = Event.objects.filter(Q(date_start__gte=datetime.now()) | Q(date_end__gte=datetime.now())).filter( **kwargs ).order_by('date_start')[:instance.limit]
+        
+        if instance.range == 'all':
+            objects = Event.published.filter( **kwargs ).order_by('-date_end')[:instance.limit]
+            
 
         
         context.update({

@@ -1,0 +1,175 @@
+#container_player
+  @extend .shaded-black
+  
+  #process_wait
+    color: contrast-color($col-marker-l)
+    background-color: $col-marker-l
+    text-transform: uppercase
+#bcast_chat
+  @extend .shaded-black
+  
+  
+.window
+  .panel
+  
+    &.lead
+    
+      color: $color-base-fg
+      
+  
+      > .action
+        background-color: $color-base-bg
+        padding: ($default-space/4) ($default-space)
+        min-height: 24px
+        > .left > h4
+          padding: 4px 0 0 0
+      
+      > .display
+        background-color: $color-base-bg
+        padding: ($default-space/4) ($default-space)
+        
+      > .info
+        @extend .shaded-black
+        @extend .typo-running
+        padding: ($default-space/2) ($default-space)
+        
+        
+      .tags
+        .tag
+          font-size: 12px
+          padding-top: 11px
+        
+    &.spectator
+      background-color: $col-social-l
+      padding: $default-space
+      
+      color: $color-base-bg
+      
+      .action
+        // height: 18px
+        .spectators
+          text-align: right
+      .display
+        height: 18px
+        
+        .user
+          text-transform: uppercase
+      
+      a.button
+        padding: 2px
+        border: 1px solid $color-base-bg
+        color: $color-base-bg
+        &:hover, &:active
+          background-color: $col-interaction-l
+          color: contrast-color($col-interaction-d)
+          
+    &.info
+      
+  
+    &.chat
+    
+      
+  
+      padding: 0
+      
+      form.submit_inside
+        padding: 6px 6px 6px 10px
+      
+      input.msg
+        // width: 300px
+        border: none
+        background-color: white
+        font-size: 100%
+        
+        border: 1px solid black
+        padding: 2px
+        width: 84%
+        
+        height: 20px
+        padding-left: 8px
+        font-family: $font-monospace
+        
+        &:hover
+          color: $col-interaction-d
+        
+        
+      input.btn
+        border: none
+        background-color: inherit
+        float: right
+        padding: 4px 16px 0 0
+        
+        background-image: url(/static/img/base/submit_16x16.png)
+        background-repeat: no-repeat
+        background-position: right 4px
+        color: contrast-color($color-base-bg)
+        font-family: $font-subheading
+        font-size: 14px
+        padding-right: 24px
+        
+        &:hover
+          color: $col-interaction-d
+      
+
+
+      > .action
+
+      
+      > .display
+        padding: 0
+      // new black style...
+      padding: 0
+  
+      > .action
+  
+      
+      > .display
+        padding: 0
+        
+    .chatmessages
+
+      max-height: 280px
+      overflow: auto
+    
+      .row
+        margin: 4px 0 4px 10px
+        clear: both
+      
+        .timestamp
+          display: block
+          float: left
+          padding: 5px 10px 5px 0
+          color: white
+          width: 90px
+          font-size: 80%
+          
+          .date, .time
+            display: block
+            border-right: 1px solid white
+            padding: 0 4px 0 0
+            text-align: right
+          .time
+            display: block
+          
+        .user
+          display: block
+          float: left
+          width: 100px
+          overflow: hidden
+          color: #a9a9a9
+          padding: 7px 10px 0 0
+          font-weight: bold
+        
+        .msg
+          color: white
+
+          display: block
+          float: left
+          width: 360px
+          padding: 7px 0 0 0
+          overflow: hidden
+          
+          a
+            color: white !important
+            font-weight: bold
+            font-size: 80%

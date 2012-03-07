@@ -190,6 +190,8 @@ class Event(models.Model):
         
     
     def get_absolute_url(self):
+        
+        """
         pages = self.get_pages_using()
         
         abs_url = False
@@ -201,7 +203,8 @@ class Event(models.Model):
             abs_url = False
             
         return abs_url
-        
+        """
+        return '/event/%s' % self.slug
     
     def get_page_published(self):
         pages = self.get_pages_using()
@@ -344,7 +347,7 @@ class EventListPlugin(CMSPlugin):
     )
     
     RANGE_CHOICES = (
-        #('all', _('All')),
+        ('all', _('All')),
         ('past', _('Past')),
         ('future', _('Future')),
     )
@@ -353,9 +356,10 @@ class EventListPlugin(CMSPlugin):
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
     range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
     
-    #channel = models.ForeignKey(Channel, blank=True, null=True)
+    channel = models.ForeignKey(Channel, blank=True, null=True)
+    season = models.ForeignKey(Season, blank=True, null=True)
     
-    limit = models.IntegerField(default=8)
+    limit = models.IntegerField(default=16)
 
     def __unicode__(self):
         return self.range

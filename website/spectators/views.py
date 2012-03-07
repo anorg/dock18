@@ -43,12 +43,27 @@ def spectate_toggle(request, content_type_id, object_id):
         notification.stop_observing(object, request.user, signal='observe_processed')
     
     if request.is_ajax():
+        
+        spectators = []
+        ts = Spectate.objects.filter(
+                receiver_content_type = content_type,
+                receiver_object_id = object_id
+            )
+
+        for s in ts:
+            try:
+                spectators.append(str(s.sender.get_profile.nameee))
+            except Exception, e:
+                spectators.append(str(s.sender))
+
+        
         return HttpResponse(json.dumps({
             "spectates_count": Spectate.objects.filter(
                 sender = request.user,
                 receiver_content_type = content_type,
                 receiver_object_id = object_id
-            ).count()
+            ).count(),
+            "spectators": spectators
         }), mimetype="application/json")
     
     return redirect(request.META["HTTP_REFERER"])

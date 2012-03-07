@@ -1,13 +1,13 @@
 {% load i18n adminmedia sekizai_tags %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{% admin_media_prefix %}js/jquery.min.js"></script>{% endaddtoblock %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>{% endaddtoblock %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>{% endaddtoblock %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.base.js"></script>{% endaddtoblock %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.toolbar.js"></script>{% endaddtoblock %}
-{% addtoblock "js_main" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.placeholders.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{% admin_media_prefix %}js/jquery.min.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.base.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.toolbar.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/plugins/cms.placeholders.js"></script>{% endaddtoblock %}
 {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.toolbar.css?v1" media="all" />{% endaddtoblock %}
 {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.placeholders.css?v1" media="all" />{% endaddtoblock %}
-{% addtoblock "js_main" %}
+{% addtoblock "js" %}
 <script type="text/javascript">
 //<![CDATA[
 jQuery(document).ready(function ($) {

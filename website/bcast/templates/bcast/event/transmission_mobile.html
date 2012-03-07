@@ -5,23 +5,17 @@
 <script type="text/javascript">
 
 jwplayer("player").setup({
-	file: "Extremists.m4v",
-	height: 400,
-	width: 578,
-	'provider':'rtmp',
-	'streamer':'rtmp://osric.net:1533/myapplication/_definst',
+	file: ".",
+	height: 420,
+	width: 680,
+	autostart: true,
 	'modes': [
-		{ 
-			type:'flash',
-			src:'player.swf' 
-		},
 		{ 
 			type:'html5',
 			config:{
-				//'file':'http://88.198.82.193:1935/d18recorded/_definst_/flv:2011-10-05_rhizome-iii.flv/playlist.m3u8',
-				'file':'http://88.198.82.243:1935/live/2011-11-09_streamtest/playlist.m3u8',
+				'file':'http://10.40.10.40:1935/d18live/{{ event.key }}/playlist.m3u8',
 				'provider':'video'
-				}
+		}
 		}
 	]
 });

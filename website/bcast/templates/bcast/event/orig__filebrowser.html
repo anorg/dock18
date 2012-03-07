@@ -1,0 +1,150 @@
+{% load account_tags sekizai_tags %}
+
+
+
+
+{% addtoblock "js_post" %}
+<script src="{{ STATIC_URL }}js/lib/fileuploader_mod.js" type="text/javascript" charset="utf-8"></script>
+{% endaddtoblock %}
+
+
+{% if user.is_authenticated %}
+{% addtoblock "js_main" %}
+<script type="text/javascript">
+$(document).ready(function(){
+
+
+var uploader = new qq.FileUploader({
+    // pass the dom node (ex. $(selector)[0] for jQuery users)
+    element: $('#file-uploader')[0],
+    // path to server-side upload script
+    // action: '/bcast/upload/{{ event.id }}/',
+    action: '{% url ajax_uploader %}',
+    
+    
+    // multiple: true,
+    onComplete: function( id, fileName, responseJSON ) {
+      if( responseJSON.success ) {
+        // alert( "success!" ) ;
+      } else  {
+        alert( "upload failed!" ) ;
+       }
+    },
+    onAllComplete: function( uploads ) {
+      // uploads is an array of maps
+      // the maps look like this: { file: FileObject, response: JSONServerResponse }
+      // alert( "All complete!" ) ;
+      
+      base.ui.interval();
+      
+    },
+    params: {
+      'csrf_token': '{{ csrf_token }}',
+      'csrf_name': 'csrfmiddlewaretoken',
+      'csrf_xname': 'X-CSRFToken',
+      'event_id': '{{ event.id }}',
+    },
+    
+    
+}); 
+	
+});
+</script>
+{% endaddtoblock %}
+{% endif %}
+
+<div class="expandable main window" id="bcast_filebrowser">
+	
+	<div class="header">
+		<div>
+			<h4>Worte zum Bild</h4>
+		</div>
+	</div>
+	
+	
+	<div class="panel filebrowser" >
+	
+		<div class="inner action">
+		{% if user.is_authenticated %}
+
+		{% load account_tags %}
+		{% user_display user as user_display %}
+		<div class="ext-form">
+			
+
+				<div id="file-uploader">
+				<span style="width: 80%">loading upload widget...</span>    
+    			<noscript>          
+        		<p>Please enable JavaScript to use file uploader.</p>
+        		<!-- or put a simple form for upload here -->
+    			</noscript>         
+				</div>
+				
+				<div class="clear"></div>
+
+		</div>
+		{% else %}
+		
+		{% url acct_login as login_url %}
+		{% url acct_signup as signup_url %}
+		
+		<!--
+		<div class="inline">
+			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
+		</div>
+		-->
+		
+		{% endif %}
+		</div>
+		
+		<div class="inner display">
+			<div id="bcast_filebrowserpanel" class="filebrowsermessages">
+			
+			<ul>
+			{% for file in folder.files %}
+				<li> <a href="{{ file.url }}" >{{ file }} [{{ file.size|filesizeformat }}]</a></li>
+			{% empty %}
+				<li>No files yet.</li>
+			{% endfor %}
+			</ul>
+			
+			
+			
+			<h4>User uploads</h4>
+			<ul>
+			{% for file in folder_uploads.files %}
+				<li><a href="{{ file.url }}" >
+					[{{ file.size|filesizeformat }}] {{ file }}
+					| uploaded by {{ file.owner }}
+				</a></li>
+			{% empty %}
+				<li>No files yet.</li>
+			{% endfor %}
+			</ul>
+			
+			
+			
+			<h4>Stream recordings</h4>
+			<ul>
+			{% for file in folder_recordings.files %}
+				<li> <a href="{{ file.url }}" >[{{ file.size|filesizeformat }}] {{ file }}</a></li>
+			{% empty %}
+				<li>No files yet.</li>
+			{% endfor %}
+			</ul>
+			
+
+			
+			</div>
+		</div>
+		
+
+		
+
+
+
+	</div>
+	
+	
+	
+</div>

@@ -1,84 +1,36 @@
 {% load account_tags sekizai_tags spectators_tags %}
 
-
-
-	{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated %}
 	{% addtoblock "js_main" %}
-
-		{% spectates_js request.user event %}
-
+	{% spectates_js request.user event %}
 	{% endaddtoblock %}
-	{% endif %}
-	
-	<!-- spectators / participants whatever -->
-	{% addtoblock "css" %}
-		{% spectates_css %}
-	{% endaddtoblock %}
-	
+{% endif %} <!-- spectators / participants whatever -->
+
+{% addtoblock "css" %}
+	{% spectates_css %}
+{% endaddtoblock %}
 
 
+	<div class="inner display">
+		{% spectators event.id as spectate_users %}
 
-
-
-
-
-
-<div class="expandable main window" id="bcast_spectator">
-	
-	<div class="header">
-		<div>
-			<h4>Die Gäste</h4>
+		{% if spectate_users %}
+		<div id="bcast_spectatorpanel" class="spectatormessages">
+			Mit dabei: {% for obj in  spectate_users %}<strong class="user">{% firstof obj.sender %}{% if not forloop.last %},{% endif %}</strong>{% endfor %}
 		</div>
+		{% endif %}
 	</div>
-	
-	
-	<div class="panel spectator" >
-	
-		<div class="inner action">
+
+
+	<div class="inner action">
 		{% if user.is_authenticated %}
 
 		{% load account_tags %}
 		{% user_display user as user_display %}
-		<div class="ext-form">
-			
 
-				<div class="spectators">
-					{% spectates_widget request.user event %}
-				</div>
-				
-				<div class="clear"></div>
+		<div class="spectators">
+			{% spectates_widget request.user event %}
+		</div>
 
-		</div>
-		{% else %}
-		
-		{% url acct_login as login_url %}
-		{% url acct_signup as signup_url %}
-		<!--
-		<div class="inline">
-			<div class="message login"><p>Please <a href="{{ login_url }}">login</a> and/or <a href="{{ signup_url }}">signup</a> to upload files.</p></div>
-		</div>
-		-->
 		{% endif %}
-		</div>
-		
-		<div class="inner display">
-		
-		
-			{% spectators event.id as spectate_users %}
-			
-			{% if spectate_users %}
-				<div id="bcast_spectatorpanel" class="spectatormessages">Teilnehmend: {% for obj in  spectate_users %}<span>{% firstof obj.sender.get_profile.name obj.sender %}{% if not forloop.last %},{% endif %}</span>{% endfor %}</div>			
-			{% endif %}
-			
-		</div>
-		
-
-		
-
-
-
 	</div>
-	
-	
-	
-</div>

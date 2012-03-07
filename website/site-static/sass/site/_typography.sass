@@ -1,0 +1,159 @@
+// Site typography
+
+
+
+// fonts --------------------------------------------------------------------
+
+//font-family:'Frutiger Neue W01 Bd';
+//font-family:'FrutigerNeueW02-BlkIt';
+//font-family:'Frutiger LT W01 65 Bold';
+//font-family:'FrutigerLTW01-45Light';
+//font-family:'FrutigerLTW01-95UltraBl';
+//font-family:'Arial W01 Monospaced';
+//font-family:'Cambria W01 Bold';
+//font-family:'Cambria W01 Bold Italic';
+
+
+
+$font-default: 'Lucida Console', Monaco, 'Courier New', 'Courier'
+$font-heading: 'FrutigerNeueW02-BlkIt', Helvetica, Arial, sans-serif
+$font-subheading: 'Frutiger LT W01 65 Bold', Helvetica, Arial, sans-serif
+$font-navigation: 'FrutigerLTW01-45Light', Helvetica, Arial, sans-serif
+
+$font-running: 'Verdana'
+
+$font-monospace: 'Lucida Console', Monaco, 'Courier New', 'Courier'
+$font-quote: 'Courier New', 'Courier'
+$font-pre: 'Courier New', 'Courier'
+$font-special: 'Cambria W01 Bold'
+
+$size-font-base: 11px
+
+.typo-running
+  p
+    font-family: $font-running
+    font-size: 12px
+    line-height: 21px
+
+.typo-base
+
+  font-family: $font-default
+
+  font-size: $size-font-base
+  h1, h2, h3, h4, h5, h6
+    text-transform: uppercase
+    
+  font-size: $size-font-base
+  line-height: normal
+
+
+  strong
+    font-weight: bold
+  em
+    font-style: italic
+    
+  sup
+    font-size: 70%
+    vertical-align: text-bottom
+  sub
+    font-size: 70%
+    vertical-align: sub
+    
+  blockquote
+    color: #333
+    margin: 4px 0 12px 0
+    padding: 0 0 0 12px
+
+    p
+      padding: 0 !important
+    
+  h1, h2
+    text-transform: uppercase
+
+    margin: 0 0 0 0
+    padding: 0
+    
+  h3, h4, h5, h6
+    margin: 0 
+    padding: 0
+
+
+  .superscript
+    font-size: 50%
+    vertical-align: super
+  .subscript
+    font-size: 90%
+    vertical-align: bottom
+    
+
+
+.sizes-base
+  h1
+    font-size: 40px
+  h2
+    font-size: 32px
+  h3
+    font-size: 24px
+  h4, h5, h6
+    font-size: 18px
+
+.sizes-medium
+  h1
+    font-size: 32px
+  h2
+    font-size: 24px
+  h3
+    font-size: 18px
+  h4, h5, h6
+    font-size: 18px
+
+.sizes-small
+  h1
+    font-size: 16px
+  h2
+    font-size: 14px
+  h3
+    font-size: 12px
+  h4, h5, h6
+    font-size: 12px
+
+.sizes-boxed
+  h1
+    font-size: 22px
+  h2
+    font-size: 18px
+  h3
+    font-size: 16px
+  h4, h5, h6
+    font-size: 14px
+
+
+
+.sizes-small-equalized
+  h1, h2, h3,  h4, h5, h6
+    font-size: $size-font-base
+  
+
+
+
+// stacked: h1 = bold font, h2-h* = serif-font
+.stacked-heading
+
+  h1
+    font-family: $font-heading
+  h2, h3, h4, h5, h6
+    font-family: $font-subheading
+
+.cms-heading
+  h1, h2, h3, h4, h5, h6
+    font-family: $font-default
+
+    
+    
+    
+    
+body
+  @extend .typo-base 
+  @extend .sizes-base 
+  @extend .stacked-heading
+

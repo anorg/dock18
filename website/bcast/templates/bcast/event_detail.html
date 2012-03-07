@@ -23,7 +23,7 @@
 
 
 
-	{% include 'bcast/event/spectators.html' %}
+	
 
 
 
@@ -42,40 +42,40 @@
 		
 		<div class="display">
 			<h3>
-			<span class="title">{{ event.title }}</span>
-		
-		<!--	
-		<span class="a-right">
-			<ul class="horizontal tags right">
-				{{ object.event.title }}
-				{% for tag in event.tags.all %}
-				<li class="tag">
-					{{ tag }}
-				</li>
-				{% endfor %}
-			</ul>
-			<div class="clear"></div>
-		</span>
-		-->	
+				<span class="title">{{ event.title }}</span>
+			
+				<!--	-->
+				<span class="a-right">
+					<ul class="horizontal tags right">
+						{% for tag in event.tags.all %}
+						<li class="tag">
+							{{ tag }}
+						</li>
+						{% endfor %}
+					</ul>
+					<div class="clear"></div>
+				</span>
+				
 			</h3>
 			
 		</div>
 	
-
-	
-	
-	
-	{% if event.excerpt %}
-	<div class="padded info" >
-		
-		<div class="left excerpt">
-			<p>
-				{{ event.excerpt|urlize|linebreaks }}
-			</p>
+		<div class="panel spectator" >
+		{% include 'bcast/event/spectators.html' %}
 		</div>
-		<div class="clear"></div>
-	</div>
-	{% endif %}
+	
+	
+		{% if event.excerpt %}
+		<div class="info" >
+			
+			<div class="left excerpt">
+				<p>
+					{{ event.excerpt|urlize|linebreaks }}
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		{% endif %}
 	
 
 	
@@ -162,14 +162,6 @@
 
 		$(function() {
 			countdown_reset({{ event.starts_in }});
-			/*
-			$('#counter').countdown({
-			until: +{{ event.starts_in }},
-			onExpiry: countdown_done,
-			compact: true,
-			onTick: countdown_tick
-			});
-			*/
 		});
 
 
@@ -231,5 +223,7 @@
 
 
 {% block sidebar_pre %}
-{% include 'bcast/event/filebrowser.html' %}
+
+	{% include 'bcast/event/filebrowser.html' %}
+
 {% endblock %}

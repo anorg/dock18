@@ -1,0 +1,183 @@
+.base .plugin
+
+  .list.events
+
+    font-family: $font-default
+    p 
+      line-height: 140%
+  
+  
+  .listing.event // listing event element
+
+    margin: 0 0 $space-inner-s 0
+    
+    background-color: $color-base-bg
+    color: $color-default
+    a
+      color: $color-default
+      &:link, &:visited, &:hover, &:active
+        color: $color-default
+        background-color: transparent
+    
+    
+    .inner
+      display: none
+      
+      &.now, &.today, &.future
+        min-height: 36px
+
+          
+        
+    &.now, &.today
+      min-height: 48px
+      h3.title
+        //padding-top: 14px
+      h4.date
+        //padding-top: 16px
+
+    div.wrap
+      width: 100%
+    
+    h3.title
+      float: left
+      display: block
+      padding: 2px 2px 2px 0px
+    
+    h4.date
+      float: left
+      width: 140px
+      display: block
+      font-size: 140%
+      padding: 10px 2px 2px 8px
+      text-transform: uppercase
+    
+    span.channel
+      font-size: 11px
+      font-family: $font-default
+    
+    p.excerpt
+      width: 460px
+      padding: 0px 4px 4px 7px
+      
+    p.time
+      width: 130px
+      padding: 0px 4px 4px 10px
+
+    &.hover
+      cursor: pointer
+      background-color: $col-content-d !important
+      color: contrast-color($col-content-d) !important
+      a
+        color: contrast-color($col-content-d) !important
+
+      // color: black 
+      h3, h3 > a, h4, h4 > span
+        // color: black !important
+        
+
+    // event states 
+    &.now
+      background: url('/static/img/base/badge/badge48.now.red.png') top right no-repeat
+      background-color: $col-marker-l
+      a
+
+        
+    &.today
+      background: url('/static/img/base/badge/badge48.today.cyan.png') top right no-repeat
+      background-color: $col-marker-l
+      a
+
+    &.future
+      // background: url('/static/img/base/badge/badge48.soon.yellow.png') top right no-repeat
+
+
+
+// event list in sidebar
+#eventlist_side
+  .list.events // list container
+    // font-size: $size-font-base *.9
+  .listing.event // listing event element
+    height: 13px !important // results in 21 with padding
+    min-height: 13px !important
+    background-image: none !important
+    padding: 4px $width-padding-base / 2
+    h3, h4
+      font-size: $size-font-base *1.1
+      padding: 0 !important
+    .picture, .channel
+      display: none
+      
+    
+      
+    h3.title
+      width: 160px
+      overflow: hidden
+      white-space: nowrap
+      
+    h4.date
+      width: 82px
+
+    p
+      display: none
+
+    .tags
+      display: none
+      
+    span.event_type
+      font-size: $size-font-base *.8
+      
+    &.hover
+      cursor: pointer
+      h3, h3 > a, h4, h4 > span
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.base.content 
+  .textplugin_holder 
+    
+    margin: 2px 0 2px
+  
+    background-image: url(/static/img/base/50p000.png)
+    
+    color: $color-default
+    
+
+    h1, h2
+      padding: 0 0px 
+    
+    font-family: $font-running
+    p 
+      line-height: 180%
+      font-size: 12px
+    
+    padding: ($default-space/2) 10px ($default-space/2) 10px // 2 for visual compensation / font
+    
+    &:nth-child(3)
+
+      padding: ($default-space/2)
+    
+    p, ul
+      padding: 4px 0 12px 0
+      list-style: square inside
+      > li
+        padding: 2px 0 2px 0
+      
+    a
+
+    
+    &:nth-child(3)
+      margin: 0 0 2px 0

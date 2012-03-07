@@ -12,7 +12,7 @@ DEBUG = True
 
 TESTING_X = True
 
-
+PRETTIFY = False
 
 TEMPLATE_DEBUG = DEBUG
 COMPRESS_ENABLED = False
@@ -94,11 +94,11 @@ MIDDLEWARE_CLASSES = (
     #'cms.middleware.media.PlaceholderMediaMiddleware',
     #'cms_redirects.middleware.RedirectFallbackMiddleware',
     # lib
-    #'lib.prettify.PrettifyMiddleware', 
     'minidetector.Middleware',
     
 #    'django.middleware.cache.FetchFromCacheMiddleware', #
     'cms.middleware.toolbar.ToolbarMiddleware',
+    'lib.middleware.PrettifyMiddlewareBS',
 )
 
 # CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
@@ -302,7 +302,7 @@ INSTALLED_APPS = (
     #'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
-    #'cmsplugin_filer_teaser',
+    'cmsplugin_filer_teaser',
     #'cmsplugin_filer_video',
     
 
@@ -431,7 +431,7 @@ JQCHAT_DATE_FORMAT={
 }
 
 
-RTMP_IP = '192.168.200.128'
+RTMP_IP = '10.40.10.40'
 
 
 # hm - how to handle multiple...

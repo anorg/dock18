@@ -29,6 +29,9 @@ vobject
 django-tinymce
 chardet
 
+
+BeautifulSoup
+
 # hm what version?
 easy-thumbnails==1.0-alpha-18
 

@@ -35,7 +35,7 @@
 	      <description></description>
 	      
 	      
-	      <enclosure url="flv:{{ event.key }}" />
+	      <enclosure url="mp4:{{ event.key }}" />
 	      <jwplayer:streamer>rtmp://{{ rtmp_ip }}:1935/d18live/</jwplayer:streamer>
 	      <!--
 	      <enclosure url="flv:combine.flv" />

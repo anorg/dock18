@@ -140,7 +140,13 @@ class EventDetailView(DetailView):
     model = Event
 
     def get_context_data(self, **kwargs):
+
+        event = self.get_object()
+
         context = super(EventDetailView, self).get_context_data(**kwargs)
-        #context['release_list'] = Release.objects.all()
+        context['folder'] = event.folder
+        context['folder_recordings'] = event.get_folder('recorded')
+        context['folder_uploads'] = event.get_folder('uploads')
+        
         return context
     
