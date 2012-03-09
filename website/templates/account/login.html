@@ -13,7 +13,7 @@
         <p><span class="warning">It appears you have started to login using OpenID. Want to <a href="/openid/register/">finish logging in</a>?</span></p>
     {% endif %}
     
-    <h2>{% trans "Log In" %}</h2>
+    <h1>{% trans "Log In" %}</h1>
     
     {% if user.is_authenticated %}
         {% user_display user as user_display %}

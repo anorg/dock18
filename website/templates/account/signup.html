@@ -7,11 +7,12 @@
 
 {% block body %}
     <h1>{% trans "Sign Up" %}</h1>
+    <h2>{% trans "& Participate!" %}</h2>
     
     {% if user.is_authenticated %}
         <p>{% trans "You are already logged in." %}</p>
     {% else %}
-        <p>{% trans "Already have an account?" %} <a href="{% url acct_login %}">{% trans "Log In" %}</a>!</p>
+        <p>{% trans "Already have an account?" %} <a href="{% url acct_login %}">{% trans "Log In here" %}</a>!</p>
         
         <form class="signup uniForm" id="signup_form" method="post" action="{% url acct_signup %}" autocapitalize="off">
             {% csrf_token %}

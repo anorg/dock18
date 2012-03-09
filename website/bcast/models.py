@@ -85,6 +85,8 @@ class Event(models.Model):
     
     date_start = models.DateTimeField('date start', default=datetime.datetime.now())
     date_end = models.DateTimeField('date end', default=datetime.datetime.now())
+    #date_start = models.DateTimeField('date start', default=str('%s %s') % (str(datetime.datetime.now())[0:10], '20:00'))
+    #date_end = models.DateTimeField('date end', default=str('%s %s') % (str(datetime.datetime.now())[0:10], '23:59'))
     
     
     location = models.CharField(max_length=200, default="Dock18", blank=True, null=True)
@@ -112,6 +114,8 @@ class Event(models.Model):
     type = models.CharField(max_length=24, default='show', choices=TYPE_CHOICES)
     
     Season = models.ForeignKey(Season)
+    
+    
     
     channel = models.ForeignKey(Channel, blank=True, null=True)
     
@@ -167,13 +171,6 @@ class Event(models.Model):
         print 'add_file()'
         
         folder, created = Folder.objects.get_or_create(name=folder_name, parent=self.folder)
-        
-        print 'folder_name', 
-        print folder_name
-        print 'name', 
-        print name
-        print 'user', 
-        print user
         
         file = DjangoFile(open(src),name=name)
         
@@ -290,7 +287,7 @@ class Event(models.Model):
         return 'unknown'
         
         
-    def save(self):
+    def save(self, *args, **kwargs):
         
         if not self.key:
             self.key = self.generate_key()
@@ -307,7 +304,7 @@ class Event(models.Model):
             self.room = room 
             
         
-        super(Event, self).save()
+        super(Event, self).save(*args, **kwargs)
 
 
 
@@ -354,7 +351,7 @@ class EventListPlugin(CMSPlugin):
     
     # settings, exposed to admin site / plugin
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
-    range = models.CharField(max_length=10, default='future', choices=RANGE_CHOICES)
+    range = models.CharField(max_length=10, default='all', choices=RANGE_CHOICES)
     
     channel = models.ForeignKey(Channel, blank=True, null=True)
     season = models.ForeignKey(Season, blank=True, null=True)
@@ -362,5 +359,5 @@ class EventListPlugin(CMSPlugin):
     limit = models.IntegerField(default=16)
 
     def __unicode__(self):
-        return self.range
+        return  '%s:%s - %s' % (self.season, self.channel, self.range)
   

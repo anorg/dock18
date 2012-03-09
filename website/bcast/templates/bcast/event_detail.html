@@ -95,15 +95,16 @@
 
 	<div class="admin padded  notice">
 		<h5>Stream setup:</h5>
+		<p>Start the Adobe Flash live encoder and configure:</p>
 		<ul>
 			<li>
 				<span>FMS URL:</span><span>rtmp://{{ rtmp_ip  }}/d18live</span>
 			</li>
 			<li>
-				<span>Stream:</span><span>{{ event.key }}</span>
+				<span>Stream:</span><strong>mp4:{{ event.key }}</strong>
 			</li>
 			<li>
-				<span>start:</span><span>{{ event.date_start|date:"Y/m/d H:i" }}</span> | <span>end:</span><span>{{ event.date_end|date:"Y/m/d H:i" }}</span>
+				<span>Start:</span><span>{{ event.date_start|date:"Y/m/d H:i" }}</span> | <span>End:</span><span>{{ event.date_end|date:"Y/m/d H:i" }}</span>
 			</li>
 			<li>&nbsp;</li>
 		</ul>
@@ -172,12 +173,22 @@
 	
 	
 	
-	{% if 1 == 2 %}
+	{% if 1 == 1 %}
+	{% with width=680 %}
 	<div id="widescreen">
-		<div class="left">{% include 'bcast/event/transmission.html' %}</div>
-		<div class="left">{% include 'bcast/event/chat.html' %}</div>
+		<div class="container screen">
+		{% if not request.mobile %}
+			{% include 'bcast/event/transmission.html' %}
+		{% else %}
+			{% include 'bcast/event/transmission_mobile.html' %}
+		{% endif %}	
+		</div>
+		<div class="container chat">
+			{% include 'bcast/event/chat.html' %}
+		</div>
 		<div class="clear"></div>
 	</div>
+	{% endwith %}
 	{% else %}
 	
 
@@ -197,7 +208,7 @@
 		{% url acct_login as login_url %}
 		{% url acct_signup as signup_url %}
 		<div class="inline">
-			<div class="message login"><p>Für soziale Interaktion bitte <a href="{{ login_url }}">anmelden</a> und/oder <a href="{{ signup_url }}">registrieren</a>!!</p></div>
+			<div class="message login"><p>Für soziale Interaktion [Chat, Upload etc.]: <a href="{{ signup_url }}">Registrieren</a> und/oder <a href="{{ login_url }}">Anmelden</a></p></div>
 		</div>
 	{% endif %}
 
@@ -225,5 +236,6 @@
 {% block sidebar_pre %}
 
 	{% include 'bcast/event/filebrowser.html' %}
+	{% include 'bcast/event/event_list_small.html' %}
 
 {% endblock %}

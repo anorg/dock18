@@ -9,7 +9,32 @@
   @extend .shaded-black
   
   
+  
+
+  
+  
+.inline  
+  // TODO: cleanup...
+  .message.login
+
+    background: $col-social-l
+    
+    a
+      padding: 2px 4px
+      color: $color-base-bg
+      border: 1px solid $color-base-bg
+      background-color: inherit
+      
+      &:hover, &:active
+        background-color: $col-interaction-l
+  
 .window
+
+
+
+
+
+
   .panel
   
     &.lead
@@ -32,6 +57,16 @@
         @extend .shaded-black
         @extend .typo-running
         padding: ($default-space/2) ($default-space)
+        
+      > .admin
+        background-color: $col-marker-l
+        padding: ($default-space / 2) $default-space
+        li
+          padding: 4px 0
+        
+        
+        
+      
         
         
       .tags
@@ -69,46 +104,73 @@
     &.chat
     
       
+      // Text input & submit area
+      .inner.action
   
-      padding: 0
-      
-      form.submit_inside
-        padding: 6px 6px 6px 10px
-      
-      input.msg
-        // width: 300px
-        border: none
-        background-color: white
-        font-size: 100%
+        padding: 0
         
-        border: 1px solid black
-        padding: 2px
-        width: 84%
-        
-        height: 20px
-        padding-left: 8px
-        font-family: $font-monospace
-        
-        &:hover
-          color: $col-interaction-d
+        form.submit_inside
+          padding: 6px 6px 6px 10px
         
         
-      input.btn
-        border: none
-        background-color: inherit
-        float: right
-        padding: 4px 16px 0 0
+        input
+          border: 1px solid white
+          
         
-        background-image: url(/static/img/base/submit_16x16.png)
-        background-repeat: no-repeat
-        background-position: right 4px
-        color: contrast-color($color-base-bg)
-        font-family: $font-subheading
-        font-size: 14px
-        padding-right: 24px
+        input.msg
         
-        &:hover
-          color: $col-interaction-d
+          
+          float: left
+          
+          width: 511px  
+          height: 20px
+        
+          background-color: white
+          padding: 2px 2px 2px 8px
+          font-family: $font-monospace
+          
+          &:hover
+            color: #333
+            border: 1px solid $col-interaction-d
+          
+        input.btn
+          background-color: inherit
+          float: left
+          padding: 3px 24px 0 8px
+          height: 26px
+          display: block
+          width: 80px
+          
+          background-image: url(/static/img/base/submit_16x16.png)
+          background-repeat: no-repeat
+          background-position: right 4px
+          color: contrast-color($color-base-bg)
+          font-family: $font-subheading
+          font-size: 14px
+          padding-right: 24px
+          
+          &:hover
+            background-color: $col-interaction-d
+          
+        a.toggle
+          background-color: inherit
+          float: right
+          padding: 0
+          height: 26px
+          width: 51px
+          display: block
+          // border: 1px solid white
+          
+          background-image: url(/static/img/icons/widescreen.png)
+          background-repeat: no-repeat
+          background-position: top left
+          color: contrast-color($color-base-bg)
+          font-family: $font-subheading
+          font-size: 14px
+          
+          &:hover, &:active
+            padding: 0 !important
+            background-color: $col-interaction-d
       
 
 
@@ -129,6 +191,7 @@
     .chatmessages
 
       max-height: 280px
+      min-height: 140px
       overflow: auto
     
       .row
@@ -173,3 +236,123 @@
             color: white !important
             font-weight: bold
             font-size: 80%
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.base.content.pinax, .base.content.cms .apps
+  // padding: $width-padding-base
+  
+  
+  .errorField
+    text-transform: uppercase
+  
+  #body
+    @extend .typo-base
+    @extend .sizes-boxed
+    @extend .shaded-black
+    @extend .stacked-heading
+    
+    h1
+      color: $col-social-d
+      padding: 0 $padding-inner
+    h2
+      color: $col-social-l
+      padding: 0 $padding-inner
+      
+    color: $color-base-fg
+    
+    a
+      color: $col-interaction-d
+    
+  
+  form
+    color: $color-base-bg
+    background: $col-social-l
+    
+    input
+      background: $col-social-d
+      border: none
+
+  > *
+    // padding: 15px
+    
+  > #body
+    // padding: 0 !important
+    &:empty
+      display: none
+    > * 
+      padding: 15px
+      
+    > table
+      margin-left: 15px
+      td
+        padding: 2px 15px 2px 0
+    
+  li
+    padding: 4px 0
+  
+  a:link, a:visited
+    // background-color: black
+    // text-decoration: none
+    color: black
+    padding: 0 4px
+    
+  p
+    padding: 4px 0 8px
+    line-height: 150%
+    
+  .ctrlHolder
+    padding: 4px 0
+    border-bottom: none
+    margin: 0 0 10px 0
+    
+  @extend .simple-button
+  
+  #hint_id_remember
+    float: left
+  
+  .form_block
+    padding: 4px 8px 0 0 
+  
+  input[type=submit]
+    float: right
+    min-width: 120px
+    // padding: 4px 10px 0 0
+      
+  .user.profile 
+    div.group
+      padding: 1px 0
+      line-height: 140% !important
+    
+    h1, h2, h3, h4, h5, h6
+      padding: 10px 0 4px 0
+      
+    a:link, a:visited
+      color: black
+      padding: 0
+      
+    div.group
+      .label
+        display: block
+        width: 100px
+        padding: 0 4px 0 0
+      .value
+      

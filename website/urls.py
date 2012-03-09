@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     (r'^poll/', include('cmsplugin_poll.urls')),
     
     # facebook connect
-    url(r'^facebook/login$', 'facebook.views.login'),
+    url(r'^facebook/login/$', 'facebook.views.login'),
     url(r'^facebook/authentication_callback$', 'facebook.views.authentication_callback'),
                        
     # pinax 

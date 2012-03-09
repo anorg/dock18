@@ -28,7 +28,7 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
-LANGUAGES = [('en', 'en')]
+LANGUAGES = [('de', 'de'),('en', 'en')]
 DEFAULT_LANGUAGE = 0
 
 DATABASES = {
@@ -48,8 +48,8 @@ DATABASES = {
 
 TIME_ZONE = 'Europe/Zurich'
 
-LANGUAGE_CODE = 'en-us'
-#LANGUAGE_CODE = 'de-de'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de-de'
 
 SITE_ID = 1
 
@@ -331,6 +331,7 @@ INSTALLED_APPS = (
     'ajaxuploader',
     
     'bcast',
+    'submission',
     
     'feedback',
     
@@ -432,6 +433,7 @@ JQCHAT_DATE_FORMAT={
 
 
 RTMP_IP = '10.40.10.40'
+RTMP_STORAGE = '/Users/ohrstrom/tmp/recorded/'
 
 
 # hm - how to handle multiple...

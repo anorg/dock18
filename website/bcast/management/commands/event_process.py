@@ -6,6 +6,7 @@ from filer.models.foldermodels import Folder
 from filer.models.imagemodels import Image
 from filer.models.videomodels import Video
 from filer.settings import FILER_IS_PUBLIC_DEFAULT
+from settings import RTMP_STORAGE
 
 # from bcast.settings import *
 from bcast.models import Event
@@ -27,13 +28,13 @@ class FileImporter(object):
 
     def import_file(self, file, folder):
         """
-        Create a File or a Video/FLV into the given folder
+        Create a File or a Video/FLV/MP4 into the given folder
         """
         try:
             iext = os.path.splitext(file.name)[1].lower()
         except:
             iext = ''
-        if iext in ['.flv']:
+        if iext in ['.flv', '.mp4']:
             obj, created = Video.objects.get_or_create(
                                 original_filename=file.name,
                                 file=file,
@@ -85,13 +86,14 @@ class FileImporter(object):
         for event in events:
             
             #event.lock = True
-            event.save()
+            #event.save()
             
             print event.title
             print event.date_end
             
             # TODO: use config file!!
-            import_path = os.path.join('/storage/www_data/ende.dock18.ch/recorded/')
+            # import_path = os.path.join('/storage/www_data/ende.dock18.ch/recorded/')
+            import_path = os.path.join(RTMP_STORAGE)
             self.linker(import_path, 'Shows' + '/' + event.title + '/', event.key)
             
             event.set_processed('done')

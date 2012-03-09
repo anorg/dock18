@@ -1,3 +1,29 @@
+.submissionplugin_holder
+  .submission
+    @extend .sizes-boxed
+  
+    .header.stacked
+      @extend .shaded-black
+      @extend .stacked-heading
+    
+      h1, h2, h3, h4, h5, h6
+        text-align: right
+    
+      h1
+        color: $col-social-d
+        padding: 0 $padding-inner
+      h2
+        color: $col-social-l
+        padding: 0 $padding-inner
+  
+    .container
+      background-color: $col-social-l
+      padding: ($default-space) ($default-space)
+      @extend .stacked-heading
+      
+      margin-bottom: $default-space
+
+
 .base .plugin
 
   .list.events

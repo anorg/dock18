@@ -54,7 +54,7 @@
 	    <item>
 			<title>{% firstof video.name video %} | FLV-Plugin</title>
 			<description>{% firstof video.description %}</description>			
-			<enclosure url="flv:{{ video.filename }}" type="video/flv" length="{{ video.size }}" />
+			<enclosure url="mp4:{{ video.filename }}" type="video/flv" length="{{ video.size }}" />
 			
 			<!-- extended properties for jwplayer-->
 			<jwplayer:start>{{ video.offset }}</jwplayer:start>
@@ -65,16 +65,15 @@
 
 	
 		{% for file in folder.files %}
+		<!--
 	    <item>
 			<title>{% firstof file.name file %}</title>
 			<description>{% firstof file.description %}</description>			
-			<enclosure url="flv:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
-			
-			<!-- extended properties for jwplayer-->
+			<enclosure url="mp4:{{ file.filename }}" type="video/flv" length="{{ file.size }}" />
 			<jwplayer:start>{{ file.cue_in }}</jwplayer:start>
 			<jwplayer:streamer>rtmp://{{ rtmp_ip }}:1935/d18recorded/</jwplayer:streamer>
-			
 	    </item>
+	   -->
 		{% endfor %}
 	
 	{% endif %}

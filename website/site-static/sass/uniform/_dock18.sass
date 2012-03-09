@@ -10,37 +10,19 @@
     padding: 1.5em 0
   .ctrlHolder
     padding: 5px 0
-    border-bottom: 1px solid #efefef
     &.focused
-      background: #fffcdf
+      background: #000000
   .inlineLabels .noLabel
   .buttonHolder
-    background: #efefef
     text-align: right
     margin: 2px 0
     padding: 1px
     border-radius: 2px
-    -webkit-border-radius: 2px
-    -moz-border-radius: 2px
-    -o-border-radius: 2px
-    -khtml-border-radius: 2px
     .primaryAction
-      padding: 4px 8px
-      background: #254a86
-      border: 1px solid #163362
-      font-size: 12px
-      font-weight: bold
-      color: #fff
-      /* CSS3
-      border-radius: 4px
-      -webkit-border-radius: 4px
-      -moz-border-radius: 4px
-      -o-border-radius: 4px
-      -khtml-border-radius: 4px
-      box-shadow: 1px 1px 0 #fff
-      -webkit-box-shadow: 1px 1px 0 #fff
-      -moz-box-shadow: 1px 1px 0 #fff
-      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25)
+      min-width: 120px
+      padding: 4px
+      background: inherit
+      border: 1px solid #000
       &:active
         position: relative
         top: 1px
@@ -57,18 +39,18 @@
       font-style: normal
       font-weight: bold
   label small
-    /* font-size: .75em
     color: #777
   .textInput, .passwordinput
-    padding: 4px 2px
-    border: 1px solid #aaa
-    background: #fff
+    padding: 4px 4px
+    border: 1px solid $col-social-d
+    background: $col-social-d
     width: 64%
   textarea
-    padding: 4px 2px
-    border: 1px solid #aaa
-    background: #fff
-    height: 12em
+    padding: 4px 4px
+    border: 1px solid $col-social-d
+    background: $col-social-d
+    height: 50px
+    min-height: 50px
   select, .fileUpload, ul, li
   ul li label
     /* font-size: .85em
@@ -81,7 +63,7 @@
     color: #777
   .inlineLabels .formHint
     padding: 4px 5px 0 0
-    font-size: 85%
+    font-size: 10px
     color: black
     text-align: right
     // width: 50%
@@ -93,12 +75,6 @@
     border: 1px solid #f3afb5
     margin: 0 0 1.5em 0
     padding: 0 1.5em
-    /* CSS3
-    border-radius: 4px
-    -webkit-border-radius: 4px
-    -moz-border-radius: 4px
-    -o-border-radius: 4px
-    -khtml-border-radius: 4px
     h3
     ol
       margin: 0 0 1.5em 0
@@ -108,13 +84,8 @@
         padding: 7px
         background: #f6bec1
         position: relative
-        font-size: .85em
-        /* CSS3
-        border-radius: 4px
-        -webkit-border-radius: 4px
-        -moz-border-radius: 4px
-        -o-border-radius: 4px
-        -khtml-border-radius: 4px
+        font-size: 11px
+
   .ctrlHolder
     &.error, &.focused.error
       //background: #ffdfdf
@@ -132,12 +103,7 @@
     margin: 0 0 1.5em 0
     padding: 1.5em
     text-align: center
-    /* CSS3
-    border-radius: 4px
-    -webkit-border-radius: 4px
-    -moz-border-radius: 4px
-    -o-border-radius: 4px
-    -khtml-border-radius: 4px
+
     p
       margin: 0
   .col

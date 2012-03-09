@@ -35,7 +35,7 @@
 							<span class="username">{{ user_display }}</span>
 						</li>
 						<li>
-							<a href="{% url profile_detail user.username %}">Profile</a>
+							<a href="{% url profile_detail user.username %}">Profile [{{ user.username }}]</a>
 						</li>
 						<li>
 							<a href="/account/email/">EMail</a>
@@ -54,14 +54,16 @@
 					{% url acct_signup as signup_url %}
 					<ul class="horizontal">
 						<li>
-							<a href="{{ signup_url }}">signup</a>
+							<a href="{{ signup_url }}?next={{ request.path }}">signup</a>
 						</li>
 						<li>
-							<a href="{{ login_url }}">login</a>
+							<a href="{{ login_url }}?next={{ request.path }}">login</a>
 						</li>
+						<!---->
 						<li>
-							<a class="fb_connect" href="/facebook/login">connect</a>
+							<a class="fb_connect" href="/facebook/login/?next={{ request.path }}">connect</a>
 						</li>
+						
 					</ul>
 					{% endif %}
 				</div>
@@ -118,7 +120,6 @@
 
 				<div id="eventlist_side">
 					{% block event_listing %}{% endblock %}
-					{% show_placeholder "template_1_content_a" "events" %}
 				</div>
 				
 				
@@ -148,7 +149,7 @@
 	</div>
 	<div id="footer" class="footer">
 		<div class="inner">
- 
+ 			<!--
  			<div class="swatches">
  				<ul>
  					<li>
@@ -182,11 +183,13 @@
  				</ul>
  				
  			</div>
+ 			-->
  
- 
+ 			<!--
 			<div id="fb_like">
 			{% include 'element/facebook.html' %}
 			</div>
+			-->
 
 		</div>
 	</div>
@@ -196,5 +199,20 @@
 			{% show_feedback %}
 		</p>
 	</div>
+	<div id="logoscreen">
+		<div class="container">
+			<a href="/">
+				<img src="{{ STATIC_URL }}img/base/logo.a.png" />
+			</a>
+		</div>
+		<!--
+		<div class="shortcuts">
+			<ul>
+				<li>#1 ABX</li>
+			</ul>
+		</div>
+		-->
+	</div>
+	<div id="dimscreen" style="display: none;"><div id="innerscreen"></div></div>
 </div>
 {% endblock %}

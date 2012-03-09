@@ -1,10 +1,11 @@
 {% load vardump sekizai_tags i18n %}
 
 <div class="plugin events list">
+	
+	
 	{% for event in objects %}
 	
 	
-		{% if event.get_page_published or request.user.is_staff %}
 	
 		{% include 'bcast/event_list_event.html' %} 
 		
@@ -13,7 +14,7 @@
 		{% if event.state == 'future' or event.state == 'today' %}
 		{% addtoblock "js_main" %}
 		<script type="text/javascript">
-			// alert(123);
+
 			$(document).ready(function() {
 				$('.event #countdown_{{ event.key }}').countdown({
 					until: +{{ event.starts_in }},
@@ -24,15 +25,8 @@
 		</script>
 		{% endaddtoblock %}
 		{% endif %}
-		
-		
-		
-		
-
-		
-		{% endif %}
 	
-	{% empty %}
+		{% empty %}
 		<div class="notice">
 			<!--
 			{% trans "none" %}

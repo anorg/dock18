@@ -547,7 +547,7 @@ class Submission(models.Model):
                  'slug':self.message.slug })
 
     newsletter = models.ForeignKey('Newsletter', verbose_name=_('newsletter'), editable=False)
-    message = models.ForeignKey('Message', verbose_name=_('message'), editable=True, default=Message.get_default_id, null=False)
+    message = models.ForeignKey('Message', verbose_name=_('message'), editable=True, default=Message.get_default_id, null=True)
     
     subscriptions = models.ManyToManyField('Subscription', help_text=_('If you select none, the system will automatically find the subscribers for you.'), blank=True, db_index=True, verbose_name=_('recipients'), limit_choices_to={ 'subscribed' :True })
 

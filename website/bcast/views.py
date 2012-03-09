@@ -1,4 +1,5 @@
 from django.http import HttpResponse, HttpResponseBadRequest, Http404
+import datetime
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -13,13 +14,15 @@ from django.views.generic import DetailView, ListView, FormView
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.shortcuts import get_object_or_404, render_to_response
 
+from django.template import loader
+
 
 
 from filer.models.videomodels import Video
 
 import json
 
-from bcast.models import Event
+from bcast.models import Event, Season, Channel
 
 #from filer.models.filemodels import *
 #from filer.models.foldermodels import *
@@ -56,6 +59,22 @@ def directory(request, id):
                               context_instance=RequestContext(request))
     
     return r
+
+def encoder(request, id):
+    """A basic chat client window."""
+    event = get_object_or_404(Event, id=id)
+
+
+
+
+    #s = django.template.loader.render_to_string(*args, **kwargs)
+    s = loader.render_to_string('bcast/api/encoder.xml')
+    s.encode("utf-16")
+    
+    response = HttpResponse(s, content_type='application/xml; charset=UTF-16', mimetype="application/xml; charset=UTF-16")
+    response['Content-Disposition'] = 'attachment; filename=encoder.xml'
+
+    return response
 
     
 
@@ -142,11 +161,17 @@ class EventDetailView(DetailView):
     def get_context_data(self, **kwargs):
 
         event = self.get_object()
+        
+        current_season = Season.objects.filter(date_start__lte=datetime.datetime.now()).filter(date_end__gte=datetime.datetime.now())[0]
 
         context = super(EventDetailView, self).get_context_data(**kwargs)
         context['folder'] = event.folder
         context['folder_recordings'] = event.get_folder('recorded')
         context['folder_uploads'] = event.get_folder('uploads')
+        
+        
+        context['current_season'] = current_season
+        context['related_events'] = Event.objects.filter(Season=current_season).order_by('-date_start')
         
         return context
     

@@ -9,11 +9,106 @@ html
   background-color: #9a9a9a !important
   
 body
-  background: url(/static/img/base/logo.a.png) no-repeat 10px 10px fixed
+  //background: url(/static/img/base/logo.a.png) no-repeat 10px 10px fixed
 
+#container
+  z-index: 2
+
+#logoscreen
+  z-index: -1
+  position: fixed
+  width: 150px
+  height: 110px
+  display: block !important
+  top: 0
+  left: 0
+  .container
+    width: 200px
+    height: 200px
+    // background: url(/static/img/base/logo.a.png) no-repeat 10px 10px fixed
+    > a
+      display: block
+      padding: 34px 10px
+      height: 100%
+      width: 100%
   
 .content.base
   // background-color: white
+
+
+
+
+
+
+// widescreen setup
+// body.widescreen
+body.widescreen
+
+  // overflow: hidden
+
+  #dimscreen
+    z-index: 3
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: black
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    display: block !important
+    top: 0
+    left: 0
+    +opacity(0.87)
+    
+  
+  
+
+  #widescreen
+    z-index: 10
+    position: fixed
+    //padding: 20px
+
+    width: 1210px
+
+
+    display: block
+    //top: 50%
+    left: 50%
+
+    position: fixed
+    margin: auto -605px
+    
+
+
+
+    
+    .container
+      &.screen
+        float: left
+      &.chat
+        input.msg
+          width: 361px 
+      
+        float: left
+        width: 530px
+        #bcast_chatpanel
+          min-height: 383px
+            
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -149,7 +244,8 @@ div.table
 
 
 
-
+div.sidebar div.panel
+  margin-bottom: $padding-inner
 
 
 
@@ -217,6 +313,8 @@ div.social.relations
       background-image: url('/static/img/icons/allauth24/icon.youtube.png')
     &.twitter > .icon
       background-image: url('/static/img/icons/allauth24/icon.login.twitter.png')
+    &.skype > .icon
+      background-image: url('/static/img/icons/allauth24/icon.login.skype.png')
     &.newsletter > .icon
       background-image: url('/static/img/icons/allauth24/icon.login.newsletter.png')
     &.flattr
@@ -233,8 +331,8 @@ div.social.relations
     padding: 4px 2px 4px 38px
 
     @extend .sizes-small
-    
     @extend .simple-button
+    
     .submit > li
       padding: 4px 4px 0 0
       float: right
@@ -263,6 +361,30 @@ div.social.relations
               &:hover, &:active
                 background-color: $col-interaction-l
                 color: contrast-color($col-interaction-d)
+                
+    form
+      .helptext
+        display: none
+        
+      .errorlist
+        padding: 8px 0 0 0
+        color: $col-marker-d
+
+      input
+        display: block
+        background-color: $col-social-d
+        border: none
+        // clear: both
+
+      input[type=checkbox]
+        display: inline
+      label
+        display: block
+        float: left
+        width: 70px
+        padding: 5px 0 0 0
+      #id_submit
+        margin-left: 70px
 
 
 
@@ -303,7 +425,7 @@ div.social.relations
     font-size: 11px
   
   
-div.sidebar div.panel
+div.sidebar div.panel.filebrowser
 
   // +simple-form($with-sidebar, $width-padding-base)
   
@@ -409,3 +531,62 @@ div.sidebar div.panel
               &:hover, &:active
                 background-color: $col-interaction-l
                 color: contrast-color($col-interaction-d)
+  
+  
+div.sidebar div.panel.event
+
+  @extend .sizes-boxed
+
+  div.header.stacked
+    padding: 1px $padding-inner
+    text-align: right
+    @extend .shaded-black
+    
+    > h1
+      color: adjust-lightness($color-base-fg, -30)
+      
+    > h2
+      color: $color-base-fg
+      
+  > h1
+    margin-bottom: 14px
+    text-align: right
+    > span
+      // color: $col-content-d
+    @extend .shaded-black
+    padding: $padding-inner
+
+
+  .container
+    // min-height: 24px
+    
+    padding: 0
+    background-color: transparent
+    margin-top: $space-inner-s
+
+    &.event
+      padding: 2px 4px 2px 10px
+      margin-bottom: $space-inner-s
+      background-color: $color-base-bg
+      color: $color-base-fg
+
+    &.hover
+      cursor: pointer
+      background-color: $col-content-d !important
+      color: contrast-color($col-content-d) !important
+      a
+        color: contrast-color($col-content-d) !important
+
+    // event states 
+    &.now
+      background-color: $col-marker-l
+
+    &.today
+      background-color: $col-marker-l
+
+      
+    .wrapper
+      @extend .sizes-small
+      padding: 0
+
+

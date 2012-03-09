@@ -1,0 +1,28 @@
+{% load account_tags sekizai_tags truncate  %}
+<div class="wrapper panel listing event">
+	<div class="header stacked">
+		<h1>{{ current_season }}</h1>
+		<h2>{{ event.date_start|date:"d. m. Y" }} - {{ event.date_end|date:"d. m. Y" }}</h2>
+	</div>
+	<div class="container files recorded">
+		<div class="wrapper"  title="{{ event.excerpt }}">
+			{% for event in related_events %}
+			<div class="container event hoverable linkable {{ event.type }} {{ event.state }}">
+				<a class="permalink" href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}">{{ event.title }}</a>
+				<div class="wrapper">
+					<h2><span class="date">{{ event.date_start|date:"d. m. Y" }}</span> {{ event.title|truncate_chars_inner:32 }}</h2>
+					{% if not event.state == 'past' %}
+					<p>
+						<span class="channel">{{ event.channel }}/{{ event.type }}</span>
+					</p>
+					{% endif %}
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			{% endfor %}
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>

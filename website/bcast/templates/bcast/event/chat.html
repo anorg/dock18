@@ -12,6 +12,12 @@ $(document).ready(function(){
 	
 	$('#msg').DefaultValue('Type your message here..');
 
+	$('#toggle_widescreen').live('click', function(e) {
+		
+		$('body').toggleClass('widescreen');
+		e.preventDefault();
+		return false;
+	});
 	
 });
 </script>
@@ -41,7 +47,9 @@ $(document).ready(function(){
 				-->
 				<input class="chat msg" type="text" id="msg" />
 				<input class="chat btn" type="submit" value="SEND" />
-				<br />
+				{% if not event.state == 'past' %}
+				<a class="toggle widescreen" id="toggle_widescreen"href="#"></a>
+				{% endif %}
 				<div class="clear"></div>
 			</form>
 		</div>
