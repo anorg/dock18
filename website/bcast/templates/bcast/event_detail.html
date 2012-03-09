@@ -194,10 +194,12 @@
 
 	{% with width=680 %}
 	
-	{% if not request.mobile %}
-		{% include 'bcast/event/transmission.html' %}
-	{% else %}
-		{% include 'bcast/event/transmission_mobile.html' %}
+	{% if event.transmission %}
+		{% if not request.mobile %}
+			{% include 'bcast/event/transmission.html' %}
+		{% else %}
+			{% include 'bcast/event/transmission_mobile.html' %}
+		{% endif %}
 	{% endif %}
 	
 	{% endwith %}
