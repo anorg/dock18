@@ -54,7 +54,7 @@
 	    <item>
 			<title>{% firstof video.name video %} | FLV-Plugin</title>
 			<description>{% firstof video.description %}</description>			
-			<enclosure url="mp4:{{ video.filename }}" type="video/flv" length="{{ video.size }}" />
+			<enclosure url="{{ video.filename|slice:":-3" }}:{{ video.filename }}" type="video/flv" length="{{ video.size }}" />
 			
 			<!-- extended properties for jwplayer-->
 			<jwplayer:start>{{ video.offset }}</jwplayer:start>

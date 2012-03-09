@@ -10,7 +10,7 @@
 			<div class="container event hoverable linkable {{ event.type }} {{ event.state }}">
 				<a class="permalink" href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}">{{ event.title }}</a>
 				<div class="wrapper">
-					<h2><span class="date">{{ event.date_start|date:"d. m. Y" }}</span> {{ event.title|truncate_chars_inner:32 }}</h2>
+					<h2><span class="date">{{ event.date_start|date:"d. m. Y" }}</span> {{ event.title|truncate_chars_inner:20 }}</h2>
 					{% if not event.state == 'past' %}
 					<p>
 						<span class="channel">{{ event.channel }}/{{ event.type }}</span>
