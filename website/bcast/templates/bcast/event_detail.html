@@ -173,7 +173,7 @@
 	
 	
 	
-	{% if 1 == 1 %}
+	{% if event.transmission %}
 	{% with width=680 %}
 	<div id="widescreen">
 		<div class="container screen">
@@ -189,20 +189,10 @@
 		<div class="clear"></div>
 	</div>
 	{% endwith %}
-	{% else %}
-	
-
-	{% with width=680 %}
-	
-	{% if event.transmission %}
-		{% if not request.mobile %}
-			{% include 'bcast/event/transmission.html' %}
-		{% else %}
-			{% include 'bcast/event/transmission_mobile.html' %}
-		{% endif %}
 	{% endif %}
 	
-	{% endwith %}
+
+
 	
 
 	
@@ -214,11 +204,12 @@
 		</div>
 	{% endif %}
 
-
+	{% if event.transmission %}
 	{% include 'bcast/event/chat.html' %}
+	{% endif %}
 
 	
-	{% endif %}
+	
 
 
 
