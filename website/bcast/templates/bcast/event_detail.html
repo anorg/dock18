@@ -189,6 +189,14 @@
 		<div class="clear"></div>
 	</div>
 	{% endwith %}
+	
+	{% else %}
+
+
+	{% if event.chat %}
+	{% include 'bcast/event/chat.html' %}
+	{% endif %}
+	
 	{% endif %}
 	
 
@@ -202,10 +210,6 @@
 		<div class="inline">
 			<div class="message login"><p>Für soziale Interaktion [Chat, Upload etc.]: <a href="{{ signup_url }}">Registrieren</a> und/oder <a href="{{ login_url }}">Anmelden</a></p></div>
 		</div>
-	{% endif %}
-
-	{% if event.transmission %}
-	{% include 'bcast/event/chat.html' %}
 	{% endif %}
 
 	
