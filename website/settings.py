@@ -83,7 +83,7 @@ MIDDLEWARE_CLASSES = (
     # pinax
     'pinax.apps.account.middleware.LocaleMiddleware',
     'pagination.middleware.PaginationMiddleware',
-    'pinax.middleware.security.HideSensistiveFieldsMiddleware',
+    #'pinax.middleware.security.HideSensistiveFieldsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     # cms
     #'cms.middleware.multilingual.MultilingualURLMiddleware',
