@@ -1,4 +1,4 @@
-{% load sekizai_tags %}
+{% load sekizai_tags streamstat %}
 
 {% addtoblock "js_main" %}
 <script type="text/javascript">
@@ -17,6 +17,15 @@
 	<div class="header stacked">
 		<h1>Sozialisieren</h1>
 		<h2>durch Kunst</h2>
+	</div>
+
+
+	{% load value_from_settings %}
+	{% value_from_settings "RTMP_IP" as rtmp_ip %}
+	<div class="container counter hoverable">
+		<div id="streamstat">
+			{% streamstat rtmp_ip %}
+		</div>
 	</div>
 
 	

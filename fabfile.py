@@ -6,7 +6,7 @@ import os
 
 # glogal env
 env.warn_only = True
-env.supervisor = '/etc/supervisor/conf.d'
+env.supervisor = '/etc/supervisord'
 env.nginx = '/etc/nginx/sites-enabled'
 
 def clean():
@@ -52,12 +52,11 @@ ende.dock18.ch
 """
 def ende_dock18_ch():
     env.site_id = 'ende.dock18.ch'
-    env.hosts = ['176.34.167.24']
-    env.git_url = 'git@lab.anorg.net:asite.git'
-    env.git_branch = 'master'
-    env.hosts = ['176.34.167.24']
+    env.hosts = ['node05.daj.anorg.net']
+    env.git_url = 'git://github.com/anorg/dock18.git'
+    env.git_branch = 'trunk-ende'
     env.path = '/var/www/ende.dock18.ch'
-    env.storage = '/var/www_data/ende.dock18.ch'
+    env.storage = '/storage/www_data/ende.dock18.ch'
     env.user = 'root'
     
 

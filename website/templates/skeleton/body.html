@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load sekizai_tags streamstat feedback_tags announcement_tags %}
+{% load sekizai_tags feedback_tags announcement_tags %}
 
 {% block extra_head %}
 {% block extra_head_base %}{% endblock %}
@@ -104,11 +104,7 @@
 			</div>
 			<!-- sidebar -->
 			<div id="sidebar" class="col left sidebar">
-				{% load value_from_settings %}
-				{% value_from_settings "RTMP_IP" as rtmp_ip %}
-				<div id="streamstat">
-					{% streamstat rtmp_ip %}
-				</div>
+
 				<div id="sidebar_pre">
 					{% placeholder sidebar_pre %}
 				</div>

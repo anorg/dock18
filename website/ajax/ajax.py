@@ -20,11 +20,16 @@ from xml.etree import ElementTree as ET
 def loopcount(request):
     
     # api_url = "http://" + RTMP_IP + ":8086/connectioncounts"
-    api_url = "http://" + '127.0.0.1' + ":8086/connectioncounts"
+    api_url = "http://" + 'node06.daj.anorg.net' + ":8086/connectioncounts"
     api_key = "xyz"
     
     
     data_json = cache.get('data_json')
+    
+    
+    
+    print 'SESSION'
+    print api_url
     
     if not data_json:
 
@@ -36,6 +41,7 @@ def loopcount(request):
             element = ET.XML(message)
             
         except Exception, e:
+            print e
             element = None
             message = "?????"
             
@@ -54,17 +60,29 @@ def loopcount(request):
                 bw = str(float(element[5].text) / 1000) + ' KBps'
             
         except Exception, e:
+            print e
             total = 'error'
             current = 'error'
             bw = 'error'
             
-        target = '#streamcounter'
+            
+        try:
+            target = '#streamcounter'
+            
+            message = '<h6>Streaming: %s</h6>' % (bw)
+            message += '<p>Jetzt: %s | Reboot: %s</p>' %  (current, total)
+            
+            #message = '%s %s' % (total, current)
+            
+            #message = '<p><span><span>Total: </span>%s</span><span> / <span>Jetzt: </span>%s</span><br />' % (total, current);
+            #message += '<span><span>BW: </span>%s</span></p><p>&nbsp;</p>' % (bw);
         
-        message = '<p><span><span>Total: </span>%s</span><span> / <span>Jetzt: </span>%s</span><br />' % (total, current);
-        message += '<span><span>BW: </span>%s</span></p><p>&nbsp;</p>' % (bw);
-    
-        data_json = {'target' :target,'content' :message}
-        cache.set('data_json', data_json, 30)
+            data_json = {'target' :target,'content' :message}
+            cache.set('data_json', data_json, 30)
+            
+        except Exception, e:
+            print e
+            data_json = {}
     
     return simplejson.dumps(data_json)
 
