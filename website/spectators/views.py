@@ -12,9 +12,12 @@ from notification import models as notification
 from spectators.models import Spectate
 from spectators.signals import object_spectated, object_unspectated
 
+from django.views.decorators.csrf import csrf_exempt
+
 
 @require_POST
 @login_required
+@csrf_exempt
 def spectate_toggle(request, content_type_id, object_id):
     content_type = get_object_or_404(ContentType, pk=content_type_id)
     

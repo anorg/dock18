@@ -40,6 +40,7 @@ def playlist(request, id):
     folder = event.get_folder('recorded')
     
     videos = folder.files.instance_of(Video)
+    videos.order_by('-name', '-original_filename')
     
 
     r = render_to_response('bcast/api/playlist.xml', {'event': event, 'folder': folder, 'videos': videos}, mimetype="application/xml",

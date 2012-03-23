@@ -245,7 +245,7 @@ base.plugins = function() {
 	$(':submit', newsletter_container).live("click", function(e) {
 		e.preventDefault();
 		var form = $(this).parents('form');
-		console.log(form);
+		// console.log(form);
 
 		var url = form.attr('action');
 		
@@ -270,7 +270,7 @@ base.plugins = function() {
 		jQuery.extend(data, values);
 		
 		
-		console.log(data);
+		//console.log(data);
 		
 		$.ajax({
 		  type: 'POST',

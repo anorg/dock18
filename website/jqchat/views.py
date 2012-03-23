@@ -5,6 +5,10 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.utils.html import escape
 
+
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 from models import Room, Message
 
 import time
@@ -74,6 +78,7 @@ class Ajax(object):
 
     # Note that login_required decorators cannot be attached here if the __call__ is to be overridden.
     # Instead they have to be attached to child classes.
+    @method_decorator(csrf_exempt)
     def __call__(self, request, id):
 
         #if not request.user.is_authenticated():

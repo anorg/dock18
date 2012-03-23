@@ -1,4 +1,4 @@
-#Thu Mar 08 01:09:59 CET 2012
+#Fri Mar 23 11:51:29 CET 2012
 eclipse.preferences.version=1
 encoding//website/ajaxuploader/models.py=utf-8
 encoding//website/bcast/management/commands/event_process.py=utf-8
@@ -29,6 +29,7 @@ encoding//website/filer/utils/files.py=utf-8
 encoding//website/filer/utils/loader.py=utf-8
 encoding//website/filer/views.py=utf-8
 encoding//website/jqchat/models.py=utf-8
+encoding//website/jqchat/urls.py=utf-8
 encoding//website/settings.py=utf-8
 encoding//website/spectators/admin.py=utf-8
 encoding/<project>=UTF-8

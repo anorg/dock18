@@ -1,6 +1,6 @@
 from menus.base import Menu, NavigationNode
 from menus.menu_pool import menu_pool
-
+from django.utils.encoding import smart_str
 
 from bcast.models import Event
 
@@ -15,7 +15,7 @@ class EventMenu(Menu):
 
         for event in events:
             
-            title = str(event.date_start) + ' | ' + str(event.title)
+            title = smart_str(event.date_start) + ' | ' + smart_str(event.title)
             #nodes.append(NavigationNode(title, event.get_absolute_url(), 'events', attr={'reverse_id':'events'}))
 
         return nodes
