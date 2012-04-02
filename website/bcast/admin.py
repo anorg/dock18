@@ -12,7 +12,7 @@ class EventAdmin(PlaceholderAdmin):
     list_filter = ('type', 'channel', 'Season')
     
     fieldsets = [
-        (None,               {'fields': ['title', 'excerpt', 'location', 'slug']}),
+        (None,               {'fields': ['title', 'excerpt', 'notes', 'location', 'slug']}),
         ('CMS content', {'fields': ['placeholder_1'], 'classes': ['plugin-holder', 'plugin-holder-nopage']}),
         ('Tags & co',               {'fields': ['type', 'tags', 'picture', 'intro', 'folder', 'key']}),
         ('Date information', {'fields': ['Season', 'channel', 'date_start', 'date_end'], 'classes': ['false']}),
