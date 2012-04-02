@@ -7,6 +7,10 @@ class EventInline(admin.TabularInline):
     extra = 1
     
 class EventAdmin(PlaceholderAdmin): 
+    
+    list_display = ('title', 'date_start', 'type', 'channel', 'Season')
+    list_filter = ('type', 'channel', 'Season')
+    
     fieldsets = [
         (None,               {'fields': ['title', 'excerpt', 'location', 'slug']}),
         ('CMS content', {'fields': ['placeholder_1'], 'classes': ['plugin-holder', 'plugin-holder-nopage']}),
