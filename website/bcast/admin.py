@@ -8,7 +8,7 @@ class EventInline(admin.TabularInline):
     
 class EventAdmin(PlaceholderAdmin): 
     
-    list_display = ('title', 'date_start', 'type', 'channel', 'Season')
+    list_display = ('title', 'date_start', 'type', 'channel', 'Season', 'slug')
     list_filter = ('type', 'channel', 'Season')
     
     fieldsets = [
