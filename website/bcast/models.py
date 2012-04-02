@@ -71,6 +71,9 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     excerpt = models.TextField(blank=True)
     
+    
+    notes = models.TextField(blank=True, verbose_name=_('Notes [Internal]'), help_text=_('Internal Notes about the Event. [Visitors, expectations etc]'))
+    
     slug = AutoSlugField(populate_from='title', blank=True, null=True, editable=True)
     
     
