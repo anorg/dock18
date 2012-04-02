@@ -349,9 +349,15 @@ class EventListPlugin(CMSPlugin):
         ('future', _('Future')),
     )
     
+    ORDERING_CHOICES = (
+        ('asc', _('Ascending [Newest first]')),
+        ('desc', _('Descending [Oldest first]')),
+    )
+    
     # settings, exposed to admin site / plugin
     size = models.CharField(max_length=2, default='m', choices=SIZE_CHOICES)
     range = models.CharField(max_length=10, default='all', choices=RANGE_CHOICES)
+    ordering = models.CharField(max_length=10, default='asc', choices=ORDERING_CHOICES)
     
     channel = models.ForeignKey(Channel, blank=True, null=True)
     season = models.ForeignKey(Season, blank=True, null=True)

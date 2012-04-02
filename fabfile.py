@@ -58,6 +58,9 @@ def ende_dock18_ch():
     env.path = '/var/www/ende.dock18.ch'
     env.storage = '/storage/www_data/ende.dock18.ch'
     env.user = 'root'
+
+def status():
+    run('supervisorctl status')
     
 
 def deploy():
