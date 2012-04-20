@@ -45,19 +45,49 @@ class Submission(MPTTModel):
     def is_active(self):
 
         if self.date_start < datetime.datetime.now() and self.date_end > datetime.datetime.now():
+            return True
+        
+        return False
+    
+    def get_state(self):
+
+        if self.date_start < datetime.datetime.now() and self.date_end > datetime.datetime.now():
             return 'running'
 
         if self.date_start > datetime.datetime.now():
             return 'future'
         else:
             return 'over'
+        
+        
+    def user_allowed(self, user):
+        if not self.parent:
+            return True
+        
+        else:
+            
+            try:
+                pe = Entry.objects.filter(user=user, submission=self.parent)[0]
+
+                if pe.state == 'accepted':
+                    return True
+                
+            except Exception, e:
+                print e
+                return False
+            
+            return False
+        
+    
+    
+    
 
 class Entry(models.Model):
     user = models.ForeignKey(User)
     submission = models.ForeignKey(Submission)
 
-    url = models.URLField()
-    description = models.CharField(max_length=512,blank=True, null=True)
+    url = models.URLField(help_text=_("Inklusive http://"))
+    description = models.TextField(help_text=_("Ein/zwei Saetze zu deiner Einreichung."), max_length=512,blank=True, null=True)
     
     STATE_CHOICES = (
         ('pending', _('Pending')),

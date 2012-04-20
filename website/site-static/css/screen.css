@@ -131,76 +131,94 @@ ul.horizontal > li.last { padding-right: 0; }
 .submissionplugin_holder .submission .header.stacked h2 { color: #40c0cb; padding: 0 10px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000319}}
 .submissionplugin_holder .submission .container { background-color: #40c0cb; padding: 10px 10px; margin-bottom: 10px; }
-
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000326}}
+.submissionplugin_holder .submission .container fieldset { border-top: 2px solid #00a8c6; padding: 4px 0 4px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000329}}
-.base .plugin .list.events { font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+.submissionplugin_holder .submission .container fieldset h3 { font-size: 110%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000332}}
-.base .plugin .list.events p { line-height: 140%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000336}}
-.base .plugin .listing.event { margin: 0 0 2px 0; background-color: black; color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000342}}
-.base .plugin .listing.event a { color: white; }
+.submissionplugin_holder .submission .container p.excerpt { padding: 10px 0; text-transform: uppercase; font-size: 130%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000344}}
+.submissionplugin_holder .submission .container div.user-entry { padding: 10px 10px 20px 224px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000348}}
+.submissionplugin_holder .submission .container div.entries { padding-top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000350}}
+.submissionplugin_holder .submission .container div.entries h4 { padding-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000353}}
+.submissionplugin_holder .submission .container div.entries a, .submissionplugin_holder .submission .container div.entries a:link, .submissionplugin_holder .submission .container div.entries a:hover, .submissionplugin_holder .submission .container div.entries a:visited, .submissionplugin_holder .submission .container div.entries a:active { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000356}}
+.submissionplugin_holder form.disabled { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000359}}
+.submissionplugin_holder form.disabled * { cursor: wait; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000368}}
+.base .plugin .list.events { font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000371}}
+.base .plugin .list.events p { line-height: 140%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000375}}
+.base .plugin .listing.event { margin: 0 0 2px 0; background-color: black; color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000381}}
+.base .plugin .listing.event a { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000383}}
 .base .plugin .listing.event a:link, .base .plugin .listing.event a:visited, .base .plugin .listing.event a:hover, .base .plugin .listing.event a:active { color: white; background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000349}}
-.base .plugin .listing.event .inner { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000352}}
-.base .plugin .listing.event .inner.now, .base .plugin .listing.event .inner.today, .base .plugin .listing.event .inner.future { min-height: 36px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000357}}
-.base .plugin .listing.event.now, .base .plugin .listing.event.today { min-height: 48px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000364}}
-.base .plugin .listing.event div.wrap { width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000367}}
-.base .plugin .listing.event h3.title { float: left; display: block; padding: 2px 2px 2px 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000372}}
-.base .plugin .listing.event h4.date { float: left; width: 140px; display: block; font-size: 140%; padding: 10px 2px 2px 8px; text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000380}}
-.base .plugin .listing.event span.channel { font-size: 11px; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000384}}
-.base .plugin .listing.event p.excerpt { width: 460px; padding: 0px 4px 4px 7px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000388}}
-.base .plugin .listing.event p.time { width: 130px; padding: 0px 4px 4px 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000392}}
-.base .plugin .listing.event.hover { cursor: pointer; background-color: yellow !important; color: black !important; }
+.base .plugin .listing.event .inner { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000391}}
+.base .plugin .listing.event .inner.now, .base .plugin .listing.event .inner.today, .base .plugin .listing.event .inner.future { min-height: 36px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000396}}
-.base .plugin .listing.event.hover a { color: black !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003105}}
-.base .plugin .listing.event.now { background: url("/static/img/base/badge/badge48.now.red.png") top right no-repeat; background-color: #cd41c4; }
+.base .plugin .listing.event.now, .base .plugin .listing.event.today { min-height: 48px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003103}}
+.base .plugin .listing.event div.wrap { width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003106}}
+.base .plugin .listing.event h3.title { float: left; display: block; padding: 2px 2px 2px 0px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003111}}
+.base .plugin .listing.event h4.date { float: left; width: 140px; display: block; font-size: 140%; padding: 10px 2px 2px 8px; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003119}}
+.base .plugin .listing.event span.channel { font-size: 11px; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003123}}
+.base .plugin .listing.event p.excerpt { width: 460px; padding: 0px 4px 4px 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003127}}
+.base .plugin .listing.event p.time { width: 130px; padding: 0px 4px 4px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003131}}
+.base .plugin .listing.event.hover { cursor: pointer; background-color: yellow !important; color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003135}}
+.base .plugin .listing.event.hover a { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003144}}
+.base .plugin .listing.event.now { background: url("/static/img/base/badge/badge48.now.red.png") top right no-repeat; background-color: #cd41c4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003150}}
 .base .plugin .listing.event.today { background: url("/static/img/base/badge/badge48.today.cyan.png") top right no-repeat; background-color: #cd41c4; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003164}}
 #eventlist_side .listing.event { height: 13px !important; min-height: 13px !important; background-image: none !important; padding: 4px 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003169}}
 #eventlist_side .listing.event h3, #eventlist_side .listing.event h4 { font-size: 12.1px; padding: 0 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003172}}
 #eventlist_side .listing.event .picture, #eventlist_side .listing.event .channel { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003177}}
 #eventlist_side .listing.event h3.title { width: 160px; overflow: hidden; white-space: nowrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003182}}
 #eventlist_side .listing.event h4.date { width: 82px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003185}}
 #eventlist_side .listing.event p { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003188}}
 #eventlist_side .listing.event .tags { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003191}}
 #eventlist_side .listing.event span.event_type { font-size: 8.8px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003194}}
 #eventlist_side .listing.event.hover { cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003215}}
 .base.content .textplugin_holder { margin: 2px 0 2px; background-image: url(/static/img/base/50p000.png); color: white; font-family: "Verdana"; padding: 5px 10px 5px 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003185}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003224}}
 .base.content .textplugin_holder h1, .base.content .textplugin_holder h2 { padding: 0 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003228}}
 .base.content .textplugin_holder p { line-height: 180%; font-size: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003234}}
 .base.content .textplugin_holder:nth-child(3) { padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003238}}
 .base.content .textplugin_holder p, .base.content .textplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003241}}
 .base.content .textplugin_holder p > li, .base.content .textplugin_holder ul > li { padding: 2px 0 2px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003247}}
 .base.content .textplugin_holder:nth-child(3) { margin: 0 0 2px 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\000034}}
