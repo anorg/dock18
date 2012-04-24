@@ -11,7 +11,7 @@
 				<a class="permalink" href="{% if event.get_absolute_url %}{{ event.get_absolute_url }}{% else %}#{% endif %}">{{ event.title }}</a>
 				<div class="wrapper">
 					<h2><span class="date">{{ event.date_start|date:"d. m. Y" }}</span> {{ event.title|truncate_chars_inner:16 }}</h2>
-					{% if not event.state == 'past' %}
+					{% if event.state == 'now' or  event.state == 'doday' %}
 					<p>
 						<span class="channel">{{ event.channel }}/{{ event.type }}</span>
 					</p>

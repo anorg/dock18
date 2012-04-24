@@ -237,8 +237,10 @@
 
 
 {% block sidebar_pre %}
-
 	{% include 'bcast/event/filebrowser.html' %}
-	{% include 'bcast/event/event_list_small.html' %}
+{% endblock %}
 
+
+{% block sidebar_post %}
+	{% include 'bcast/event/event_list_small.html' %}
 {% endblock %}
