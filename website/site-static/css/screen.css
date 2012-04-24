@@ -182,43 +182,47 @@ ul.horizontal > li.last { padding-right: 0; }
 .base .plugin .listing.event.hover { cursor: pointer; background-color: yellow !important; color: black !important; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003139}}
 .base .plugin .listing.event.hover a { color: black !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003148}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003146}}
+.base .plugin .listing.event.transmission { background: url("/static/img/base/badge/badge48.recording.white.png") 639px 7px no-repeat; background-color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003151}}
+.base .plugin .listing.event.transmission.future { background-image: url("/static/img/base/badge/badge48.recording_blank.white.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003157}}
 .base .plugin .listing.event.now { background: url("/static/img/base/badge/badge48.now.red.png") top right no-repeat; background-color: #cd41c4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003163}}
 .base .plugin .listing.event.today { background: url("/static/img/base/badge/badge48.today.cyan.png") top right no-repeat; background-color: #cd41c4; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003177}}
 #eventlist_side .listing.event { height: 13px !important; min-height: 13px !important; background-image: none !important; padding: 4px 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003182}}
 #eventlist_side .listing.event h3, #eventlist_side .listing.event h4 { font-size: 12.1px; padding: 0 !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003185}}
 #eventlist_side .listing.event .picture, #eventlist_side .listing.event .channel { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003190}}
 #eventlist_side .listing.event h3.title { width: 160px; overflow: hidden; white-space: nowrap; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003186}}
-#eventlist_side .listing.event h4.date { width: 82px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003189}}
-#eventlist_side .listing.event p { display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003192}}
-#eventlist_side .listing.event .tags { display: none; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003195}}
-#eventlist_side .listing.event span.event_type { font-size: 8.8px; }
+#eventlist_side .listing.event h4.date { width: 82px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003198}}
+#eventlist_side .listing.event p { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003201}}
+#eventlist_side .listing.event .tags { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003204}}
+#eventlist_side .listing.event span.event_type { font-size: 8.8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003207}}
 #eventlist_side .listing.event.hover { cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003219}}
-.base.content .textplugin_holder { margin: 2px 0 2px; background-image: url(/static/img/base/50p000.png); color: white; font-family: "Verdana"; padding: 5px 10px 5px 10px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003228}}
+.base.content .textplugin_holder { margin: 2px 0 2px; background-image: url(/static/img/base/50p000.png); color: white; font-family: "Verdana"; padding: 5px 10px 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003237}}
 .base.content .textplugin_holder h1, .base.content .textplugin_holder h2 { padding: 0 0px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003241}}
 .base.content .textplugin_holder p { line-height: 180%; font-size: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003247}}
 .base.content .textplugin_holder:nth-child(3) { padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003242}}
-.base.content .textplugin_holder p, .base.content .textplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003245}}
-.base.content .textplugin_holder p > li, .base.content .textplugin_holder ul > li { padding: 2px 0 2px 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003251}}
+.base.content .textplugin_holder p, .base.content .textplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003254}}
+.base.content .textplugin_holder p > li, .base.content .textplugin_holder ul > li { padding: 2px 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003260}}
 .base.content .textplugin_holder:nth-child(3) { margin: 0 0 2px 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/Documents\/Code\/dock18_ch\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\000034}}
