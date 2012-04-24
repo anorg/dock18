@@ -90,6 +90,12 @@
 	{% if request.user.is_authenticated %}
 	
 	{% if request.user|in_group:"Streamers" %}
+
+	<div class="admin padded  notice">
+		<h5><a href="/admin/bcast/event/{{ event.id }}/">&gt; Edit link</a></h5>
+	</div>
+	
+	
 	
 	{% if event.state == 'future' or event.state == 'today' or event.state == 'now' %}
 
