@@ -61,6 +61,7 @@ class Submission(MPTTModel):
         
         
     def user_allowed(self, user):
+        
         if not self.parent:
             return True
         

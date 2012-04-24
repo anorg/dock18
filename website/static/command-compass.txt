@@ -1,1 +1,0 @@
-compass create dock18 --using blueprint --syntax sass --sass-dir "sass" --css-dir "css" --javascripts-dir "js" --images-dir "img"
