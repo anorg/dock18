@@ -39,12 +39,10 @@
 		</h3>
 		
 		<div class="clear"></div>
-		{% if event.excerpt or event.state == 'now' or event.state == 'today' %}
+		{% if event.excerpt or event.state == 'now' or event.state == 'today' %}{% endif %}
 		<h4 class="left time">{{ event.date_start|date:"H:i" }}</h4>
-		
-		
 		<h4 class="left excerpt">{{ event.excerpt|truncate_chars_inner:32 }}</h4>
-		{% endif %}
+		
 		<div class="clear"></div>
 	</div>
 
