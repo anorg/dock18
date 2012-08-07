@@ -1,12 +1,11 @@
 {% load i18n admin_modify adminmedia filermedia %}
+{% load url from future %}
+
 <script type="text/javascript">
 //<![CDATA[
-
-
-(function($) {
-	
+$(function() {
     var uploader = new qq.FileUploaderBasic({
-        action: '{% url admin:filer-ajax_upload %}',
+        action: '{% url 'admin:filer-ajax_upload' %}',
         button: document.getElementById('id_upload_button'),
         onSubmit: function(id, fileName){
             $("#fileInputQueue .noItemsRow").hide();
@@ -37,6 +36,6 @@
             $('#fileUpload-' + id).hide();
         }
     });
-})(jQuery);
+});
 //]]>
 </script>

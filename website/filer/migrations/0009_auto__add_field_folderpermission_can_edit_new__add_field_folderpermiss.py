@@ -1,27 +1,38 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 import datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
 
+
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        
-        # Adding field 'File.cue_in'
-        db.add_column('filer_file', 'cue_in', self.gf('django.db.models.fields.IntegerField')(default=0, null=True, blank=True), keep_default=False)
+        # Adding field 'FolderPermission.can_edit_new'
+        db.add_column('filer_folderpermission', 'can_edit_new',
+                      self.gf('django.db.models.fields.SmallIntegerField')(default=None, null=True, blank=True),
+                      keep_default=False)
 
-        # Adding field 'File.cue_out'
-        db.add_column('filer_file', 'cue_out', self.gf('django.db.models.fields.IntegerField')(default=0, null=True, blank=True), keep_default=False)
+        # Adding field 'FolderPermission.can_read_new'
+        db.add_column('filer_folderpermission', 'can_read_new',
+                      self.gf('django.db.models.fields.SmallIntegerField')(default=None, null=True, blank=True),
+                      keep_default=False)
+
+        # Adding field 'FolderPermission.can_add_children_new'
+        db.add_column('filer_folderpermission', 'can_add_children_new',
+                      self.gf('django.db.models.fields.SmallIntegerField')(default=None, null=True, blank=True),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        
-        # Deleting field 'File.cue_in'
-        db.delete_column('filer_file', 'cue_in')
+        # Deleting field 'FolderPermission.can_edit_new'
+        db.delete_column('filer_folderpermission', 'can_edit_new')
 
-        # Deleting field 'File.cue_out'
-        db.delete_column('filer_file', 'cue_out')
+        # Deleting field 'FolderPermission.can_read_new'
+        db.delete_column('filer_folderpermission', 'can_read_new')
+
+        # Deleting field 'FolderPermission.can_add_children_new'
+        db.delete_column('filer_folderpermission', 'can_add_children_new')
 
 
     models = {
@@ -76,8 +87,6 @@ class Migration(SchemaMigration):
         'filer.file': {
             'Meta': {'object_name': 'File'},
             '_file_size': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
-            'cue_in': ('django.db.models.fields.IntegerField', [], {'default': '0', 'null': 'True', 'blank': 'True'}),
-            'cue_out': ('django.db.models.fields.IntegerField', [], {'default': '0', 'null': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'folder': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'all_files'", 'null': 'True', 'to': "orm['filer.Folder']"}),
@@ -109,8 +118,11 @@ class Migration(SchemaMigration):
         'filer.folderpermission': {
             'Meta': {'object_name': 'FolderPermission'},
             'can_add_children': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_add_children_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'can_edit': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_edit_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'can_read': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_read_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'everybody': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'folder': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['filer.Folder']", 'null': 'True', 'blank': 'True'}),
             'group': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'filer_folder_permissions'", 'null': 'True', 'to': "orm['auth.Group']"}),
