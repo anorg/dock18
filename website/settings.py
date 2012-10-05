@@ -34,16 +34,9 @@ DEFAULT_LANGUAGE = 0
 DATABASES = {
 
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'dock18_ch-dev',
-        'NAME': 'fresh',
-        'USERNAME': 'root',
-        'PASSWORD': 'root',
-    },
-    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_DIR, 'dev.db'),
-    }
+    },
 }
 
 TIME_ZONE = 'Europe/Zurich'

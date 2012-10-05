@@ -1,28 +1,27 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 import datetime
 from south.db import db
-from south.v2 import SchemaMigration
+from south.v2 import DataMigration
 from django.db import models
 
-class Migration(SchemaMigration):
+class Migration(DataMigration):
+    ALLOW = 1
+    DENY = 0
 
     def forwards(self, orm):
-        
-        # Adding field 'File.preview_pos'
-        db.add_column('filer_file', 'preview_pos', self.gf('django.db.models.fields.IntegerField')(default=0, null=True, blank=True), keep_default=False)
-
-        # Adding field 'File.apply_permanent'
-        db.add_column('filer_file', 'apply_permanent', self.gf('django.db.models.fields.BooleanField')(default=True), keep_default=False)
-
+        for permission in orm.FolderPermission.objects.all():
+            permission.can_edit_new = self.ALLOW if permission.can_edit else self.DENY
+            permission.can_read_new = self.ALLOW if permission.can_read else self.DENY
+            permission.can_add_children_new = self.ALLOW if permission.can_add_children else self.DENY
+            permission.save()
 
     def backwards(self, orm):
-        
-        # Deleting field 'File.preview_pos'
-        db.delete_column('filer_file', 'preview_pos')
-
-        # Deleting field 'File.apply_permanent'
-        db.delete_column('filer_file', 'apply_permanent')
-
+        # Backwards migration is lossy, but we play on a safe side and deny more
+        for permission in orm.FolderPermission.objects.all():
+            permission.can_edit = permission.can_edit_new == self.ALLOW
+            permission.can_read = permission.can_read_new == self.ALLOW
+            permission.can_add_children = permission.can_add_children_new == self.ALLOW
+            permission.save()
 
     models = {
         'auth.group': {
@@ -76,9 +75,6 @@ class Migration(SchemaMigration):
         'filer.file': {
             'Meta': {'object_name': 'File'},
             '_file_size': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
-            'apply_permanent': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'cue_in': ('django.db.models.fields.IntegerField', [], {'default': '0', 'null': 'True', 'blank': 'True'}),
-            'cue_out': ('django.db.models.fields.IntegerField', [], {'default': '0', 'null': 'True', 'blank': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'file': ('django.db.models.fields.files.FileField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'folder': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'all_files'", 'null': 'True', 'to': "orm['filer.Folder']"}),
@@ -90,7 +86,6 @@ class Migration(SchemaMigration):
             'original_filename': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
             'owner': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'owned_files'", 'null': 'True', 'to': "orm['auth.User']"}),
             'polymorphic_ctype': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'polymorphic_filer.file_set'", 'null': 'True', 'to': "orm['contenttypes.ContentType']"}),
-            'preview_pos': ('django.db.models.fields.IntegerField', [], {'default': '0', 'null': 'True', 'blank': 'True'}),
             'sha1': ('django.db.models.fields.CharField', [], {'default': "''", 'max_length': '40', 'blank': 'True'}),
             'uploaded_at': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'})
         },
@@ -111,8 +106,11 @@ class Migration(SchemaMigration):
         'filer.folderpermission': {
             'Meta': {'object_name': 'FolderPermission'},
             'can_add_children': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_add_children_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'can_edit': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_edit_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'can_read': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
+            'can_read_new': ('django.db.models.fields.SmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'}),
             'everybody': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'folder': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['filer.Folder']", 'null': 'True', 'blank': 'True'}),
             'group': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'filer_folder_permissions'", 'null': 'True', 'to': "orm['auth.Group']"}),
@@ -136,3 +134,4 @@ class Migration(SchemaMigration):
     }
 
     complete_apps = ['filer']
+    symmetrical = True

@@ -1,745 +1,1348 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
-body { line-height: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
+html { line-height: 1; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
 ol, ul { list-style: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
 table { border-collapse: collapse; border-spacing: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
 caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
 q, blockquote { quotes: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003103}}
 q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000332}}
 a img { border: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003116}}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_control\.sass}line{font-family:\000031}}
 .left { float: left; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_control\.sass}line{font-family:\000034}}
 .right { float: right; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_control\.sass}line{font-family:\000037}}
 .clear { clear: both; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_control\.sass}line{font-family:\0000314}}
 ul.horizontal { margin: 0; padding: 0; border: 0; overflow: hidden; *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_control\.sass}line{font-family:\0000316}}
 ul.horizontal > li { list-style-image: none; list-style-type: none; margin-left: 0; white-space: nowrap; display: inline; float: left; padding-left: 4px; padding-right: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000348}}
 ul.horizontal > li:first-child, ul.horizontal > li.first { padding-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000349}}
 ul.horizontal > li:last-child { padding-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_horizontal-list\.scss}line{font-family:\0000350}}
 ul.horizontal > li.last { padding-right: 0; }
 
 /* vars  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000333}}
 .typo-running p, .window .panel.lead > .info p { font-family: "Verdana"; font-size: 12px; line-height: 21px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000338}}
 .typo-base, body, .base.content.pinax #body, .base.content.cms .apps #body { font-family: "Lucida Console", Monaco, "Courier New", "Courier"; font-size: 11px; font-size: 11px; line-height: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000343}}
 .typo-base h1, body h1, .base.content.pinax #body h1, .base.content.cms .apps #body h1, .typo-base h2, body h2, .base.content.pinax #body h2, .base.content.cms .apps #body h2, .typo-base h3, body h3, .base.content.pinax #body h3, .base.content.cms .apps #body h3, .typo-base h4, body h4, .base.content.pinax #body h4, .base.content.cms .apps #body h4, .typo-base h5, body h5, .base.content.pinax #body h5, .base.content.cms .apps #body h5, .typo-base h6, body h6, .base.content.pinax #body h6, .base.content.cms .apps #body h6 { text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000350}}
 .typo-base strong, body strong, .base.content.pinax #body strong, .base.content.cms .apps #body strong { font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000352}}
 .typo-base em, body em, .base.content.pinax #body em, .base.content.cms .apps #body em { font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000355}}
 .typo-base sup, body sup, .base.content.pinax #body sup, .base.content.cms .apps #body sup { font-size: 70%; vertical-align: text-bottom; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000358}}
 .typo-base sub, body sub, .base.content.pinax #body sub, .base.content.cms .apps #body sub { font-size: 70%; vertical-align: sub; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000362}}
 .typo-base blockquote, body blockquote, .base.content.pinax #body blockquote, .base.content.cms .apps #body blockquote { color: #333333; margin: 4px 0 12px 0; padding: 0 0 0 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000367}}
 .typo-base blockquote p, body blockquote p, .base.content.pinax #body blockquote p, .base.content.cms .apps #body blockquote p { padding: 0 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000370}}
 .typo-base h1, body h1, .base.content.pinax #body h1, .base.content.cms .apps #body h1, .typo-base h2, body h2, .base.content.pinax #body h2, .base.content.cms .apps #body h2 { text-transform: uppercase; margin: 0 0 0 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000376}}
 .typo-base h3, body h3, .base.content.pinax #body h3, .base.content.cms .apps #body h3, .typo-base h4, body h4, .base.content.pinax #body h4, .base.content.cms .apps #body h4, .typo-base h5, body h5, .base.content.pinax #body h5, .base.content.cms .apps #body h5, .typo-base h6, body h6, .base.content.pinax #body h6, .base.content.cms .apps #body h6 { margin: 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000381}}
 .typo-base .superscript, body .superscript, .base.content.pinax #body .superscript, .base.content.cms .apps #body .superscript { font-size: 50%; vertical-align: super; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000384}}
 .typo-base .subscript, body .subscript, .base.content.pinax #body .subscript, .base.content.cms .apps #body .subscript { font-size: 90%; vertical-align: bottom; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000391}}
 .sizes-base h1, body h1 { font-size: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000393}}
 .sizes-base h2, body h2 { font-size: 32px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000395}}
 .sizes-base h3, body h3 { font-size: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\0000397}}
 .sizes-base h4, body h4, .sizes-base h5, body h5, .sizes-base h6, body h6 { font-size: 18px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003101}}
 .sizes-medium h1 { font-size: 32px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003103}}
 .sizes-medium h2 { font-size: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003105}}
 .sizes-medium h3 { font-size: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003107}}
 .sizes-medium h4, .sizes-medium h5, .sizes-medium h6 { font-size: 18px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003111}}
 .sizes-small h1, div.social.relations .container .wrapper h1, div.social.relations .ajax.newsletter h1, div.sidebar div.panel.filebrowser .container .wrapper h1, div.sidebar div.panel.filebrowser .ajax.newsletter h1, div.sidebar div.panel.event .container .wrapper h1 { font-size: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003113}}
 .sizes-small h2, div.social.relations .container .wrapper h2, div.social.relations .ajax.newsletter h2, div.sidebar div.panel.filebrowser .container .wrapper h2, div.sidebar div.panel.filebrowser .ajax.newsletter h2, div.sidebar div.panel.event .container .wrapper h2 { font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003115}}
 .sizes-small h3, div.social.relations .container .wrapper h3, div.social.relations .ajax.newsletter h3, div.sidebar div.panel.filebrowser .container .wrapper h3, div.sidebar div.panel.filebrowser .ajax.newsletter h3, div.sidebar div.panel.event .container .wrapper h3 { font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003117}}
 .sizes-small h4, div.social.relations .container .wrapper h4, div.social.relations .ajax.newsletter h4, div.sidebar div.panel.filebrowser .container .wrapper h4, div.sidebar div.panel.filebrowser .ajax.newsletter h4, div.sidebar div.panel.event .container .wrapper h4, .sizes-small h5, div.social.relations .container .wrapper h5, div.social.relations .ajax.newsletter h5, div.sidebar div.panel.filebrowser .container .wrapper h5, div.sidebar div.panel.filebrowser .ajax.newsletter h5, div.sidebar div.panel.event .container .wrapper h5, .sizes-small h6, div.social.relations .container .wrapper h6, div.social.relations .ajax.newsletter h6, div.sidebar div.panel.filebrowser .container .wrapper h6, div.sidebar div.panel.filebrowser .ajax.newsletter h6, div.sidebar div.panel.event .container .wrapper h6 { font-size: 12px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003121}}
 .sizes-boxed h1, .submissionplugin_holder .submission h1, .base.content.pinax #body h1, .base.content.cms .apps #body h1, div.table h1, div.social.relations h1, div.sidebar div.panel.filebrowser h1, div.sidebar div.panel.event h1 { font-size: 22px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003123}}
 .sizes-boxed h2, .submissionplugin_holder .submission h2, .base.content.pinax #body h2, .base.content.cms .apps #body h2, div.table h2, div.social.relations h2, div.sidebar div.panel.filebrowser h2, div.sidebar div.panel.event h2 { font-size: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003125}}
 .sizes-boxed h3, .submissionplugin_holder .submission h3, .base.content.pinax #body h3, .base.content.cms .apps #body h3, div.table h3, div.social.relations h3, div.sidebar div.panel.filebrowser h3, div.sidebar div.panel.event h3 { font-size: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003127}}
 .sizes-boxed h4, .submissionplugin_holder .submission h4, .base.content.pinax #body h4, .base.content.cms .apps #body h4, div.table h4, div.social.relations h4, div.sidebar div.panel.filebrowser h4, div.sidebar div.panel.event h4, .sizes-boxed h5, .submissionplugin_holder .submission h5, .base.content.pinax #body h5, .base.content.cms .apps #body h5, div.table h5, div.social.relations h5, div.sidebar div.panel.filebrowser h5, div.sidebar div.panel.event h5, .sizes-boxed h6, .submissionplugin_holder .submission h6, .base.content.pinax #body h6, .base.content.cms .apps #body h6, div.table h6, div.social.relations h6, div.sidebar div.panel.filebrowser h6, div.sidebar div.panel.event h6 { font-size: 14px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003133}}
 .sizes-small-equalized h1, .sizes-small-equalized h2, .sizes-small-equalized h3, .sizes-small-equalized h4, .sizes-small-equalized h5, .sizes-small-equalized h6 { font-size: 11px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003142}}
 .stacked-heading h1, body h1, .submissionplugin_holder .submission .header.stacked h1, .submissionplugin_holder .submission .container h1, .base.content.pinax #body h1, .base.content.cms .apps #body h1 { font-family: "FrutigerNeueW02-BlkIt", Helvetica, Arial, sans-serif; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003144}}
 .stacked-heading h2, body h2, .submissionplugin_holder .submission .header.stacked h2, .submissionplugin_holder .submission .container h2, .base.content.pinax #body h2, .base.content.cms .apps #body h2, .stacked-heading h3, body h3, .submissionplugin_holder .submission .header.stacked h3, .submissionplugin_holder .submission .container h3, .base.content.pinax #body h3, .base.content.cms .apps #body h3, .stacked-heading h4, body h4, .submissionplugin_holder .submission .header.stacked h4, .submissionplugin_holder .submission .container h4, .base.content.pinax #body h4, .base.content.cms .apps #body h4, .stacked-heading h5, body h5, .submissionplugin_holder .submission .header.stacked h5, .submissionplugin_holder .submission .container h5, .base.content.pinax #body h5, .base.content.cms .apps #body h5, .stacked-heading h6, body h6, .submissionplugin_holder .submission .header.stacked h6, .submissionplugin_holder .submission .container h6, .base.content.pinax #body h6, .base.content.cms .apps #body h6 { font-family: "Frutiger LT W01 65 Bold", Helvetica, Arial, sans-serif; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_typography\.sass}line{font-family:\00003148}}
 .cms-heading h1, .cms-heading h2, .cms-heading h3, .cms-heading h4, .cms-heading h5, .cms-heading h6 { font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_base\.sass}line{font-family:\000037}}
 .shaded-black, .submissionplugin_holder .submission .header.stacked, #container_player, #bcast_chat, .window .panel.lead > .info, .base.content.pinax #body, .base.content.cms .apps #body, div.table .cell h1 > span, div.table .cell h2 > span, div.table .cell h3 > span, div.table .cell h4 > span, div.table .cell p, div.social.relations div.header.stacked, div.social.relations > h1, div.sidebar div.panel.filebrowser div.header.stacked, div.sidebar div.panel.filebrowser > h1, div.sidebar div.panel.event div.header.stacked, div.sidebar div.panel.event > h1 { background-image: url(/static/img/base/50p000.png); }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\000039}}
 .submissionplugin_holder .submission .header.stacked h1, .submissionplugin_holder .submission .header.stacked h2, .submissionplugin_holder .submission .header.stacked h3, .submissionplugin_holder .submission .header.stacked h4, .submissionplugin_holder .submission .header.stacked h5, .submissionplugin_holder .submission .header.stacked h6 { text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000312}}
 .submissionplugin_holder .submission .header.stacked h1 { color: #00a8c6; padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000315}}
 .submissionplugin_holder .submission .header.stacked h2 { color: #40c0cb; padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000319}}
 .submissionplugin_holder .submission .container { background-color: #40c0cb; padding: 10px 10px; margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000326}}
 .submissionplugin_holder .submission .container fieldset { border-top: 2px solid #00a8c6; padding: 4px 0 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000329}}
 .submissionplugin_holder .submission .container fieldset h3 { font-size: 110%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000332}}
 .submissionplugin_holder .submission .container p.excerpt { padding: 10px 0; text-transform: uppercase; font-size: 130%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000344}}
 .submissionplugin_holder .submission .container div.user-entry { padding: 10px 10px 20px 224px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000348}}
 .submissionplugin_holder .submission .container div.entries { padding-top: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000350}}
 .submissionplugin_holder .submission .container div.entries h4 { padding-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000353}}
 .submissionplugin_holder .submission .container div.entries a, .submissionplugin_holder .submission .container div.entries a:link, .submissionplugin_holder .submission .container div.entries a:hover, .submissionplugin_holder .submission .container div.entries a:visited, .submissionplugin_holder .submission .container div.entries a:active { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000356}}
 .submissionplugin_holder form.disabled { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000359}}
 .submissionplugin_holder form.disabled * { cursor: wait; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000368}}
 .base .plugin .list.events { font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000371}}
 .base .plugin .list.events p { line-height: 140%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000375}}
 .base .plugin .listing.event { margin: 0 0 2px 0; background-color: black; color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000381}}
 .base .plugin .listing.event a { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000383}}
 .base .plugin .listing.event a:link, .base .plugin .listing.event a:visited, .base .plugin .listing.event a:hover, .base .plugin .listing.event a:active { color: white; background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000388}}
 .base .plugin .listing.event .inner { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000391}}
 .base .plugin .listing.event .inner.now, .base .plugin .listing.event .inner.today, .base .plugin .listing.event .inner.future { min-height: 36px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\0000396}}
 .base .plugin .listing.event.now, .base .plugin .listing.event.today { min-height: 48px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003103}}
 .base .plugin .listing.event div.wrap { width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003106}}
 .base .plugin .listing.event h3.title { font-weight: bold; float: left; display: block; padding: 2px 2px 2px 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003112}}
 .base .plugin .listing.event h3.date { font-weight: bold; float: left; width: 150px; display: block; padding: 2px 2px 2px 8px; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003121}}
 .base .plugin .listing.event .channel { font-size: 11px; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003125}}
 .base .plugin .listing.event h4.excerpt { width: 450px; padding: 0px 4px 4px 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003130}}
 .base .plugin .listing.event h4.time { width: 140px; padding: 0px 4px 4px 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003135}}
 .base .plugin .listing.event.hover { cursor: pointer; background-color: yellow !important; color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003139}}
 .base .plugin .listing.event.hover a { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003146}}
 .base .plugin .listing.event.transmission { background: url("/static/img/base/badge/badge48.recording.white.png") 639px 7px no-repeat; background-color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003151}}
 .base .plugin .listing.event.transmission.future { background-image: url("/static/img/base/badge/badge48.recording_blank.white.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003157}}
 .base .plugin .listing.event.now { background: url("/static/img/base/badge/badge48.now.red.png") top right no-repeat; background-color: #cd41c4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003163}}
 .base .plugin .listing.event.today { background: url("/static/img/base/badge/badge48.today.cyan.png") top right no-repeat; background-color: #cd41c4; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003177}}
 #eventlist_side .listing.event { height: 13px !important; min-height: 13px !important; background-image: none !important; padding: 4px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003182}}
 #eventlist_side .listing.event h3, #eventlist_side .listing.event h4 { font-size: 12.1px; padding: 0 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003185}}
 #eventlist_side .listing.event .picture, #eventlist_side .listing.event .channel { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003190}}
 #eventlist_side .listing.event h3.title { width: 160px; overflow: hidden; white-space: nowrap; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003195}}
 #eventlist_side .listing.event h4.date { width: 82px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003198}}
 #eventlist_side .listing.event p { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003201}}
 #eventlist_side .listing.event .tags { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003204}}
 #eventlist_side .listing.event span.event_type { font-size: 8.8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003207}}
 #eventlist_side .listing.event.hover { cursor: pointer; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003228}}
 .base.content .textplugin_holder { margin: 2px 0 2px; background-image: url(/static/img/base/50p000.png); color: white; font-family: "Verdana"; padding: 5px 10px 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003237}}
 .base.content .textplugin_holder h1, .base.content .textplugin_holder h2 { padding: 0 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003241}}
 .base.content .textplugin_holder p { line-height: 180%; font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003247}}
 .base.content .textplugin_holder:nth-child(3) { padding: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003251}}
 .base.content .textplugin_holder p, .base.content .textplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003254}}
 .base.content .textplugin_holder p > li, .base.content .textplugin_holder ul > li { padding: 2px 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_plugins\.sass}line{font-family:\00003260}}
 .base.content .textplugin_holder:nth-child(3) { margin: 0 0 2px 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\000034}}
 #container_player #process_wait { color: black; background-color: #cd41c4; text-transform: uppercase; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000318}}
 .inline .message.login { background: #40c0cb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000322}}
 .inline .message.login a { padding: 2px 4px; color: black; border: 1px solid black; background-color: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000328}}
 .inline .message.login a:hover, .inline .message.login a:active { background-color: #aee239; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000340}}
 .window .panel.lead { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000345}}
 .window .panel.lead > .action { background-color: black; padding: 2.5px 10px; min-height: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000349}}
 .window .panel.lead > .action > .left > h4 { padding: 4px 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000352}}
 .window .panel.lead > .display { background-color: black; padding: 2.5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000356}}
 .window .panel.lead > .info { padding: 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000361}}
 .window .panel.lead > .admin { background-color: #cd41c4; padding: 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000364}}
 .window .panel.lead > .admin li { padding: 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000373}}
 .window .panel.lead .tags .tag { font-size: 12px; padding-top: 11px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000377}}
 .window .panel.spectator { background-color: #40c0cb; padding: 10px; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000385}}
 .window .panel.spectator .action .spectators { text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000387}}
 .window .panel.spectator .display { height: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000390}}
 .window .panel.spectator .display .user { text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000393}}
 .window .panel.spectator a.button { padding: 2px; border: 1px solid black; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\0000397}}
 .window .panel.spectator a.button:hover, .window .panel.spectator a.button:active { background-color: #aee239; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003104}}
 .window .panel.chat { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003108}}
 .window .panel.chat .inner.action { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003112}}
 .window .panel.chat .inner.action form.submit_inside { padding: 6px 6px 6px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003116}}
 .window .panel.chat .inner.action input { border: 1px solid white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003120}}
 .window .panel.chat .inner.action input.msg { float: left; width: 511px; height: 20px; background-color: white; padding: 2px 2px 2px 8px; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003132}}
 .window .panel.chat .inner.action input.msg:hover { color: #333333; border: 1px solid #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003136}}
 .window .panel.chat .inner.action input.btn { background-color: inherit; float: left; padding: 3px 24px 0 8px; height: 26px; display: block; width: 80px; background-image: url(/static/img/base/submit_16x16.png); background-repeat: no-repeat; background-position: right 4px; color: white; font-family: "Frutiger LT W01 65 Bold", Helvetica, Arial, sans-serif; font-size: 14px; padding-right: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003152}}
 .window .panel.chat .inner.action input.btn:hover { background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003155}}
 .window .panel.chat .inner.action a.toggle { background-color: inherit; float: right; padding: 0; height: 26px; width: 51px; display: block; background-image: url(/static/img/icons/widescreen.png); background-repeat: no-repeat; background-position: top left; color: white; font-family: "Frutiger LT W01 65 Bold", Helvetica, Arial, sans-serif; font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003171}}
 .window .panel.chat .inner.action a.toggle:hover, .window .panel.chat .inner.action a.toggle:active { padding: 0 !important; background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003180}}
 .window .panel.chat > .display { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003188}}
 .window .panel.chat > .display { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003191}}
 .window .panel .chatmessages { max-height: 280px; min-height: 140px; overflow: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003197}}
 .window .panel .chatmessages .row { margin: 4px 0 4px 10px; clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003201}}
 .window .panel .chatmessages .row .timestamp { display: block; float: left; padding: 5px 10px 5px 0; color: white; width: 90px; font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003209}}
 .window .panel .chatmessages .row .timestamp .date, .window .panel .chatmessages .row .timestamp .time { display: block; border-right: 1px solid white; padding: 0 4px 0 0; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003214}}
 .window .panel .chatmessages .row .timestamp .time { display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003217}}
 .window .panel .chatmessages .row .user { display: block; float: left; width: 100px; overflow: hidden; color: #a9a9a9; padding: 7px 10px 0 0; font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003226}}
 .window .panel .chatmessages .row .msg { color: white; display: block; float: left; width: 360px; padding: 7px 0 0 0; overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003235}}
 .window .panel .chatmessages .row .msg a { color: white !important; font-weight: bold; font-size: 80%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003264}}
 .base.content.pinax .errorField, .base.content.cms .apps .errorField { text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003267}}
 .base.content.pinax #body, .base.content.cms .apps #body { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003273}}
 .base.content.pinax #body h1, .base.content.cms .apps #body h1 { color: #00a8c6; padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003276}}
 .base.content.pinax #body h2, .base.content.cms .apps #body h2 { color: #40c0cb; padding: 0 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003282}}
 .base.content.pinax #body a, .base.content.cms .apps #body a { color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003286}}
 .base.content.pinax form, .base.content.cms .apps form { color: black; background: #40c0cb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003290}}
 .base.content.pinax form input, .base.content.cms .apps form input { background: #00a8c6; border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003299}}
 .base.content.pinax > #body:empty, .base.content.cms .apps > #body:empty { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003301}}
 .base.content.pinax > #body > *, .base.content.cms .apps > #body > * { padding: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003304}}
 .base.content.pinax > #body > table, .base.content.cms .apps > #body > table { margin-left: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003306}}
 .base.content.pinax > #body > table td, .base.content.cms .apps > #body > table td { padding: 2px 15px 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003309}}
 .base.content.pinax li, .base.content.cms .apps li { padding: 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003312}}
 .base.content.pinax a:link, .base.content.pinax a:visited, .base.content.cms .apps a:link, .base.content.cms .apps a:visited { color: black; padding: 0 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003318}}
 .base.content.pinax p, .base.content.cms .apps p { padding: 4px 0 8px; line-height: 150%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003322}}
 .base.content.pinax .ctrlHolder, .base.content.cms .apps .ctrlHolder { padding: 4px 0; border-bottom: none; margin: 0 0 10px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003329}}
 .base.content.pinax #hint_id_remember, .base.content.cms .apps #hint_id_remember { float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003332}}
 .base.content.pinax .form_block, .base.content.cms .apps .form_block { padding: 4px 8px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003335}}
 .base.content.pinax input[type=submit], .base.content.cms .apps input[type=submit] { float: right; min-width: 120px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003341}}
 .base.content.pinax .user.profile div.group, .base.content.cms .apps .user.profile div.group { padding: 1px 0; line-height: 140% !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003345}}
 .base.content.pinax .user.profile h1, .base.content.pinax .user.profile h2, .base.content.pinax .user.profile h3, .base.content.pinax .user.profile h4, .base.content.pinax .user.profile h5, .base.content.pinax .user.profile h6, .base.content.cms .apps .user.profile h1, .base.content.cms .apps .user.profile h2, .base.content.cms .apps .user.profile h3, .base.content.cms .apps .user.profile h4, .base.content.cms .apps .user.profile h5, .base.content.cms .apps .user.profile h6 { padding: 10px 0 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003348}}
 .base.content.pinax .user.profile a:link, .base.content.pinax .user.profile a:visited, .base.content.cms .apps .user.profile a:link, .base.content.cms .apps .user.profile a:visited { color: black; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_style\.sass}line{font-family:\00003353}}
 .base.content.pinax .user.profile div.group .label, .base.content.cms .apps .user.profile div.group .label { display: block; width: 100px; padding: 0 4px 0 0; }
 
-html { background: url(/static/img/base/bg.c.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #9a9a9a !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\000032}}
+html { background-color: #222222 !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000314}}
 #container { z-index: 2; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000317}}
 #logoscreen { z-index: -1; position: fixed; width: 150px; height: 110px; display: block !important; top: 0; left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000325}}
 #logoscreen .container { width: 200px; height: 200px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000329}}
 #logoscreen .container > a { display: block; padding: 34px 10px; height: 100%; width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000349}}
 body.widescreen #dimscreen { z-index: 3; position: fixed; width: 100%; height: 100%; background-color: black; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; display: block !important; top: 0; left: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=87); opacity: 0.87; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000367}}
 body.widescreen #widescreen { z-index: 10; position: fixed; width: 1210px; display: block; left: 50%; position: fixed; margin: auto -605px; top: 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000388}}
 body.widescreen #widescreen .container.screen { float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000390}}
 body.widescreen #widescreen .container.chat { float: left; width: 530px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000391}}
 body.widescreen #widescreen .container.chat input.msg { width: 361px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\0000396}}
 body.widescreen #widescreen .container.chat #bcast_chatpanel { min-height: 383px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003117}}
 .simple-button input[type=submit], .base.content.pinax input[type=submit], .base.content.cms .apps input[type=submit], div.social.relations .ajax.newsletter input[type=submit] { background-color: inherit; border: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003120}}
 .simple-button input[type=submit]:hover, .base.content.pinax input[type=submit]:hover, .base.content.cms .apps input[type=submit]:hover, div.social.relations .ajax.newsletter input[type=submit]:hover { background-color: #8fbe00; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003125}}
 .linkable { cursor: pointer; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003131}}
 div.swatches ul > li.swatch { display: block; height: 20px; width: 336px; padding: 2px 2px 0 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003137}}
 div.swatches ul > li.swatch.col-interaction-d { background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003139}}
 div.swatches ul > li.swatch.col-interaction-l { background-color: #aee239; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003142}}
 div.swatches ul > li.swatch.col-content-d { background-color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003144}}
 div.swatches ul > li.swatch.col-content-l { background-color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003147}}
 div.swatches ul > li.swatch.col-social-d { background-color: #00a8c6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003150}}
 div.swatches ul > li.swatch.col-social-l { background-color: #40c0cb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003153}}
 div.swatches ul > li.swatch.col-marker-d { background-color: #c900ae; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003155}}
 div.swatches ul > li.swatch.col-marker-l { background-color: #cd41c4; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003160}}
 .x3 .filerteaserplugin_holder h1 > span { font-size: 43px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003163}}
 div.table { width: 680px; display: table; margin: 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003167}}
 div.table .filerteaserplugin_holder > div { background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003177}}
 div.table .row { display: table-row; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003180}}
 div.table .cell { display: table-cell; padding-bottom: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003184}}
 div.table .cell h1, div.table .cell h2, div.table .cell h3, div.table .cell h4 { text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003186}}
 div.table .cell h1 > span, div.table .cell h2 > span, div.table .cell h3 > span, div.table .cell h4 > span { color: yellow; padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003197}}
 div.table .cell h1 a, div.table .cell h1 span, div.table .cell h2 a, div.table .cell h2 span, div.table .cell h3 a, div.table .cell h3 span, div.table .cell h4 a, div.table .cell h4 span { padding: 0px 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003205}}
 div.table .cell p { padding: 5px 10px; margin-top: 20px; color: white; line-height: 150%; text-align: right; font-size: 112%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003223}}
 div.table .cell.x1 { width: 226.667px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003229}}
 div.table .cell.x2 { width: 340px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003234}}
 div.table .cell.x3 { width: 680px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003243}}
 div.table .hoverable.hover h1 > span, div.table .hoverable.hover h2 > span, div.table .hoverable.hover h3 > span, div.table .hoverable.hover h4 > span { color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003245}}
 div.table .hoverable.hover p { color: yellow; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003252}}
 div.sidebar div.panel { margin-bottom: 10px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003265}}
 div.social.relations div.header.stacked { padding: 1px 10px; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003270}}
 div.social.relations div.header.stacked > h1 { color: #00a8c6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003273}}
 div.social.relations div.header.stacked > h2 { color: #40c0cb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003278}}
 div.social.relations > h1 { margin-bottom: 14px; text-align: right; padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003289}}
 div.social.relations .container { min-height: 24px; padding: 8px 0 4px; background-color: #40c0cb; margin-top: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003300}}
 div.social.relations .container.hover { background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003303}}
 div.social.relations .container .icon { width: 36px; height: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003306}}
 div.social.relations .container .wrapper { padding: 0 2px 0 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003312}}
 div.social.relations .container > .icon { background-position: 10px 1px; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003316}}
 div.social.relations .container.facebook > .icon { background-image: url("/static/img/icons/social24/facebook.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003318}}
 div.social.relations .container.youtube > .icon { background-image: url("/static/img/icons/social24/youtube.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003320}}
 div.social.relations .container.twitter > .icon { background-image: url("/static/img/icons/social24/twitter.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003322}}
 div.social.relations .container.skype > .icon { background-image: url("/static/img/icons/social24/skype.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003324}}
 div.social.relations .container.newsletter > .icon { background-image: url("/static/img/icons/social24/newsletter.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003326}}
 div.social.relations .container.email > .icon { background-image: url("/static/img/icons/social24/email.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003328}}
 div.social.relations .container.bug > .icon { background-image: url("/static/img/icons/social24/bug.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003330}}
 div.social.relations .container.flattr { min-height: 22px; padding-left: 10px; padding-top: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003334}}
 div.social.relations .container.flattr #flattr { height: 18px; overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003338}}
 div.social.relations .container.counter { padding-left: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003342}}
 div.social.relations .ajax.newsletter { padding: 4px 2px 4px 38px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003349}}
 div.social.relations .ajax.newsletter .submit > li { padding: 4px 4px 0 0; float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003356}}
 div.social.relations .ajax.newsletter > ul .description { padding-top: 3px; padding-bottom: 3px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003361}}
 div.social.relations .ajax.newsletter > ul > li { padding: 4px 0 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003365}}
 div.social.relations .ajax.newsletter > ul > li > ul.action { padding-top: 3px; padding-bottom: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003368}}
 div.social.relations .ajax.newsletter > ul > li > ul.action a { padding: 2px; border: 1px solid black; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003374}}
 div.social.relations .ajax.newsletter > ul > li > ul.action a:hover, div.social.relations .ajax.newsletter > ul > li > ul.action a:active { background-color: #aee239; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003379}}
 div.social.relations .ajax.newsletter form .helptext { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003382}}
 div.social.relations .ajax.newsletter form .errorlist { padding: 8px 0 0 0; color: #c900ae; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003386}}
 div.social.relations .ajax.newsletter form input { display: block; background-color: #00a8c6; border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003392}}
 div.social.relations .ajax.newsletter form input[type=checkbox] { display: inline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003394}}
 div.social.relations .ajax.newsletter form label { display: block; float: left; width: 70px; padding: 5px 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003399}}
 div.social.relations .ajax.newsletter form #id_submit { margin-left: 70px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003407}}
 .qq-upload-button { /* or inline-block */ width: 40%; padding: 4px 2px 2px; text-align: center; border: 1px solid black; color: black; background-color: yellow; float: right; margin-bottom: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003416}}
 .qq-upload-button:hover { background-color: #8fbe00; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003422}}
 .qq-upload-drop-area { position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 70px; z-index: 2; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003432}}
 .qq-upload-drop-area span { display: block; position: absolute; top: 50%; width: 100%; margin-top: -8px; font-size: 11px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003447}}
 div.sidebar div.panel.filebrowser div.header.stacked { padding: 1px 10px; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003452}}
 div.sidebar div.panel.filebrowser div.header.stacked > h1 { color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003455}}
 div.sidebar div.panel.filebrowser div.header.stacked > h2 { color: yellow; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003460}}
 div.sidebar div.panel.filebrowser > h1 { margin-bottom: 14px; text-align: right; padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003471}}
 div.sidebar div.panel.filebrowser .container { min-height: 24px; padding: 8px 10px 4px; background-color: yellow; margin-top: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003479}}
 div.sidebar div.panel.filebrowser .container.hover { background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003482}}
 div.sidebar div.panel.filebrowser .container .icon { width: 26px; height: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003486}}
 div.sidebar div.panel.filebrowser .container .wrapper { padding: 0 2px 0 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003491}}
 div.sidebar div.panel.filebrowser .container > .icon { background-position: 2px 1px; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003497}}
 div.sidebar div.panel.filebrowser .container.files .listing.files { padding: 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003499}}
 div.sidebar div.panel.filebrowser .container.files .listing.files ul, div.sidebar div.panel.filebrowser .container.files .listing.files li.file { list-style: square inside; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003501}}
 div.sidebar div.panel.filebrowser .container.files .listing.files li.file { color: black; padding: 2px 0 2px 4px; margin-bottom: 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003505}}
 div.sidebar div.panel.filebrowser .container.files .listing.files li.file a { color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003510}}
 div.sidebar div.panel.filebrowser .container.files .listing.files li.file:hover { background-color: #8fbe00; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003513}}
 div.sidebar div.panel.filebrowser .container.files .listing.files li.file:hover a { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003520}}
 div.sidebar div.panel.filebrowser .ajax.newsletter { padding: 4px 2px 4px 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003527}}
 div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li { padding: 4px 0 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003531}}
 div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li > ul.description { padding-top: 3px; padding-bottom: 3px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003535}}
 div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li > ul.action { padding-top: 3px; padding-bottom: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003538}}
 div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li > ul.action a { padding: 2px; border: 1px solid black; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003544}}
 div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li > ul.action a:hover, div.sidebar div.panel.filebrowser .ajax.newsletter > ul > li > ul.action a:active { background-color: #aee239; color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003553}}
 div.sidebar div.panel.event div.header.stacked { padding: 1px 10px; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003558}}
 div.sidebar div.panel.event div.header.stacked > h1 { color: #b3b3b3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003561}}
 div.sidebar div.panel.event div.header.stacked > h2 { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003564}}
 div.sidebar div.panel.event > h1 { margin-bottom: 14px; text-align: right; padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003573}}
 div.sidebar div.panel.event .container { padding: 0; background-color: transparent; margin-top: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003580}}
 div.sidebar div.panel.event .container.event { padding: 2px 4px 2px 10px; margin-bottom: 2px; background-color: black; color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003586}}
 div.sidebar div.panel.event .container.hover { cursor: pointer; background-color: yellow !important; color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003590}}
 div.sidebar div.panel.event .container.hover a { color: black !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003594}}
 div.sidebar div.panel.event .container.now { background-color: #cd41c4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003597}}
 div.sidebar div.panel.event .container.today { background-color: #cd41c4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/site\/_work-in-progress\.sass}line{font-family:\00003601}}
 div.sidebar div.panel.event .container .wrapper { padding: 0; }
 
 /** qTip2 - Pretty powerful tooltips * http://craigsworks.com/projects/qtip2/ * * Version: 2.0.0pre * Copyright 2009-2010 Craig Michael Thompson - http://craigsworks.com * * Dual licensed under MIT or GPLv2 licenses *   http://en.wikipedia.org/wiki/MIT_License *   http://en.wikipedia.org/wiki/GNU_General_Public_License * * Date: Tue Feb 7 21:29:55 2012 +0000 */
 /* Core qTip styles */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000316}}
 .ui-tooltip, .qtip { position: absolute; left: -28000px; top: -28000px; display: none; max-width: 680px; min-width: 50px; font-size: 10.5px; }
 
 /* Fluid class for determining actual width in IE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000328}}
 .ui-tooltip-fluid { display: block; visibility: hidden; position: static !important; float: left !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000334}}
 .ui-tooltip-content { position: relative; padding: 5px 9px; overflow: hidden; text-align: left; word-wrap: break-word; overflow: hidden; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000342}}
 .ui-tooltip-titlebar { position: relative; min-height: 14px; padding: 5px 35px 5px 10px; overflow: hidden; font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000349}}
 .ui-tooltip-titlebar .ui-state-default { position: absolute; right: 4px; top: 50%; margin-top: -9px; cursor: pointer; }
 
 /* Default close button class */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000360}}
 * html .ui-tooltip-titlebar .ui-state-default { top: 16px; }
 
 /* IE fix */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000365}}
 .ui-tooltip-titlebar .ui-icon { display: block; text-indent: -1000em; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000370}}
 .ui-tooltip-icon .ui-icon { display: block; text-indent: -1000em; width: 18px; height: 14px; text-align: center; text-indent: 0; color: inherit; background: transparent none no-repeat -100em -100em; }
 
 /* Applied to 'focused' tooltips e.g. most recently displayed/interacted with */
 /* Applied on hover of tooltips i.e. added/removed on mouseenter/mouseleave respectively */
 /* Default tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000389}}
 .ui-tooltip-default { width: 680px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000391}}
 .ui-tooltip-default .ui-tooltip-titlebar, .ui-tooltip-default .ui-tooltip-content { background-color: white; color: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000394}}
 .ui-tooltip-default .ui-tooltip-titlebar { background-color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000396}}
 .ui-tooltip-default .ui-tooltip-icon { background: white; color: #777777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\0000399}}
 .ui-tooltip-default .ui-tooltip-titlebar .ui-state-hover { border-color: white; color: #111111; }
 
 /* Tips plugin */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003105}}
 .ui-tooltip .ui-tooltip-tip { margin: 0 auto; overflow: hidden; z-index: 10; position: absolute; line-height: 0.1px !important; font-size: 0.1px !important; color: #123456; background: transparent; border: 0px dashed transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003115}}
 .ui-tooltip .ui-tooltip-tip * { position: absolute; line-height: 0.1px !important; font-size: 0.1px !important; color: #123456; background: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003122}}
 .ui-tooltip .ui-tooltip-tip canvas { top: 0; left: 0; }
 
 /* Modal plugin */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003128}}
 #qtip-overlay { position: fixed; left: -10000em; top: -10000em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003132}}
 #qtip-overlay.blurs { cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003134}}
 #qtip-overlay div { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: black; opacity: 0.9; filter: alpha(opacity=90); -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; }
 
 /* Applied to modals with show.modal.blur set to true */
 /* Change opacity of overlay here */
 /* Light tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003152}}
 .ui-tooltip-light .ui-tooltip-titlebar { border-color: #e2e2e2; color: #454545; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003155}}
 .ui-tooltip-light .ui-tooltip-content { border-color: #e2e2e2; color: #454545; background-color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003159}}
 .ui-tooltip-light .ui-tooltip-titlebar { background-color: #f1f1f1; }
 
 /* Dark tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003165}}
 .ui-tooltip-dark .ui-tooltip-titlebar { border-color: #303030; color: #f3f3f3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003168}}
 .ui-tooltip-dark .ui-tooltip-content { border-color: #303030; color: #f3f3f3; background-color: #505050; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003172}}
 .ui-tooltip-dark .ui-tooltip-titlebar { background-color: #404040; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003174}}
 .ui-tooltip-dark .ui-tooltip-icon { border-color: #444444; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003176}}
 .ui-tooltip-dark .ui-tooltip-titlebar .ui-state-hover { border-color: #303030; }
 
 /* Cream tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003182}}
 .ui-tooltip-cream .ui-tooltip-titlebar { border-color: #f9e98e; color: #a27d35; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003185}}
 .ui-tooltip-cream .ui-tooltip-content { border-color: #f9e98e; color: #a27d35; background-color: #fbf7aa; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003189}}
 .ui-tooltip-cream .ui-tooltip-titlebar { background-color: #f0de7d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003191}}
 .ui-tooltip-cream .ui-state-default .ui-tooltip-icon { background-position: -82px 0; }
 
 /* Red tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003197}}
 .ui-tooltip-red .ui-tooltip-titlebar { border-color: #d95252; color: #912323; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003200}}
 .ui-tooltip-red .ui-tooltip-content { border-color: #d95252; color: #912323; background-color: #f78b83; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003204}}
 .ui-tooltip-red .ui-tooltip-titlebar { background-color: #f06d65; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003206}}
 .ui-tooltip-red .ui-state-default .ui-tooltip-icon { background-position: -102px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003208}}
 .ui-tooltip-red .ui-tooltip-icon, .ui-tooltip-red .ui-tooltip-titlebar .ui-state-hover { border-color: #d95252; }
 
 /* Green tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003214}}
 .ui-tooltip-green .ui-tooltip-titlebar { border-color: #90d93f; color: #3f6219; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003217}}
 .ui-tooltip-green .ui-tooltip-content { border-color: #90d93f; color: #3f6219; background-color: #caed9e; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003221}}
 .ui-tooltip-green .ui-tooltip-titlebar { background-color: #b0de78; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003223}}
 .ui-tooltip-green .ui-state-default .ui-tooltip-icon { background-position: -42px 0; }
 
 /* Blue tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003229}}
 .ui-tooltip-blue .ui-tooltip-titlebar { border-color: #add9ed; color: #5e99bd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003232}}
 .ui-tooltip-blue .ui-tooltip-content { border-color: #add9ed; color: #5e99bd; background-color: #e5f6fe; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003236}}
 .ui-tooltip-blue .ui-tooltip-titlebar { background-color: #d0e9f5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003238}}
 .ui-tooltip-blue .ui-state-default .ui-tooltip-icon { background-position: -2px 0; }
 
 /* Add shadows to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE6+, Safari 2+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003243}}
 .ui-tooltip-shadow { -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); -moz-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003247}}
 .ui-tooltip-shadow .ui-tooltip-titlebar, .ui-tooltip-shadow .ui-tooltip-content { filter: progid:DXImageTransform.Microsoft.Shadow(Color='gray', Direction=135, Strength=3); -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Color='gray', Direction=135, Strength=3)"; _margin-bottom: -3px; /* IE6 */ .margin-bottom: -3px; /* IE7 */ }
 
 /* Add rounded corners to your tooltips in: FF3+, Chrome 2+, Opera 10.6+, IE9+, Safari 2+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003257}}
 .ui-tooltip-rounded, .ui-tooltip-tipsy, .ui-tooltip-youtube { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003261}}
 .ui-tooltip-rounded .ui-tooltip-content, .ui-tooltip-tipsy .ui-tooltip-content, .ui-tooltip-youtube .ui-tooltip-content { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003266}}
 .ui-tooltip-rounded .ui-tooltip-titlebar, .ui-tooltip-tipsy .ui-tooltip-titlebar, .ui-tooltip-youtube .ui-tooltip-titlebar { -moz-border-radius: 5px 5px 0 0; -webkit-border-radius: 5px 5px 0 0; border-radius: 5px 5px 0 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003271}}
 .ui-tooltip-rounded .ui-tooltip-titlebar + .ui-tooltip-content, .ui-tooltip-tipsy .ui-tooltip-titlebar + .ui-tooltip-content { -moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003276}}
 .ui-tooltip-youtube { -webkit-box-shadow: 0 0 3px #333333; -moz-box-shadow: 0 0 3px #333333; box-shadow: 0 0 3px #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003277}}
 .ui-tooltip-youtube .ui-tooltip-titlebar { _margin-bottom: 0; /* IE6 */ .margin-bottom: 0; /* IE7 */ background: transparent; background: rgba(0, 0, 0, 0.85); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000)"; color: white; border-color: #cccccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003278}}
 .ui-tooltip-youtube .ui-tooltip-titlebar + .ui-tooltip-content { -moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003295}}
 .ui-tooltip-youtube .ui-tooltip-content { _margin-bottom: 0; /* IE6 */ .margin-bottom: 0; /* IE7 */ background: transparent; background: rgba(0, 0, 0, 0.85); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000)"; color: white; border-color: #cccccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003306}}
 .ui-tooltip-youtube .ui-tooltip-icon { border-color: #222222; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003308}}
 .ui-tooltip-youtube .ui-tooltip-titlebar .ui-state-hover { border-color: #303030; }
 
 /* Youtube tooltip style */
 /* jQuery TOOLS Tooltip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003315}}
 .ui-tooltip-jtools { background: #232323; background: rgba(0, 0, 0, 0.7); background-image: -moz-linear-gradient(top, #717171, #232323); background-image: -webkit-gradient(linear, left top, left bottom, from(#717171), to(#232323)); border: 2px solid #dddddd; border: 2px solid #f1f1f1; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: 0 0 12px #333333; -moz-box-shadow: 0 0 12px #333333; box-shadow: 0 0 12px #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003328}}
 .ui-tooltip-jtools .ui-tooltip-titlebar { filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171,endColorstr=#4A4A4A); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171,endColorstr=#4A4A4A)"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003331}}
 .ui-tooltip-jtools .ui-tooltip-content { filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A,endColorstr=#232323); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A,endColorstr=#232323)"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003334}}
 .ui-tooltip-jtools .ui-tooltip-titlebar, .ui-tooltip-jtools .ui-tooltip-content { background: transparent; color: white; border: 0 dashed transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003338}}
 .ui-tooltip-jtools .ui-tooltip-icon { border-color: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003340}}
 .ui-tooltip-jtools .ui-tooltip-titlebar .ui-state-hover { border-color: #333333; }
 
 /* IE Specific */
 /* Cluetip style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003347}}
 .ui-tooltip-cluetip { -webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4); -moz-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4); box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003351}}
 .ui-tooltip-cluetip .ui-tooltip-titlebar { background-color: #87876a; color: white; border: 0 dashed transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003355}}
 .ui-tooltip-cluetip .ui-tooltip-content { background-color: #d9d9c2; color: #111111; border: 0 dashed transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003359}}
 .ui-tooltip-cluetip .ui-tooltip-icon { border-color: #808064; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003361}}
 .ui-tooltip-cluetip .ui-tooltip-titlebar .ui-state-hover { border-color: #696952; color: #696952; }
 
 /* Tipsy style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003367}}
 .ui-tooltip-tipsy { border: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003369}}
 .ui-tooltip-tipsy .ui-tooltip-titlebar, .ui-tooltip-tipsy .ui-tooltip-content { _margin-bottom: 0; /* IE6 */ .margin-bottom: 0; /* IE7 */ background: transparent; background: rgba(0, 0, 0, 0.87); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9000000,endColorstr=#D9000000)"; color: white; border: 0px transparent; font-size: 15px; font-family: "Lucida Grande", sans-serif; font-weight: bold; text-shadow: 0 1px black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003385}}
 .ui-tooltip-tipsy .ui-tooltip-titlebar { padding: 6px 35px 0 10; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003387}}
 .ui-tooltip-tipsy .ui-tooltip-content { padding: 6px 10; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003389}}
 .ui-tooltip-tipsy .ui-tooltip-icon { border-color: #222222; text-shadow: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003392}}
 .ui-tooltip-tipsy .ui-tooltip-titlebar .ui-state-hover { border-color: #303030; }
 
 /* Tipped style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003398}}
 .ui-tooltip-tipped .ui-tooltip-titlebar, .ui-tooltip-tipped .ui-tooltip-content { border: 3px solid #959fa9; filter: none; -ms-filter: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003402}}
 .ui-tooltip-tipped .ui-tooltip-titlebar { background: #3a79b8; background-image: -moz-linear-gradient(top, #3a79b8, #2e629d); background-image: -webkit-gradient(linear, left top, left bottom, from(#3a79b8), to(#2e629d)); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8,endColorstr=#2E629D); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8,endColorstr=#2E629D)"; color: white; font-weight: normal; font-family: serif; border-bottom-width: 0; -moz-border-radius: 3px 3px 0 0; -webkit-border-radius: 3px 3px 0 0; border-radius: 3px 3px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003415}}
 .ui-tooltip-tipped .ui-tooltip-content { background-color: #f9f9f9; color: #454545; -moz-border-radius: 0 0 3px 3px; -webkit-border-radius: 0 0 3px 3px; border-radius: 0 0 3px 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003421}}
 .ui-tooltip-tipped .ui-tooltip-icon { border: 2px solid #285589; background: #285589; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003424}}
 .ui-tooltip-tipped .ui-tooltip-icon .ui-icon { background-color: #fbfbfb; color: #555555; }
 
 /* IE9 fix - removes all filters */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/lib\/_jqtip\.sass}line{font-family:\00003431}}
 .ui-tooltip:not(.ie9haxors) div.ui-tooltip-content, .ui-tooltip:not(.ie9haxors) div.ui-tooltip-titlebar { filter: none; -ms-filter: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000315}}
 .holder.navigation a { font-size: 13px; font-family: "FrutigerLTW01-45Light", Helvetica, Arial, sans-serif; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000319}}
 #topbar { z-index: 1000; background-color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000323}}
 #subbar { border-top: 2px solid #aee239; z-index: 0; background-color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000329}}
 #subbar .holder.navigation { z-index: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000333}}
 #subbar .holder.navigation.sub { background-color: transparent; height: 24px; padding-left: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000342}}
 #subbar .holder.navigation.sub a { text-decoration: none; text-transform: uppercase; padding: 5px 10px 0; height: 19px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000354}}
 #subbar .holder.navigation.sub li:hover ul, #subbar .holder.navigation.sub li.sfHover > ul { top: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000356}}
 #subbar .holder.navigation.sub li:hover a, #subbar .holder.navigation.sub li.sfHover a { background: #8fbe00; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000359}}
 #subbar .holder.navigation.sub li:hover ul a, #subbar .holder.navigation.sub li.sfHover ul a { background: black; color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000362}}
 #subbar .holder.navigation.sub li:hover ul a:hover, #subbar .holder.navigation.sub li.sfHover ul a:hover { background: #8fbe00; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000367}}
 #subbar .holder.navigation.sub li.sibling > ul > li > ul { top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000374}}
 #subbar .holder.navigation.sub li.selected > a, #subbar .holder.navigation.sub > li.ancestor > a { background-color: #aee239; color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\0000390}}
 .holder.navigation { list-style: none; margin: 0; padding: 0; z-index: 1001; position: relative; height: 24px; padding-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003100}}
 .holder.navigation > ul { height: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003122}}
 .holder.navigation li { float: left; margin: 0; padding: 0; position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003127}}
 .holder.navigation li a { display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003133}}
 .holder.navigation a { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003138}}
 .holder.navigation.base { /* first level */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003141}}
 .holder.navigation.base a { text-decoration: none; text-transform: uppercase; padding: 5px 10px 0; height: 19px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003152}}
 .holder.navigation.base li:hover ul, .holder.navigation.base li.sfHover > ul { top: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003154}}
 .holder.navigation.base li:hover a, .holder.navigation.base li.sfHover a { background: #8fbe00; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003157}}
 .holder.navigation.base li:hover ul a, .holder.navigation.base li.sfHover ul a { background: black; color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003160}}
 .holder.navigation.base li:hover ul a:hover, .holder.navigation.base li.sfHover ul a:hover { background: #8fbe00; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003165}}
 .holder.navigation.base li.sibling > ul > li > ul { top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003171}}
 .holder.navigation.base > ul { margin-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003175}}
 .holder.navigation.base > ul a { display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003181}}
 .holder.navigation.base > ul a:hover { background-color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003186}}
 .holder.navigation.base > ul > li { margin: 0 0 0 0; padding: 0; /* second level */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003196}}
 .holder.navigation.base > ul > li > ul { margin-top: 2px; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003206}}
 .holder.navigation.base > ul > li.selected > a, .holder.navigation.base > ul > li.ancestor > a { background-color: #aee239; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003214}}
 .holder.navigation.base > ul > li.ancestor ul > li.selected > a { background-color: #aee239; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003219}}
 .holder.navigation.base > ul > li ul > li > ul { padding: 0 0 0 20px; display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003223}}
 .holder.navigation.base > ul > li ul > li > ul.ancestor ul > li > ul { padding: 0 0 0 20px; display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003248}}
 .holder.navigation.profile li a { height: 21px; display: block; padding: 4px; color: #aee239; text-decoration: none; text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003255}}
 .holder.navigation.profile li a:hover { color: black; background-color: #aee239; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003259}}
 .holder.navigation.profile li.selected a { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_navigation\.sass}line{font-family:\00003262}}
 .holder.navigation.profile a.fb_connect { background-image: url(/static/img/base/fb.connect.16x16.png); background-repeat: no-repeat; background-position: 0px 3px; padding-left: 18px; margin-left: 10px; }
 
 /* ------------------------------------------------------------------------------  Copyright (c) 2010, Dragan Babic  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  ------------------------------------------------------------------------------ */
 /* #############################   GENERALS   ################################### */
 /* ------------------------------------------------------------------------------ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000330}}
 .uniForm { margin: 0; padding: 0; position: relative; z-index: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000335}}
 .uniForm fieldset { border: none; margin: 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000339}}
 .uniForm fieldset legend { margin: 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000342}}
 .uniForm .ctrlHolder, .uniForm .buttonHolder { margin: 0; padding: 0; clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000346}}
 .uniForm:after, .uniForm .buttonHolder:after { content: "."; display: block; height: 0; line-height: 0; font-size: 0; clear: both; min-height: 0; visibility: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000356}}
 .uniForm .ctrlHolder:after, .uniForm .ctrlHolder .multiField:after { content: "."; display: block; height: 0; line-height: 0; font-size: 0; clear: both; min-height: 0; visibility: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000365}}
 .uniForm .inlineLabel:after { content: "."; display: block; height: 0; line-height: 0; font-size: 0; clear: both; min-height: 0; visibility: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000374}}
 .uniForm label, .uniForm button { cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000376}}
 .uniForm label, .uniForm .label { display: block; float: none; margin: 0 0 0.5em 0; padding: 0; line-height: 100%; width: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000383}}
 .uniForm .textInput, .uniForm .fileUpload, .uniForm .selectInput, .uniForm select, .uniForm textarea { float: left; width: 53%; margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000387}}
 .uniForm .readOnlyLabel { margin: 0; font-size: 1em; font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000391}}
 .uniForm .readOnly { font-size: 0.85em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000393}}
 .uniForm .readOnly .choiceLabel { color: #777777; text-transform: uppercase; font-size: 0.75em; letter-spacing: 0.15em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\0000398}}
 .uniForm .formHint { float: right; width: 43%; margin: 0; clear: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003103}}
 .uniForm ul { float: left; width: 53%; margin: 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003108}}
 .uniForm ul li { margin: 0 0 0.5em 0; list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003111}}
 .uniForm ul li label { margin: 0; float: none; display: block; overflow: visible; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003116}}
 .uniForm ul.alternate li { float: left; width: 30%; margin-right: 3%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003120}}
 .uniForm ul.alternate li label { float: none; display: block; width: 98%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003124}}
 .uniForm ul .textInput, .uniForm ul .selectInput, .uniForm ul select { width: 98%; margin-top: 0.5em; display: block; float: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003130}}
 .uniForm ul.alternate .textInput, .uniForm ul.alternate .selectInput, .uniForm ul.alternate select { width: 98%; margin-top: 0.5em; display: block; float: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003135}}
 .uniForm label em, .uniForm .label em { float: left; width: 1em; margin: 0 0 0 -1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003140}}
 .uniForm .inlineLabels label, .uniForm .inlineLabels .label { float: left; margin: 0.3em 2% 0 0; padding: 0; line-height: 1; position: relative; width: 32%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003147}}
 .uniForm .inlineLabels .readOnlyLabel { float: left; margin: 0.3em 2% 0 0; padding: 0; line-height: 1; position: relative; width: 32%; margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003155}}
 .uniForm .inlineLabels .textInput, .uniForm .inlineLabels .fileUpload, .uniForm .inlineLabels .selectInput, .uniForm .inlineLabels select, .uniForm .inlineLabels textarea { float: left; width: 64%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003158}}
 .uniForm .inlineLabels .formHint { clear: both; float: none; width: auto; margin-left: 34%; position: static; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003164}}
 .uniForm .inlineLabels ul { float: left; width: 66%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003167}}
 .uniForm .inlineLabels ul li { margin: 0.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003169}}
 .uniForm .inlineLabels ul li label { float: none; display: block; width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003173}}
 .uniForm .inlineLabels ul.alternate li { margin-right: 3%; margin-top: 0.25em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003177}}
 .uniForm .inlineLabels ul li label .textInput, .uniForm .inlineLabels ul li label textarea, .uniForm .inlineLabels ul li label select { float: none; display: block; width: 98%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003181}}
 .uniForm .inlineLabels .readOnly { float: right; width: 66%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003184}}
 .uniForm .inlineLabels label em, .uniForm .inlineLabels .label em { display: block; float: none; margin: 0; position: absolute; right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003190}}
 .uniForm legend { color: inherit; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003192}}
 .uniForm .secondaryAction { float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003194}}
 .uniForm .inlineLabel input, .uniForm .inlineLabels .inlineLabel input, .uniForm .blockLabels .inlineLabel input, .uniForm label input { float: none; display: inline; margin: 0; padding: 0; border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003201}}
 .uniForm .buttonHolder .inlineLabel, .uniForm .buttonHolder label { float: left; margin: 0.5em 0 0 0; width: auto; max-width: 60%; text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003207}}
 .uniForm .inlineLabels .noLabel ul { margin-left: 34%; /* Match to width of label + gap to field */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003210}}
 .uniForm .small { width: 30% !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003212}}
 .uniForm .medium { width: 45% !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003215}}
 .uniForm .auto { width: auto !important; height: auto !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003218}}
 .uniForm .small, .uniForm .medium, .uniForm .auto { margin-right: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_base\.sass}line{font-family:\00003220}}
 .uniForm .col { float: left; width: 50%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\000037}}
 .uniForm legend { font-weight: bold; margin: 0; padding: 1.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000311}}
 .uniForm .ctrlHolder { padding: 5px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000313}}
 .uniForm .ctrlHolder.focused { background: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000316}}
 .uniForm .buttonHolder { text-align: right; margin: 2px 0; padding: 1px; border-radius: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000321}}
 .uniForm .buttonHolder .primaryAction { min-width: 120px; padding: 4px; background: inherit; border: 1px solid black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000326}}
 .uniForm .buttonHolder .primaryAction:active { position: relative; top: 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000329}}
 .uniForm .secondaryAction { text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000331}}
 .uniForm button.secondaryAction { background: transparent; border: none; color: #777777; margin: 10px 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000338}}
 .uniForm .inlineLabels label em, .uniForm .inlineLabels .label em { font-style: normal; font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000341}}
 .uniForm label small { color: #777777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000343}}
 .uniForm .textInput, .uniForm .passwordinput { padding: 4px 4px; border: 1px solid #00a8c6; background: #00a8c6; width: 64%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000348}}
 .uniForm textarea { padding: 4px 4px; border: 1px solid #00a8c6; background: #00a8c6; height: 50px; min-height: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000355}}
 .uniForm ul li label { /* font-size: .85em */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000359}}
 .uniForm .ctrlHolder .textInput:focus, .uniForm .ctrlHolder textarea:focus { outline: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000361}}
 .uniForm .formHint { /* font-size: .85em */ color: #777777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000364}}
 .uniForm .inlineLabels .formHint { padding: 4px 5px 0 0; font-size: 10px; color: black; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000371}}
 .uniForm .ctrlHolder.focused .formHint { color: #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000373}}
 .uniForm #errorMsg { background: #ffdfdf; border: 1px solid #f3afb5; margin: 0 0 1.5em 0; padding: 0 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000379}}
 .uniForm #errorMsg ol { margin: 0 0 1.5em 0; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000382}}
 .uniForm #errorMsg ol li { margin: 0 0 3px 1.5em; padding: 7px; background: #f6bec1; position: relative; font-size: 11px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000390}}
 .uniForm .ctrlHolder.error, .uniForm .ctrlHolder.focused.error { color: red; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\0000396}}
 .uniForm .ctrlHolder.error input.error, .uniForm .ctrlHolder.error select.error, .uniForm .ctrlHolder.error textarea.error { color: red; margin: 0 0 6px 0; padding: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\00003100}}
 .uniForm #okMsg { background: #c8ffbf; border: 1px solid #a2ef95; margin: 0 0 1.5em 0; padding: 1.5em; text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\00003107}}
 .uniForm #okMsg p { margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\00003109}}
 .uniForm .col { margin-bottom: 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\00003112}}
 .uniForm .col.first { width: 49%; float: left; clear: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/uniform\/_dock18\.sass}line{font-family:\00003116}}
 .uniForm .col.last { width: 49%; float: right; clear: none; margin-right: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\000031}}
 .qq-uploader { position: relative; width: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000310}}
 .qq-upload-button-focus { outline: 1px dotted black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000318}}
 .qq-upload-list { color: black; margin: 15px 35px; padding: 0; list-style: disc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000323}}
 .qq-upload-list li { margin: 0; padding: 0; line-height: 15px; font-size: 12px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000329}}
 .qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text { margin-right: 7px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000334}}
 .qq-upload-spinner { display: inline-block; background: url("/static/img/base/loading.gif"); width: 15px; height: 15px; vertical-align: text-bottom; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000342}}
 .qq-upload-size, .qq-upload-cancel { font-size: 11px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000345}}
 .qq-upload-failed-text { display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_qq-upload\.sass}line{font-family:\0000348}}
 .qq-upload-fail .qq-upload-failed-text { display: inline; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\000032}}
 div.jGrowl { z-index: 9999; color: white; font-size: 12px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\000036}}
 div.ie6 { position: absolute; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\000038}}
 div.ie6.top-right { right: auto; bottom: auto; left: expression(( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' ); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000313}}
 div.ie6.top-left { left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' ); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000316}}
 div.ie6.bottom-right { left: expression(( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression(( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' ); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000319}}
 div.ie6.bottom-left { left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression(( 0 - jGrowl.offsetHeight + ( document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' ); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000322}}
 div.ie6.center { left: expression(( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression(( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' ); width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000326}}
 div.jGrowl { position: absolute; }
 
 /*Special IE6 Style Positioning */
 /*Normal Style Positions */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000333}}
 body > div.jGrowl { position: fixed; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000338}}
 div.jGrowl.top-left { left: 0px; top: 19px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000341}}
 div.jGrowl.top-right { right: 0px; top: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000344}}
 div.jGrowl.bottom-left { left: 0px; bottom: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000347}}
 div.jGrowl.bottom-right { right: 0px; bottom: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000350}}
 div.jGrowl.center { top: 0px; width: 50%; left: 25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000355}}
 div.center div.jGrowl-notification, div.center div.jGrowl-closer { margin-left: auto; margin-right: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000359}}
 div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer { background-color: black; opacity: 0.85; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85); zoom: 1; width: 235px; padding: 10px; margin-top: 5px; margin-bottom: 5px; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 1em; text-align: left; display: none; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000375}}
 div.jGrowl div.jGrowl-notification { min-height: 40px; margin: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000378}}
 div.jGrowl div.jGrowl-closer { margin: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000381}}
 div.jGrowl div.jGrowl-notification div.jGrowl-header { font-weight: bold; font-size: 0.85em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000384}}
 div.jGrowl div.jGrowl-notification div.jGrowl-close { z-index: 99; float: right; font-weight: bold; font-size: 1em; cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\0000390}}
 div.jGrowl div.jGrowl-closer { padding-top: 4px; padding-bottom: 4px; cursor: pointer; font-size: 0.9em; font-weight: bold; text-align: center; }
 
 /*Cross Browser Styling */
 /*Hide jGrowl when printing */
-@media print { div.jGrowl { display: none; } }
+@media print { @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/asif\/_jgrowl\.sass}line{font-family:\00003102}}
+  div.jGrowl { display: none; } }
 /* structure: body #container div#root div#toolbar div#header div#content div#base div#sidebar div#footer  div.inner */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\0000389}}
 body { padding: 0; pargin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\0000393}}
 body > #container { width: 960px; margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\0000397}}
 body #root { width: 960px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\0000399}}
 body #root #toolbar, body #root #content { overflow: hidden; *zoom: 1; margin: 0 0 0 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003102}}
 body #root #content > #base { width: 680px; margin: 0 10px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003105}}
 body #root #sidebar { width: 270px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003108}}
 body #footer { margin: 0 0 0 0px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003112}}
 div#content { padding-bottom: 10px; padding-top: 10px !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003140}}
 a { padding: 0 2px; text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003143}}
 a:link, a:visited { color: #8fbe00; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003146}}
 a:hover, a:active { background-color: #8fbe00; color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003154}}
 div#header { margin: 10px 0 20px 0; display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003160}}
 div#sidebar { margin: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003171}}
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a { font-style: normal; text-decoration: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003189}}
 .detail.event { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003194}}
 .detail.event div.padded { padding: 0 0 5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003197}}
 .detail.event div.padded p { line-height: 150%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003209}}
 .detail.event .message { padding: 5px; margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003214}}
 .detail.event .message a { text-decoration: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003221}}
 .expandable.main.window { margin: 0; pading: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003228}}
 .expandable.main.window .header { display: none; text-align: right; padding: 0 8px 0 8px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003241}}
 .expandable.main.window #cuepoints p { padding: 10px; line-height: 150%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003245}}
 .expandable.main.window #cuepoints p a:link { text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003256}}
 .expandable.main.window #cuepoints.filebrowser { padding: 0; max-height: 580px; overflow: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003265}}
 .expandable.main.window #cuepoints.filebrowser > .action .ext-form { padding: 2.5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003270}}
 .expandable.main.window #cuepoints.filebrowser > .display { padding: 5px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003272}}
 .expandable.main.window #cuepoints.filebrowser > .display a { text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003275}}
 .expandable.main.window #cuepoints.filebrowser > .display h4, .expandable.main.window #cuepoints.filebrowser > .display h5, .expandable.main.window #cuepoints.filebrowser > .display p { padding: 2px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003278}}
 .expandable.main.window #cuepoints.filebrowser > .display ul { padding: 10px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003286}}
 .expandable.main.window #cuepoints.spectator { padding: 0; max-height: 280px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003293}}
 .expandable.main.window #cuepoints.spectator .spectatormessages { padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003295}}
 .expandable.main.window #cuepoints.spectator .spectatormessages:empty { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003298}}
 .expandable.main.window #cuepoints.spectator .spectatormessages span { padding: 0 10px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003302}}
 .expandable.main.window #cuepoints.spectator a#spectates { color: black; padding: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003305}}
 .expandable.main.window #cuepoints.spectator a#spectates span { background-image: url(/static/img/base/hack.check_p.png); background-position: 0 0px; background-repeat: no-repeat; padding: 0 0 2px 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003316}}
 .expandable.main.window #cuepoints.spectator a#spectates.spectators-spectated { font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003319}}
 .expandable.main.window #cuepoints.spectator a#spectates.spectators-spectated span { background-image: url(/static/img/base/hack.check_a.png); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003325}}
 .expandable.main.window #cuepoints.spectator > .action .ext-form { padding: 2.5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003330}}
 .expandable.main.window #cuepoints.spectator > .display { padding: 5px; padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003333}}
 .expandable.main.window #cuepoints.spectator > .display a { text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003342}}
 .expandable.main.window #cuepoints.user > .action { padding: 2.5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003346}}
 .expandable.main.window #cuepoints.user > .display { padding: 2.5px 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003349}}
 .expandable.main.window #cuepoints.user > .display p, .expandable.main.window #cuepoints.user > .display div.group { padding: 4px 0; line-height: 140% !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003356}}
 .expandable.main.window #cuepoints.user > .display div.group .label { display: block; padding: 0 4px 0 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003393}}
 .base.content .filerfolderplugin_holder { margin: 2px 0 2px; background-color: transparent; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; padding: 10px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003399}}
 .base.content .filerfolderplugin_holder .expandable.main.window { border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003402}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003405}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a { display: block; float: left; margin: 0 10px 10px 0; background-color: black; width: 331px; height: 242px; overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003412}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a .info, .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a .info a { color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003416}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a:hover .info, .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a:hover .info a { color: #8fbe00 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003424}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow > a:nth-child(even) { margin-right: 0 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003427}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow img { background-color: black; border: none; padding: 0; width: 335px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003433}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow .wrapper { height: 224px; overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003437}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow .info { padding: 5px 8px 0 0; text-align: right; font-size: 82%; text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003444}}
 .base.content .filerfolderplugin_holder .cmsplugin_filer_folder_slidshow .info a { text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003453}}
 .base.content .filerfolderplugin_holder > div.slideshow > div { clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003458}}
 .base.content .filerfolderplugin_holder p { line-height: 140%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003465}}
 .base.content .filerfolderplugin_holder:nth-child(3) { padding: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003469}}
 .base.content .filerfolderplugin_holder p, .base.content .filerfolderplugin_holder ul { padding: 4px 0 12px 0; list-style: square inside; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003472}}
 .base.content .filerfolderplugin_holder p > li, .base.content .filerfolderplugin_holder ul > li { padding: 2px 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003478}}
 .base.content .filerfolderplugin_holder:nth-child(3) { margin: 0 0 2px 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003485}}
 .sidebar .textplugin_holder { background-color: transparent; padding: 5px 0 5px 0; margin: 0 0 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003491}}
 .sidebar .textplugin_holder p { line-height: 140%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003497}}
 .sidebar .textplugin_holder p { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003503}}
 .sidebar .textplugin_holder:first-child { margin: 0 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003507}}
 .sidebar .cmspollplugin_holder { background-color: transparent; padding: 5px 0 2px 0; margin: 0 0 4px 0; font-family: "Lucida Console", Monaco, "Courier New", "Courier"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003512}}
 .sidebar .cmspollplugin_holder p { line-height: 140%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003515}}
 .sidebar .cmspollplugin_holder > p > a { font-size: 110%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003520}}
 .sidebar .cmspollplugin_holder input { margin: 4px 0 4px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003523}}
 .sidebar .cmspollplugin_holder p { padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003528}}
 .sidebar .cmspollplugin_holder:first-child { margin: 0 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003534}}
 .sidebar .cmspollplugin_holder label { width: 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003539}}
 .sidebar .cmspollplugin_holder p { margin: 0 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003543}}
 .sidebar .cmspollplugin_holder ul.errorlist li { font-size: 90%; padding: 10px 0 2px 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003548}}
 .sidebar .cmspollplugin_holder p.display .small { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003552}}
 .sidebar .cmspollplugin_holder p input, .sidebar .cmspollplugin_holder p textarea { border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003558}}
 .sidebar .cmspollplugin_holder p textarea { height: 100px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003570}}
 #invitation { padding: 10px; margin-bottom: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000311}}
 #invitation ul.errorlist li { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000315}}
 #invitation div.display .small { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000318}}
 #invitation div input { border: none; height: 18px; padding-left: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000323}}
 #invitation div.input { margin: 10px 0 0 0; width: 210px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000327}}
 #invitation div.action { margin: 10px 0 0 0; width: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000330}}
 #invitation div.action input { height: 20px; font-weight: normal; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000335}}
 #invitation div.action input:hover { color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003578}}
 #newsletter { padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000311}}
 #newsletter ul.errorlist li { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000315}}
 #newsletter div.display .small { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000318}}
 #newsletter div input { border: none; height: 18px; padding-left: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000323}}
 #newsletter div.input { margin: 10px 0 0 0; width: 210px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000327}}
 #newsletter div.action { margin: 10px 0 0 0; width: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000330}}
 #newsletter div.action input { height: 20px; font-weight: normal; color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/mixins\/_base\.sass}line{font-family:\0000335}}
 #newsletter div.action input:hover { color: black; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003588}}
 #wrapper_feedback { min-height: 122px; padding: 10px; width: 400px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003589}}
 #wrapper_feedback.loading { display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003601}}
 #wrapper_feedback label { width: 100px; display: block; float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003606}}
 #wrapper_feedback p { margin: 0 0 2px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003610}}
 #wrapper_feedback ul.errorlist li { font-size: 90%; padding: 10px 0 2px 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003615}}
 #wrapper_feedback p.display .small { font-size: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003619}}
 #wrapper_feedback p input, #wrapper_feedback p textarea { border: none; width: 300px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003623}}
 #wrapper_feedback p input { height: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003625}}
 #wrapper_feedback p textarea { height: 100px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003636}}
 .fb_edge_widget_with_comment { position: absolute !important; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003647}}
 .window .action .social ul > li.facebook { width: 140px; padding: 6px 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003650}}
 .window .action .social ul > li.google { padding: 6px 0 0 0; width: 62px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003662}}
 div#player_wrapper > div { width: 100%; padding: 292px 0 0px 0; text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003667}}
 div#player_wrapper > div #chat_f { height: 71px; padding-right: 8px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003672}}
 div#player_wrapper > div #chat_f.short { color: red; text-decoration: blink; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003676}}
 div#player_wrapper > div span { font-family: Arial; font-size: 60px; font-weight: bold; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003683}}
 .horizontal.tags li.tag { font-size: 100%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003689}}
 .base.content.cms ul#messages li { padding: 10px; font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003694}}
 .base.content.cms ul#messages li a > small { display: none; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003707}}
 .base.content.cms #site_wide_announcements { display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003711}}
 .base.content.cms #site_wide_announcements .announcment.action { padding: 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003715}}
 .base.content.cms #site_wide_announcements .announcment.display { padding: 5px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003722}}
 .base.content.cms #site_wide_announcements ul.main { padding-left: 20px; background: no-repeat url("/static/img/base/icon/bolt_12x12.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003726}}
 .base.content.cms #site_wide_announcements ul li.subject { font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003729}}
 .base.content.cms #site_wide_announcements ul li.date { font-size: 90%; padding: 1px 0 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003735}}
 .base.content.cms #site_wide_announcements ul li.hide a { font-weight: bold; text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ohrstrom\/src\/dock18\/website\/site-static\/sass\/_base\.sass}line{font-family:\00003742}}
 .base.content.cms #site_wide_announcements li a { color: black; }
